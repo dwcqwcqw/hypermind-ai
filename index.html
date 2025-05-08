@@ -57,7 +57,7 @@
                         AI recruits users, leads interviews, and synthesizes insights — accelerate qualitative research at 10x speed and 1/10 the cost.
                     </p>
                     <div class="mt-4">
-                        <a href="#" class="btn btn-primary btn-lg">Try for free</a>
+                        <a href="#" class="btn btn-primary btn-lg btn-frosted">Try for free</a>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -564,13 +564,15 @@
             }
             
             // Add event listener to all "Try for free" buttons
-            const tryFreeButtons = document.querySelectorAll('.btn-frosted');
+            const tryFreeButtons = document.querySelectorAll('a.btn-frosted, a.btn-primary');
             tryFreeButtons.forEach(button => {
-                button.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const waitlistModal = new bootstrap.Modal(document.getElementById('waitlistModal'));
-                    waitlistModal.show();
-                });
+                if (button.textContent.trim() === "Try for free") {
+                    button.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const waitlistModal = new bootstrap.Modal(document.getElementById('waitlistModal'));
+                        waitlistModal.show();
+                    });
+                }
             });
             
             // Waitlist form submission
