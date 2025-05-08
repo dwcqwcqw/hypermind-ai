@@ -1,0 +1,93 @@
+<svg width="700" height="400" viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ec4899;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect x="0" y="0" width="700" height="400" rx="12" fill="#1e1e2e" />
+  
+  <!-- Window Controls -->
+  <circle cx="20" cy="20" r="6" fill="#ff5f56" />
+  <circle cx="40" cy="20" r="6" fill="#ffbd2e" />
+  <circle cx="60" cy="20" r="6" fill="#27c93f" />
+  
+  <!-- Search Bar -->
+  <rect x="50" y="50" width="600" height="30" rx="15" fill="rgba(255,255,255,0.8)" />
+  
+  <!-- Question Text -->
+  <text x="50" y="110" fill="white" font-family="Arial" font-size="16" font-weight="bold">How likely are you to add more seat licenses?</text>
+  
+  <!-- Stats Boxes -->
+  <g transform="translate(50, 130)">
+    <!-- Box 1 -->
+    <rect x="0" y="0" width="100" height="70" rx="8" fill="rgba(255,255,255,0.1)" />
+    <text x="50" y="30" fill="white" font-family="Arial" font-size="20" font-weight="bold" text-anchor="middle">1,256</text>
+    <text x="50" y="50" fill="#ccc" font-family="Arial" font-size="12" text-anchor="middle">Insights</text>
+    
+    <!-- Box 2 -->
+    <rect x="120" y="0" width="100" height="70" rx="8" fill="rgba(255,255,255,0.1)" />
+    <text x="170" y="30" fill="white" font-family="Arial" font-size="20" font-weight="bold" text-anchor="middle">3.5</text>
+    <text x="170" y="50" fill="#ccc" font-family="Arial" font-size="12" text-anchor="middle">Avg. Score</text>
+    
+    <!-- Box 3 -->
+    <rect x="240" y="0" width="100" height="70" rx="8" fill="rgba(255,255,255,0.1)" />
+    <text x="290" y="30" fill="white" font-family="Arial" font-size="20" font-weight="bold" text-anchor="middle">198</text>
+    <text x="290" y="50" fill="#ccc" font-family="Arial" font-size="12" text-anchor="middle">Neg. Signals</text>
+    
+    <!-- Box 4 -->
+    <rect x="360" y="0" width="100" height="70" rx="8" fill="rgba(255,255,255,0.1)" />
+    <text x="410" y="30" fill="white" font-family="Arial" font-size="20" font-weight="bold" text-anchor="middle">367</text>
+    <text x="410" y="50" fill="#ccc" font-family="Arial" font-size="12" text-anchor="middle">Avg. Score</text>
+    
+    <!-- Box 5 -->
+    <rect x="480" y="0" width="100" height="70" rx="8" fill="rgba(255,255,255,0.1)" />
+    <text x="530" y="30" fill="white" font-family="Arial" font-size="20" font-weight="bold" text-anchor="middle">7.1</text>
+    <text x="530" y="50" fill="#ccc" font-family="Arial" font-size="12" text-anchor="middle">Conv. Depth</text>
+  </g>
+  
+  <!-- Response Section -->
+  <rect x="50" y="220" width="580" height="80" rx="8" fill="rgba(255,255,255,0.05)" />
+  <text x="70" y="245" fill="white" font-family="Arial" font-size="14">Customers Say</text>
+  <rect x="170" y="235" width="70" height="20" rx="4" fill="#ec4899" />
+  <text x="185" y="249" fill="white" font-family="Arial" font-size="12">Filtered</text>
+  <rect x="70" y="260" width="540" height="25" rx="4" fill="#333" />
+  
+  <!-- Bottom Section - Response Breakdown -->
+  <g transform="translate(50, 320)">
+    <text x="0" y="20" fill="white" font-family="Arial" font-size="14" font-weight="bold">Response Breakdown</text>
+    
+    <!-- Level 5 -->
+    <text x="20" y="50" fill="white" font-family="Arial" font-size="14">5</text>
+    <rect x="40" y="42" width="200" height="10" rx="5" fill="url(#purpleGradient)" />
+    
+    <!-- Level 4 -->
+    <text x="20" y="70" fill="white" font-family="Arial" font-size="14">4</text>
+    <rect x="40" y="62" width="150" height="10" rx="5" fill="url(#purpleGradient)" />
+    
+    <!-- Level 3 -->
+    <text x="20" y="90" fill="white" font-family="Arial" font-size="14">3</text>
+    <rect x="40" y="82" width="180" height="10" rx="5" fill="url(#purpleGradient)" />
+    
+    <!-- Level 2 -->
+    <text x="20" y="110" fill="white" font-family="Arial" font-size="14">2</text>
+    <rect x="40" y="102" width="80" height="10" rx="5" fill="url(#purpleGradient)" />
+  </g>
+  
+  <!-- User List -->
+  <g transform="translate(350, 320)">
+    <!-- User 1 -->
+    <rect x="0" y="0" width="300" height="40" rx="8" fill="rgba(255,255,255,0.05)" />
+    <circle cx="20" cy="20" r="15" fill="#ec4899" />
+    <text x="20" y="25" fill="white" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">2</text>
+    <text x="50" y="25" fill="white" font-family="Arial" font-size="14">Shane Martin</text>
+    
+    <!-- User 2 -->
+    <rect x="0" y="50" width="300" height="40" rx="8" fill="rgba(255,255,255,0.05)" />
+    <circle cx="20" cy="70" r="15" fill="#ec4899" />
+    <text x="20" y="75" fill="white" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">5</text>
+    <text x="50" y="75" fill="white" font-family="Arial" font-size="14">Maria Gomez</text>
+  </g>
+</svg> 

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #1e1e2e;
+            font-family: 'Arial', sans-serif;
+            color: white;
+        }
+        .dashboard {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .icons {
+            display: flex;
+            gap: 10px;
+        }
+        .icon {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #ccc;
+        }
+        .input-bar {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            height: 30px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .question {
+            margin-top: 20px;
+            font-weight: bold;
+            color: white;
+        }
+        .stats {
+            display: flex;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .stat-box {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 10px;
+            flex: 1;
+            text-align: center;
+        }
+        .number {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+        .label {
+            font-size: 12px;
+            color: #ccc;
+        }
+        .chart-section {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        .chart {
+            flex: 3;
+            height: 200px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+        .bar {
+            position: absolute;
+            bottom: 0;
+            width: 20px;
+            background: linear-gradient(to top, #ec4899, #8b5cf6);
+            border-radius: 4px 4px 0 0;
+        }
+        .bar-1 { height: 60%; left: 10%; }
+        .bar-2 { height: 80%; left: 20%; }
+        .bar-3 { height: 40%; left: 30%; }
+        .bar-4 { height: 90%; left: 40%; }
+        .bar-5 { height: 70%; left: 50%; }
+        .sidebar {
+            flex: 1;
+            padding-left: 20px;
+        }
+        .response-section {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .user-list {
+            margin-top: 20px;
+        }
+        .user-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 10px;
+        }
+        .user-avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #ec4899;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .user-info {
+            flex: 1;
+        }
+        .user-name {
+            font-weight: bold;
+        }
+        .user-score {
+            font-size: 12px;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <div class="header">
+            <div class="icons">
+                <div class="icon" style="background-color: #ff5f56;"></div>
+                <div class="icon" style="background-color: #ffbd2e;"></div>
+                <div class="icon" style="background-color: #27c93f;"></div>
+            </div>
+        </div>
+        
+        <div class="input-bar"></div>
+        
+        <div class="question">
+            How likely are you to add more seat licenses?
+        </div>
+        
+        <div class="stats">
+            <div class="stat-box">
+                <div class="number">1,256</div>
+                <div class="label">Insights</div>
+            </div>
+            <div class="stat-box">
+                <div class="number">3.5</div>
+                <div class="label">Avg. Score</div>
+            </div>
+            <div class="stat-box">
+                <div class="number">198</div>
+                <div class="label">Neg. Signals</div>
+            </div>
+            <div class="stat-box">
+                <div class="number">367</div>
+                <div class="label">Avg. Score</div>
+            </div>
+            <div class="stat-box">
+                <div class="number">7.1</div>
+                <div class="label">Conv. Depth</div>
+            </div>
+        </div>
+        
+        <div class="response-section">
+            <p>Customers Say <span style="background-color: #ec4899; border-radius: 4px; padding: 2px 8px; font-size: 12px;">Filtered</span></p>
+            <div style="height: 30px; width: 100%; background-color: #333; border-radius: 4px; margin-top: 10px;"></div>
+        </div>
+        
+        <div class="chart-section">
+            <div class="chart">
+                <div class="bar bar-1"></div>
+                <div class="bar bar-2"></div>
+                <div class="bar bar-3"></div>
+                <div class="bar bar-4"></div>
+                <div class="bar bar-5"></div>
+            </div>
+            <div class="sidebar">
+                <div style="color: white; font-weight: bold; margin-bottom: 10px;">Response Breakdown</div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                    <div>5</div>
+                    <div style="width: 100px; height: 10px; background: linear-gradient(to right, #ec4899, #8b5cf6); border-radius: 5px;"></div>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                    <div>4</div>
+                    <div style="width: 80px; height: 10px; background: linear-gradient(to right, #ec4899, #8b5cf6); border-radius: 5px;"></div>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                    <div>3</div>
+                    <div style="width: 120px; height: 10px; background: linear-gradient(to right, #ec4899, #8b5cf6); border-radius: 5px;"></div>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                    <div>2</div>
+                    <div style="width: 40px; height: 10px; background: linear-gradient(to right, #ec4899, #8b5cf6); border-radius: 5px;"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="user-list">
+            <div class="user-item">
+                <div class="user-avatar">2</div>
+                <div class="user-info">
+                    <div class="user-name">Shane Martin</div>
+                    <div class="user-score"></div>
+                </div>
+            </div>
+            <div class="user-item">
+                <div class="user-avatar">5</div>
+                <div class="user-info">
+                    <div class="user-name">Maria Gomez</div>
+                    <div class="user-score"></div>
+                </div>
+            </div>
+            <div class="user-item">
+                <div class="user-avatar">4</div>
+                <div class="user-info">
+                    <div class="user-name">Phillip Wilson</div>
+                    <div class="user-score"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

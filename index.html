@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>HyperMind - Human insights in hours, not weeks</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="images/logo.png" alt="HyperMind AI Logo" style="max-height: 48px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Product</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Case Studies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a href="#" class="btn btn-frosted">Try for free</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero py-5" style="background: linear-gradient(135deg, #f3f4f6 0%, #e0e7ff 100%);">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 text-center">
+                    <h1 class="display-4 fw-bold mb-4">
+                        Smarter research, Faster outcomes
+                    </h1>
+                    <p class="lead mb-4">
+                        AI recruits users, leads interviews, and synthesizes insights — accelerate qualitative research at 10x speed and 1/10 the cost.
+                    </p>
+                    <div class="custom-video-container my-4">
+                        <video class="custom-video" id="hero-video" src="images/Hypermind.mp4" muted playsinline></video>
+                        <div class="video-controls" style="opacity: 0; transition: opacity 0.3s ease;">
+                            <button class="video-button play-button" id="play-button">
+                                <i class="fas fa-pause"></i>
+                            </button>
+                            <div class="video-time" id="video-time">0:22 / 1:05</div>
+                            <div class="video-progress" id="video-progress">
+                                <div class="video-progress-filled" id="video-progress-filled"></div>
+                            </div>
+                            <button class="video-button mute-button" id="mute-button">
+                                <i class="fas fa-volume-mute"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <style>
+                        .custom-video-container:hover .video-controls {
+                            opacity: 1 !important;
+                        }
+                        
+                        .caption-icon {
+                            height: 16px;
+                            width: auto;
+                            vertical-align: middle;
+                            margin-right: 4px;
+                        }
+                        
+                        .media-content img.media-image {
+                            width: 100%;
+                            height: 400px;
+                            object-fit: cover;
+                            object-position: center;
+                        }
+                    </style>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works-section" id="features">
+        <div class="container">
+            <h2 class="text-center mb-5">How It Works</h2>
+            
+            <div class="how-it-works-container">
+                <div class="steps-container">
+                    <div class="step active" data-step="1" id="step1">
+                        <div class="step-content">
+                            <div class="step-number">1</div>
+                            <div class="step-info">
+                                <h3>Design Your Study</h3>
+                                <p>Upload your interview guide or let our AI research assistant create a comprehensive guide based on your objectives.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="step" data-step="2" id="step2">
+                        <div class="step-content">
+                            <div class="step-number">2</div>
+                            <div class="step-info">
+                                <h3>Share with Participants</h3>
+                                <p>Bring your own participants or recruit directly through the HyperMind platform for immediate engagement.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="step" data-step="3" id="step3">
+                        <div class="step-content">
+                            <div class="step-number">3</div>
+                            <div class="step-info">
+                                <h3>Engage with Users</h3>
+                                <p>Our conversational AI interviewer conducts hundreds of voice and video conversations simultaneously for optimal results.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="step" data-step="4" id="step4">
+                        <div class="step-content">
+                            <div class="step-number">4</div>
+                            <div class="step-info">
+                                <h3>Get Actionable Insights</h3>
+                                <p>Watch the AI extract meaningful insights from in-depth conversations and transform them into actionable recommendations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="spacer-column"></div>
+                
+                <div class="image-display">
+                    <div class="image-container active" data-step="1">
+                        <img src="images/pic1.png" alt="Design Your Study" class="feature-image">
+                    </div>
+                    <div class="image-container" data-step="2">
+                        <img src="images/pic2.png" alt="Share with Participants" class="feature-image">
+                    </div>
+                    <div class="image-container" data-step="3">
+                        <img src="images/pic3.svg" alt="Engage with Users" class="feature-image">
+                    </div>
+                    <div class="image-container" data-step="4">
+                        <img src="images/pic4.png" alt="Get Actionable Insights" class="feature-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Secondary Features -->
+    <section id="secondary-features" class="secondary-features py-5 bg-light">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-item text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3 class="h5">Dynamic follow ups</h3>
+                        <p>Dig deeper on the topics<br>that matter most</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-item text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <h3 class="h5">Multilingual</h3>
+                        <p>Choose language & voice most<br>suitable for your audience</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-item text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h3 class="h5">Screen & video recording</h3>
+                        <p>Watch users interact with<br>your embedded stimuli</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-item text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3 class="h5">Available 24/7</h3>
+                        <p>Interview moderation<br>anytime and in any time zone</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-item text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="h5">Unlimited scale</h3>
+                        <p>Run as many interviews<br>as you want, all at once</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-item text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3 class="h5">Desktop & mobile</h3>
+                        <p>Let participants interview<br>at work, home, or on-the-go</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Multimedia Section -->
+    <section class="multimedia py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center mb-3">Multimedia</h2>
+            <h3 class="section-subtitle text-center mb-5">Test any stimuli, for any use case</h3>
+            <p class="text-center mb-5">Embed any stimuli, with screen and video recording capabilities to capture participants' real-time reactions and interactions</p>
+            
+            <div class="media-tabs-container">
+                <div class="media-tabs">
+                    <button class="media-tab active" data-media-type="websites">
+                        <i class="fas fa-globe"></i>
+                        <span>Websites</span>
+                    </button>
+                    <button class="media-tab" data-media-type="prototypes">
+                        <i class="fas fa-layer-group"></i>
+                        <span>Prototypes</span>
+                    </button>
+                    <button class="media-tab" data-media-type="images">
+                        <i class="fas fa-image"></i>
+                        <span>Images</span>
+                    </button>
+                    <button class="media-tab" data-media-type="videos">
+                        <i class="fas fa-video"></i>
+                        <span>Videos</span>
+                    </button>
+                    <button class="media-tab" data-media-type="adcopy">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Ad Copy</span>
+                    </button>
+                </div>
+                
+                <div class="media-content-container">
+                    <div class="media-content active" id="websites-content">
+                        <img src="images/pic5.png" alt="Website stimulus example" class="media-image">
+                        <div class="media-caption">
+                            <span>Please show how you would select items you like</span>
+                        </div>
+                    </div>
+                    <div class="media-content" id="prototypes-content">
+                        <img src="images/pic6.png" alt="Prototype stimulus example" class="media-image">
+                        <div class="media-caption">
+                            <span>Does any part of this workflow confuse you?</span>
+                        </div>
+                    </div>
+                    <div class="media-content" id="images-content">
+                        <img src="images/pic7.jpg" alt="Image stimulus example" class="media-image">
+                        <div class="media-caption">
+                            <span>Which image style do you prefer and why?</span>
+                        </div>
+                    </div>
+                    <div class="media-content" id="videos-content">
+                        <img src="images/pic8.png" alt="Video stimulus example" class="media-image">
+                        <div class="media-caption">
+                            <span>How would you rate this video's creativity, and why?</span>
+                        </div>
+                    </div>
+                    <div class="media-content" id="adcopy-content">
+                        <img src="images/pic9.png" alt="Ad copy stimulus example" class="media-image">
+                        <div class="media-caption">
+                            <span>What message do you think this advertisement is conveying?</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Features -->
+    <section class="additional-features py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-item text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="h5">Recruit participants</h3>
+                        <p>Recruit from our global panel<br>of over 3 million participants</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-item text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <h3 class="h5">Streamlined incentives</h3>
+                        <p>Seamlessly pay incentives<br>directly from the platform</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-item text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-user-friends"></i>
+                        </div>
+                        <h3 class="h5">Unlimited users</h3>
+                        <p>Collaborate and<br>share across your entire team</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-item text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <h3 class="h5">Flexible pricing</h3>
+                        <p>Usage based pricing tiers<br>to meet every teams' needs</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-item text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3 class="h5">Dedicated support</h3>
+                        <p>Account support with you<br>every step of the way</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-item text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="h5">Safe & secure</h3>
+                        <p>Adherence to SOC-II, HIPAA and GDPR security standards</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section (Customer Success) -->
+    <section class="testimonials py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Customer success</h2>
+            <h3 class="section-subtitle text-center mb-5">Hear it from the voices of our customers</h3>
+            
+            <div class="testimonials-carousel">
+                <div class="testimonials-container" id="testimonialsContainer">
+                    <div class="testimonial-slide" id="slide0">
+                        <div class="testimonial-card">
+                            <blockquote>
+                                <p>"HyperMind cut our research time from two weeks to one day. It is very effective in asking in-depth questions."</p>
+                            </blockquote>
+                            <div class="testimonial-author">
+                                <img src="images/photo1.jpg" alt="Sarah Thompson" class="author-image">
+                                <div class="author-info">
+                                    <p class="author-name">Sarah Thompson</p>
+                                    <p class="author-title">Product Manager, New York</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-slide" id="slide1">
+                        <div class="testimonial-card">
+                            <blockquote>
+                                <p>"I've tried a lot of tools. This is the first one that gave me clear, actionable insights without needing a research team."</p>
+                            </blockquote>
+                            <div class="testimonial-author">
+                                <img src="images/photo2.jpg" alt="Jake Miller" class="author-image">
+                                <div class="author-info">
+                                    <p class="author-name">Jake Miller</p>
+                                    <p class="author-title">Startup Founder, Austin</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-slide" id="slide2">
+                        <div class="testimonial-card">
+                            <blockquote>
+                                <p>"The AI-led interviews felt natural and insightful. We had our synthesis the same day — that's game-changing."</p>
+                            </blockquote>
+                            <div class="testimonial-author">
+                                <img src="images/photo3.jpg" alt="Olivia White" class="author-image">
+                                <div class="author-info">
+                                    <p class="author-name">Olivia White</p>
+                                    <p class="author-title">UX Researcher, San Francisco</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-slide" id="slide3">
+                        <div class="testimonial-card">
+                            <blockquote>
+                                <p>"As a solo PM, I don't have time to recruit or moderate. HyperMind handled everything — fast and clean."</p>
+                            </blockquote>
+                            <div class="testimonial-author">
+                                <img src="images/photo4.jpg" alt="Daniel Brooks" class="author-image">
+                                <div class="author-info">
+                                    <p class="author-name">Daniel Brooks</p>
+                                    <p class="author-title">Product Lead, Chicago</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-slide" id="slide4">
+                        <div class="testimonial-card">
+                            <blockquote>
+                                <p>"HyperMind found exactly the users I needed, ran the interviews, and pulled out insights with affordable prices"</p>
+                            </blockquote>
+                            <div class="testimonial-author">
+                                <img src="images/photo5.webp" alt="Emily Carter" class="author-image">
+                                <div class="author-info">
+                                    <p class="author-name">Emily Carter</p>
+                                    <p class="author-title">Growth Strategist, Seattle</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta py-5">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-md-5">
+                    <div class="cta-content">
+                        <h2 class="mb-4">
+                            Get better insights,<br>
+                            in less time and at lower cost<br>
+                            <span class="text-accent">— with AI interviews</span>
+                        </h2>
+                        <div class="subscription-form">
+                            <div class="input-group mb-3">
+                                <input type="email" class="form-control" placeholder="Enter your email" aria-label="Email">
+                                <button class="btn btn-light" type="submit">Subscribe</button>
+                            </div>
+                        </div>
+                        <div class="footer-content mt-4">
+                            <div class="footer-links mb-2">
+                                <a href="#" class="me-3">Contact</a>
+                                <a href="#" class="me-3">Privacy Policy</a>
+                                <a href="#" class="me-3">Terms of Service</a>
+                            </div>
+                            <p class="text-muted">© 2025 HyperMind. All Rights Reserved</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="cta-image">
+                        <img src="images/demo1.jpg" alt="AI Insights Dashboard" class="img-fluid rounded">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Modal -->
+    <div class="modal fade" id="newsletterModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Let's keep in touch!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Join our mailing list to stay up to date on the latest HyperMind features & updates!</p>
+                    <form>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Your email address">
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+</html> 
