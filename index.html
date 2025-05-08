@@ -13,11 +13,11 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body id="top">
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="#top">
                 <img src="images/logo.png" alt="HyperMind AI Logo" style="max-height: 48px;">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,19 +26,16 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Product</a>
+                        <a class="nav-link" href="#features">Product</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Case Studies</a>
+                        <a class="nav-link" href="#multimedia">Case Studies</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Blog</a>
+                        <a class="nav-link" href="pricing.html">Pricing</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" href="contact.html">Contact</a>
                     </li>
                 </ul>
                 <div class="d-flex">
@@ -49,7 +46,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero py-5" style="background: linear-gradient(135deg, #f3f4f6 0%, #e0e7ff 100%);">
+    <section class="hero py-5" id="hero" style="background: linear-gradient(135deg, #f3f4f6 0%, #e0e7ff 100%);">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 text-center">
@@ -230,7 +227,7 @@
     </section>
     
     <!-- Multimedia Section -->
-    <section class="multimedia py-5 bg-light">
+    <section class="multimedia py-5 bg-light" id="multimedia">
         <div class="container">
             <h2 class="section-title text-center mb-3">Multimedia</h2>
             <h3 class="section-subtitle text-center mb-5">Test any stimuli, for any use case</h3>
@@ -375,7 +372,7 @@
                                 <img src="images/photo1.jpg" alt="Sarah Thompson" class="author-image">
                                 <div class="author-info">
                                     <p class="author-name">Sarah Thompson</p>
-                                    <p class="author-title">Product Manager, New York</p>
+                                    <p class="author-title">Market Analyst, New York</p>
                                 </div>
                             </div>
                         </div>
@@ -458,17 +455,23 @@
                         </h2>
                         <div class="subscription-form">
                             <div class="input-group mb-3">
-                                <input type="email" class="form-control" placeholder="Enter your email" aria-label="Email">
-                                <button class="btn btn-light" type="submit">Subscribe</button>
+                                <input type="email" class="form-control" id="footerEmail" placeholder="Enter your email" aria-label="Email">
+                                <button class="btn btn-light" type="submit" id="footerSubscribeBtn">Subscribe</button>
+                            </div>
+                            <div class="alert alert-success mt-2" id="footer-subscription-success" style="display: none;">
+                                Thank you for subscribing!
+                            </div>
+                            <div class="alert alert-danger mt-2" id="footer-subscription-error" style="display: none;">
+                                Please enter a valid email address.
                             </div>
                         </div>
                         <div class="footer-content mt-4">
-                            <div class="footer-links mb-2">
-                                <a href="#" class="me-3">Contact</a>
-                                <a href="#" class="me-3">Privacy Policy</a>
-                                <a href="#" class="me-3">Terms of Service</a>
+                            <div class="footer-links">
+                                <a href="contact.html" class="me-3">Contact</a>
+                                <a href="privacy-policy.html" class="me-3">Privacy Policy</a>
+                                <a href="terms-of-service.html" class="me-3">Terms of Service</a>
                             </div>
-                            <p class="text-muted">© 2025 HyperMind. All Rights Reserved</p>
+                            <p style="color: rgba(255, 255, 255, 0.7); font-weight: 500;">© 2025 HyperMind. All Rights Reserved</p>
                         </div>
                     </div>
                 </div>
@@ -491,20 +494,225 @@
                 </div>
                 <div class="modal-body">
                     <p>Join our mailing list to stay up to date on the latest HyperMind features & updates!</p>
-                    <form>
+                    <form id="newsletterForm">
                         <div class="mb-3">
-                            <input type="email" class="form-control" placeholder="Your email address">
+                            <input type="email" class="form-control" id="newsletterEmail" placeholder="Your email address" required>
+                            <div class="invalid-feedback" id="newsletter-error">
+                                Please enter a valid email address.
+                            </div>
                         </div>
                         <button type="submit" class="btn btn-primary w-100">Subscribe</button>
+                        <div class="alert alert-success mt-3" id="newsletter-success" style="display: none;">
+                            Thank you for subscribing to our newsletter!
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Waitlist Modal -->
+    <div class="modal fade" id="waitlistModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Please enter your email to join the waitlist</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="waitlistForm">
+                        <div class="mb-3">
+                            <input type="email" class="form-control" id="waitlistEmail" placeholder="Your email address" required>
+                            <div class="invalid-feedback">
+                                Please enter a valid email address.
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Join Waitlist</button>
+                        <div class="alert alert-success mt-3" id="waitlistSuccess" style="display: none;">
+                            Thank you for joining our waitlist! We'll be in touch soon.
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Google Sheets Integration Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Function to submit data to Google Sheets
+            function submitToGoogleSheets(formType, data) {
+                // Get Google Sheets Apps Script URL from localStorage
+                const googleSheetsUrl = localStorage.getItem('googleSheetsUrl');
+                
+                // Prepare form data
+                const formData = new FormData();
+                
+                // Add form type
+                formData.append('form_type', formType);
+                
+                // Add all data fields
+                for (const key in data) {
+                    formData.append(key, data[key]);
+                }
+                
+                // Add page URL and timestamp
+                formData.append('page_url', window.location.href);
+                formData.append('timestamp', new Date().toISOString());
+                
+                if (googleSheetsUrl) {
+                    // Submit to Google Sheets
+                    fetch(googleSheetsUrl, {
+                        method: 'POST',
+                        body: formData,
+                        mode: 'no-cors'
+                    })
+                    .then(() => {
+                        console.log(`${formType} form submitted to Google Sheets`);
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        
+                        // Fallback to PHP backend
+                        fetch('php/submit.php', {
+                            method: 'POST',
+                            body: formData
+                        })
+                        .catch(error => console.error('Error:', error));
+                    });
+                } else {
+                    // Submit to PHP backend
+                    fetch('php/submit.php', {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .catch(error => console.error('Error:', error));
+                }
+            }
+            
+            // Add event listener to all "Try for free" buttons
+            const tryFreeButtons = document.querySelectorAll('.btn-frosted');
+            tryFreeButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const waitlistModal = new bootstrap.Modal(document.getElementById('waitlistModal'));
+                    waitlistModal.show();
+                });
+            });
+            
+            // Waitlist form submission
+            const waitlistForm = document.getElementById('waitlistForm');
+            if (waitlistForm) {
+                waitlistForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const email = document.getElementById('waitlistEmail').value.trim();
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    
+                    if (email && emailRegex.test(email)) {
+                        // Submit to Google Sheets
+                        submitToGoogleSheets('waitlist', { email: email });
+                        
+                        // Show success message
+                        document.getElementById('waitlistSuccess').style.display = 'block';
+                        
+                        // Clear the form
+                        waitlistForm.reset();
+                        
+                        // Hide the success message after 5 seconds
+                        setTimeout(() => {
+                            // If modal is still open
+                            if (document.getElementById('waitlistModal').classList.contains('show')) {
+                                // Close the modal
+                                const waitlistModal = bootstrap.Modal.getInstance(document.getElementById('waitlistModal'));
+                                if (waitlistModal) {
+                                    waitlistModal.hide();
+                                }
+                            }
+                            // Hide success message
+                            document.getElementById('waitlistSuccess').style.display = 'none';
+                        }, 3000);
+                    } else {
+                        // Show validation error
+                        document.getElementById('waitlistEmail').classList.add('is-invalid');
+                    }
+                });
+            }
+            
+            // Newsletter form submission
+            const newsletterForm = document.getElementById('newsletterForm');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const email = document.getElementById('newsletterEmail').value.trim();
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    
+                    if (email && emailRegex.test(email)) {
+                        // Submit to Google Sheets
+                        submitToGoogleSheets('newsletter', { email: email });
+                        
+                        // Show success message
+                        document.getElementById('newsletterSuccess').style.display = 'block';
+                        
+                        // Clear the form
+                        newsletterForm.reset();
+                        
+                        // Hide the success message after 5 seconds
+                        setTimeout(() => {
+                            document.getElementById('newsletterSuccess').style.display = 'none';
+                        }, 5000);
+                    } else {
+                        // Show validation error
+                        document.getElementById('newsletterEmail').classList.add('is-invalid');
+                    }
+                });
+            }
+            
+            // Footer subscription form
+            const footerSubscribeBtn = document.getElementById('footerSubscribeBtn');
+            if (footerSubscribeBtn) {
+                footerSubscribeBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const emailInput = document.getElementById('footerEmail');
+                    const email = emailInput.value.trim();
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    const successMsg = document.getElementById('footer-subscription-success');
+                    const errorMsg = document.getElementById('footer-subscription-error');
+                    
+                    if (email && emailRegex.test(email)) {
+                        // Submit to Google Sheets
+                        submitToGoogleSheets('newsletter', { email: email });
+                        
+                        // Show success message
+                        emailInput.classList.remove('is-invalid');
+                        errorMsg.style.display = 'none';
+                        successMsg.style.display = 'block';
+                        
+                        // Clear the form
+                        emailInput.value = '';
+                        
+                        // Hide success message after 3 seconds
+                        setTimeout(() => {
+                            successMsg.style.display = 'none';
+                        }, 3000);
+                    } else {
+                        // Show validation error
+                        emailInput.classList.add('is-invalid');
+                        successMsg.style.display = 'none';
+                        errorMsg.style.display = 'block';
+                    }
+                });
+            }
+        });
+    </script>
+
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
+    <script src="js/init-sheets.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/logo-click.js"></script>
 </body>
 </html> 

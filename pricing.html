@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>HyperMind - Pricing</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Pricing specific styles */
+        .pricing-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8edf5 50%, #f0f4f8 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Add decorative elements for enhanced glassmorphism effect */
+        .pricing-section::before,
+        .pricing-section::after {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            z-index: 0;
+            filter: blur(80px);
+            opacity: 0.4;
+        }
+
+        .pricing-section::before {
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.7) 0%, rgba(99, 102, 241, 0) 70%);
+            top: -200px;
+            right: -100px;
+        }
+
+        .pricing-section::after {
+            background: radial-gradient(circle, rgba(249, 119, 148, 0.7) 0%, rgba(249, 119, 148, 0) 70%);
+            bottom: -200px;
+            left: -100px;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .pricing-header-text {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .pricing-header-text h1 {
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .pricing-card {
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+            padding: 30px;
+            height: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.25);
+        }
+        
+        .pricing-card.featured {
+            background: rgba(35, 35, 51, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.3);
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: linear-gradient(135deg, rgba(249, 119, 148, 0.9) 0%, rgba(98, 58, 162, 0.9) 100%);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            color: white;
+            padding: 8px 16px;
+            font-size: 14px;
+            font-weight: 600;
+            border-top-right-radius: 12px;
+            box-shadow: 0 4px 15px rgba(98, 58, 162, 0.3);
+        }
+        
+        .pricing-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .pricing-subtitle {
+            font-size: 16px;
+            color: #6b7280;
+            margin-bottom: 20px;
+        }
+        
+        .pricing-card.featured .pricing-subtitle {
+            color: #e0e0e0;
+        }
+        
+        .pricing-price {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: flex-end;
+        }
+        
+        .pricing-price .currency {
+            font-size: 36px;
+            font-weight: 700;
+        }
+        
+        .pricing-period {
+            color: #6b7280;
+            font-size: 16px;
+            margin-left: 5px;
+            font-weight: normal;
+        }
+        
+        .pricing-card.featured .pricing-period {
+            color: #e0e0e0;
+        }
+        
+        .pricing-features {
+            margin: 30px 0;
+            flex-grow: 1;
+        }
+        
+        .pricing-feature {
+            margin-bottom: 8px;
+            font-size: 16px;
+            color: #4b5563;
+            display: flex;
+            align-items: center;
+        }
+        
+        .pricing-card.featured .pricing-feature {
+            color: #f3f4f6;
+        }
+        
+        .pricing-feature .icon {
+            color: #10b981;
+            margin-right: 12px;
+            font-size: 16px;
+            flex-shrink: 0;
+            width: 20px;
+            height: 20px;
+            background: rgba(230, 247, 239, 0.7);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .pricing-card.featured .pricing-feature .icon {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+        
+        .pricing-feature .fa-check {
+            font-size: 12px;
+        }
+        
+        .pricing-breakdown {
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 500;
+            color: #4b5563;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: 8px 16px;
+            border-radius: 30px;
+        }
+        
+        .pricing-breakdown:hover {
+            background: rgba(99, 102, 241, 0.1);
+            color: #4338ca;
+        }
+        
+        .pricing-card.featured .pricing-breakdown {
+            color: #e0e0e0;
+        }
+        
+        .pricing-card.featured .pricing-breakdown:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+        
+        .pricing-cta {
+            width: 100%;
+            padding: 12px;
+            font-weight: 500;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            text-align: center;
+            font-size: 16px;
+            border: none;
+        }
+        
+        .btn-gradient {
+            background: linear-gradient(135deg, #f97794 0%, #623aa2 100%);
+            color: white;
+        }
+        
+        .btn-outline {
+            background: white;
+            color: #4b5563;
+            border: 1px solid #e5e7eb;
+        }
+        
+        .pricing-card.featured .pricing-cta.btn-outline {
+            background: linear-gradient(135deg, #f97794 0%, #623aa2 100%);
+            color: white;
+            border: none;
+        }
+        
+        .pricing-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .no-credit {
+            text-align: center;
+            font-size: 14px;
+            color: #6b7280;
+            margin-top: 16px;
+        }
+        
+        .features-table {
+            margin-top: 80px;
+        }
+        
+        .features-table h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+        
+        .features-table table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+        }
+        
+        .features-table th {
+            text-align: center;
+            padding: 15px;
+            font-weight: 600;
+            color: #1f2937;
+            border-bottom: 1px solid rgba(229, 231, 235, 0.5);
+            background: rgba(249, 250, 251, 0.5);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+        
+        .features-table th:first-child {
+            text-align: left;
+        }
+        
+        .features-table td {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid rgba(229, 231, 235, 0.3);
+        }
+        
+        .features-table td:first-child {
+            text-align: left;
+            font-weight: 500;
+            color: #1f2937;
+        }
+        
+        .features-table tr:nth-child(even) {
+            background-color: rgba(249, 250, 251, 0.3);
+        }
+        
+        .features-table .fa-check {
+            color: #10b981;
+        }
+        
+        .features-table .fa-times {
+            color: #ef4444;
+        }
+        
+        .feature-category {
+            font-weight: 600;
+            color: #1f2937;
+            background: rgba(243, 244, 246, 0.7);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            font-size: 16px;
+        }
+        
+        .footnote {
+            font-size: 14px;
+            color: #6b7280;
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        /* FAQ section styles */
+        .faq-section {
+            background: linear-gradient(135deg, #f0f4f8 0%, #e8edf5 50%, #f5f7fa 100%);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Add decorative elements for enhanced glassmorphism effect */
+        .faq-section::before,
+        .faq-section::after {
+            content: "";
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            z-index: 0;
+            filter: blur(70px);
+            opacity: 0.3;
+        }
+
+        .faq-section::before {
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.6) 0%, rgba(16, 185, 129, 0) 70%);
+            top: -150px;
+            left: -100px;
+        }
+
+        .faq-section::after {
+            background: radial-gradient(circle, rgba(79, 70, 229, 0.6) 0%, rgba(79, 70, 229, 0) 70%);
+            bottom: -150px;
+            right: -100px;
+        }
+        
+        .faq-section h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .faq-section .accordion {
+            --bs-accordion-border-width: 0;
+            --bs-accordion-border-radius: 8px;
+            --bs-accordion-inner-border-radius: 8px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .faq-section .accordion-item {
+            margin-bottom: 8px;
+            border: 1px solid rgba(0,0,0,0.05);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        
+        .faq-section .accordion-button {
+            font-weight: 600;
+            padding: 20px 20px !important;
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            color: #1f2937;
+            border-bottom: 0 !important;
+            text-align: left !important;
+            position: relative;
+            padding-right: 40px !important;
+            display: flex;
+            align-items: center;
+        }
+        
+        .faq-section .accordion-button::after {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            margin-top: 0;
+        }
+        
+        .faq-section .accordion-button:not(.collapsed) {
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            color: #1f2937;
+            box-shadow: none !important;
+            border-bottom: none !important;
+            padding-bottom: 20px !important;
+            margin-bottom: 0 !important;
+        }
+        
+        .faq-section .accordion-button:focus {
+            box-shadow: none !important;
+            border-color: rgba(0,0,0,0.05);
+        }
+        
+        .faq-section .accordion-body {
+            padding: 0 20px 20px !important;
+            margin-top: 0 !important;
+            font-size: 16px;
+            color: #4b5563;
+            line-height: 1.5;
+            border-top: none !important;
+            text-align: left;
+            background: rgba(255, 255, 255, 0.7);
+        }
+        
+        .faq-section .accordion-collapse.collapse.show {
+            margin-top: 0 !important;
+            padding-top: 0 !important;
+            border-top: none !important;
+        }
+        
+        .faq-section .accordion-header {
+            margin-bottom: 0 !important;
+            border-bottom: none !important;
+        }
+        
+        .faq-section .accordion-collapse {
+            transition: none !important;
+        }
+        
+        .faq-section .card-body {
+            padding: 0 !important;
+        }
+        
+        .faq-section .accordion-button[aria-expanded="true"] + .accordion-collapse .accordion-body {
+            padding-top: 10px !important;
+            margin-top: 0 !important;
+        }
+        
+        .faq-section .col-lg-8 {
+            margin: 0 auto;
+            display: block;
+        }
+        
+        @media (max-width: 768px) {
+            .pricing-card {
+                margin-bottom: 30px;
+            }
+        }
+
+        /* CTA Section - Glass morphism */
+        .cta {
+            background: #f9fafb;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta::before,
+        .cta::after {
+            content: none;
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cta-content h2 {
+            color: #1f2937;
+            font-weight: 700;
+        }
+        
+        .cta-content .text-accent {
+            color: #6366f1;
+        }
+        
+        .cta-image {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cta-image img {
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+        
+        .footer-content mt-4 {
+            margin-top: 1.5rem;
+        }
+        
+        .footer-links {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-links a {
+            margin-right: 1rem;
+            color: #4b5563;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: #6366f1;
+            text-decoration: underline;
+        }
+        
+        .text-muted {
+            color: #6b7280 !important;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html#hero">
+                <img src="images/logo.png" alt="HyperMind AI Logo" style="max-height: 48px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#features">Product</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#multimedia">Case Studies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="pricing.html">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a href="#" class="btn btn-frosted">Try for free</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section">
+        <div class="container">
+            <div class="pricing-header-text">
+                <h1>Easy pricing</h1>
+                <p class="lead text-muted">The best AI interviews for the best price</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Free Plan -->
+                <div class="col-lg-3">
+                    <div class="pricing-card">
+                        <h3 class="pricing-title">Free</h3>
+                        <p class="pricing-subtitle">Replace your NPS for free</p>
+                        
+                        <div class="pricing-price">
+                            <span class="currency">$</span>0
+                            <span class="pricing-period">/month</span>
+                        </div>
+                        
+                        <div class="pricing-features">
+                            <div class="pricing-feature">
+                                <div class="icon"><i class="fas fa-check"></i></div>
+                                <div>1 active AI project</div>
+                            </div>
+                            <div class="pricing-feature">
+                                <div class="icon"><i class="fas fa-check"></i></div>
+                                <div>50 monthly responses</div>
+                            </div>
+                            <div class="pricing-feature">
+                                <div class="icon"><i class="fas fa-check"></i></div>
+                                <div>1 seat license</div>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="pricing-breakdown">Full Feature Breakdown</a>
+                        
+                        
+                    </div>
+                </div>
+
+                <!-- Essential Plan -->
+                <div class="col-lg-3">
+                    <div class="pricing-card featured">
+                        <div class="popular-badge">Most Popular</div>
+                        <h3 class="pricing-title">Essential</h3>
+                        <p class="pricing-subtitle">Unlock multi-question surveys</p>
+                        
+                        <div class="pricing-price">
+                            <span class="currency">$</span>19
+                            <span class="pricing-period">/month</span>
+                        </div>
+                        
+                        <div class="pricing-features">
+                            <div class="pricing-feature">
+                                <div class="icon"><i class="fas fa-check"></i></div>
+                                <div>1 active AI project</div>
+                            </div>
+                            <div class="pricing-feature">
+                                <div class="icon"><i class="fas fa-check"></i></div>
+                                <div>250 monthly responses</div>
+                            </div>
+                            <div class="pricing-feature">
+                                <div class="icon"><i class="fas fa-check"></i></div>
+                                <div>1 seat license</div>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="pricing-breakdown">Full Feature Breakdown</a>
+                        
+                    </div>
+                </div>
+
+                <!-- Pro Plan -->
+                <div class="col-lg-3">
+                    <div class="pricing-card">
+                        <h3 class="pricing-title">Pro</h3>
+                        <p class="pricing-subtitle">Unlimited AI responses</p>
+                        
+                        <div class="pricing-price">
+                            <span class="currency">$</span>99
+                            <span class="pricing-period">/month</span>
+                        </div>
+                        
+                        <div class="pricing-features">
+                            <div class="pricing-feature">
+                                <div class="icon"><i class="fas fa-check"></i></div>
+                                <div>2 active AI projects</div>
+                            </div>
+                            <div class="pricing-feature">
+                                <div class="icon"><i class="fas fa-check"></i></div>
+                                <div>1000 monthly responses</div>
+                            </div>
+                            <div class="pricing-feature">
+                                <div class="icon"><i class="fas fa-check"></i></div>
+                                <div>5 seat licenses</div>
+                            </div>
+                            <div class="pricing-feature">
+                                <div class="icon"><i class="fas fa-check"></i></div>
+                                <div>AI-simulated respondents</div>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="pricing-breakdown">Full Feature Breakdown</a>
+                        
+                    </div>
+                </div>
+
+                <!-- Team Plan -->
+                <div class="col-lg-3">
+                    <div class="pricing-card">
+                        <h3 class="pricing-title">Team</h3>
+                        <p class="pricing-subtitle">Starting at</p>
+                        
+                        <div class="pricing-price">
+                            <span class="currency"></span>Custom
+                        </div>
+                        
+                        <div class="pricing-features">
+                            <div class="pricing-feature">
+                                <div class="icon"><i class="fas fa-check"></i></div>
+                                <div>More active AI projects</div>
+                            </div>
+                            <div class="pricing-feature">
+                                <div class="icon"><i class="fas fa-check"></i></div>
+                                <div>Unlimited monthly responses</div>
+                            </div>
+                            <div class="pricing-feature">
+                                <div class="icon"><i class="fas fa-check"></i></div>
+                                <div>Multi-team management</div>
+                            </div>
+                            <div class="pricing-feature">
+                                <div class="icon"><i class="fas fa-check"></i></div>
+                                <div>Recruit human respondents</div>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="pricing-breakdown">Full Feature Breakdown</a>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="footnote text-center mt-4">
+                <p>Government, Non-profit and Education organizations receive special pricing. Please email contact@hypermind-ai.com from your .org, .gov or .edu email domain to claim your discount.</p>
+            </div>
+
+            <!-- Feature Comparison Table -->
+            <div class="features-table mt-5">
+                <h2>AI Interview Features</h2>
+                
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Feature</th>
+                                <th scope="col">Free</th>
+                                <th scope="col">Essential</th>
+                                <th scope="col">Pro</th>
+                                <th scope="col">Team</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Active AI interviews</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>Custom</td>
+                            </tr>
+                            <tr>
+                                <td>Monthly responses</td>
+                                <td>50</td>
+                                <td>250</td>
+                                <td>1000</td>
+                                <td>Custom</td>
+                            </tr>
+                            <tr>
+                                <td>Seat licenses</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>5</td>
+                                <td>Multi-team</td>
+                            </tr>
+                            <tr>
+                                <td>Workspaces</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>Custom</td>
+                            </tr>
+                            <tr>
+                                <td>Number of sources to teach AI</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>Custom</td>
+                            </tr>
+                            <tr>
+                                <td>Integrations</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>Custom</td>
+                            </tr>
+                            <tr class="feature-category">
+                                <td colspan="5"><strong>AI Project Types</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Single-question pulses (NPS, CSAT)</td>
+                                <td><i class="fas fa-check"></i></td>
+                                <td><i class="fas fa-check"></i></td>
+                                <td><i class="fas fa-check"></i></td>
+                                <td><i class="fas fa-check"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Multi-question surveys</td>
+                                <td><i class="fas fa-times"></i></td>
+                                <td><i class="fas fa-check"></i></td>
+                                <td><i class="fas fa-check"></i></td>
+                                <td><i class="fas fa-check"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Advanced Interviews (win-loss, QBRs, brand)</td>
+                                <td><i class="fas fa-times"></i></td>
+                                <td><i class="fas fa-check"></i></td>
+                                <td><i class="fas fa-check"></i></td>
+                                <td><i class="fas fa-check"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Polls</td>
+                                <td><i class="fas fa-times"></i></td>
+                                <td><i class="fas fa-check"></i></td>
+                                <td><i class="fas fa-check"></i></td>
+                                <td><i class="fas fa-check"></i></td>
+                            </tr>
+                            <tr>
+                                <td>User tests</td>
+                                <td><i class="fas fa-times"></i></td>
+                                <td><i class="fas fa-check"></i></td>
+                                <td><i class="fas fa-check"></i></td>
+                                <td><i class="fas fa-check"></i></td>
+                            </tr>
+                            <tr class="feature-category">
+                                <td colspan="5"><strong>Analysis</strong></td>
+                            </tr>
+                            <tr>
+                                <td>AI individual response summary</td>
+                                <td><i class="fas fa-check"></i></td>
+                                <td><i class="fas fa-check"></i></td>
+                                <td><i class="fas fa-check"></i></td>
+                                <td><i class="fas fa-check"></i></td>
+                            </tr>
+                            <tr>
+                                <td>AI single-survey summary</td>
+                                <td><i class="fas fa-times"></i></td>
+                                <td><i class="fas fa-check"></i></td>
+                                <td><i class="fas fa-check"></i></td>
+                                <td><i class="fas fa-check"></i></td>
+                            </tr>
+                            <tr>
+                                <td>AI cross-survey summary</td>
+                                <td><i class="fas fa-times"></i></td>
+                                <td><i class="fas fa-times"></i></td>
+                                <td><i class="fas fa-check"></i></td>
+                                <td><i class="fas fa-check"></i></td>
+                            </tr>
+                            <tr class="feature-category">
+                                <td colspan="5"><strong>Basic Features</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Library of common questions</td>
+                                <td><i class="fas fa-check"></i></td>
+                                <td><i class="fas fa-check"></i></td>
+                                <td><i class="fas fa-check"></i></td>
+                                <td><i class="fas fa-check"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Basic export</td>
+                                <td><i class="fas fa-check"></i></td>
+                                <td><i class="fas fa-check"></i></td>
+                                <td><i class="fas fa-check"></i></td>
+                                <td><i class="fas fa-check"></i></td>
+                            </tr>
+                            <tr class="feature-category">
+                                <td colspan="5"><strong>Advanced Features</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Advanced export with AI conversation details</td>
+                                <td><i class="fas fa-times"></i></td>
+                                <td><i class="fas fa-check"></i></td>
+                                <td><i class="fas fa-check"></i></td>
+                                <td><i class="fas fa-check"></i></td>
+                            </tr>
+                            <tr>
+                                <td>AI survey designer</td>
+                                <td><i class="fas fa-times"></i></td>
+                                <td><i class="fas fa-check"></i></td>
+                                <td><i class="fas fa-check"></i></td>
+                                <td><i class="fas fa-check"></i></td>
+                            </tr>
+                            <tr>
+                                <td>White labeling (use your own logo and branding)</td>
+                                <td><i class="fas fa-times"></i></td>
+                                <td><i class="fas fa-times"></i></td>
+                                <td><i class="fas fa-check"></i></td>
+                                <td><i class="fas fa-check"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Journey-based survey scheduling</td>
+                                <td><i class="fas fa-times"></i></td>
+                                <td><i class="fas fa-times"></i></td>
+                                <td><i class="fas fa-check"></i></td>
+                                <td><i class="fas fa-check"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Custom workflows with Open API</td>
+                                <td><i class="fas fa-times"></i></td>
+                                <td><i class="fas fa-times"></i></td>
+                                <td><i class="fas fa-times"></i></td>
+                                <td><i class="fas fa-check"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Automation - send to Hubspot, Zendesk, Workday and more!</td>
+                                <td><i class="fas fa-times"></i></td>
+                                <td><i class="fas fa-times"></i></td>
+                                <td><i class="fas fa-times"></i></td>
+                                <td><i class="fas fa-check"></i></td>
+                            </tr>
+                            <tr>
+                                <td>SSO</td>
+                                <td><i class="fas fa-times"></i></td>
+                                <td><i class="fas fa-times"></i></td>
+                                <td><i class="fas fa-times"></i></td>
+                                <td><i class="fas fa-check"></i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="footnote text-center mt-4">
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    What is an AI Interview?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Time to ditch your typical interview process and enter the modern era of collecting feedback. AI Interviews ask a series of questions in conversational format, creating a personalized and engaging experience as AI asks follow up questions based on how users respond.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Are AI interviews safe?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    HyperMind is SOC II Type 2, ISO 27001 and GDPR compliant, with a HIPAA certification expected in February 2025. HyperMind gives you full control over the AI, including the data you use to train your custom AI and how AI is allowed to interact with your Users.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Who uses AI Interviews?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Anyone who needs to gather feedback from someone else is a customer of HyperMind AI. This can be <strong>marketers</strong> looking to understand customer preferences, <strong>sales</strong> teams who want to do win-loss analysis, <strong>product</strong> and <strong>design</strong> teams who want to validate ideas, <strong>human resources</strong> teams who want to collect employee feedback, <strong>engineering</strong> teams who want to understand the impact of tech debt on user experience, <strong>school administrators</strong> who want to collect student feedback, <strong>non-profit fundraisers</strong> who want to gather donor feedback, or even single people who want to get feedback on their dating profile.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    What kinds of feedback can I gather with AI?
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    HyperMind AI Conversations can be used to gather 4 kinds of feedback:<br>
+                                    1) AI Surveys - a series of rating scale, multiple choice, ranking or open-ended questions.<br>
+                                    2) AI Interviews - a conversation with Users that that goes in depth about their experiences and opinions.<br>
+                                    3) AI Pulses - a single-question survey to take the pulse of Users (NPS, CSAT, CES, CPV).<br>
+                                    4) AI Polls - supercharge your polls by asking users why they answered the way they did.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFive">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                    What is the experience for users taking the AI Survey?
+                                </button>
+                            </h2>
+                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    AI Surveys are an incredible upgrade to traditional surveys. Questions are asked of users in a chat-like format, and you can give AI permission to ask users follow up questions based on their response. This not only personalizes the conversation, but it also leads to much higher completion rates.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingSix">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                    Can my international customers interact with the AI survey in multiple languages?
+                                </button>
+                            </h2>
+                            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes! AI will examine User messages and reply back in the User's language. To avoid re-writing your survey in multiple languages, you can start your survey by letting the User pick what language they want to use.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingSeven">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                    Can I use HyperMind AI for personal use?
+                                </button>
+                            </h2>
+                            <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes, some of the best use cases we've seen are people who test their dating profiles, married couples who send each other scheduled messages, or productivity junkies who send surveys to their database of contacts.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta py-5">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-md-5">
+                    <div class="cta-content">
+                        <h2 class="mb-4">
+                            Get better insights,<br>
+                            in less time and at lower cost<br>
+                            <span class="text-accent">— with AI interviews</span>
+                        </h2>
+                        <div class="subscription-form">
+                            <div class="input-group mb-3">
+                                <input type="email" class="form-control" id="footerEmail" placeholder="Enter your email" aria-label="Email">
+                                <button class="btn btn-light" type="submit" id="footerSubscribeBtn">Subscribe</button>
+                            </div>
+                            <div class="alert alert-success mt-2" id="footer-subscription-success" style="display: none;">
+                                Thank you for subscribing!
+                            </div>
+                            <div class="alert alert-danger mt-2" id="footer-subscription-error" style="display: none;">
+                                Please enter a valid email address.
+                            </div>
+                        </div>
+                        <div class="footer-content mt-4">
+                            <div class="footer-links mb-2">
+                                <a href="contact.html" class="me-3" style="color: #4b5563; font-weight: 500;">Contact</a>
+                                <a href="privacy-policy.html" class="me-3" style="color: #4b5563; font-weight: 500;">Privacy Policy</a>
+                                <a href="terms-of-service.html" class="me-3" style="color: #4b5563; font-weight: 500;">Terms of Service</a>
+                            </div>
+                            <p style="color: rgba(255, 255, 255, 0.7); font-weight: 500;">© 2025 HyperMind. All Rights Reserved</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="cta-image">
+                        <img src="images/pricing1.jpeg" alt="AI Insights Dashboard" class="img-fluid rounded">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Google Sheets Integration -->
+    <script src="js/init-sheets.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    <script src="js/logo-click.js"></script>
+    <script src="js/scroll-top.js"></script>
+    
+    <!-- Waitlist Modal -->
+    <div class="modal fade" id="waitlistModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Please enter your email to join the waitlist</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="waitlistForm">
+                        <div class="mb-3">
+                            <input type="email" class="form-control" id="waitlistEmail" placeholder="Your email address" required>
+                            <div class="invalid-feedback">
+                                Please enter a valid email address.
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Join Waitlist</button>
+                        <div class="alert alert-success mt-3" id="waitlistSuccess" style="display: none;">
+                            Thank you for joining our waitlist! We'll be in touch soon.
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Fix accordion spacing
+            const accordionButtons = document.querySelectorAll('.faq-section .accordion-button');
+            
+            // Add event listeners to all accordion buttons
+            accordionButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Allow a tiny delay for the collapse animation
+                    setTimeout(() => {
+                        if (!this.classList.contains('collapsed')) {
+                            // Find the associated body
+                            const collapseId = this.getAttribute('data-bs-target');
+                            const collapseBody = document.querySelector(collapseId + ' .accordion-body');
+                            
+                            // Apply proper spacing for consistent look
+                            if (collapseBody) {
+                                collapseBody.style.paddingTop = '10px';
+                            }
+                        }
+                    }, 10);
+                });
+            });
+            
+            // Fix the initially expanded section immediately
+            const expandedButton = document.querySelector('.faq-section .accordion-button:not(.collapsed)');
+            if (expandedButton) {
+                const collapseId = expandedButton.getAttribute('data-bs-target');
+                const collapseBody = document.querySelector(collapseId + ' .accordion-body');
+                
+                if (collapseBody) {
+                    collapseBody.style.paddingTop = '10px';
+                }
+            }
+            
+            // Add event listener to all "Try for free" buttons
+            const tryFreeButtons = document.querySelectorAll('.btn-frosted, .btn-try-free');
+            tryFreeButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const waitlistModal = new bootstrap.Modal(document.getElementById('waitlistModal'));
+                    waitlistModal.show();
+                });
+            });
+            
+            // Handle waitlist form submission
+            const waitlistForm = document.getElementById('waitlistForm');
+            if (waitlistForm) {
+                waitlistForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Simple email validation
+                    const emailInput = document.getElementById('waitlistEmail');
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    
+                    if (!emailInput.value || !emailRegex.test(emailInput.value)) {
+                        emailInput.classList.add('is-invalid');
+                        return;
+                    }
+                    
+                    // Prepare form data
+                    const formData = new FormData();
+                    formData.append('form_type', 'waitlist');
+                    formData.append('email', emailInput.value);
+                    formData.append('page_url', window.location.href);
+                    formData.append('timestamp', new Date().toISOString());
+                    
+                    // Get Google Sheets Apps Script URL
+                    const googleSheetsUrl = localStorage.getItem('googleSheetsUrl');
+                    
+                    if (!googleSheetsUrl) {
+                        // If Google Sheets URL is not set, try using the PHP backend
+                        sendEmail('Waitlist Request', 'Waitlist request from pricing page: ' + emailInput.value);
+                    } else {
+                        // Use Google Sheets direct integration
+                        fetch(googleSheetsUrl, {
+                            method: 'POST',
+                            body: formData,
+                            mode: 'no-cors'
+                        })
+                        .then(() => {
+                            console.log('Waitlist form submitted to Google Sheets');
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                            // Fallback to PHP method
+                            sendEmail('Waitlist Request', 'Waitlist request from pricing page: ' + emailInput.value);
+                        });
+                    }
+                    
+                    // Show success message
+                    emailInput.classList.remove('is-invalid');
+                    document.getElementById('waitlistSuccess').style.display = 'block';
+                    
+                    // Hide success message and close modal after 3 seconds
+                    setTimeout(() => {
+                        document.getElementById('waitlistSuccess').style.display = 'none';
+                        bootstrap.Modal.getInstance(document.getElementById('waitlistModal')).hide();
+                        emailInput.value = ''; // Clear the input
+                    }, 3000);
+                });
+            }
+            
+            // Function to send email to contact@hypermind-ai.com
+            function sendEmail(subject, message) {
+                // Determine form type and extract data
+                let form_type = 'unknown';
+                let email = '';
+                
+                if (subject.includes('Waitlist')) {
+                    form_type = 'waitlist';
+                    // Extract email from the waitlist form
+                    email = document.getElementById('waitlistEmail')?.value || '';
+                } else if (subject.includes('Newsletter')) {
+                    form_type = 'newsletter';
+                    // Extract email from newsletter form
+                    const newsletterForms = document.querySelectorAll('.newsletter-form');
+                    if (newsletterForms.length > 0) {
+                        const emailInput = newsletterForms[0].querySelector('input[type="email"]');
+                        email = emailInput?.value || '';
+                    }
+                }
+                
+                // Create payload
+                const payload = {
+                    form_type: form_type,
+                    email: email,
+                    message: message,
+                    page_url: window.location.href
+                };
+                
+                // Send data to backend
+                fetch('php/submit.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(payload),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Submission successful:', data);
+                })
+                .catch(error => {
+                    console.error('Error submitting form:', error);
+                });
+            }
+            
+            // Footer subscription form
+            const footerSubscribeBtn = document.getElementById('footerSubscribeBtn');
+            if (footerSubscribeBtn) {
+                footerSubscribeBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const emailInput = document.getElementById('footerEmail');
+                    const email = emailInput.value.trim();
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    const successMsg = document.getElementById('footer-subscription-success');
+                    const errorMsg = document.getElementById('footer-subscription-error');
+                    
+                    if (email && emailRegex.test(email)) {
+                        // Submit to Google Sheets
+                        const formData = new FormData();
+                        formData.append('form_type', 'newsletter');
+                        formData.append('email', email);
+                        formData.append('page_url', window.location.href);
+                        formData.append('timestamp', new Date().toISOString());
+                        
+                        // Get Google Sheets URL
+                        const googleSheetsUrl = localStorage.getItem('googleSheetsUrl');
+                        
+                        if (googleSheetsUrl) {
+                            // Use Google Sheets direct integration
+                            fetch(googleSheetsUrl, {
+                                method: 'POST',
+                                body: formData,
+                                mode: 'no-cors'
+                            })
+                            .then(() => {
+                                console.log('Newsletter form submitted to Google Sheets');
+                            })
+                            .catch(error => {
+                                console.error('Error:', error);
+                                // Fallback to PHP method
+                                sendEmail('Newsletter Subscription', 'Newsletter subscription from pricing page: ' + email);
+                            });
+                        } else {
+                            // Fallback to PHP method
+                            sendEmail('Newsletter Subscription', 'Newsletter subscription from pricing page: ' + email);
+                        }
+                        
+                        // Show success message
+                        emailInput.classList.remove('is-invalid');
+                        errorMsg.style.display = 'none';
+                        successMsg.style.display = 'block';
+                        
+                        // Clear the form
+                        emailInput.value = '';
+                        
+                        // Hide success message after 3 seconds
+                        setTimeout(() => {
+                            successMsg.style.display = 'none';
+                        }, 3000);
+                    } else {
+                        // Show validation error
+                        emailInput.classList.add('is-invalid');
+                        successMsg.style.display = 'none';
+                        errorMsg.style.display = 'block';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html> 

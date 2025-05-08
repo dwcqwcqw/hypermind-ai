@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>HyperMind - Terms of Service</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .terms-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8edf5 50%, #f0f4f8 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .terms-section::before,
+        .terms-section::after {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            z-index: 0;
+            filter: blur(80px);
+            opacity: 0.4;
+        }
+
+        .terms-section::before {
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.7) 0%, rgba(99, 102, 241, 0) 70%);
+            top: -200px;
+            right: -100px;
+        }
+
+        .terms-section::after {
+            background: radial-gradient(circle, rgba(249, 119, 148, 0.7) 0%, rgba(249, 119, 148, 0) 70%);
+            bottom: -200px;
+            left: -100px;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .terms-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .terms-header h1 {
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .terms-content {
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+            padding: 40px;
+        }
+        
+        .terms-content h2 {
+            color: #1f2937;
+            font-weight: 600;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+        
+        .terms-content h3 {
+            color: #374151;
+            font-weight: 600;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.25rem;
+        }
+        
+        .terms-content p, .terms-content li {
+            color: #4b5563;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .terms-content ul {
+            margin-bottom: 20px;
+        }
+        
+        .terms-content li {
+            margin-bottom: 8px;
+        }
+        
+        .terms-content a {
+            color: #6366f1;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .terms-content a:hover {
+            color: #4f46e5;
+            text-decoration: underline;
+        }
+        
+        .last-updated {
+            font-style: italic;
+            color: #6b7280;
+            margin-top: 15px;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html#hero">
+                <img src="images/logo.png" alt="HyperMind AI Logo" style="max-height: 48px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#features">Product</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#multimedia">Case Studies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pricing.html">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a href="#" class="btn btn-frosted">Try for free</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Terms of Service Section -->
+    <section class="terms-section">
+        <div class="container">
+            <div class="terms-header">
+                <h1>Terms of Service</h1>
+                <p class="lead text-muted">Please read these terms carefully before using our services</p>
+            </div>
+            
+            <div class="terms-content">
+                <p>These Terms of Service ("Terms") govern your access to and use of HyperMind AI's services, including our website, AI interview platform, and other features (collectively, the "Services"). By accessing or using our Services, you agree to be bound by these Terms and our Privacy Policy.</p>
+                
+                <h2>1. Account Registration and Security</h2>
+                <p>To access certain features of our Services, you may need to register for an account. When you register, you agree to provide accurate and complete information and to update this information to keep it accurate and current. You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account. You agree to:</p>
+                <ul>
+                    <li>Create a strong password and keep it secure</li>
+                    <li>Restrict access to your account and not share your credentials</li>
+                    <li>Notify us immediately of any unauthorized use of your account or other security breaches</li>
+                    <li>Ensure all authorized users in your organization comply with these Terms</li>
+                </ul>
+                
+                <h2>2. Subscription Plans and Payment</h2>
+                <p>HyperMind AI offers various subscription plans, including free and paid options. By selecting a paid subscription, you agree to pay the applicable fees as described on our pricing page. We may change our fees at any time with notice. Unless otherwise stated:</p>
+                <ul>
+                    <li>All fees are quoted in U.S. dollars</li>
+                    <li>Payments are non-refundable</li>
+                    <li>We reserve the right to change pricing with 30 days' notice</li>
+                    <li>You are responsible for any taxes applicable to your subscription</li>
+                </ul>
+                
+                <h2>3. AI Platform Usage</h2>
+                <p>Our platform uses artificial intelligence to conduct user interviews and process responses. When using the AI features of our platform, you agree not to:</p>
+                <ul>
+                    <li>Submit content that is illegal, harmful, threatening, abusive, defamatory, or otherwise objectionable</li>
+                    <li>Attempt to manipulate, reverse engineer, or exploit the AI systems</li>
+                    <li>Use the AI features for purposes other than their intended use for gathering feedback and insights</li>
+                    <li>Share output from the AI with third parties without proper attribution to HyperMind AI</li>
+                </ul>
+                
+                <h2>4. User Content and Data Rights</h2>
+                <p>When you upload content to our platform ("User Content"), including interview guides, survey questions, or data sources to train the AI, you retain ownership of that content. However, you grant us a license to use, copy, and process this content as necessary to provide the Services. You represent and warrant that:</p>
+                <ul>
+                    <li>You have all necessary rights to submit the User Content</li>
+                    <li>Your User Content does not violate any third-party rights or applicable laws</li>
+                    <li>You have obtained appropriate consent from any individuals whose personal data is included in your User Content</li>
+                </ul>
+                
+                <p>We may use aggregated, anonymized data derived from your use of the Services to improve our platform and services.</p>
+                
+                <h2>5. Intellectual Property Rights</h2>
+                <p>The Services contain proprietary content, information, and material that is protected by intellectual property laws. You agree that:</p>
+                <ul>
+                    <li>HyperMind AI retains all rights, title, and interest in the Services and our technology</li>
+                    <li>Nothing in these Terms transfers ownership of our intellectual property to you</li>
+                    <li>You will not copy, modify, distribute, sell, or lease any part of our Services or included software</li>
+                    <li>You will not reverse engineer or attempt to extract the source code of our software</li>
+                </ul>
+                
+                <h2>6. Compliance with Laws</h2>
+                <p>You agree to use our Services in compliance with all applicable laws, regulations, and industry best practices, including:</p>
+                <ul>
+                    <li>Data protection and privacy laws</li>
+                    <li>Consumer protection regulations</li>
+                    <li>Anti-spam legislation</li>
+                    <li>Intellectual property laws</li>
+                </ul>
+                
+                <h2>7. Prohibited Uses</h2>
+                <p>You may not use our Services to:</p>
+                <ul>
+                    <li>Violate any laws or regulations</li>
+                    <li>Infringe or violate the rights of others</li>
+                    <li>Harass, abuse, or harm another person</li>
+                    <li>Send spam or unsolicited messages</li>
+                    <li>Interfere with or disrupt our Services</li>
+                    <li>Attempt to gain unauthorized access to our systems</li>
+                    <li>Collect user information without consent</li>
+                    <li>Impersonate another person or entity</li>
+                </ul>
+                
+                <h2>8. Termination</h2>
+                <p>We may suspend or terminate your access to the Services at any time if:</p>
+                <ul>
+                    <li>You violate these Terms</li>
+                    <li>You use the Services in a way that could cause legal liability</li>
+                    <li>We are required to do so by law</li>
+                    <li>We decide to discontinue the Services</li>
+                </ul>
+                
+                <p>You may terminate your account at any time by following the instructions on our platform. Upon termination, you will lose access to the Services and your User Content stored on our platform may be deleted.</p>
+                
+                <h2>9. Disclaimers and Limitation of Liability</h2>
+                <p>THE SERVICES ARE PROVIDED "AS IS" WITHOUT WARRANTIES OF ANY KIND. TO THE MAXIMUM EXTENT PERMITTED BY LAW, HYPERMIND AI DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.</p>
+                
+                <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, HYPERMIND AI SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS OR REVENUES, WHETHER INCURRED DIRECTLY OR INDIRECTLY, OR ANY LOSS OF DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES RESULTING FROM YOUR ACCESS TO OR USE OF THE SERVICES.</p>
+                
+                <h2>10. Indemnification</h2>
+                <p>You agree to indemnify, defend, and hold harmless HyperMind AI and its officers, directors, employees, and agents from and against any claims, liabilities, damages, losses, and expenses, including reasonable attorneys' fees, arising out of or in any way connected with your access to or use of the Services, your violation of these Terms, or your violation of any rights of another.</p>
+                
+                <h2>11. Modifications to the Terms</h2>
+                <p>We may revise these Terms from time to time. The most current version will always be posted on our website. If we make changes that we believe are material, we will notify you through the Services or by email. By continuing to access or use the Services after revisions become effective, you agree to be bound by the revised Terms.</p>
+                
+                <h2>12. Governing Law and Dispute Resolution</h2>
+                <p>These Terms shall be governed by the laws of the state of Delaware, without regard to its conflict of law provisions. Any dispute arising from or relating to these Terms or the Services shall be resolved exclusively through binding arbitration in accordance with the American Arbitration Association's rules.</p>
+                
+                <h2>13. Contact Information</h2>
+                <p>If you have questions about these Terms, please contact us at:</p>
+                <p>
+                    HyperMind AI<br>
+                    Email: <a href="mailto:contact@hypermind-ai.com">contact@hypermind-ai.com</a>
+                </p>
+                
+                <p class="last-updated">Last Updated: May 2025</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta py-5">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-md-5">
+                    <div class="cta-content">
+                        <h2 class="mb-4">
+                            Get better insights,<br>
+                            in less time and at lower cost<br>
+                            <span class="text-accent">— with AI interviews</span>
+                        </h2>
+                        <div class="subscription-form">
+                            <div class="input-group mb-3">
+                                <input type="email" class="form-control" id="footerEmail" placeholder="Enter your email" aria-label="Email">
+                                <button class="btn btn-light" type="submit" id="footerSubscribeBtn">Subscribe</button>
+                            </div>
+                            <div class="alert alert-success mt-2" id="footer-subscription-success" style="display: none;">
+                                Thank you for subscribing!
+                            </div>
+                            <div class="alert alert-danger mt-2" id="footer-subscription-error" style="display: none;">
+                                Please enter a valid email address.
+                            </div>
+                        </div>
+                        <div class="footer-content mt-4">
+                            <div class="footer-links mb-2">
+                                <a href="contact.html" class="me-3" style="color: #4b5563; font-weight: 500;">Contact</a>
+                                <a href="privacy-policy.html" class="me-3" style="color: #4b5563; font-weight: 500;">Privacy Policy</a>
+                                <a href="terms-of-service.html" class="me-3" style="color: #4b5563; font-weight: 500;">Terms of Service</a>
+                            </div>
+                            <p style="color: rgba(255, 255, 255, 0.7); font-weight: 500;">© 2025 HyperMind. All Rights Reserved</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="cta-image">
+                        <img src="images/demo1.jpg" alt="AI Insights Dashboard" class="img-fluid rounded">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Google Sheets Integration -->
+    <script src="js/init-sheets.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    <script src="js/logo-click.js"></script>
+    <script src="js/scroll-top.js"></script>
+    
+    <!-- Waitlist Modal -->
+    <div class="modal fade" id="waitlistModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Please enter your email to join the waitlist</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="waitlistForm">
+                        <div class="mb-3">
+                            <input type="email" class="form-control" id="waitlistEmail" placeholder="Your email address" required>
+                            <div class="invalid-feedback">
+                                Please enter a valid email address.
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Join Waitlist</button>
+                        <div class="alert alert-success mt-3" id="waitlistSuccess" style="display: none;">
+                            Thank you for joining our waitlist! We'll be in touch soon.
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add event listener to all "Try for free" buttons
+            const tryFreeButtons = document.querySelectorAll('.btn-frosted, .btn-try-free');
+            tryFreeButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const waitlistModal = new bootstrap.Modal(document.getElementById('waitlistModal'));
+                    waitlistModal.show();
+                });
+            });
+            
+            // Handle waitlist form submission
+            const waitlistForm = document.getElementById('waitlistForm');
+            if (waitlistForm) {
+                waitlistForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Simple email validation
+                    const emailInput = document.getElementById('waitlistEmail');
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    
+                    if (!emailInput.value || !emailRegex.test(emailInput.value)) {
+                        emailInput.classList.add('is-invalid');
+                        return;
+                    }
+                    
+                    // Prepare form data
+                    const formData = new FormData();
+                    formData.append('form_type', 'waitlist');
+                    formData.append('email', emailInput.value);
+                    formData.append('page_url', window.location.href);
+                    formData.append('timestamp', new Date().toISOString());
+                    
+                    // Get Google Sheets Apps Script URL
+                    const googleSheetsUrl = localStorage.getItem('googleSheetsUrl');
+                    
+                    if (googleSheetsUrl) {
+                        // Use Google Sheets direct integration
+                        fetch(googleSheetsUrl, {
+                            method: 'POST',
+                            body: formData,
+                            mode: 'no-cors'
+                        })
+                        .then(() => {
+                            console.log('Waitlist form submitted to Google Sheets');
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                        });
+                    }
+                    
+                    // Show success message
+                    emailInput.classList.remove('is-invalid');
+                    document.getElementById('waitlistSuccess').style.display = 'block';
+                    
+                    // Hide success message and close modal after 3 seconds
+                    setTimeout(() => {
+                        document.getElementById('waitlistSuccess').style.display = 'none';
+                        bootstrap.Modal.getInstance(document.getElementById('waitlistModal')).hide();
+                        emailInput.value = ''; // Clear the input
+                    }, 3000);
+                });
+            }
+            
+            // Footer subscription form
+            const footerSubscribeBtn = document.getElementById('footerSubscribeBtn');
+            if (footerSubscribeBtn) {
+                footerSubscribeBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const emailInput = document.getElementById('footerEmail');
+                    const email = emailInput.value.trim();
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    const successMsg = document.getElementById('footer-subscription-success');
+                    const errorMsg = document.getElementById('footer-subscription-error');
+                    
+                    if (email && emailRegex.test(email)) {
+                        // Submit to Google Sheets
+                        const formData = new FormData();
+                        formData.append('form_type', 'newsletter');
+                        formData.append('email', email);
+                        formData.append('page_url', window.location.href);
+                        formData.append('timestamp', new Date().toISOString());
+                        
+                        // Get Google Sheets URL
+                        const googleSheetsUrl = localStorage.getItem('googleSheetsUrl');
+                        
+                        if (googleSheetsUrl) {
+                            // Use Google Sheets direct integration
+                            fetch(googleSheetsUrl, {
+                                method: 'POST',
+                                body: formData,
+                                mode: 'no-cors'
+                            })
+                            .then(() => {
+                                console.log('Newsletter form submitted to Google Sheets');
+                            })
+                            .catch(error => {
+                                console.error('Error:', error);
+                            });
+                        }
+                        
+                        // Show success message
+                        emailInput.classList.remove('is-invalid');
+                        errorMsg.style.display = 'none';
+                        successMsg.style.display = 'block';
+                        
+                        // Clear the form
+                        emailInput.value = '';
+                        
+                        // Hide success message after 3 seconds
+                        setTimeout(() => {
+                            successMsg.style.display = 'none';
+                        }, 3000);
+                    } else {
+                        // Show validation error
+                        emailInput.classList.add('is-invalid');
+                        successMsg.style.display = 'none';
+                        errorMsg.style.display = 'block';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html> 
