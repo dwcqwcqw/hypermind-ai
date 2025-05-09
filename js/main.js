@@ -88,17 +88,25 @@ document.addEventListener('DOMContentLoaded', function() {
             const email = emailInput.value.trim();
             
             if (validateEmail(email)) {
-                // Simulate form submission
+                // Integrate with Google Sheets
+                if (typeof submitToGoogleSheets === 'function') {
+                    submitToGoogleSheets('newsletter', { email: email });
+                }
+                
+                // UI feedback
                 emailInput.value = '';
                 showToast('Thanks for subscribing!');
-                
-                // In a real application, you would submit to backend here
-                // submitFormToBackend(email);
             } else {
                 showToast('Please enter a valid email address.', 'error');
             }
         });
     });
+
+    // Improved email validation function
+    function validateEmail(email) {
+        const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return regex.test(String(email).toLowerCase());
+    }
 
     // Show newsletter modal after 5 seconds
     setTimeout(() => {
@@ -437,12 +445,6 @@ function initTestimonialCarousel() {
     // This would be implemented if using a carousel library
     // or custom carousel functionality
     console.log('Testimonial carousel initialized');
-}
-
-// Validate email format
-function validateEmail(email) {
-    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
 }
 
 // Show toast notification

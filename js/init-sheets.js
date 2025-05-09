@@ -1,48 +1,55 @@
 /**
  * Google Sheets Integration Initialization
- * 自动设置Google Sheets URL并初始化集成
+ * This script initializes the Google Sheets integration for the website
  */
 
-(function() {
-    // 在页面加载时自动设置Google Sheets URL
-    document.addEventListener('DOMContentLoaded', function() {
-        const googleSheetsUrl = 'https://script.google.com/macros/s/AKfycby7tw9JVDun2etghO-uQnpGMYY9cjm5RZzcjmF4_Dx1i9evSysrPa38oMvN_8d4gSJK2A/exec';
-        
-        // 只有当localStorage中没有设置URL时才设置
-        if (!localStorage.getItem('googleSheetsUrl')) {
-            localStorage.setItem('googleSheetsUrl', googleSheetsUrl);
-            console.log('Google Sheets URL initialized:', googleSheetsUrl);
-        } else {
-            console.log('Using existing Google Sheets URL:', localStorage.getItem('googleSheetsUrl'));
+document.addEventListener('DOMContentLoaded', function() {
+    // Default Google Sheets Web App URL
+    const defaultSheetsUrl = "https://script.google.com/macros/s/AKfycbzNW-gGPVKtoJMAM7TvqbNuMUQNdxf1hKX5zLrrfYN6of70y7zfYuS4sFHFMVpE0GQF/exec";
+    
+    // Only set if not already set
+    if (!localStorage.getItem('googleSheetsUrl')) {
+        localStorage.setItem('googleSheetsUrl', defaultSheetsUrl);
+        console.log('Google Sheets URL initialized');
+    }
+    
+    // Add admin shortcut to set Google Sheets URL (Ctrl+Shift+G)
+    const adminKeyCombo = (e) => {
+        if (e.ctrlKey && e.shiftKey && e.key === 'G') {
+            const sheetsUrl = prompt('Enter Google Sheets Apps Script URL:', localStorage.getItem('googleSheetsUrl'));
+            if (sheetsUrl) {
+                localStorage.setItem('googleSheetsUrl', sheetsUrl);
+                alert('Google Sheets URL saved successfully!');
+            }
         }
+    };
+    
+    document.addEventListener('keydown', adminKeyCombo);
+    
+    // Test connection to Google Sheets
+    function testSheetsConnection() {
+        const sheetsUrl = localStorage.getItem('googleSheetsUrl');
+        if (!sheetsUrl) return;
         
-        // 添加快捷键显示当前Google Sheets URL (Ctrl+Shift+I)
-        document.addEventListener('keydown', function(e) {
-            if (e.ctrlKey && e.shiftKey && e.key === 'I') {
-                const currentUrl = localStorage.getItem('googleSheetsUrl');
-                alert('当前Google Sheets URL: ' + (currentUrl || '未设置'));
-            }
-        });
+        // Create a test FormData object
+        const testData = new FormData();
+        testData.append('form_type', 'connection_test');
+        testData.append('timestamp', new Date().toISOString());
         
-        // 重置URL的快捷键 (Ctrl+Shift+R)
-        document.addEventListener('keydown', function(e) {
-            if (e.ctrlKey && e.shiftKey && e.key === 'R') {
-                if (confirm('确定要重置Google Sheets URL吗？')) {
-                    localStorage.setItem('googleSheetsUrl', googleSheetsUrl);
-                    alert('Google Sheets URL已重置为: ' + googleSheetsUrl);
-                }
-            }
+        // Attempt to connect
+        fetch(sheetsUrl, {
+            method: 'POST',
+            body: testData,
+            mode: 'no-cors'
+        })
+        .then(() => {
+            console.log('Google Sheets connection test sent');
+        })
+        .catch(error => {
+            console.error('Google Sheets connection test failed:', error);
         });
-        
-        // 添加自定义URL的快捷键 (Ctrl+Shift+G)
-        document.addEventListener('keydown', function(e) {
-            if (e.ctrlKey && e.shiftKey && e.key === 'G') {
-                const newUrl = prompt('请输入新的Google Sheets URL:', localStorage.getItem('googleSheetsUrl') || '');
-                if (newUrl) {
-                    localStorage.setItem('googleSheetsUrl', newUrl);
-                    alert('Google Sheets URL已更新为: ' + newUrl);
-                }
-            }
-        });
-    });
-})(); 
+    }
+    
+    // Run the test
+    setTimeout(testSheetsConnection, 2000);
+}); 
