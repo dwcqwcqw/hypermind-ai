@@ -703,7 +703,7 @@
                     if (email && emailRegex.test(String(email).toLowerCase())) {
                         console.log('Newsletter email is valid');
                         // Submit to Google Sheets
-                        submitToGoogleSheets('newsletter', { email: email });
+                        submitToGoogleSheets('newsletter_modal', { email: email });
                         
                         // Show success message
                         document.getElementById('newsletter-success').style.display = 'block';
@@ -767,7 +767,7 @@
                     if (email && emailRegex.test(String(email).toLowerCase())) {
                         console.log('Footer email is valid');
                         // Submit to Google Sheets
-                        submitToGoogleSheets('newsletter', { email: email });
+                        submitToGoogleSheets('newsletter_footer', { email: email });
                         
                         // Show success message
                         emailInput.classList.remove('is-invalid');

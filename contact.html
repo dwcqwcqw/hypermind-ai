@@ -255,54 +255,89 @@
                 
                 // If form is valid, submit the data
                 if (isValid) {
-                    // Prepare form data
-                    const formData = new FormData();
-                    formData.append('form_type', 'contact');
-                    formData.append('name', fullName);
-                    formData.append('email', email);
-                    formData.append('company', company);
-                    formData.append('position', position);
-                    formData.append('message', message);
-                    formData.append('page_url', window.location.href);
-                    formData.append('timestamp', new Date().toISOString());
+                    // Initialize Google Sheets URL if not set
+                    if (!localStorage.getItem('googleSheetsUrl')) {
+                        const defaultSheetsUrl = "https://script.google.com/macros/s/AKfycbzNW-gGPVKtoJMAM7TvqbNuMUQNdxf1hKX5zLrrfYN6of70y7zfYuS4sFHFMVpE0GQF/exec";
+                        localStorage.setItem('googleSheetsUrl', defaultSheetsUrl);
+                        console.log('Google Sheets URL initialized with default:', defaultSheetsUrl);
+                    }
                     
-                    // Get Google Sheets Apps Script URL
-                    const googleSheetsUrl = localStorage.getItem('googleSheetsUrl');
+                    // Submit data to Google Sheets
+                    submitToGoogleSheets('contact_form', {
+                        name: fullName,
+                        email: email,
+                        company: company,
+                        position: position,
+                        message: message
+                    });
                     
-                    if (!googleSheetsUrl) {
-                        // If Google Sheets URL is not set, try using the PHP backend
+                    // Show success message
+                    contactForm.style.display = 'none';
+                    successMessage.style.display = 'block';
+                }
+            });
+            
+            // Function to submit data to Google Sheets
+            function submitToGoogleSheets(formType, data) {
+                console.log(`Attempting to submit ${formType} form data:`, data);
+                
+                // Get Google Sheets Apps Script URL from localStorage
+                const googleSheetsUrl = localStorage.getItem('googleSheetsUrl');
+                console.log('Google Sheets URL found:', googleSheetsUrl);
+                
+                // Prepare form data
+                const formData = new FormData();
+                
+                // Add form type
+                formData.append('form_type', formType);
+                
+                // Add all data fields
+                for (const key in data) {
+                    formData.append(key, data[key]);
+                }
+                
+                // Add page URL and timestamp
+                formData.append('page_url', window.location.href);
+                formData.append('timestamp', new Date().toISOString());
+                
+                if (googleSheetsUrl) {
+                    console.log('Submitting to Google Sheets...');
+                    // Submit to Google Sheets
+                    fetch(googleSheetsUrl, {
+                        method: 'POST',
+                        body: formData,
+                        mode: 'no-cors'
+                    })
+                    .then(() => {
+                        console.log(`${formType} form submitted to Google Sheets successfully`);
+                    })
+                    .catch(error => {
+                        console.error('Error submitting to Google Sheets:', error);
+                        
+                        // Fallback to PHP backend
+                        console.log('Falling back to PHP backend...');
                         fetch('php/submit.php', {
                             method: 'POST',
                             body: formData
                         })
-                        .then(response => {
-                            console.log('Form submitted via PHP');
-                            // Show success message
-                            contactForm.style.display = 'none';
-                            successMessage.style.display = 'block';
-                        })
-                        .catch(error => {
-                            console.error('Error:', error);
-                        });
-                    } else {
-                        // Use Google Sheets direct integration
-                        fetch(googleSheetsUrl, {
-                            method: 'POST',
-                            body: formData,
-                            mode: 'no-cors'
-                        })
                         .then(() => {
-                            console.log('Form submitted to Google Sheets');
-                            // Show success message
-                            contactForm.style.display = 'none';
-                            successMessage.style.display = 'block';
+                            console.log('Fallback form submission successful');
                         })
-                        .catch(error => {
-                            console.error('Error:', error);
-                        });
-                    }
+                        .catch(error => console.error('Error with fallback submission:', error));
+                    });
+                } else {
+                    console.log('No Google Sheets URL found, using PHP backend...');
+                    // Submit to PHP backend
+                    fetch('php/submit.php', {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(() => {
+                        console.log('PHP form submission successful');
+                    })
+                    .catch(error => console.error('Error with PHP submission:', error));
                 }
-            });
+            }
             
             // Check if Google Sheets URL is already set
             if (!localStorage.getItem('googleSheetsUrl')) {
@@ -337,42 +372,17 @@
                     
                     // Simple email validation
                     const emailInput = document.getElementById('waitlistEmail');
-                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
                     
-                    if (!emailInput.value || !emailRegex.test(emailInput.value)) {
+                    if (!emailInput.value || !emailRegex.test(String(emailInput.value).toLowerCase())) {
                         emailInput.classList.add('is-invalid');
                         return;
                     }
                     
-                    // Prepare form data
-                    const formData = new FormData();
-                    formData.append('form_type', 'waitlist');
-                    formData.append('email', emailInput.value);
-                    formData.append('page_url', window.location.href);
-                    formData.append('timestamp', new Date().toISOString());
-                    
-                    // Get Google Sheets Apps Script URL
-                    const googleSheetsUrl = localStorage.getItem('googleSheetsUrl');
-                    
-                    if (!googleSheetsUrl) {
-                        // If Google Sheets URL is not set, try using the PHP backend
-                        sendEmail('Waitlist Request', 'Waitlist request from contact page: ' + emailInput.value);
-                    } else {
-                        // Use Google Sheets direct integration
-                        fetch(googleSheetsUrl, {
-                            method: 'POST',
-                            body: formData,
-                            mode: 'no-cors'
-                        })
-                        .then(() => {
-                            console.log('Waitlist form submitted to Google Sheets');
-                        })
-                        .catch(error => {
-                            console.error('Error:', error);
-                            // Fallback to PHP method
-                            sendEmail('Waitlist Request', 'Waitlist request from contact page: ' + emailInput.value);
-                        });
-                    }
+                    // Submit to Google Sheets with contact page source
+                    submitToGoogleSheets('contact_waitlist', { 
+                        email: emailInput.value 
+                    });
                     
                     // Show success message
                     emailInput.classList.remove('is-invalid');
