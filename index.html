@@ -12,6 +12,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
+    <!-- Bootstrap JS - Load early to ensure it's available -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body id="top">
     <!-- Navigation -->
@@ -515,10 +517,22 @@
     <!-- Google Sheets Integration Script -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Google Sheets URL if not already set
+            if (!localStorage.getItem('googleSheetsUrl')) {
+                const defaultSheetsUrl = "https://script.google.com/macros/s/AKfycbzNW-gGPVKtoJMAM7TvqbNuMUQNdxf1hKX5zLrrfYN6of70y7zfYuS4sFHFMVpE0GQF/exec";
+                localStorage.setItem('googleSheetsUrl', defaultSheetsUrl);
+                console.log('Google Sheets URL initialized with default:', defaultSheetsUrl);
+            } else {
+                console.log('Using existing Google Sheets URL:', localStorage.getItem('googleSheetsUrl'));
+            }
+            
             // Function to submit data to Google Sheets
             function submitToGoogleSheets(formType, data) {
+                console.log(`Attempting to submit ${formType} form data:`, data);
+                
                 // Get Google Sheets Apps Script URL from localStorage
                 const googleSheetsUrl = localStorage.getItem('googleSheetsUrl');
+                console.log('Google Sheets URL found:', googleSheetsUrl);
                 
                 // Prepare form data
                 const formData = new FormData();
@@ -536,6 +550,7 @@
                 formData.append('timestamp', new Date().toISOString());
                 
                 if (googleSheetsUrl) {
+                    console.log('Submitting to Google Sheets...');
                     // Submit to Google Sheets
                     fetch(googleSheetsUrl, {
                         method: 'POST',
@@ -543,25 +558,33 @@
                         mode: 'no-cors'
                     })
                     .then(() => {
-                        console.log(`${formType} form submitted to Google Sheets`);
+                        console.log(`${formType} form submitted to Google Sheets successfully`);
                     })
                     .catch(error => {
-                        console.error('Error:', error);
+                        console.error('Error submitting to Google Sheets:', error);
                         
                         // Fallback to PHP backend
+                        console.log('Falling back to PHP backend...');
                         fetch('php/submit.php', {
                             method: 'POST',
                             body: formData
                         })
-                        .catch(error => console.error('Error:', error));
+                        .then(() => {
+                            console.log('Fallback form submission successful');
+                        })
+                        .catch(error => console.error('Error with fallback submission:', error));
                     });
                 } else {
+                    console.log('No Google Sheets URL found, using PHP backend...');
                     // Submit to PHP backend
                     fetch('php/submit.php', {
                         method: 'POST',
                         body: formData
                     })
-                    .catch(error => console.error('Error:', error));
+                    .then(() => {
+                        console.log('PHP form submission successful');
+                    })
+                    .catch(error => console.error('Error with PHP submission:', error));
                 }
             }
             
@@ -571,29 +594,51 @@
                 if (button.textContent.trim() === "Try for free") {
                     button.addEventListener('click', function(e) {
                         e.preventDefault();
-                        const waitlistModal = new bootstrap.Modal(document.getElementById('waitlistModal'));
-                        waitlistModal.show();
+                        
+                        // Debug: Check if bootstrap is defined
+                        console.log('Bootstrap defined?', typeof bootstrap !== 'undefined');
+                        console.log('Bootstrap Modal defined?', typeof bootstrap !== 'undefined' && typeof bootstrap.Modal !== 'undefined');
+                        
+                        try {
+                            const waitlistModal = new bootstrap.Modal(document.getElementById('waitlistModal'));
+                            waitlistModal.show();
+                        } catch (error) {
+                            console.error('Error showing modal:', error);
+                            
+                            // Fallback to manual display if bootstrap is not loaded
+                            const modal = document.getElementById('waitlistModal');
+                            if (modal) {
+                                modal.classList.add('show');
+                                modal.style.display = 'block';
+                                document.body.classList.add('modal-open');
+                                
+                                // Create backdrop
+                                const backdrop = document.createElement('div');
+                                backdrop.className = 'modal-backdrop fade show';
+                                document.body.appendChild(backdrop);
+                                
+                                console.log('Manually showed modal as fallback');
+                            }
+                        }
                     });
                 }
             });
             
             // Waitlist form submission
             const waitlistForm = document.getElementById('waitlistForm');
+            console.log('Waitlist form element found:', !!waitlistForm);
+            
             if (waitlistForm) {
                 waitlistForm.addEventListener('submit', function(e) {
+                    console.log('Waitlist form submit triggered');
                     e.preventDefault();
                     
                     const email = document.getElementById('waitlistEmail').value.trim();
+                    console.log('Waitlist email entered:', email);
                     const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
                     
                     if (email && emailRegex.test(String(email).toLowerCase())) {
-                        // Initialize Google Sheets URL if not set
-                        if (!localStorage.getItem('googleSheetsUrl')) {
-                            // Using the default sheets URL that was created for this project
-                            const defaultSheetsUrl = "https://script.google.com/macros/s/AKfycbzNW-gGPVKtoJMAM7TvqbNuMUQNdxf1hKX5zLrrfYN6of70y7zfYuS4sFHFMVpE0GQF/exec";
-                            localStorage.setItem('googleSheetsUrl', defaultSheetsUrl);
-                        }
-                        
+                        console.log('Waitlist email is valid');
                         // Submit to Google Sheets
                         submitToGoogleSheets('waitlist', { email: email });
                         
@@ -608,9 +653,28 @@
                             // If modal is still open
                             if (document.getElementById('waitlistModal').classList.contains('show')) {
                                 // Close the modal
-                                const waitlistModal = bootstrap.Modal.getInstance(document.getElementById('waitlistModal'));
-                                if (waitlistModal) {
-                                    waitlistModal.hide();
+                                try {
+                                    const waitlistModal = bootstrap.Modal.getInstance(document.getElementById('waitlistModal'));
+                                    if (waitlistModal) {
+                                        waitlistModal.hide();
+                                    }
+                                } catch (error) {
+                                    console.error('Error hiding waitlist modal:', error);
+                                    // Fallback to manual hide
+                                    const modal = document.getElementById('waitlistModal');
+                                    if (modal) {
+                                        modal.classList.remove('show');
+                                        modal.style.display = 'none';
+                                        document.body.classList.remove('modal-open');
+                                        
+                                        // Remove backdrop
+                                        const backdrop = document.querySelector('.modal-backdrop');
+                                        if (backdrop) {
+                                            backdrop.parentNode.removeChild(backdrop);
+                                        }
+                                        
+                                        console.log('Manually hid waitlist modal as fallback');
+                                    }
                                 }
                             }
                             // Hide success message
@@ -625,21 +689,19 @@
             
             // Newsletter form submission
             const newsletterForm = document.getElementById('newsletterForm');
+            console.log('Newsletter form element found:', !!newsletterForm);
+            
             if (newsletterForm) {
                 newsletterForm.addEventListener('submit', function(e) {
+                    console.log('Newsletter form submit triggered');
                     e.preventDefault();
                     
                     const email = document.getElementById('newsletterEmail').value.trim();
+                    console.log('Newsletter email entered:', email);
                     const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
                     
                     if (email && emailRegex.test(String(email).toLowerCase())) {
-                        // Initialize Google Sheets URL if not set
-                        if (!localStorage.getItem('googleSheetsUrl')) {
-                            // Using the default sheets URL that was created for this project
-                            const defaultSheetsUrl = "https://script.google.com/macros/s/AKfycbzNW-gGPVKtoJMAM7TvqbNuMUQNdxf1hKX5zLrrfYN6of70y7zfYuS4sFHFMVpE0GQF/exec";
-                            localStorage.setItem('googleSheetsUrl', defaultSheetsUrl);
-                        }
-                        
+                        console.log('Newsletter email is valid');
                         // Submit to Google Sheets
                         submitToGoogleSheets('newsletter', { email: email });
                         
@@ -654,9 +716,28 @@
                             document.getElementById('newsletter-success').style.display = 'none';
                             
                             // Close the modal after showing success
-                            const newsletterModal = bootstrap.Modal.getInstance(document.getElementById('newsletterModal'));
-                            if (newsletterModal) {
-                                newsletterModal.hide();
+                            try {
+                                const newsletterModal = bootstrap.Modal.getInstance(document.getElementById('newsletterModal'));
+                                if (newsletterModal) {
+                                    newsletterModal.hide();
+                                }
+                            } catch (error) {
+                                console.error('Error hiding newsletter modal:', error);
+                                // Fallback to manual hide
+                                const modal = document.getElementById('newsletterModal');
+                                if (modal) {
+                                    modal.classList.remove('show');
+                                    modal.style.display = 'none';
+                                    document.body.classList.remove('modal-open');
+                                    
+                                    // Remove backdrop
+                                    const backdrop = document.querySelector('.modal-backdrop');
+                                    if (backdrop) {
+                                        backdrop.parentNode.removeChild(backdrop);
+                                    }
+                                    
+                                    console.log('Manually hid newsletter modal as fallback');
+                                }
                             }
                         }, 3000);
                     } else {
@@ -669,17 +750,22 @@
             
             // Footer subscription form
             const footerSubscribeBtn = document.getElementById('footerSubscribeBtn');
+            console.log('Footer subscribe button found:', !!footerSubscribeBtn);
+            
             if (footerSubscribeBtn) {
                 footerSubscribeBtn.addEventListener('click', function(e) {
+                    console.log('Footer subscription button clicked');
                     e.preventDefault();
                     
                     const emailInput = document.getElementById('footerEmail');
                     const email = emailInput.value.trim();
-                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    console.log('Footer email entered:', email);
+                    const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
                     const successMsg = document.getElementById('footer-subscription-success');
                     const errorMsg = document.getElementById('footer-subscription-error');
                     
-                    if (email && emailRegex.test(email)) {
+                    if (email && emailRegex.test(String(email).toLowerCase())) {
+                        console.log('Footer email is valid');
                         // Submit to Google Sheets
                         submitToGoogleSheets('newsletter', { email: email });
                         
@@ -696,6 +782,7 @@
                             successMsg.style.display = 'none';
                         }, 3000);
                     } else {
+                        console.log('Footer email is invalid');
                         // Show validation error
                         emailInput.classList.add('is-invalid');
                         successMsg.style.display = 'none';
@@ -706,8 +793,6 @@
         });
     </script>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
     <script src="js/init-sheets.js"></script>
     <script src="js/main.js"></script>
