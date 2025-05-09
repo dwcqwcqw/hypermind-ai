@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Submissions - HyperMind Admin</title>
+    <!-- Favicon -->
+    <link rel="icon" href="../images/icon1.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Inter', sans-serif;
+        }
+        .sidebar {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 100;
+            padding: 48px 0 0;
+            box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+            background-color: #fff;
+        }
+        .sidebar-sticky {
+            height: calc(100vh - 48px);
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+        .sidebar .nav-link {
+            font-weight: 500;
+            color: #333;
+            padding: 0.75rem 1.25rem;
+        }
+        .sidebar .nav-link.active {
+            color: #4f46e5;
+        }
+        .sidebar .nav-link:hover {
+            color: #4338ca;
+        }
+        .sidebar .nav-link i {
+            margin-right: 10px;
+        }
+        main {
+            padding-top: 48px;
+        }
+        .navbar {
+            box-shadow: 0 1px 2px rgba(0,0,0,.1);
+            background-color: #fff;
+        }
+        .table-submissions tr.unread {
+            background-color: #f0f8ff;
+        }
+        .btn-mark-read {
+            font-size: 0.8rem;
+        }
+        .form-filter {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+        }
+        .pagination {
+            margin-top: 20px;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-light fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="../images/logo.png" alt="HyperMind AI Logo" style="max-height: 40px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-user-circle"></i> <span id="username-display">admin</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 col-lg-2 d-md-block sidebar collapse">
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">
+                                <i class="fas fa-tachometer-alt"></i> Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="submissions.html">
+                                <i class="fas fa-list"></i> All Submissions
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-envelope"></i> Newsletter
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-user-clock"></i> Waitlist
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-envelope-open-text"></i> Contact Forms
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-cog"></i> Settings
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">All Submissions</h1>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                        <div class="btn-group me-2">
+                            <button type="button" class="btn btn-sm btn-outline-secondary" id="export-btn">
+                                <i class="fas fa-download"></i> Export
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-filter">
+                    <form id="filter-form" class="row g-3">
+                        <div class="col-md-4">
+                            <label for="search" class="form-label">Search</label>
+                            <input type="text" class="form-control" id="search" name="search" placeholder="Email, name, company, message...">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="form_type" class="form-label">Form Type</label>
+                            <select class="form-select" id="form_type" name="form_type">
+                                <option value="">All</option>
+                                <option value="contact">Contact Form</option>
+                                <option value="newsletter">Newsletter</option>
+                                <option value="waitlist">Waitlist</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="is_read" class="form-label">Status</label>
+                            <select class="form-select" id="is_read" name="is_read">
+                                <option value="">All</option>
+                                <option value="0">Unread</option>
+                                <option value="1">Read</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2 d-flex align-items-end">
+                            <button type="submit" class="btn btn-primary w-100">Filter</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-striped table-submissions">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Form Type</th>
+                                <th>Email</th>
+                                <th>Name</th>
+                                <th>Company</th>
+                                <th>Message</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="submissions-table-body">
+                            <!-- This will be populated by JavaScript -->
+                            <tr>
+                                <td colspan="7" class="text-center">Loading submissions...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <nav aria-label="Page navigation" id="pagination-container" class="d-none">
+                    <ul class="pagination" id="pagination">
+                        <!-- This will be populated by JavaScript -->
+                    </ul>
+                </nav>
+            </main>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/admin.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if user is logged in
+            if (localStorage.getItem('adminLoggedIn') !== 'true') {
+                window.location.href = 'login.html';
+                return;
+            }
+            
+            // Update username display
+            const usernameDisplay = document.getElementById('username-display');
+            if (usernameDisplay) {
+                usernameDisplay.textContent = localStorage.getItem('adminUsername') || 'admin';
+            }
+            
+            // Logout functionality
+            const logoutBtn = document.getElementById('logout-btn');
+            if (logoutBtn) {
+                logoutBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    localStorage.removeItem('adminLoggedIn');
+                    localStorage.removeItem('adminUsername');
+                    window.location.href = 'login.html';
+                });
+            }
+            
+            // Populate submissions table
+            populateSubmissionsTable();
+            
+            // Filter form submission
+            const filterForm = document.getElementById('filter-form');
+            if (filterForm) {
+                filterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    populateSubmissionsTable(1);
+                });
+            }
+            
+            // Export button
+            const exportBtn = document.getElementById('export-btn');
+            if (exportBtn) {
+                exportBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    alert('Export functionality would be implemented here in a real application');
+                });
+            }
+        });
+        
+        function populateSubmissionsTable(page = 1) {
+            const tableBody = document.getElementById('submissions-table-body');
+            const paginationContainer = document.getElementById('pagination-container');
+            const pagination = document.getElementById('pagination');
+            
+            // Get filter values
+            const search = document.getElementById('search').value;
+            const formType = document.getElementById('form_type').value;
+            const isRead = document.getElementById('is_read').value;
+            
+            // Clear table
+            tableBody.innerHTML = '<tr><td colspan="7" class="text-center">Loading submissions...</td></tr>';
+            
+            // In a real application, this would make an API call to get the data
+            // For now, we'll use the mock data from admin.js
+            setTimeout(() => {
+                let filteredSubmissions = window.mockData.allSubmissions;
+                
+                // Apply filters
+                if (search) {
+                    const searchLower = search.toLowerCase();
+                    filteredSubmissions = filteredSubmissions.filter(submission => 
+                        submission.email.toLowerCase().includes(searchLower) ||
+                        (submission.name && submission.name.toLowerCase().includes(searchLower)) ||
+                        (submission.company && submission.company.toLowerCase().includes(searchLower)) ||
+                        (submission.message && submission.message.toLowerCase().includes(searchLower))
+                    );
+                }
+                
+                if (formType) {
+                    filteredSubmissions = filteredSubmissions.filter(submission => 
+                        submission.formType === formType
+                    );
+                }
+                
+                if (isRead !== '') {
+                    const isReadBool = isRead === '1';
+                    filteredSubmissions = filteredSubmissions.filter(submission => 
+                        submission.isRead === isReadBool
+                    );
+                }
+                
+                // Pagination
+                const itemsPerPage = 10;
+                const totalPages = Math.ceil(filteredSubmissions.length / itemsPerPage);
+                const startIndex = (page - 1) * itemsPerPage;
+                const endIndex = startIndex + itemsPerPage;
+                const pagedSubmissions = filteredSubmissions.slice(startIndex, endIndex);
+                
+                // Update table
+                if (pagedSubmissions.length === 0) {
+                    tableBody.innerHTML = '<tr><td colspan="7" class="text-center">No submissions found</td></tr>';
+                } else {
+                    tableBody.innerHTML = pagedSubmissions.map(submission => {
+                        const readClass = submission.isRead ? '' : 'unread';
+                        const markReadButton = submission.isRead ? '' : 
+                            `<button class="btn btn-sm btn-outline-secondary btn-mark-read" data-id="${submission.id}">Mark as Read</button>`;
+                        
+                        return `
+                            <tr class="${readClass}">
+                                <td>${submission.date}</td>
+                                <td><span class="badge bg-secondary">${submission.formType}</span></td>
+                                <td>${submission.email}</td>
+                                <td>${submission.name || 'N/A'}</td>
+                                <td>${submission.company || 'N/A'}</td>
+                                <td>${submission.message ? (submission.message.length > 50 ? submission.message.substring(0, 50) + '...' : submission.message) : 'N/A'}</td>
+                                <td>
+                                    <a href="view_submission.html?id=${submission.id}" class="btn btn-sm btn-primary btn-view">View</a>
+                                    ${markReadButton}
+                                </td>
+                            </tr>
+                        `;
+                    }).join('');
+                    
+                    // Add event listeners to buttons
+                    document.querySelectorAll('.btn-view').forEach(button => {
+                        button.addEventListener('click', function(e) {
+                            // We're using anchor links now, so we don't need this handler
+                            // Just let the default link behavior work
+                        });
+                    });
+                    
+                    document.querySelectorAll('.btn-mark-read').forEach(button => {
+                        button.addEventListener('click', function() {
+                            const id = this.getAttribute('data-id');
+                            const row = this.closest('tr');
+                            row.classList.remove('unread');
+                            this.style.display = 'none';
+                            alert(`Marked submission #${id} as read`);
+                        });
+                    });
+                }
+                
+                // Update pagination
+                if (totalPages > 1) {
+                    paginationContainer.classList.remove('d-none');
+                    
+                    let paginationHtml = '';
+                    
+                    // Previous button
+                    if (page > 1) {
+                        paginationHtml += `
+                            <li class="page-item">
+                                <a class="page-link" href="#" data-page="${page - 1}" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                        `;
+                    }
+                    
+                    // Page numbers
+                    for (let i = Math.max(1, page - 2); i <= Math.min(totalPages, page + 2); i++) {
+                        paginationHtml += `
+                            <li class="page-item ${i === page ? 'active' : ''}">
+                                <a class="page-link" href="#" data-page="${i}">${i}</a>
+                            </li>
+                        `;
+                    }
+                    
+                    // Next button
+                    if (page < totalPages) {
+                        paginationHtml += `
+                            <li class="page-item">
+                                <a class="page-link" href="#" data-page="${page + 1}" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        `;
+                    }
+                    
+                    pagination.innerHTML = paginationHtml;
+                    
+                    // Add event listeners to pagination links
+                    document.querySelectorAll('.page-link').forEach(link => {
+                        link.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            const page = parseInt(this.getAttribute('data-page'));
+                            populateSubmissionsTable(page);
+                        });
+                    });
+                } else {
+                    paginationContainer.classList.add('d-none');
+                }
+            }, 500); // Simulate network delay
+        }
+    </script>
+</body>
+</html> 

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting - HyperMind Admin</title>
+    <!-- Favicon -->
+    <link rel="icon" href="../images/icon1.png" type="image/png">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if user is logged in
+            if (localStorage.getItem('adminLoggedIn') === 'true') {
+                // User is already logged in, load admin content
+                loadAdminContent();
+            } else {
+                // User is not logged in, redirect to login page
+                window.location.href = 'login.html';
+            }
+        });
+
+        function loadAdminContent() {
+            // In a real implementation, this would fetch the dashboard content
+            // For now, we will redirect to the login page which also has the dashboard
+            window.location.href = 'login.html';
+        }
+    </script>
+</head>
+<body>
+    <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+        <div style="text-align: center;">
+            <img src="../images/logo.png" alt="HyperMind AI Logo" style="max-height: 100px;">
+            <p>Loading admin panel...</p>
+        </div>
+    </div>
+</body>
+</html> 
