@@ -4,8 +4,8 @@
  */
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Default Google Sheets Web App URL
-    const defaultSheetsUrl = "https://script.google.com/macros/s/AKfycbzNW-gGPVKtoJMAM7TvqbNuMUQNdxf1hKX5zLrrfYN6of70y7zfYuS4sFHFMVpE0GQF/exec";
+    // Default Google Sheets URL
+    const defaultSheetsUrl = "https://script.google.com/macros/s/AKfycbzr9AjCBQycQCqYWB4mbPVey7qrKRbra7WTgWZmUUifAqxsXa3mQVrADq32JjJhd1ZBNg/exec";
     
     // Only set if not already set
     if (!localStorage.getItem('googleSheetsUrl')) {

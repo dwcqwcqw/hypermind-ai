@@ -670,6 +670,18 @@ function initMediaTabs() {
         
         // 更新当前索引
         currentIndex = index;
+        
+        // On mobile, scroll to the active slide
+        if (window.innerWidth <= 768) {
+            const container = document.querySelector('.media-content-container');
+            const activeSlide = mediaContents[index];
+            if (container && activeSlide) {
+                container.scrollTo({
+                    left: activeSlide.offsetLeft - container.offsetWidth / 2 + activeSlide.offsetWidth / 2,
+                    behavior: 'smooth'
+                });
+            }
+        }
     }
     
     // 切换到下一张幻灯片
@@ -685,7 +697,7 @@ function initMediaTabs() {
             clearInterval(slideInterval);
         }
         // 设置新的计时器
-        slideInterval = setInterval(nextSlide, 2000);
+        slideInterval = setInterval(nextSlide, 4000); // Increased time to 4 seconds
         console.log('Slideshow started');
     }
     
@@ -713,6 +725,43 @@ function initMediaTabs() {
     if (mediaContainer) {
         mediaContainer.addEventListener('mouseenter', stopSlideshow);
         mediaContainer.addEventListener('mouseleave', startSlideshow);
+        
+        // On mobile, add touch events
+        mediaContainer.addEventListener('touchstart', stopSlideshow);
+        mediaContainer.addEventListener('touchend', () => {
+            // Short delay to allow for scrolling
+            setTimeout(startSlideshow, 1000);
+        });
+    }
+    
+    // 添加滑动功能以在移动设备上改善体验
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    if (mediaContainer) {
+        mediaContainer.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, {passive: true});
+        
+        mediaContainer.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, {passive: true});
+    }
+    
+    function handleSwipe() {
+        // Calculate swipe distance
+        const swipeDistance = touchEndX - touchStartX;
+        const minSwipeDistance = 50;
+        
+        if (swipeDistance > minSwipeDistance) {
+            // Swipe right - go to previous slide
+            currentIndex = (currentIndex - 1 + mediaTabs.length) % mediaTabs.length;
+            showSlide(currentIndex);
+        } else if (swipeDistance < -minSwipeDistance) {
+            // Swipe left - go to next slide
+            nextSlide();
+        }
     }
     
     // 初始显示第一张幻灯片
@@ -727,6 +776,12 @@ function initMediaTabs() {
     // 添加窗口焦点/失焦事件，当用户切换标签时暂停/继续轮播
     window.addEventListener('focus', startSlideshow);
     window.addEventListener('blur', stopSlideshow);
+    
+    // Handle window resize
+    window.addEventListener('resize', () => {
+        // Re-show current slide to adjust scrolling
+        showSlide(currentIndex);
+    });
 }
 
 // Initialize Testimonials Carousel

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Direct Google Sheets Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; }
+        .container { max-width: 600px; margin: 0 auto; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; }
+        input, textarea { width: 100%; padding: 8px; box-sizing: border-box; }
+        button { padding: 10px 15px; background: #4285f4; color: white; border: none; cursor: pointer; }
+        .result { margin-top: 20px; padding: 10px; border: 1px solid #ccc; }
+        #debug { height: 300px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; background: #f9f9f9; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Direct Google Sheets Submission Test</h1>
+        
+        <div class="form-group">
+            <label for="sheetsUrl">Google Sheets Script URL:</label>
+            <input type="text" id="sheetsUrl" placeholder="Enter Apps Script Web App URL" />
+            <small>Currently using: <span id="currentUrl">Not set</span></small>
+            <button id="saveUrl">Save URL</button>
+        </div>
+        
+        <form id="testForm">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" required placeholder="test@example.com" />
+            </div>
+            
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" placeholder="Test User" />
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" rows="3" placeholder="Test message"></textarea>
+            </div>
+            
+            <button type="submit">Submit Test</button>
+        </form>
+        
+        <div class="result" id="result">Results will appear here</div>
+        
+        <h2>Debug Log:</h2>
+        <div id="debug"></div>
+        
+        <div style="margin-top: 20px;">
+            <button id="testGet">Test GET Request</button>
+            <button id="testPost">Test POST (JSON)</button>
+            <button id="resetLogs">Clear Logs</button>
+        </div>
+    </div>
+    
+    <script>
+        // Helper function to log messages
+        function log(message) {
+            const debugDiv = document.getElementById('debug');
+            const time = new Date().toLocaleTimeString();
+            debugDiv.innerHTML += `<div>[${time}] ${message}</div>`;
+            debugDiv.scrollTop = debugDiv.scrollHeight;
+            console.log(`[${time}] ${message}`);
+        }
+        
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            log("Page loaded");
+            
+            // Display current Google Sheets URL
+            const sheetsUrl = localStorage.getItem('googleSheetsUrl') || "https://script.google.com/macros/s/AKfycbzr9AjCBQycQCqYWB4mbPVey7qrKRbra7WTgWZmUUifAqxsXa3mQVrADq32JjJhd1ZBNg/exec";
+            document.getElementById('currentUrl').textContent = sheetsUrl || 'Not set';
+            document.getElementById('sheetsUrl').value = sheetsUrl || '';
+            
+            if (!localStorage.getItem('googleSheetsUrl')) {
+                localStorage.setItem('googleSheetsUrl', sheetsUrl);
+                log("Set default Google Sheets URL: " + sheetsUrl);
+            }
+            
+            // Save URL button
+            document.getElementById('saveUrl').addEventListener('click', function() {
+                const newUrl = document.getElementById('sheetsUrl').value.trim();
+                if (newUrl) {
+                    localStorage.setItem('googleSheetsUrl', newUrl);
+                    document.getElementById('currentUrl').textContent = newUrl;
+                    log(`URL saved: ${newUrl}`);
+                } else {
+                    log("Error: Please enter a URL");
+                }
+            });
+            
+            // Form submission
+            document.getElementById('testForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                log("Form submitted");
+                
+                const sheetsUrl = localStorage.getItem('googleSheetsUrl');
+                if (!sheetsUrl) {
+                    log("Error: No Google Sheets URL set");
+                    document.getElementById('result').textContent = "Error: Please set a Google Sheets URL first";
+                    return;
+                }
+                
+                // Prepare form data
+                const formData = new FormData();
+                formData.append('form_type', 'direct_test');
+                formData.append('email', document.getElementById('email').value);
+                formData.append('name', document.getElementById('name').value);
+                formData.append('message', document.getElementById('message').value);
+                formData.append('timestamp', new Date().toISOString());
+                formData.append('page_url', window.location.href);
+                
+                log(`Sending request to: ${sheetsUrl}`);
+                log(`Form data: ${JSON.stringify({
+                    form_type: 'direct_test',
+                    email: document.getElementById('email').value,
+                    name: document.getElementById('name').value,
+                    message: document.getElementById('message').value,
+                    timestamp: new Date().toISOString(),
+                    page_url: window.location.href
+                })}`);
+                
+                // Send request
+                document.getElementById('result').textContent = "Submitting...";
+                
+                fetch(sheetsUrl, {
+                    method: 'POST',
+                    body: formData,
+                    mode: 'no-cors'
+                })
+                .then(() => {
+                    log("Request completed (no-cors mode)");
+                    document.getElementById('result').textContent = 
+                        "Submission sent, but due to no-cors mode, can't verify actual status. Check your Google Sheet.";
+                })
+                .catch(error => {
+                    log(`Error: ${error.message}`);
+                    document.getElementById('result').textContent = `Error: ${error.message}`;
+                });
+            });
+            
+            // Test GET request
+            document.getElementById('testGet').addEventListener('click', function() {
+                const sheetsUrl = localStorage.getItem('googleSheetsUrl');
+                if (!sheetsUrl) {
+                    log("Error: No Google Sheets URL set");
+                    return;
+                }
+                
+                log(`Testing GET request to: ${sheetsUrl}`);
+                
+                fetch(sheetsUrl)
+                .then(response => {
+                    log(`Response status: ${response.status}`);
+                    return response.text();
+                })
+                .then(data => {
+                    log(`Response data: ${data.substring(0, 150)}...`);
+                })
+                .catch(error => {
+                    log(`Error: ${error.message}`);
+                });
+            });
+            
+            // Test POST with JSON
+            document.getElementById('testPost').addEventListener('click', function() {
+                const sheetsUrl = localStorage.getItem('googleSheetsUrl');
+                if (!sheetsUrl) {
+                    log("Error: No Google Sheets URL set");
+                    return;
+                }
+                
+                const testData = {
+                    form_type: 'json_test',
+                    email: 'json@test.com',
+                    name: 'JSON Test',
+                    message: 'Testing JSON POST',
+                    timestamp: new Date().toISOString()
+                };
+                
+                log(`Testing JSON POST to: ${sheetsUrl}`);
+                log(`JSON data: ${JSON.stringify(testData)}`);
+                
+                fetch(sheetsUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(testData),
+                    mode: 'cors'
+                })
+                .then(response => {
+                    log(`Response status: ${response.status}`);
+                    return response.text();
+                })
+                .then(data => {
+                    log(`Response data: ${data}`);
+                })
+                .catch(error => {
+                    log(`Error: ${error.message}`);
+                });
+            });
+            
+            // Clear logs
+            document.getElementById('resetLogs').addEventListener('click', function() {
+                document.getElementById('debug').innerHTML = '';
+                log("Logs cleared");
+            });
+        });
+    </script>
+</body>
+</html> 
