@@ -122,4 +122,93 @@ For the Website:
 For ongoing issues, consider:
 1. Checking Google Apps Script quotas and limitations
 2. Reviewing execution logs in the Apps Script editor
-3. Implementing a fallback server-side solution (like the PHP option) 
+3. Implementing a fallback server-side solution (like the PHP option)
+
+# HyperMind 表单提交系统说明
+
+这个文档解释了 HyperMind AI 网站上的表单提交系统如何工作，特别是对于中国用户的特殊处理。
+
+## 表单提交系统架构
+
+HyperMind AI 网站使用多层提交系统来确保表单数据（如联系表单、通讯订阅和等待列表注册）能够被可靠地收集：
+
+1. **主要方法**：Google Sheets 集成
+   - 使用 Google Apps Script Web 应用提供的 API 端点
+   - 数据直接提交到指定的 Google 电子表格
+
+2. **备用方法 1**：PHP 后端
+   - 当 Google Sheets 不可用时自动切换
+   - 数据存储在 MySQL 数据库中
+
+3. **备用方法 2**：文件存储
+   - 当数据库连接失败时使用
+   - 数据以 JSON 格式保存在服务器文件中
+
+## 针对中国用户的优化
+
+我们已经对系统进行了特别优化，以解决中国大陆用户访问 Google 服务受限的问题：
+
+### 自动检测中国用户
+
+系统会通过以下方式自动检测可能来自中国的用户：
+
+1. 浏览器语言设置为 `zh-CN` 或 `zh`
+2. 时区为 `Asia/Shanghai`, `Asia/Chongqing`, `Asia/Harbin` 或 `Asia/Urumqi`
+
+### 提交逻辑调整
+
+对于检测到的中国用户：
+
+1. **直接使用 PHP 后端**：系统会跳过 Google Sheets 提交尝试，直接使用 PHP 后端
+2. **多重备份**：如果 PHP/数据库失败，会自动切换到文件存储方式
+3. **失败通知**：如果所有方法都失败，会建议用户直接通过电子邮件联系
+
+### 技术原理
+
+```javascript
+// 示例：检测可能来自中国的用户
+const isLikelyFromChina = function() {
+    // 检查浏览器语言
+    const userLang = navigator.language || navigator.userLanguage;
+    const isChinaLang = userLang.startsWith('zh-CN') || userLang === 'zh';
+    
+    // 检查时区
+    const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    const isChinaTZ = timezone.includes('Asia/Shanghai') || 
+                      timezone.includes('Asia/Chongqing') || 
+                      timezone.includes('Asia/Harbin') || 
+                      timezone.includes('Asia/Urumqi');
+    
+    return isChinaLang || isChinaTZ;
+};
+```
+
+## 管理员指南
+
+作为网站管理员，您可以：
+
+1. **查看所有提交**：
+   - 通过 Google Sheets 查看在线提交
+   - 通过管理员面板查看数据库中的提交
+   - 检查服务器上的 `data/form_submissions.json` 文件获取备份提交
+
+2. **合并数据**：
+   - 我们提供了一个脚本来将文件存储的数据导入到数据库或 Google Sheets
+   - 使用 `php/import_from_file.php` 来导入文件数据
+
+## 潜在问题和解决方案
+
+1. **Google 服务完全不可用**：
+   - 系统会自动使用 PHP 后端和文件存储
+   - 定期检查服务器上的备份文件
+
+2. **表单提交失败**：
+   - 检查服务器错误日志
+   - 确保 PHP 和数据库配置正确
+   - 验证 `data` 目录存在并可写入
+
+## 联系支持
+
+如有任何问题，请联系：
+- 技术支持：support@hypermind-ai.com
+- 管理员：admin@hypermind-ai.com 

@@ -84,67 +84,117 @@ const FormHandler = (function() {
             formData.append('page_url', window.location.href);
             formData.append('timestamp', new Date().toISOString());
             
-            log('Submitting to Google Sheets...', {
-                url: googleSheetsUrl,
-                formType: formType,
-                data: data
-            });
+            // Check if user is likely from China
+            const isLikelyFromChina = function() {
+                // Check browser language
+                const userLang = navigator.language || navigator.userLanguage;
+                const isChinaLang = userLang.startsWith('zh-CN') || userLang === 'zh';
+                
+                // Check timezone
+                const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+                const isChinaTZ = timezone.includes('Asia/Shanghai') || 
+                                  timezone.includes('Asia/Chongqing') || 
+                                  timezone.includes('Asia/Harbin') || 
+                                  timezone.includes('Asia/Urumqi');
+                
+                return isChinaLang || isChinaTZ;
+            };
             
-            // Try submitting with FormData first
-            fetch(googleSheetsUrl, {
-                method: 'POST',
-                body: formData,
-                mode: 'no-cors'
-            })
-            .then(() => {
-                log(`${formType} form submitted to Google Sheets successfully`);
-                resolve(true);
-            })
-            .catch(error => {
-                log('Error submitting to Google Sheets:', error);
+            // If user is likely from China, use PHP backend directly
+            if (isLikelyFromChina()) {
+                log('User likely from China, using PHP backend directly');
                 
-                // Try again with JSON format as fallback
-                log('Trying JSON format as fallback...');
-                
-                // Prepare JSON data
-                const jsonData = {
-                    form_type: formType,
-                    ...data,
-                    page_url: window.location.href,
-                    timestamp: new Date().toISOString()
-                };
-                
-                fetch(googleSheetsUrl, {
+                fetch('php/submit.php', {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(jsonData),
-                    mode: 'no-cors'
+                    body: formData
                 })
-                .then(() => {
-                    log('JSON fallback submission successful');
+                .then(response => {
+                    if (response.ok) {
+                        return response.json();
+                    }
+                    throw new Error('Network response was not ok');
+                })
+                .then(data => {
+                    log('PHP form submission successful:', data);
                     resolve(true);
                 })
                 .catch(error => {
-                    log('Error with JSON fallback:', error);
+                    log('Error with PHP submission:', error);
                     
-                    // Last fallback to PHP backend
-                    log('Falling back to PHP backend...');
-                    fetch('php/submit.php', {
+                    // As a last resort, try Google Sheets anyway
+                    tryGoogleSheets();
+                });
+                
+                return;
+            }
+            
+            // Function to try Google Sheets submission
+            const tryGoogleSheets = function() {
+                log('Submitting to Google Sheets...', {
+                    url: googleSheetsUrl,
+                    formType: formType,
+                    data: data
+                });
+                
+                // Try submitting with FormData first
+                fetch(googleSheetsUrl, {
+                    method: 'POST',
+                    body: formData,
+                    mode: 'no-cors'
+                })
+                .then(() => {
+                    log(`${formType} form submitted to Google Sheets successfully`);
+                    resolve(true);
+                })
+                .catch(error => {
+                    log('Error submitting to Google Sheets:', error);
+                    
+                    // Try again with JSON format as fallback
+                    log('Trying JSON format as fallback...');
+                    
+                    // Prepare JSON data
+                    const jsonData = {
+                        form_type: formType,
+                        ...data,
+                        page_url: window.location.href,
+                        timestamp: new Date().toISOString()
+                    };
+                    
+                    fetch(googleSheetsUrl, {
                         method: 'POST',
-                        body: formData
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(jsonData),
+                        mode: 'no-cors'
                     })
                     .then(() => {
-                        log('PHP form submission successful');
+                        log('JSON fallback submission successful');
                         resolve(true);
                     })
                     .catch(error => {
-                        log('Error with PHP submission:', error);
-                        reject(error);
+                        log('Error with JSON fallback:', error);
+                        
+                        // Last fallback to PHP backend
+                        log('Falling back to PHP backend...');
+                        fetch('php/submit.php', {
+                            method: 'POST',
+                            body: formData
+                        })
+                        .then(() => {
+                            log('PHP form submission successful');
+                            resolve(true);
+                        })
+                        .catch(error => {
+                            log('Error with PHP submission:', error);
+                            reject(error);
+                        });
                     });
                 });
-            });
+            };
+            
+            // For non-China users, try Google Sheets first
+            tryGoogleSheets();
         });
     };
     
