@@ -13,7 +13,7 @@ export default function Navbar() {
           {/* Logo */}
           <a href="#hero" className="flex items-center gap-3 hover:opacity-80 transition">
             <Image 
-              src="/asset/logo.jpg" 
+              src="/asset/logo.png" 
               alt="HyperMind Logo" 
               width={56} 
               height={56} 

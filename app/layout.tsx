@@ -8,9 +8,9 @@ export const metadata: Metadata = {
   title: 'HyperMind - 10x your traffic from AI Search Engines',
   description: 'Turn AI mentions on ChatGPT, Perplexity, and Google AI into traffic and customers.',
   icons: {
-    icon: '/asset/logo.jpg',
-    shortcut: '/asset/logo.jpg',
-    apple: '/asset/logo.jpg',
+    icon: '/asset/logo.png',
+    shortcut: '/asset/logo.png',
+    apple: '/asset/logo.png',
   },
 }
 
@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="zh-CN">
       <head>
-        <link rel="icon" href="/asset/logo.jpg" />
+        <link rel="icon" href="/asset/logo.png" />
       </head>
       <body className={inter.className}>{children}</body>
     </html>
