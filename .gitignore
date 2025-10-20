@@ -32,4 +32,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# Cloudflare
+.wrangler
+wrangler.toml.bak
+.dev.vars
+
 
