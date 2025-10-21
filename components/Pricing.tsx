@@ -3,8 +3,8 @@ export default function Pricing() {
     {
       name: 'Basic',
       description: 'Perfect for small businesses getting started with GEO',
-      price: '199',
-      period: '/m',
+      price: 'Contact Us',
+      period: '',
       features: [
         'Up to 50 prompt simulations',
         '2 blog post generation',
@@ -18,8 +18,8 @@ export default function Pricing() {
       name: 'Pro',
       badge: 'Most Popular',
       description: 'For growing teams who need advanced GEO analysis',
-      price: '500',
-      period: '/m',
+      price: 'Contact Us',
+      period: '',
       features: [
         'Up to 200 prompt simulations',
         '20 blog post generation',
@@ -91,15 +91,10 @@ export default function Pricing() {
               </p>
 
               {/* Price */}
-              <div className="mb-6">
-                <span className={`text-5xl font-bold ${plan.highlighted ? 'text-white' : 'text-gray-900'}`}>
-                  {plan.price === 'Custom' ? plan.price : `$${plan.price}`}
+              <div className="mb-8">
+                <span className={`text-4xl font-bold ${plan.highlighted ? 'text-white' : 'text-gray-900'}`}>
+                  {plan.price}
                 </span>
-                {plan.period && (
-                  <span className={`text-xl ${plan.highlighted ? 'text-white/80' : 'text-gray-600'}`}>
-                    {plan.period}
-                  </span>
-                )}
               </div>
 
               {/* Features */}
