@@ -4,6 +4,15 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useParams } from 'next/navigation'
 
+// Generate static paths for all articles
+export function generateStaticParams() {
+  return [
+    { slug: 'how-to-write-geo-content' },
+    { slug: 'top-10-geo-tools-2025' },
+    { slug: 'seo-vs-geo-strategy' },
+  ]
+}
+
 export default function ArticlePage() {
   const params = useParams()
   
