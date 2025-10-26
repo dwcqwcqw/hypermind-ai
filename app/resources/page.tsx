@@ -8,12 +8,12 @@ export default function ResourcesPage() {
   const articles = [
     {
       id: 1,
-      title: 'How to Write Generative Engine Optimized (GEO) Content for AI Search?',
-      date: 'Oct 22, 2025',
+      title: 'The Definitive Comparison of HyperMind vs Top AI Marketing Platforms',
+      date: 'Oct 1, 2024',
       category: 'ARTICLE',
       image: '/resources/article1 image.png',
-      description: 'Learn the best practices for creating content optimized for AI search engines like ChatGPT, Claude, and Perplexity.',
-      slug: 'how-to-write-geo-content',
+      description: 'Discover how HyperMind stands apart as the only B2B SaaS platform specializing in Generative Engine Optimization (GEO), offering proprietary AI visibility tracking, secure data governance, and actionable intelligence that converts AI-driven brand mentions into measurable traffic and revenue.',
+      slug: 'hypermind-vs-top-ai-marketing-platforms',
     },
   ]
 
