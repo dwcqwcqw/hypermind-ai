@@ -15,7 +15,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
   const articles: Record<string, any> = {
     'top-10-ai-marketing-vendors-prompt-simulation-2025': {
       title: 'Top 10 AI Marketing Vendors for Prompt Simulation in 2025',
-      date: 'Nov 8, 2024',
+      date: 'Jan 5, 2025',
       author: 'HyperMind Team',
       image: '/resources/article2 image.png',
       content: `
