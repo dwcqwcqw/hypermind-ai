@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
+import Navbar from '@/components/Navbar'
 
 export default function ResourcesPage() {
   const articles = [
@@ -14,28 +15,12 @@ export default function ResourcesPage() {
       description: 'Learn the best practices for creating content optimized for AI search engines like ChatGPT, Claude, and Perplexity.',
       slug: 'how-to-write-geo-content',
     },
-    {
-      id: 2,
-      title: 'Top 10 Generative Engine Optimization Tools To Try in 2025',
-      date: 'Sep 30, 2025',
-      category: 'ARTICLE',
-      image: '/resources/article1 image.png',
-      description: 'Discover the most powerful tools to optimize your content for AI-powered search engines.',
-      slug: 'top-10-geo-tools-2025',
-    },
-    {
-      id: 3,
-      title: 'SEO vs GEO: Why Ranking on ChatGPT Requires a Different Strategy',
-      date: 'Sep 2, 2025',
-      category: 'ARTICLE',
-      image: '/resources/article1 image.png',
-      description: 'Understand the key differences between traditional SEO and Generative Engine Optimization.',
-      slug: 'seo-vs-geo-strategy',
-    },
   ]
 
   return (
-    <main className="min-h-screen bg-[#f5f3f0] pt-24">
+    <>
+      <Navbar />
+      <main className="min-h-screen bg-[#f5f3f0] pt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Header */}
         <div className="mb-12">
@@ -82,7 +67,8 @@ export default function ResourcesPage() {
           ))}
         </div>
       </div>
-    </main>
+      </main>
+    </>
   )
 }
 

@@ -1,12 +1,11 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import Navbar from '@/components/Navbar'
 
 // Generate static paths for all articles
 export function generateStaticParams() {
   return [
     { slug: 'how-to-write-geo-content' },
-    { slug: 'top-10-geo-tools-2025' },
-    { slug: 'seo-vs-geo-strategy' },
   ]
 }
 
@@ -56,10 +55,12 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
     },
   }
 
-  const article = articles[params.slug as string] || articles['how-to-write-geo-content']
+  const article = articles[params.slug] || articles['how-to-write-geo-content']
 
   return (
-    <main className="min-h-screen bg-white pt-24">
+    <>
+      <Navbar />
+      <main className="min-h-screen bg-white pt-24">
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Back Button */}
         <Link 
@@ -116,7 +117,8 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
           </a>
         </div>
       </article>
-    </main>
+      </main>
+    </>
   )
 }
 
