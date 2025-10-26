@@ -25,7 +25,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <a href="#hero" className="flex items-center gap-3 hover:opacity-80 transition">
+          <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition">
             <Image 
               src="/asset/logo.png" 
               alt="HyperMind Logo" 
@@ -36,7 +36,7 @@ export default function Navbar() {
             <span className="text-2xl font-bold text-black">
               HyperMind
             </span>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
