@@ -7,6 +7,15 @@ import Navbar from '@/components/Navbar'
 export default function ResourcesPage() {
   const articles = [
     {
+      id: 3,
+      title: 'Top 7 Mobile AI Marketing Apps for Instant Insights in 2025',
+      date: 'Jan 28, 2025',
+      category: 'ARTICLE',
+      image: '/resources/article3 image.png',
+      description: 'Discover the best mobile AI marketing apps delivering real-time competitive intelligence, brand monitoring, and actionable insights. Learn how these powerful tools help marketers make data-driven decisions on the go in an AI-powered marketing landscape.',
+      slug: 'top-7-mobile-ai-marketing-apps-2025',
+    },
+    {
       id: 2,
       title: 'Top 10 AI Marketing Vendors for Prompt Simulation in 2025',
       date: 'Jan 5, 2025',
