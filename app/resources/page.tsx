@@ -7,6 +7,15 @@ import Navbar from '@/components/Navbar'
 export default function ResourcesPage() {
   const articles = [
     {
+      id: 2,
+      title: 'Top 10 AI Marketing Vendors for Prompt Simulation in 2025',
+      date: 'Nov 8, 2024',
+      category: 'ARTICLE',
+      image: '/resources/article2 image.png',
+      description: 'Explore the leading AI marketing vendors specializing in prompt simulation, featuring comprehensive insights into platforms that help brands optimize their AI presence, test messaging strategies, and enhance campaign effectiveness through advanced simulation capabilities.',
+      slug: 'top-10-ai-marketing-vendors-prompt-simulation-2025',
+    },
+    {
       id: 1,
       title: 'The Definitive Comparison of HyperMind vs Top AI Marketing Platforms',
       date: 'Oct 1, 2024',
