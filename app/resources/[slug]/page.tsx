@@ -1,8 +1,5 @@
-'use client'
-
 import Image from 'next/image'
 import Link from 'next/link'
-import { useParams } from 'next/navigation'
 
 // Generate static paths for all articles
 export function generateStaticParams() {
@@ -13,8 +10,7 @@ export function generateStaticParams() {
   ]
 }
 
-export default function ArticlePage() {
-  const params = useParams()
+export default function ArticlePage({ params }: { params: { slug: string } }) {
   
   const articles: Record<string, any> = {
     'how-to-write-geo-content': {
@@ -98,12 +94,8 @@ export default function ArticlePage() {
 
         {/* Article Content */}
         <div 
-          className="prose prose-lg max-w-none"
+          className="article-content prose prose-lg max-w-none text-lg leading-7"
           dangerouslySetInnerHTML={{ __html: article.content }}
-          style={{
-            fontSize: '1.125rem',
-            lineHeight: '1.75rem',
-          }}
         />
 
         {/* CTA */}
@@ -124,40 +116,6 @@ export default function ArticlePage() {
           </a>
         </div>
       </article>
-
-      <style jsx>{`
-        :global(.prose h2) {
-          font-size: 2rem;
-          font-weight: 700;
-          margin-top: 2.5rem;
-          margin-bottom: 1.5rem;
-          color: #111;
-        }
-        
-        :global(.prose h3) {
-          font-size: 1.5rem;
-          font-weight: 600;
-          margin-top: 2rem;
-          margin-bottom: 1rem;
-          color: #111;
-        }
-        
-        :global(.prose p) {
-          margin-bottom: 1.5rem;
-          color: #374151;
-        }
-        
-        :global(.prose ul) {
-          margin-top: 1rem;
-          margin-bottom: 1.5rem;
-          padding-left: 1.5rem;
-        }
-        
-        :global(.prose li) {
-          margin-bottom: 0.5rem;
-          color: #374151;
-        }
-      `}</style>
     </main>
   )
 }

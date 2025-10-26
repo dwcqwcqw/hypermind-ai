@@ -76,6 +76,40 @@ body {
       transform: translateY(0);
     }
   }
+
+  /* Article Content Styles */
+  .article-content h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #111;
+  }
+  
+  .article-content h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #111;
+  }
+  
+  .article-content p {
+    margin-bottom: 1.5rem;
+    color: #374151;
+  }
+  
+  .article-content ul {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    list-style-type: disc;
+  }
+  
+  .article-content li {
+    margin-bottom: 0.5rem;
+    color: #374151;
+  }
 }
 
 
