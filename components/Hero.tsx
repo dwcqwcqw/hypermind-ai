@@ -69,7 +69,7 @@ export default function Hero() {
           </div>
 
           {/* Right side - Rotating logos animation */}
-          <div className="relative w-full h-[500px] flex items-center justify-center animate-slide-in-3">
+          <div className="relative w-full h-[360px] sm:h-[420px] md:h-[500px] flex items-center justify-center animate-slide-in-3">
             {/* Center core image - circular */}
             <div className="absolute z-10">
               <div className="w-52 h-52 rounded-full overflow-hidden bg-gradient-to-br from-blue-50 to-purple-50 shadow-2xl flex items-center justify-center border-4 border-white">
@@ -145,6 +145,12 @@ export default function Hero() {
         @media (max-width: 1024px) {
           .logo-orbit > div {
             transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-170px) rotate(calc(-1 * var(--angle)));
+          }
+        }
+
+        @media (max-width: 640px) {
+          .logo-orbit > div {
+            transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-120px) rotate(calc(-1 * var(--angle)));
           }
         }
       `}</style>
