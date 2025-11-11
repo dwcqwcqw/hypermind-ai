@@ -55,8 +55,8 @@ export default function ResourcesPage() {
   useEffect(() => {
     // Fetch dynamic posts from API
     fetch('/api/posts')
-      .then(res => res.ok ? res.json() : [])
-      .then(posts => {
+      .then(res => res.ok ? res.json() as Promise<Article[]> : Promise.resolve([]))
+      .then((posts) => {
         // Filter published posts
         const now = Date.now()
         const published = posts.filter((p: Article) => {

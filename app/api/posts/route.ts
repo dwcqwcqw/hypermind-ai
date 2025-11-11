@@ -19,7 +19,13 @@ export async function GET() {
 
 export async function POST(request: Request) {
   try {
-    const body = await request.json()
+    const body = await request.json() as {
+      title: string
+      content: string
+      coverImage: string
+      publishAt: string
+      excerpt?: string
+    }
     const { title, content, coverImage, publishAt, excerpt } = body
 
     if (!title || !content || !coverImage || !publishAt) {

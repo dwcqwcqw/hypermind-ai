@@ -25,8 +25,8 @@ export default function DynamicArticlePage() {
 
   useEffect(() => {
     fetch('/api/posts')
-      .then(res => res.json())
-      .then((posts: Post[]) => {
+      .then(res => res.json() as Promise<Post[]>)
+      .then((posts) => {
         const found = posts.find((p: Post) => p.slug === slug)
         if (found) {
           setPost(found)

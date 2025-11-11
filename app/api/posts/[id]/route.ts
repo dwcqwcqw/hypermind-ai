@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { updatePost, deletePost } from '@/lib/posts'
+import { updatePost, deletePost, Post } from '@/lib/posts'
 
 export const runtime = 'edge'
 export const dynamic = 'force-dynamic'
@@ -10,7 +10,7 @@ export async function PUT(
 ) {
   try {
     const { id } = await params
-    const body = await request.json()
+    const body = await request.json() as Partial<Post>
     const post = await updatePost(id, body)
 
     if (!post) {
