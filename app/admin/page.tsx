@@ -88,7 +88,7 @@ export default function AdminPage() {
         throw new Error('Image upload failed')
       }
 
-      const { url } = await uploadRes.json()
+      const { url } = await uploadRes.json() as { url: string; key: string }
 
       // Create post
       const postData = {
