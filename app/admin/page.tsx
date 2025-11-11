@@ -44,7 +44,7 @@ export default function AdminPage() {
     try {
       const res = await fetch('/api/posts')
       if (res.ok) {
-        const data = await res.json()
+        const data = await res.json() as Post[]
         setPosts(data)
       }
     } catch (error) {
