@@ -1,11 +1,28 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 
+type Article = {
+  id: string | number
+  title: string
+  date?: string
+  publishAt?: string
+  category?: string
+  image?: string
+  coverImage?: string
+  description?: string
+  excerpt?: string
+  slug: string
+}
+
 export default function ResourcesPage() {
-  const articles = [
+  const [dynamicPosts, setDynamicPosts] = useState<Article[]>([])
+
+  // Static articles (original ones)
+  const staticArticles: Article[] = [
     {
       id: 3,
       title: 'Top 7 Mobile AI Marketing Apps for Instant Insights in 2025',
@@ -35,6 +52,30 @@ export default function ResourcesPage() {
     },
   ]
 
+  useEffect(() => {
+    // Fetch dynamic posts from API
+    fetch('/api/posts')
+      .then(res => res.ok ? res.json() : [])
+      .then(posts => {
+        // Filter published posts
+        const now = Date.now()
+        const published = posts.filter((p: Article) => {
+          if (p.publishAt) {
+            return new Date(p.publishAt).getTime() <= now
+          }
+          return true
+        })
+        setDynamicPosts(published)
+      })
+      .catch(err => {
+        console.error('Failed to fetch posts:', err)
+        setDynamicPosts([])
+      })
+  }, [])
+
+  // Combine static and dynamic articles
+  const articles = [...dynamicPosts, ...staticArticles]
+
   return (
     <>
       <Navbar />
@@ -59,7 +100,7 @@ export default function ResourcesPage() {
               {/* Image */}
               <div className="relative h-64 overflow-hidden">
                 <Image
-                  src={article.image}
+                  src={article.image || article.coverImage || '/resources/article1 image.png'}
                   alt={article.title}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
@@ -69,13 +110,13 @@ export default function ResourcesPage() {
               {/* Content */}
               <div className="p-6 flex-1 flex flex-col">
                 <div className="text-sm text-gray-500 mb-2">
-                  {article.category} | {article.date}
+                  {article.category || 'ARTICLE'} | {article.date || (article.publishAt ? new Date(article.publishAt).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) : '')}
                 </div>
                 <h2 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-gray-700 transition-colors">
                   {article.title}
                 </h2>
                 <p className="text-gray-600 flex-1">
-                  {article.description}
+                  {article.description || article.excerpt || ''}
                 </p>
                 <div className="mt-4 text-black font-semibold group-hover:underline">
                   Read More →

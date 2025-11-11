@@ -1,11 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['usebear.ai'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'usebear.ai',
+      },
+    ],
     formats: ['image/avif', 'image/webp'],
     unoptimized: true,
   },
-  output: 'export',
   trailingSlash: true,
 }
 

@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
+import DynamicArticlePage from './page-dynamic'
 
 // Generate static paths for all articles
 export function generateStaticParams() {
@@ -379,7 +380,12 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
     },
   }
 
-  const article = articles[params.slug] || articles['top-7-mobile-ai-marketing-apps-2025']
+  const article = articles[params.slug]
+
+  // If not a static article, render dynamic article page
+  if (!article) {
+    return <DynamicArticlePage />
+  }
 
   return (
     <>
