@@ -9,6 +9,9 @@ export function generateStaticParams() {
   ]
 }
 
+// Allow dynamic params for new posts
+export const dynamicParams = true
+
 export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   
