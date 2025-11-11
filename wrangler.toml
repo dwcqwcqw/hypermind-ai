@@ -1,6 +1,5 @@
 name = "hypermind"
 compatibility_date = "2025-01-20"
-pages_build_output_dir = ".vercel/output/static"
 
 [[kv_namespaces]]
 binding = "POSTS_KV"
