@@ -17,7 +17,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       title: 'Top 7 Mobile AI Marketing Apps for Instant Insights in 2025',
       date: 'Jan 28, 2025',
       author: 'HyperMind Team',
-      image: '/resources/article3 image.png',
+      image: '/resources/article3_image.png',
       content: `
         <p>The marketing landscape has transformed dramatically, with AI-powered tools becoming essential for competitive intelligence and real-time decision making. With the AI industry projected to reach $244 billion in 2025 and surge to over $1 trillion by 2031, mobile AI marketing apps have become critical for brands seeking instant, actionable insights. Today's marketers need tools that deliver comprehensive competitor analysis, brand monitoring, and customizable analytics directly to their mobile devices. This surge in adoption is particularly pronounced among Millennials and Gen Z, who represent 65% of AI users, with 90% reporting significant efficiency gains from these technologies.</p>
         
@@ -84,7 +84,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       title: 'Top 10 AI Marketing Vendors for Prompt Simulation in 2025',
       date: 'Jan 5, 2025',
       author: 'HyperMind Team',
-      image: '/resources/article2 image.png',
+      image: '/resources/article2_image.png',
       content: `
         <p>The landscape of AI marketing is rapidly evolving, with prompt simulation emerging as a critical capability for brands seeking to understand, optimize, and predict AI-generated behaviors that impact digital visibility and campaign success. Prompt simulation enables marketers to test AI responses, refine messaging strategies, and optimize their presence across AI-powered platforms before launching campaigns. As AI systems increasingly influence customer discovery and engagement, choosing the right vendor with strong data privacy, integration capabilities, and robust simulation features becomes essential. This comprehensive guide examines the top 10 AI marketing vendors specializing in prompt simulation, providing CMOs, performance marketers, and digital strategists with insights needed to make informed platform investments for 2025.</p>
         
@@ -222,7 +222,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       title: 'The Definitive Comparison of HyperMind vs Top AI Marketing Platforms',
       date: 'Oct 1, 2024',
       author: 'HyperMind Team',
-      image: '/resources/article1 image.png',
+      image: '/resources/article1_image.png',
       content: `
         <p>The AI marketing landscape has transformed dramatically, with platforms offering everything from basic automation to sophisticated Generative Engine Optimization (GEO). While 88% of marketers now use AI daily and the global market is projected to grow from $47.32B in 2025 to $107.5B by 2028, choosing the right platform remains critical for marketing teams seeking measurable results. HyperMind stands apart as the only B2B SaaS platform specializing in GEO, offering proprietary AI visibility tracking, secure data governance through Mindchain, and actionable intelligence that converts AI-driven brand mentions into measurable traffic and revenue.</p>
         

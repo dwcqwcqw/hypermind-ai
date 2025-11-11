@@ -5,31 +5,31 @@ export default function FeaturesShowcase() {
     {
       title: 'Understand What AI is Saying About Your Brand',
       description: 'See how AI platforms describe your brand, and use those insights to shape your strategy.',
-      image: '/asset/Understand What AI is Saying About Your Brand.jpg',
+      image: '/asset/Understand_What_AI_is_Saying_About_Your_Brand.jpg',
       span: 'col-span-1 lg:col-span-2',
     },
     {
       title: 'Track AI Visibility',
       description: 'Measure how often you\'re mentioned and track progress over time.',
-      image: '/asset/Track AI Visibility.avif',
+      image: '/asset/Track_AI_Visibility.avif',
       span: 'col-span-1',
     },
     {
       title: 'Find Sources Referenced by AI',
       description: 'Discover the exact sources AI pulls from, so you can optimize the content that drives visibility.',
-      image: '/asset/Find Sources Referenced by AI.avif',
+      image: '/asset/Find_Sources_Referenced_by_AI.avif',
       span: 'col-span-1',
     },
     {
       title: 'Compare Competitors',
       description: 'Benchmark your brand against competitors and spot opportunities to outrank them.',
-      image: '/asset/Compare Competitors.avif',
+      image: '/asset/Compare_Competitors.avif',
       span: 'col-span-1',
     },
     {
       title: 'Boost Product Visibility',
       description: 'Get clear, prioritized steps to turn mentions in customers',
-      image: '/asset/Boost Product Visibility.avif',
+      image: '/asset/Boost_Product_Visibility.avif',
       span: 'col-span-1',
     },
   ]
