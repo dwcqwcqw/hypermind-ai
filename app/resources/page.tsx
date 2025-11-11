@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 
@@ -99,11 +98,10 @@ export default function ResourcesPage() {
             >
               {/* Image */}
               <div className="relative h-64 overflow-hidden">
-                <Image
+                <img
                   src={article.image || article.coverImage || '/resources/article1 image.png'}
                   alt={article.title}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
 

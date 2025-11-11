@@ -1,7 +1,5 @@
 'use client'
 
-import Image from 'next/image'
-
 export default function FeaturesShowcase() {
   const features = [
     {
@@ -65,11 +63,9 @@ export default function FeaturesShowcase() {
             </div>
             <div className="relative px-8 pb-8">
               <div className="relative overflow-hidden rounded-2xl transition-transform duration-500 group-hover:scale-[1.02]">
-                <Image
+                <img
                   src={features[0].image}
                   alt={features[0].title}
-                  width={800}
-                  height={500}
                   className="w-full h-auto object-cover"
                 />
               </div>
@@ -88,11 +84,9 @@ export default function FeaturesShowcase() {
             </div>
             <div className="relative px-8 pb-8">
               <div className="relative overflow-hidden rounded-2xl transition-transform duration-500 group-hover:scale-[1.02]">
-                <Image
+                <img
                   src={features[1].image}
                   alt={features[1].title}
-                  width={400}
-                  height={500}
                   className="w-full h-auto object-cover"
                 />
               </div>
@@ -117,11 +111,9 @@ export default function FeaturesShowcase() {
               </div>
               <div className="relative px-8 pb-8">
                 <div className="relative overflow-hidden rounded-2xl transition-transform duration-500 group-hover:scale-[1.02]">
-                  <Image
+                  <img
                     src={feature.image}
                     alt={feature.title}
-                    width={400}
-                    height={300}
                     className="w-full h-auto object-cover"
                   />
                 </div>
