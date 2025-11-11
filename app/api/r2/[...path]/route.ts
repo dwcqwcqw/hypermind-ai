@@ -6,9 +6,10 @@ export const dynamic = 'force-dynamic'
 
 export async function GET(
   _request: Request,
-  { params }: { params: { path: string[] } }
+  { params }: { params: Promise<{ path: string[] }> }
 ) {
   try {
+    const { path } = await params
     const bindings = getBindings()
     if (!bindings.IMAGES_R2) {
       return NextResponse.json(
@@ -17,7 +18,7 @@ export async function GET(
       )
     }
 
-    const key = params.path.join('/')
+    const key = path.join('/')
     const object = await bindings.IMAGES_R2.get(key)
 
     if (!object || !object.body) {

@@ -6,11 +6,12 @@ export const dynamic = 'force-dynamic'
 
 export async function PUT(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params
     const body = await request.json()
-    const post = await updatePost(params.id, body)
+    const post = await updatePost(id, body)
 
     if (!post) {
       return NextResponse.json(
@@ -31,10 +32,11 @@ export async function PUT(
 
 export async function DELETE(
   _request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const success = await deletePost(params.id)
+    const { id } = await params
+    const success = await deletePost(id)
 
     if (!success) {
       return NextResponse.json(

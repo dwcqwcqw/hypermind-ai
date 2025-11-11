@@ -12,7 +12,8 @@ export function generateStaticParams() {
   ]
 }
 
-export default function ArticlePage({ params }: { params: { slug: string } }) {
+export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
   
   const articles: Record<string, any> = {
     'top-7-mobile-ai-marketing-apps-2025': {
@@ -380,7 +381,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
     },
   }
 
-  const article = articles[params.slug]
+  const article = articles[slug]
 
   // If not a static article, render dynamic article page
   if (!article) {
