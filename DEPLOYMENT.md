@@ -34,8 +34,8 @@ npm install
 
 在 Cloudflare Pages 项目设置中配置：
 
-- **Build command:** `npm run build`
-- **Build output directory:** `.next`
+- **Build command:** `npm run build && npx @cloudflare/next-on-pages`
+- **Build output directory:** `.vercel/output/static`
 - **Root directory:** `/`
 - **Node version:** `20.x`
 
