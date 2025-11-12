@@ -454,13 +454,19 @@ export default function ArticlePage() {
 
   // Determine if it's a static article
   const isStatic = !!staticArticle
+  
+  // Type-safe access
   const displayDate = isStatic 
-    ? article.date 
-    : new Date((article as Post).publishAt).toLocaleDateString('en-US', { 
+    ? (article as StaticArticle).date 
+    : new Date((article as unknown as Post).publishAt).toLocaleDateString('en-US', { 
         year: 'numeric', 
         month: 'short', 
         day: 'numeric' 
       })
+
+  const coverImage = isStatic 
+    ? (article as StaticArticle).image 
+    : (article as unknown as Post).coverImage
 
   return (
     <>
@@ -491,10 +497,10 @@ export default function ArticlePage() {
           </header>
 
           {/* Featured Image */}
-          {(article.image || (article as Post).coverImage) && (
+          {coverImage && (
             <div className="relative w-full h-96 mb-12 rounded-2xl overflow-hidden">
               <img
-                src={article.image || (article as Post).coverImage}
+                src={coverImage}
                 alt={article.title}
                 className="w-full h-full object-cover"
               />
