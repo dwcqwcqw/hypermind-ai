@@ -15,8 +15,16 @@ type Post = {
   updatedAt: string
 }
 
+const ADMIN_USERNAME = 'admin'
+const ADMIN_PASSWORD = 'Hypermind2025!@#'
+
 export default function AdminPage() {
   const router = useRouter()
+  const [isAuthenticated, setIsAuthenticated] = useState(false)
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
+  const [loginError, setLoginError] = useState('')
+  
   const [posts, setPosts] = useState<Post[]>([])
   const [loading, setLoading] = useState(false)
   const [showForm, setShowForm] = useState(false)
@@ -31,21 +39,56 @@ export default function AdminPage() {
   const [uploading, setUploading] = useState(false)
 
   useEffect(() => {
-    fetchPosts()
-    // Set default publish date to now
-    const now = new Date()
-    const localDate = new Date(now.getTime() - now.getTimezoneOffset() * 60000)
-      .toISOString()
-      .slice(0, 16)
-    setPublishAt(localDate)
+    // Check if already authenticated
+    const auth = sessionStorage.getItem('admin_authenticated')
+    if (auth === 'true') {
+      setIsAuthenticated(true)
+      fetchPosts()
+      // Set default publish date to now
+      const now = new Date()
+      const localDate = new Date(now.getTime() - now.getTimezoneOffset() * 60000)
+        .toISOString()
+        .slice(0, 16)
+      setPublishAt(localDate)
+    }
   }, [])
+
+  const handleLogin = (e: React.FormEvent) => {
+    e.preventDefault()
+    setLoginError('')
+    
+    if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
+      setIsAuthenticated(true)
+      sessionStorage.setItem('admin_authenticated', 'true')
+      fetchPosts()
+      // Set default publish date to now
+      const now = new Date()
+      const localDate = new Date(now.getTime() - now.getTimezoneOffset() * 60000)
+        .toISOString()
+        .slice(0, 16)
+      setPublishAt(localDate)
+    } else {
+      setLoginError('Invalid username or password')
+    }
+  }
+
+  const handleLogout = () => {
+    setIsAuthenticated(false)
+    sessionStorage.removeItem('admin_authenticated')
+    setUsername('')
+    setPassword('')
+  }
 
   const fetchPosts = async () => {
     try {
       const res = await fetch('/api/posts')
       if (res.ok) {
         const data = await res.json() as Post[]
-        setPosts(data)
+        // Sort by publishAt descending (newest first)
+        const sorted = data.sort((a, b) => 
+          new Date(b.publishAt).getTime() - new Date(a.publishAt).getTime()
+        )
+        setPosts(sorted)
       }
     } catch (error) {
       console.error('Failed to fetch posts:', error)
@@ -68,7 +111,7 @@ export default function AdminPage() {
     e.preventDefault()
     
     if (!title || !content || !coverImageFile || !publishAt) {
-      alert('请填写所有必填字段')
+      alert('Please fill in all required fields')
       return
     }
 
@@ -109,7 +152,7 @@ export default function AdminPage() {
         throw new Error('Post creation failed')
       }
 
-      alert('文章发布成功！')
+      alert('Post published successfully!')
       
       // Reset form
       setTitle('')
@@ -123,14 +166,14 @@ export default function AdminPage() {
       fetchPosts()
     } catch (error) {
       console.error('Submit error:', error)
-      alert('发布失败，请重试')
+      alert('Failed to publish post. Please try again.')
     } finally {
       setUploading(false)
     }
   }
 
   const handleDelete = async (id: string) => {
-    if (!confirm('确定要删除这篇文章吗？')) {
+    if (!confirm('Are you sure you want to delete this post?')) {
       return
     }
 
@@ -140,51 +183,110 @@ export default function AdminPage() {
       })
 
       if (res.ok) {
-        alert('删除成功')
+        alert('Post deleted successfully')
         fetchPosts()
       } else {
         throw new Error('Delete failed')
       }
     } catch (error) {
       console.error('Delete error:', error)
-      alert('删除失败，请重试')
+      alert('Failed to delete post. Please try again.')
     }
   }
 
+  // Login form
+  if (!isAuthenticated) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="bg-white rounded-2xl shadow-lg p-8 w-full max-w-md">
+          <h1 className="text-3xl font-bold text-gray-900 mb-6 text-center">
+            Admin Login
+          </h1>
+          <form onSubmit={handleLogin} className="space-y-6">
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Username
+              </label>
+              <input
+                type="text"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
+                placeholder="Enter username"
+                required
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Password
+              </label>
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
+                placeholder="Enter password"
+                required
+              />
+            </div>
+            {loginError && (
+              <div className="text-red-600 text-sm">{loginError}</div>
+            )}
+            <button
+              type="submit"
+              className="w-full px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition"
+            >
+              Login
+            </button>
+          </form>
+        </div>
+      </div>
+    )
+  }
+
+  // Admin dashboard
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="mb-8 flex justify-between items-center">
-          <h1 className="text-4xl font-bold text-gray-900">Resources 管理后台</h1>
-          <button
-            onClick={() => setShowForm(!showForm)}
-            className="px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition"
-          >
-            {showForm ? '取消' : '+ 新建文章'}
-          </button>
+          <h1 className="text-4xl font-bold text-gray-900">Resources Admin</h1>
+          <div className="flex gap-4">
+            <button
+              onClick={() => setShowForm(!showForm)}
+              className="px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition"
+            >
+              {showForm ? 'Cancel' : '+ New Post'}
+            </button>
+            <button
+              onClick={handleLogout}
+              className="px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition"
+            >
+              Logout
+            </button>
+          </div>
         </div>
 
         {showForm && (
           <div className="bg-white rounded-2xl shadow-sm p-8 mb-8">
-            <h2 className="text-2xl font-bold mb-6">新建文章</h2>
+            <h2 className="text-2xl font-bold mb-6">Create New Post</h2>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  标题 *
+                  Title *
                 </label>
                 <input
                   type="text"
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
-                  placeholder="输入文章标题"
+                  placeholder="Enter post title"
                   required
                 />
               </div>
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  封面图 *
+                  Cover Image *
                 </label>
                 <input
                   type="file"
@@ -204,37 +306,37 @@ export default function AdminPage() {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  摘要（选填）
+                  Excerpt (Optional)
                 </label>
                 <textarea
                   value={excerpt}
                   onChange={(e) => setExcerpt(e.target.value)}
                   rows={3}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
-                  placeholder="输入文章摘要（不填写则自动从正文截取）"
+                  placeholder="Enter post excerpt (auto-generated from content if empty)"
                 />
               </div>
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  全文 *
+                  Content *
                 </label>
                 <textarea
                   value={content}
                   onChange={(e) => setContent(e.target.value)}
                   rows={12}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent font-mono text-sm"
-                  placeholder="输入文章全文（支持 HTML 格式）"
+                  placeholder="Enter post content (HTML supported)"
                   required
                 />
                 <p className="mt-2 text-sm text-gray-500">
-                  提示：字体样式会自动与现有文章保持一致
+                  Note: Font styles will automatically match existing posts
                 </p>
               </div>
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  发布时间 *
+                  Publish Date & Time *
                 </label>
                 <input
                   type="datetime-local"
@@ -251,14 +353,14 @@ export default function AdminPage() {
                   disabled={uploading}
                   className="px-8 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition disabled:bg-gray-400"
                 >
-                  {uploading ? '发布中...' : '发布文章'}
+                  {uploading ? 'Publishing...' : 'Publish Post'}
                 </button>
                 <button
                   type="button"
                   onClick={() => setShowForm(false)}
                   className="px-8 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition"
                 >
-                  取消
+                  Cancel
                 </button>
               </div>
             </form>
@@ -267,12 +369,15 @@ export default function AdminPage() {
 
         <div className="bg-white rounded-2xl shadow-sm">
           <div className="p-6 border-b border-gray-200">
-            <h2 className="text-xl font-bold">已发布文章</h2>
+            <h2 className="text-xl font-bold">Published Posts</h2>
+            <p className="text-sm text-gray-500 mt-1">
+              Sorted by publish date (newest first)
+            </p>
           </div>
           <div className="divide-y divide-gray-200">
             {posts.length === 0 ? (
               <div className="p-8 text-center text-gray-500">
-                暂无文章，点击"新建文章"开始创作
+                No posts yet. Click "New Post" to create your first post.
               </div>
             ) : (
               posts.map((post) => (
@@ -284,7 +389,13 @@ export default function AdminPage() {
                       </h3>
                       <div className="flex items-center gap-4 text-sm text-gray-500">
                         <span>
-                          发布时间: {new Date(post.publishAt).toLocaleDateString('zh-CN')}
+                          Publish Date: {new Date(post.publishAt).toLocaleDateString('en-US', { 
+                            year: 'numeric', 
+                            month: 'short', 
+                            day: 'numeric',
+                            hour: '2-digit',
+                            minute: '2-digit'
+                          })}
                         </span>
                         <span>·</span>
                         <span>Slug: {post.slug}</span>
@@ -297,13 +408,13 @@ export default function AdminPage() {
                         rel="noopener noreferrer"
                         className="px-4 py-2 text-sm border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition"
                       >
-                        查看
+                        View
                       </a>
                       <button
                         onClick={() => handleDelete(post.id)}
                         className="px-4 py-2 text-sm border border-red-300 text-red-600 rounded-lg hover:bg-red-50 transition"
                       >
-                        删除
+                        Delete
                       </button>
                     </div>
                   </div>
@@ -316,4 +427,3 @@ export default function AdminPage() {
     </div>
   )
 }
-
