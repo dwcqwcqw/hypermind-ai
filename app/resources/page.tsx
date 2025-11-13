@@ -4,6 +4,18 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 
+export const metadata = {
+  title: 'Resources - Learn AI Search Optimization | HyperMind',
+  description: 'Learn how to optimize your content for AI search engines. Discover strategies, tools, and best practices for improving your visibility on ChatGPT, Claude, Perplexity, and more.',
+  openGraph: {
+    title: 'Resources - Learn AI Search Optimization | HyperMind',
+    description: 'Learn how to optimize your content for AI search engines with expert guides and insights.',
+    url: 'https://www.hypermindai.tech/resources',
+    siteName: 'HyperMind',
+    type: 'website',
+  },
+}
+
 type Article = {
   id: string | number
   title: string

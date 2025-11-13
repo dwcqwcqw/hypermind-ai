@@ -1,4 +1,6 @@
 import ClientArticle from './client-article'
+import { Metadata } from 'next'
+import ArticleStructuredData from '@/components/ArticleStructuredData'
 
 export const runtime = 'edge'
 export const dynamic = 'force-dynamic'
@@ -248,6 +250,156 @@ const staticArticles: Record<string, StaticArticle> = {
   },
 }
 
+type Post = {
+  id: string
+  title: string
+  slug: string
+  publishAt: string
+  content: string
+  coverImage: string
+  excerpt: string
+}
+
+async function getPostBySlug(slug: string): Promise<Post | null> {
+  try {
+    const res = await fetch('https://www.hypermindai.tech/api/posts', {
+      cache: 'no-store'
+    })
+    if (!res.ok) return null
+    const posts: Post[] = await res.json()
+    return posts.find(p => p.slug === slug) || null
+  } catch (error) {
+    console.error('Failed to fetch post:', error)
+    return null
+  }
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params
+  
+  // Check static articles first
+  const staticArticle = staticArticles[slug]
+  
+  if (staticArticle) {
+    const description = staticArticle.content.replace(/<[^>]*>/g, '').substring(0, 160)
+    return {
+      title: `${staticArticle.title} | HyperMind`,
+      description,
+      openGraph: {
+        title: staticArticle.title,
+        description,
+        url: `https://www.hypermindai.tech/resources/${slug}`,
+        siteName: 'HyperMind',
+        images: [
+          {
+            url: `https://www.hypermindai.tech${staticArticle.image}`,
+            width: 1200,
+            height: 630,
+            alt: staticArticle.title,
+          },
+        ],
+        locale: 'en_US',
+        type: 'article',
+        publishedTime: new Date(staticArticle.date).toISOString(),
+        authors: [staticArticle.author || 'HyperMind Team'],
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: staticArticle.title,
+        description,
+        images: [`https://www.hypermindai.tech${staticArticle.image}`],
+      },
+    }
+  }
+  
+  // Try dynamic post
+  const post = await getPostBySlug(slug)
+  
+  if (post) {
+    const description = post.excerpt || post.content.replace(/<[^>]*>/g, '').substring(0, 160)
+    return {
+      title: `${post.title} | HyperMind`,
+      description,
+      openGraph: {
+        title: post.title,
+        description,
+        url: `https://www.hypermindai.tech/resources/${slug}`,
+        siteName: 'HyperMind',
+        images: [
+          {
+            url: `https://www.hypermindai.tech${post.coverImage}`,
+            width: 1200,
+            height: 630,
+            alt: post.title,
+          },
+        ],
+        locale: 'en_US',
+        type: 'article',
+        publishedTime: new Date(post.publishAt).toISOString(),
+        authors: ['HyperMind Team'],
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: post.title,
+        description,
+        images: [`https://www.hypermindai.tech${post.coverImage}`],
+      },
+    }
+  }
+  
+  // Fallback
+  return {
+    title: 'Article | HyperMind',
+    description: 'Learn how to optimize your content for AI search engines',
+  }
+}
+
 export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
-  return <ClientArticle staticArticles={staticArticles} />
+  const { slug } = await params
+  
+  // Get article data for structured data
+  const staticArticle = staticArticles[slug]
+  let articleData = null
+  
+  if (staticArticle) {
+    articleData = {
+      title: staticArticle.title,
+      url: `https://www.hypermindai.tech/resources/${slug}`,
+      image: `https://www.hypermindai.tech${staticArticle.image}`,
+      datePublished: new Date(staticArticle.date).toISOString().split('T')[0],
+      dateModified: new Date(staticArticle.date).toISOString().split('T')[0],
+      description: staticArticle.content.replace(/<[^>]*>/g, '').substring(0, 200),
+      content: staticArticle.content,
+    }
+  } else {
+    const post = await getPostBySlug(slug)
+    if (post) {
+      articleData = {
+        title: post.title,
+        url: `https://www.hypermindai.tech/resources/${slug}`,
+        image: `https://www.hypermindai.tech${post.coverImage}`,
+        datePublished: new Date(post.publishAt).toISOString().split('T')[0],
+        dateModified: new Date(post.publishAt).toISOString().split('T')[0],
+        description: post.excerpt || post.content.replace(/<[^>]*>/g, '').substring(0, 200),
+        content: post.content,
+      }
+    }
+  }
+  
+  return (
+    <>
+      {articleData && (
+        <ArticleStructuredData
+          title={articleData.title}
+          url={articleData.url}
+          image={articleData.image}
+          datePublished={articleData.datePublished}
+          dateModified={articleData.dateModified}
+          description={articleData.description}
+          content={articleData.content}
+        />
+      )}
+      <ClientArticle staticArticles={staticArticles} />
+    </>
+  )
 }
