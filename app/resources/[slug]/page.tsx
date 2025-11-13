@@ -1,7 +1,8 @@
-import ClientArticle from './client-article'
+import ArticleContent from './client-article'
 import { Metadata } from 'next'
 import ArticleStructuredData from '@/components/ArticleStructuredData'
-import { getPostBySlug as getPostBySlugFromKV } from '@/lib/posts'
+import Navbar from '@/components/Navbar'
+import { getPostBySlug as getPostBySlugFromKV, Post as KVPost } from '@/lib/posts'
 
 export const runtime = 'edge'
 export const dynamic = 'force-dynamic'
@@ -333,11 +334,24 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
-  
-  // Get article data for structured data
+
   const staticArticle = staticArticles[slug]
-  let articleData = null
-  
+  let dynamicPost: KVPost | null = null
+  if (!staticArticle) {
+    dynamicPost = await getPostBySlugFromKV(slug)
+  }
+
+  // Prepare structured data
+  let articleData: {
+    title: string
+    url: string
+    image: string
+    datePublished: string
+    dateModified: string
+    description: string
+    content: string
+  } | null = null
+
   if (staticArticle) {
     articleData = {
       title: staticArticle.title,
@@ -348,21 +362,67 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       description: staticArticle.content.replace(/<[^>]*>/g, '').substring(0, 200),
       content: staticArticle.content,
     }
-  } else {
-    const post = await getPostBySlugFromKV(slug)
-    if (post) {
-      articleData = {
-        title: post.title,
-        url: `https://www.hypermindai.tech/resources/${slug}`,
-        image: `https://www.hypermindai.tech${post.coverImage}`,
-        datePublished: new Date(post.publishAt).toISOString().split('T')[0],
-        dateModified: new Date(post.publishAt).toISOString().split('T')[0],
-        description: post.excerpt || post.content.replace(/<[^>]*>/g, '').substring(0, 200),
-        content: post.content,
-      }
+  } else if (dynamicPost) {
+    articleData = {
+      title: dynamicPost.title,
+      url: `https://www.hypermindai.tech/resources/${slug}`,
+      image: `https://www.hypermindai.tech${dynamicPost.coverImage}`,
+      datePublished: new Date(dynamicPost.publishAt).toISOString().split('T')[0],
+      dateModified: new Date(dynamicPost.publishAt).toISOString().split('T')[0],
+      description: dynamicPost.excerpt || dynamicPost.content.replace(/<[^>]*>/g, '').substring(0, 200),
+      content: dynamicPost.content,
     }
   }
-  
+
+  // Prepare article for rendering
+  let renderArticle: {
+    title: string
+    coverImage?: string
+    content: string
+    displayDate: string
+    author?: string
+  } | null = null
+
+  if (staticArticle) {
+    renderArticle = {
+      title: staticArticle.title,
+      coverImage: staticArticle.image,
+      content: staticArticle.content,
+      displayDate: staticArticle.date,
+      author: staticArticle.author,
+    }
+  } else if (dynamicPost) {
+    renderArticle = {
+      title: dynamicPost.title,
+      coverImage: dynamicPost.coverImage,
+      content: dynamicPost.content,
+      displayDate: new Date(dynamicPost.publishAt).toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+      }),
+    }
+  }
+
+  if (!renderArticle) {
+    return (
+      <>
+        <Navbar />
+        <main className="min-h-screen bg-white pt-24">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div className="text-center">Article not found</div>
+            <a
+              href="/resources"
+              className="mt-4 inline-block text-gray-600 hover:text-gray-900"
+            >
+              ← Back to Resources
+            </a>
+          </div>
+        </main>
+      </>
+    )
+  }
+
   return (
     <>
       {articleData && (
@@ -376,7 +436,16 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           content={articleData.content}
         />
       )}
-      <ClientArticle staticArticles={staticArticles} />
+      <Navbar />
+      <main className="min-h-screen bg-white pt-24">
+        <ArticleContent
+          title={renderArticle.title}
+          coverImage={renderArticle.coverImage}
+          content={renderArticle.content}
+          displayDate={renderArticle.displayDate}
+          author={renderArticle.author}
+        />
+      </main>
     </>
   )
 }
