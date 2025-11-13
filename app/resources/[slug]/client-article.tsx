@@ -147,7 +147,7 @@ export default function ClientArticle({ staticArticles }: Props) {
 
           {/* Article Content */}
           <div 
-            className="prose prose-lg max-w-none"
+            className="prose prose-lg prose-headings:font-bold prose-h2:text-3xl prose-h2:mt-8 prose-h2:mb-4 prose-h3:text-2xl prose-h3:mt-6 prose-h3:mb-3 prose-p:mb-4 prose-p:text-gray-700 prose-a:text-blue-600 prose-a:underline prose-strong:font-semibold prose-ul:list-disc prose-ul:ml-6 prose-ol:list-decimal prose-ol:ml-6 prose-img:rounded-lg prose-img:my-6 max-w-none"
             style={{
               fontSize: '1.125rem',
               lineHeight: '1.75',

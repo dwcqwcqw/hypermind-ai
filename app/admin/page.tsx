@@ -28,6 +28,7 @@ export default function AdminPage() {
   const [posts, setPosts] = useState<Post[]>([])
   const [loading, setLoading] = useState(false)
   const [showForm, setShowForm] = useState(false)
+  const [editingPost, setEditingPost] = useState<Post | null>(null)
   
   // Form state
   const [title, setTitle] = useState('')
@@ -107,66 +108,120 @@ export default function AdminPage() {
     }
   }
 
+  const handleEdit = (post: Post) => {
+    setEditingPost(post)
+    setTitle(post.title)
+    setContent(post.content)
+    setExcerpt(post.excerpt)
+    setCoverImagePreview(post.coverImage)
+    // Convert ISO to datetime-local format
+    const localDate = new Date(post.publishAt)
+    const formattedDate = new Date(localDate.getTime() - localDate.getTimezoneOffset() * 60000)
+      .toISOString()
+      .slice(0, 16)
+    setPublishAt(formattedDate)
+    setShowForm(true)
+  }
+
+  const resetForm = () => {
+    setTitle('')
+    setContent('')
+    setExcerpt('')
+    setCoverImageFile(null)
+    setCoverImagePreview('')
+    setShowForm(false)
+    setEditingPost(null)
+    // Reset to current time
+    const now = new Date()
+    const localDate = new Date(now.getTime() - now.getTimezoneOffset() * 60000)
+      .toISOString()
+      .slice(0, 16)
+    setPublishAt(localDate)
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     
-    if (!title || !content || !coverImageFile || !publishAt) {
+    // For editing, cover image is optional (can keep existing)
+    // For new post, cover image is required
+    if (!title || !content || !publishAt) {
       alert('Please fill in all required fields')
+      return
+    }
+
+    if (!editingPost && !coverImageFile) {
+      alert('Please select a cover image')
       return
     }
 
     setUploading(true)
 
     try {
-      // Upload image first
-      const formData = new FormData()
-      formData.append('file', coverImageFile)
-      
-      const uploadRes = await fetch('/api/upload', {
-        method: 'POST',
-        body: formData,
-      })
+      let coverImageUrl = editingPost?.coverImage || ''
 
-      if (!uploadRes.ok) {
-        throw new Error('Image upload failed')
+      // Upload new image if selected
+      if (coverImageFile) {
+        const formData = new FormData()
+        formData.append('file', coverImageFile)
+        
+        const uploadRes = await fetch('/api/upload', {
+          method: 'POST',
+          body: formData,
+        })
+
+        if (!uploadRes.ok) {
+          throw new Error('Image upload failed')
+        }
+
+        const { url } = await uploadRes.json() as { url: string; key: string }
+        coverImageUrl = url
       }
 
-      const { url } = await uploadRes.json() as { url: string; key: string }
-
-      // Create post
+      // Prepare post data
       const postData = {
         title,
         content,
-        excerpt: excerpt || content.substring(0, 200),
-        coverImage: url,
+        excerpt: excerpt || content.replace(/<[^>]*>/g, '').substring(0, 200),
+        coverImage: coverImageUrl,
         publishAt: new Date(publishAt).toISOString(),
       }
 
-      const postRes = await fetch('/api/posts', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(postData),
-      })
+      if (editingPost) {
+        // Update existing post
+        const postRes = await fetch(`/api/posts/${editingPost.id}`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(postData),
+        })
 
-      if (!postRes.ok) {
-        throw new Error('Post creation failed')
+        if (!postRes.ok) {
+          throw new Error('Post update failed')
+        }
+
+        alert('Post updated successfully!')
+      } else {
+        // Create new post
+        const postRes = await fetch('/api/posts', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(postData),
+        })
+
+        if (!postRes.ok) {
+          throw new Error('Post creation failed')
+        }
+
+        alert('Post published successfully!')
       }
-
-      alert('Post published successfully!')
       
       // Reset form
-      setTitle('')
-      setContent('')
-      setExcerpt('')
-      setCoverImageFile(null)
-      setCoverImagePreview('')
-      setShowForm(false)
+      resetForm()
       
       // Refresh posts list
       fetchPosts()
     } catch (error) {
       console.error('Submit error:', error)
-      alert('Failed to publish post. Please try again.')
+      alert(`Failed to ${editingPost ? 'update' : 'publish'} post. Please try again.`)
     } finally {
       setUploading(false)
     }
@@ -252,7 +307,13 @@ export default function AdminPage() {
           <h1 className="text-4xl font-bold text-gray-900">Resources Admin</h1>
           <div className="flex gap-4">
             <button
-              onClick={() => setShowForm(!showForm)}
+              onClick={() => {
+                if (showForm) {
+                  resetForm()
+                } else {
+                  setShowForm(true)
+                }
+              }}
               className="px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition"
             >
               {showForm ? 'Cancel' : '+ New Post'}
@@ -268,7 +329,9 @@ export default function AdminPage() {
 
         {showForm && (
           <div className="bg-white rounded-2xl shadow-sm p-8 mb-8">
-            <h2 className="text-2xl font-bold mb-6">Create New Post</h2>
+            <h2 className="text-2xl font-bold mb-6">
+              {editingPost ? 'Edit Post' : 'Create New Post'}
+            </h2>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -286,21 +349,26 @@ export default function AdminPage() {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Cover Image *
+                  Cover Image {editingPost ? '(Optional - keep existing if not changed)' : '*'}
                 </label>
                 <input
                   type="file"
                   accept="image/*"
                   onChange={handleImageChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
-                  required
+                  required={!editingPost}
                 />
                 {coverImagePreview && (
-                  <img
-                    src={coverImagePreview}
-                    alt="Preview"
-                    className="mt-4 w-64 h-40 object-cover rounded-lg"
-                  />
+                  <div className="mt-4">
+                    <img
+                      src={coverImagePreview}
+                      alt="Preview"
+                      className="w-64 h-40 object-cover rounded-lg"
+                    />
+                    {editingPost && !coverImageFile && (
+                      <p className="text-sm text-gray-500 mt-2">Current image</p>
+                    )}
+                  </div>
                 )}
               </div>
 
@@ -353,11 +421,14 @@ export default function AdminPage() {
                   disabled={uploading}
                   className="px-8 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition disabled:bg-gray-400"
                 >
-                  {uploading ? 'Publishing...' : 'Publish Post'}
+                  {uploading 
+                    ? (editingPost ? 'Updating...' : 'Publishing...') 
+                    : (editingPost ? 'Update Post' : 'Publish Post')
+                  }
                 </button>
                 <button
                   type="button"
-                  onClick={() => setShowForm(false)}
+                  onClick={resetForm}
                   className="px-8 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition"
                 >
                   Cancel
@@ -410,6 +481,12 @@ export default function AdminPage() {
                       >
                         View
                       </a>
+                      <button
+                        onClick={() => handleEdit(post)}
+                        className="px-4 py-2 text-sm border border-blue-300 text-blue-600 rounded-lg hover:bg-blue-50 transition"
+                      >
+                        Edit
+                      </button>
                       <button
                         onClick={() => handleDelete(post.id)}
                         className="px-4 py-2 text-sm border border-red-300 text-red-600 rounded-lg hover:bg-red-50 transition"
