@@ -1,8 +1,6 @@
-'use client'
-
-import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
+import { getAllPosts } from '@/lib/posts'
 
 type Article = {
   id: string | number
@@ -17,10 +15,11 @@ type Article = {
   slug: string
 }
 
-export default function ResourcesPage() {
-  const [dynamicPosts, setDynamicPosts] = useState<Article[]>([])
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
 
-  // Static articles (original ones)
+async function getArticles(): Promise<Article[]> {
+  // Static articles
   const staticArticles: Article[] = [
     {
       id: 3,
@@ -51,81 +50,89 @@ export default function ResourcesPage() {
     },
   ]
 
-  useEffect(() => {
-    // Fetch dynamic posts from API
-    fetch('/api/posts')
-      .then(res => res.ok ? res.json() as Promise<Article[]> : Promise.resolve([]))
-      .then((posts) => {
-        // Filter published posts
-        const now = Date.now()
-        const published = posts.filter((p: Article) => {
-          if (p.publishAt) {
-            return new Date(p.publishAt).getTime() <= now
-          }
-          return true
-        })
-        setDynamicPosts(published)
-      })
-      .catch(err => {
-        console.error('Failed to fetch posts:', err)
-        setDynamicPosts([])
-      })
-  }, [])
+  // Get dynamic posts from KV
+  let dynamicPosts: Article[] = []
+  try {
+    const posts = await getAllPosts()
+    const now = Date.now()
+    dynamicPosts = posts
+      .filter(p => new Date(p.publishAt).getTime() <= now)
+      .map(p => ({
+        id: p.id,
+        title: p.title,
+        publishAt: p.publishAt,
+        category: 'ARTICLE',
+        coverImage: p.coverImage,
+        excerpt: p.excerpt,
+        slug: p.slug,
+      }))
+  } catch (error) {
+    console.error('Failed to fetch dynamic posts:', error)
+  }
 
-  // Combine static and dynamic articles
-  const articles = [...dynamicPosts, ...staticArticles]
+  // Combine and sort by date
+  const allArticles = [...dynamicPosts, ...staticArticles].sort((a, b) => {
+    const dateA = new Date(a.publishAt || a.date || 0).getTime()
+    const dateB = new Date(b.publishAt || b.date || 0).getTime()
+    return dateB - dateA
+  })
+
+  return allArticles
+}
+
+export default async function ResourcesPage() {
+  const articles = await getArticles()
 
   return (
     <>
       <Navbar />
       <main className="min-h-screen bg-[#f5f3f0] pt-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        {/* Header */}
-        <div className="mb-12">
-          <h1 className="text-5xl font-bold text-gray-900 mb-4">Resources</h1>
-          <p className="text-xl text-gray-600">
-            Learn how to optimize your content for AI search engines
-          </p>
-        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          {/* Header */}
+          <div className="mb-12">
+            <h1 className="text-5xl font-bold text-gray-900 mb-4">Resources</h1>
+            <p className="text-xl text-gray-600">
+              Learn how to optimize your content for AI search engines
+            </p>
+          </div>
 
-        {/* Articles Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {articles.map((article) => (
-            <Link
-              key={article.id}
-              href={`/resources/${article.slug}`}
-              className="group bg-white rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-300 flex flex-col"
-            >
-              {/* Image */}
-              <div className="relative h-64 overflow-hidden">
-                <img
-                  src={article.image || article.coverImage || '/resources/article1 image.png'}
-                  alt={article.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
+          {/* Articles Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {articles.map((article) => (
+              <Link
+                key={article.id}
+                href={`/resources/${article.slug}`}
+                className="group bg-white rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-300 flex flex-col"
+              >
+                {/* Image */}
+                <div className="relative h-64 overflow-hidden">
+                  <img
+                    src={article.image || article.coverImage || '/resources/article1_image.png'}
+                    alt={article.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
 
-              {/* Content */}
-              <div className="p-6 flex-1 flex flex-col">
-                <div className="text-sm text-gray-500 mb-2">
-                  {article.category || 'ARTICLE'} | {article.date || (article.publishAt ? new Date(article.publishAt).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) : '')}
+                {/* Content */}
+                <div className="p-6 flex-1 flex flex-col">
+                  <div className="text-sm text-gray-500 mb-2">
+                    {article.category || 'ARTICLE'} | {article.date || (article.publishAt ? new Date(article.publishAt).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) : '')}
+                  </div>
+                  <h2 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-gray-700 transition-colors">
+                    {article.title}
+                  </h2>
+                  <p className="text-gray-600 flex-1">
+                    {article.description || article.excerpt || ''}
+                  </p>
+                  <div className="mt-4 text-black font-semibold group-hover:underline">
+                    Read More →
+                  </div>
                 </div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-gray-700 transition-colors">
-                  {article.title}
-                </h2>
-                <p className="text-gray-600 flex-1">
-                  {article.description || article.excerpt || ''}
-                </p>
-                <div className="mt-4 text-black font-semibold group-hover:underline">
-                  Read More →
-                </div>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            ))}
+          </div>
         </div>
-      </div>
       </main>
     </>
   )
 }
-
