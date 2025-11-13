@@ -1,6 +1,7 @@
 import ClientArticle from './client-article'
 import { Metadata } from 'next'
 import ArticleStructuredData from '@/components/ArticleStructuredData'
+import { getPostBySlug as getPostBySlugFromKV } from '@/lib/posts'
 
 export const runtime = 'edge'
 export const dynamic = 'force-dynamic'
@@ -250,30 +251,6 @@ const staticArticles: Record<string, StaticArticle> = {
   },
 }
 
-type Post = {
-  id: string
-  title: string
-  slug: string
-  publishAt: string
-  content: string
-  coverImage: string
-  excerpt: string
-}
-
-async function getPostBySlug(slug: string): Promise<Post | null> {
-  try {
-    const res = await fetch('https://www.hypermindai.tech/api/posts', {
-      cache: 'no-store'
-    })
-    if (!res.ok) return null
-    const posts: Post[] = await res.json()
-    return posts.find(p => p.slug === slug) || null
-  } catch (error) {
-    console.error('Failed to fetch post:', error)
-    return null
-  }
-}
-
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params
   
@@ -313,7 +290,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   }
   
   // Try dynamic post
-  const post = await getPostBySlug(slug)
+  const post = await getPostBySlugFromKV(slug)
   
   if (post) {
     const description = post.excerpt || post.content.replace(/<[^>]*>/g, '').substring(0, 160)
@@ -372,7 +349,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       content: staticArticle.content,
     }
   } else {
-    const post = await getPostBySlug(slug)
+    const post = await getPostBySlugFromKV(slug)
     if (post) {
       articleData = {
         title: post.title,

@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next'
+import { getAllPosts } from '@/lib/posts'
 
 export const runtime = 'edge'
 export const dynamic = 'force-dynamic'
@@ -12,12 +13,8 @@ type Post = {
 
 async function getPosts(): Promise<Post[]> {
   try {
-    const res = await fetch('https://www.hypermindai.tech/api/posts', {
-      cache: 'no-store'
-    })
-    if (!res.ok) return []
-    const posts = await res.json() as any[]
-    return posts.map((p: any) => ({
+    const posts = await getAllPosts()
+    return posts.map(p => ({
       slug: p.slug,
       publishAt: p.publishAt,
       updatedAt: p.updatedAt
