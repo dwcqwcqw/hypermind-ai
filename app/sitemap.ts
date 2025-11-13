@@ -16,7 +16,7 @@ async function getPosts(): Promise<Post[]> {
       cache: 'no-store'
     })
     if (!res.ok) return []
-    const posts = await res.json()
+    const posts = await res.json() as any[]
     return posts.map((p: any) => ({
       slug: p.slug,
       publishAt: p.publishAt,
