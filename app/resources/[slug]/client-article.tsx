@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'next/navigation'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
+import ArticleStructuredData from '@/components/ArticleStructuredData'
 
 type Post = {
   id: string
@@ -106,8 +107,31 @@ export default function ClientArticle({ staticArticles }: Props) {
     ? (article as StaticArticle).image 
     : (article as unknown as Post).coverImage
 
+  // Prepare structured data
+  const articleUrl = `https://www.hypermindai.tech/resources/${slug}`
+  const articleImage = isStatic 
+    ? `https://www.hypermindai.tech${(article as StaticArticle).image}` 
+    : `https://www.hypermindai.tech${(article as unknown as Post).coverImage}`
+  
+  const articleDate = isStatic
+    ? new Date((article as StaticArticle).date).toISOString().split('T')[0]
+    : new Date((article as unknown as Post).publishAt).toISOString().split('T')[0]
+  
+  const articleDescription = isStatic
+    ? article.content.replace(/<[^>]*>/g, '').substring(0, 200)
+    : (article as unknown as Post).excerpt || article.content.replace(/<[^>]*>/g, '').substring(0, 200)
+
   return (
     <>
+      <ArticleStructuredData
+        title={article.title}
+        url={articleUrl}
+        image={articleImage}
+        datePublished={articleDate}
+        dateModified={articleDate}
+        description={articleDescription}
+        content={article.content}
+      />
       <Navbar />
       <main className="min-h-screen bg-white pt-24">
         <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
