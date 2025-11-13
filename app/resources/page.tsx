@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
-import { getAllPosts } from '@/lib/posts'
+import { getRequestContext } from '@cloudflare/next-on-pages'
 
 type Article = {
   id: string | number
@@ -13,6 +13,17 @@ type Article = {
   description?: string
   excerpt?: string
   slug: string
+}
+
+type Post = {
+  id: string
+  title: string
+  slug: string
+  publishAt: string
+  content: string
+  coverImage: string
+  excerpt: string
+  updatedAt: string
 }
 
 export const runtime = 'edge'
@@ -54,19 +65,37 @@ async function getArticles(): Promise<Article[]> {
   // Get dynamic posts from KV
   let dynamicPosts: Article[] = []
   try {
-    const posts = await getAllPosts()
-    const now = Date.now()
-    dynamicPosts = posts
-      .filter(p => new Date(p.publishAt).getTime() <= now)
-      .map(p => ({
-        id: p.id,
-        title: p.title,
-        publishAt: p.publishAt,
-        category: 'ARTICLE',
-        coverImage: p.coverImage,
-        excerpt: p.excerpt,
-        slug: p.slug,
-      }))
+    const { env } = getRequestContext()
+    const POSTS_KV = (env as any).POSTS_KV
+    
+    if (POSTS_KV) {
+      const { keys } = await POSTS_KV.list({ prefix: 'post:' })
+      const now = Date.now()
+      
+      for (const key of keys) {
+        const value = await POSTS_KV.get(key.name)
+        if (value) {
+          try {
+            const post: Post = JSON.parse(value)
+            if (new Date(post.publishAt).getTime() <= now) {
+              dynamicPosts.push({
+                id: post.id,
+                title: post.title,
+                publishAt: post.publishAt,
+                category: 'ARTICLE',
+                coverImage: post.coverImage,
+                excerpt: post.excerpt,
+                slug: post.slug,
+              })
+            }
+          } catch (e) {
+            console.error('Failed to parse post:', key.name, e)
+          }
+        }
+      }
+    } else {
+      console.warn('POSTS_KV binding not available')
+    }
   } catch (error) {
     console.error('Failed to fetch dynamic posts:', error)
   }
@@ -86,6 +115,8 @@ export default async function ResourcesPage() {
 
   return (
     <>
+      {/* Debug info for crawlers */}
+      {/* Total articles: {articles.length} */}
       <Navbar />
       <main className="min-h-screen bg-[#f5f3f0] pt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
