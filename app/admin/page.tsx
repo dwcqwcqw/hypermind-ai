@@ -387,14 +387,14 @@ export default function AdminPage() {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Content *
+                  Content * (Markdown or HTML)
                 </label>
                 <textarea
                   value={content}
                   onChange={(e) => setContent(e.target.value)}
                   rows={12}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent font-mono text-sm"
-                  placeholder="Enter post content (HTML supported)"
+                  placeholder="Enter post content (Markdown or HTML supported)"
                   required
                 />
                 <p className="mt-2 text-sm text-gray-500">

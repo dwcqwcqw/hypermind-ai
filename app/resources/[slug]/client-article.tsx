@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { marked } from 'marked'
 
 type ArticleContentProps = {
   title: string
@@ -8,7 +9,24 @@ type ArticleContentProps = {
   author?: string
 }
 
+// Simple helper: if content already contains common HTML tags, we treat it as HTML.
+// Otherwise we assume it's Markdown and convert to HTML.
+function getHtmlFromContent(content: string): string {
+  const looksLikeHtml = /<\/(p|h1|h2|h3|h4|h5|h6|ul|ol|li|strong|em|div|section|article)>/i.test(
+    content
+  )
+
+  if (looksLikeHtml) {
+    return content
+  }
+
+  // Markdown -> HTML
+  return marked.parse(content, { breaks: true }) as string
+}
+
 export default function ArticleContent({ title, coverImage, content, displayDate, author }: ArticleContentProps) {
+  const html = getHtmlFromContent(content)
+
   return (
     <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       {/* Back Button */}
@@ -53,7 +71,7 @@ export default function ArticleContent({ title, coverImage, content, displayDate
           lineHeight: '1.75',
           color: '#374151'
         }}
-        dangerouslySetInnerHTML={{ __html: content }}
+        dangerouslySetInnerHTML={{ __html: html }}
       />
 
       {/* CTA */}
