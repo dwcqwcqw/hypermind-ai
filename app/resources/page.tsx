@@ -115,14 +115,15 @@ async function getArticles(): Promise<Article[]> {
 export default async function ResourcesPage({
   searchParams,
 }: {
-  searchParams?: { page?: string }
+  searchParams?: Promise<{ page?: string }>
 }) {
   const articles = await getArticles()
 
   const totalArticles = articles.length
   const totalPages = Math.max(1, Math.ceil(totalArticles / PAGE_SIZE))
 
-  const pageParam = searchParams?.page
+  const resolvedSearchParams = searchParams ? await searchParams : undefined
+  const pageParam = resolvedSearchParams?.page
   let currentPage = 1
   if (pageParam) {
     const parsed = parseInt(pageParam, 10)
