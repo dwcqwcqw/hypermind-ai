@@ -30,6 +30,8 @@ export const runtime = 'edge'
 export const dynamic = 'force-dynamic'
 export const revalidate = 0
 
+const PAGE_SIZE = 9
+
 async function getArticles(): Promise<Article[]> {
   // Static articles
   const staticArticles: Article[] = [
@@ -110,13 +112,32 @@ async function getArticles(): Promise<Article[]> {
   return allArticles
 }
 
-export default async function ResourcesPage() {
+export default async function ResourcesPage({
+  searchParams,
+}: {
+  searchParams?: { page?: string }
+}) {
   const articles = await getArticles()
+
+  const totalArticles = articles.length
+  const totalPages = Math.max(1, Math.ceil(totalArticles / PAGE_SIZE))
+
+  const pageParam = searchParams?.page
+  let currentPage = 1
+  if (pageParam) {
+    const parsed = parseInt(pageParam, 10)
+    if (!Number.isNaN(parsed) && parsed >= 1 && parsed <= totalPages) {
+      currentPage = parsed
+    }
+  }
+
+  const startIndex = (currentPage - 1) * PAGE_SIZE
+  const pageArticles = articles.slice(startIndex, startIndex + PAGE_SIZE)
 
   return (
     <>
       {/* Debug info for crawlers */}
-      {/* Total articles: {articles.length} */}
+      {/* Total articles: {totalArticles}, Page: {currentPage}/{totalPages} */}
       <Navbar />
       <main className="min-h-screen bg-[#f5f3f0] pt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -130,7 +151,7 @@ export default async function ResourcesPage() {
 
           {/* Articles Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {articles.map((article) => (
+            {pageArticles.map((article) => (
               <Link
                 key={article.id}
                 href={`/resources/${article.slug}`}
@@ -163,6 +184,74 @@ export default async function ResourcesPage() {
               </Link>
             ))}
           </div>
+
+          {/* Pagination */}
+          {totalPages > 1 && (
+            <nav
+              className="mt-12 flex items-center justify-center flex-wrap gap-3"
+              aria-label="Resources pagination"
+            >
+              {/* Previous */}
+              <Link
+                href={
+                  currentPage > 2
+                    ? `/resources?page=${currentPage - 1}`
+                    : currentPage === 2
+                    ? '/resources'
+                    : '#'
+                }
+                aria-disabled={currentPage === 1}
+                className={`px-4 py-2 rounded-full border text-sm ${
+                  currentPage === 1
+                    ? 'cursor-not-allowed border-gray-200 text-gray-400'
+                    : 'border-gray-300 text-gray-700 hover:bg-white'
+                }`}
+              >
+                Previous
+              </Link>
+
+              {/* Page numbers */}
+              <div className="flex flex-wrap gap-2">
+                {Array.from({ length: totalPages }).map((_, index) => {
+                  const page = index + 1
+                  const href =
+                    page === 1 ? '/resources' : `/resources?page=${page}`
+                  const isActive = page === currentPage
+                  return (
+                    <Link
+                      key={page}
+                      href={href}
+                      aria-current={isActive ? 'page' : undefined}
+                      className={`min-w-[2.5rem] text-center px-3 py-2 rounded-full text-sm ${
+                        isActive
+                          ? 'bg-black text-white'
+                          : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'
+                      }`}
+                    >
+                      {page}
+                    </Link>
+                  )
+                })}
+              </div>
+
+              {/* Next */}
+              <Link
+                href={
+                  currentPage < totalPages
+                    ? `/resources?page=${currentPage + 1}`
+                    : '#'
+                }
+                aria-disabled={currentPage === totalPages}
+                className={`px-4 py-2 rounded-full border text-sm ${
+                  currentPage === totalPages
+                    ? 'cursor-not-allowed border-gray-200 text-gray-400'
+                    : 'border-gray-300 text-gray-700 hover:bg-white'
+                }`}
+              >
+                Next
+              </Link>
+            </nav>
+          )}
         </div>
       </main>
     </>
