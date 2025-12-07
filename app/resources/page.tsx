@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import { getRequestContext } from '@cloudflare/next-on-pages'
+import Pagination from './pagination'
 
 type Article = {
   id: string | number
@@ -188,70 +189,7 @@ export default async function ResourcesPage({
 
           {/* Pagination */}
           {totalPages > 1 && (
-            <nav
-              className="mt-12 flex items-center justify-center flex-wrap gap-3"
-              aria-label="Resources pagination"
-            >
-              {/* Previous */}
-              <Link
-                href={
-                  currentPage > 2
-                    ? `/resources?page=${currentPage - 1}`
-                    : currentPage === 2
-                    ? '/resources'
-                    : '#'
-                }
-                aria-disabled={currentPage === 1}
-                className={`px-4 py-2 rounded-full border text-sm ${
-                  currentPage === 1
-                    ? 'cursor-not-allowed border-gray-200 text-gray-400'
-                    : 'border-gray-300 text-gray-700 hover:bg-white'
-                }`}
-              >
-                Previous
-              </Link>
-
-              {/* Page numbers */}
-              <div className="flex flex-wrap gap-2">
-                {Array.from({ length: totalPages }).map((_, index) => {
-                  const page = index + 1
-                  const href =
-                    page === 1 ? '/resources' : `/resources?page=${page}`
-                  const isActive = page === currentPage
-                  return (
-                    <Link
-                      key={page}
-                      href={href}
-                      aria-current={isActive ? 'page' : undefined}
-                      className={`min-w-[2.5rem] text-center px-3 py-2 rounded-full text-sm ${
-                        isActive
-                          ? 'bg-black text-white'
-                          : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'
-                      }`}
-                    >
-                      {page}
-                    </Link>
-                  )
-                })}
-              </div>
-
-              {/* Next */}
-              <Link
-                href={
-                  currentPage < totalPages
-                    ? `/resources?page=${currentPage + 1}`
-                    : '#'
-                }
-                aria-disabled={currentPage === totalPages}
-                className={`px-4 py-2 rounded-full border text-sm ${
-                  currentPage === totalPages
-                    ? 'cursor-not-allowed border-gray-200 text-gray-400'
-                    : 'border-gray-300 text-gray-700 hover:bg-white'
-                }`}
-              >
-                Next
-              </Link>
-            </nav>
+            <Pagination currentPage={currentPage} totalPages={totalPages} />
           )}
         </div>
       </main>
