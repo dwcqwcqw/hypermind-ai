@@ -5,20 +5,12 @@ import Navbar from '@/components/Navbar'
 import { getPostBySlug as getPostBySlugFromKV, Post as KVPost } from '@/lib/posts'
 
 // Edge runtime required for Cloudflare KV access.
-// generateStaticParams pre-builds the 3 known static articles at deploy time,
-// so those pages are served as pure static HTML with no edge function invocation.
-// KV-sourced posts fall through to the edge function path and are cached for 1 hour.
+// revalidate=3600 lets Cloudflare CDN cache article pages for 1 hour,
+// avoiding a cold edge-function call on every visit.
+// Note: generateStaticParams is incompatible with edge runtime in Next.js.
 export const runtime = 'edge'
 export const dynamicParams = true
 export const revalidate = 3600
-
-export function generateStaticParams() {
-  return [
-    { slug: 'top-7-mobile-ai-marketing-apps-2025' },
-    { slug: 'top-10-ai-marketing-vendors-prompt-simulation-2025' },
-    { slug: 'hypermind-vs-top-ai-marketing-platforms' },
-  ]
-}
 
 type StaticArticle = {
   title: string
