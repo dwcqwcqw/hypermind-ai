@@ -27,14 +27,16 @@ type Post = {
   updatedAt: string
 }
 
+// Edge runtime is required for Cloudflare KV access via getRequestContext().
+// revalidate=3600 allows Cloudflare CDN to cache this page for 1 hour,
+// dramatically reducing cold-start latency compared to force-dynamic.
 export const runtime = 'edge'
-export const dynamic = 'force-dynamic'
-export const revalidate = 0
+export const revalidate = 3600
 
 const PAGE_SIZE = 9
 
 async function getArticles(): Promise<Article[]> {
-  // Static articles
+  // Static articles — always available, no KV round-trip needed
   const staticArticles: Article[] = [
     {
       id: 3,
@@ -65,37 +67,42 @@ async function getArticles(): Promise<Article[]> {
     },
   ]
 
-  // Get dynamic posts from KV
+  // Get dynamic posts from KV — use Promise.all to fetch concurrently (avoids serial N+1 waterfall)
   let dynamicPosts: Article[] = []
   try {
     const { env } = getRequestContext()
-    const POSTS_KV = (env as any).POSTS_KV
-    
+    const POSTS_KV = (env as Record<string, unknown>).POSTS_KV as {
+      list: (opts: { prefix: string }) => Promise<{ keys: Array<{ name: string }> }>
+      get: (key: string) => Promise<string | null>
+    } | undefined
+
     if (POSTS_KV) {
       const { keys } = await POSTS_KV.list({ prefix: 'post:' })
       const now = Date.now()
-      
-      for (const key of keys) {
-        const value = await POSTS_KV.get(key.name)
-        if (value) {
-          try {
-            const post: Post = JSON.parse(value)
-            if (new Date(post.publishAt).getTime() <= now) {
-              dynamicPosts.push({
-                id: post.id,
-                title: post.title,
-                publishAt: post.publishAt,
-                category: 'ARTICLE',
-                coverImage: post.coverImage,
-                excerpt: post.excerpt,
-                slug: post.slug,
-              })
-            }
-          } catch (e) {
-            console.error('Failed to parse post:', key.name, e)
+
+      // Fetch all KV values concurrently instead of one-by-one
+      const values = await Promise.all(keys.map((key) => POSTS_KV.get(key.name)))
+
+      dynamicPosts = values.flatMap((value, i) => {
+        if (!value) return []
+        try {
+          const post: Post = JSON.parse(value)
+          if (new Date(post.publishAt).getTime() <= now) {
+            return [{
+              id: post.id,
+              title: post.title,
+              publishAt: post.publishAt,
+              category: 'ARTICLE' as const,
+              coverImage: post.coverImage,
+              excerpt: post.excerpt,
+              slug: post.slug,
+            }]
           }
+        } catch (e) {
+          console.error('Failed to parse post:', keys[i].name, e)
         }
-      }
+        return []
+      })
     } else {
       console.warn('POSTS_KV binding not available')
     }
@@ -103,10 +110,10 @@ async function getArticles(): Promise<Article[]> {
     console.error('Failed to fetch dynamic posts:', error)
   }
 
-  // Combine and sort by date
+  // Combine and sort by date (newest first)
   const allArticles = [...dynamicPosts, ...staticArticles].sort((a, b) => {
-    const dateA = new Date(a.publishAt || a.date || 0).getTime()
-    const dateB = new Date(b.publishAt || b.date || 0).getTime()
+    const dateA = new Date(a.publishAt ?? a.date ?? 0).getTime()
+    const dateB = new Date(b.publishAt ?? b.date ?? 0).getTime()
     return dateB - dateA
   })
 
