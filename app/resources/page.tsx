@@ -1,205 +1,194 @@
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
-import { getRequestContext } from '@cloudflare/next-on-pages'
-import Pagination from './pagination'
+import Footer from '@/components/Footer'
+import { Metadata } from 'next'
 
-type Article = {
-  id: string | number
-  title: string
-  date?: string
-  publishAt?: string
-  category?: string
-  image?: string
-  coverImage?: string
-  description?: string
-  excerpt?: string
-  slug: string
-}
-
-type Post = {
-  id: string
-  title: string
-  slug: string
-  publishAt: string
-  content: string
-  coverImage: string
-  excerpt: string
-  updatedAt: string
-}
-
-// Edge runtime is required for Cloudflare KV access via getRequestContext().
-// revalidate=3600 allows Cloudflare CDN to cache this page for 1 hour,
-// dramatically reducing cold-start latency compared to force-dynamic.
-export const runtime = 'edge'
 export const revalidate = 3600
 
-const PAGE_SIZE = 9
-
-async function getArticles(): Promise<Article[]> {
-  // Static articles — always available, no KV round-trip needed
-  const staticArticles: Article[] = [
-    {
-      id: 3,
-      title: 'Top 7 Mobile AI Marketing Apps for Instant Insights in 2025',
-      date: 'Jan 28, 2025',
-      category: 'ARTICLE',
-      image: '/resources/article3_image.png',
-      description: 'Discover the best mobile AI marketing apps delivering real-time competitive intelligence, brand monitoring, and actionable insights. Learn how these powerful tools help marketers make data-driven decisions on the go in an AI-powered marketing landscape.',
-      slug: 'top-7-mobile-ai-marketing-apps-2025',
-    },
-    {
-      id: 2,
-      title: 'Top 10 AI Marketing Vendors for Prompt Simulation in 2025',
-      date: 'Jan 5, 2025',
-      category: 'ARTICLE',
-      image: '/resources/article2_image.png',
-      description: 'Explore the leading AI marketing vendors specializing in prompt simulation, featuring comprehensive insights into platforms that help brands optimize their AI presence, test messaging strategies, and enhance campaign effectiveness through advanced simulation capabilities.',
-      slug: 'top-10-ai-marketing-vendors-prompt-simulation-2025',
-    },
-    {
-      id: 1,
-      title: 'The Definitive Comparison of HyperMind vs Top AI Marketing Platforms',
-      date: 'Oct 1, 2024',
-      category: 'ARTICLE',
-      image: '/resources/article1_image.png',
-      description: 'Discover how HyperMind stands apart as the only B2B SaaS platform specializing in Generative Engine Optimization (GEO), offering proprietary AI visibility tracking, secure data governance, and actionable intelligence that converts AI-driven brand mentions into measurable traffic and revenue.',
-      slug: 'hypermind-vs-top-ai-marketing-platforms',
-    },
-  ]
-
-  // Get dynamic posts from KV — use Promise.all to fetch concurrently (avoids serial N+1 waterfall)
-  let dynamicPosts: Article[] = []
-  try {
-    const { env } = getRequestContext()
-    const POSTS_KV = (env as Record<string, unknown>).POSTS_KV as {
-      list: (opts: { prefix: string }) => Promise<{ keys: Array<{ name: string }> }>
-      get: (key: string) => Promise<string | null>
-    } | undefined
-
-    if (POSTS_KV) {
-      const { keys } = await POSTS_KV.list({ prefix: 'post:' })
-      const now = Date.now()
-
-      // Fetch all KV values concurrently instead of one-by-one
-      const values = await Promise.all(keys.map((key) => POSTS_KV.get(key.name)))
-
-      dynamicPosts = values.flatMap((value, i) => {
-        if (!value) return []
-        try {
-          const post: Post = JSON.parse(value)
-          if (new Date(post.publishAt).getTime() <= now) {
-            return [{
-              id: post.id,
-              title: post.title,
-              publishAt: post.publishAt,
-              category: 'ARTICLE' as const,
-              coverImage: post.coverImage,
-              excerpt: post.excerpt,
-              slug: post.slug,
-            }]
-          }
-        } catch (e) {
-          console.error('Failed to parse post:', keys[i].name, e)
-        }
-        return []
-      })
-    } else {
-      console.warn('POSTS_KV binding not available')
-    }
-  } catch (error) {
-    console.error('Failed to fetch dynamic posts:', error)
-  }
-
-  // Combine and sort by date (newest first)
-  const allArticles = [...dynamicPosts, ...staticArticles].sort((a, b) => {
-    const dateA = new Date(a.publishAt ?? a.date ?? 0).getTime()
-    const dateB = new Date(b.publishAt ?? b.date ?? 0).getTime()
-    return dateB - dateA
-  })
-
-  return allArticles
+export const metadata: Metadata = {
+  title: 'GEO Resources — Generative Engine Optimization Knowledge Hub | HyperMind',
+  description: 'Comprehensive GEO knowledge base including guides, playbooks, AI search library, prompt database, and the latest research on Generative Engine Optimization.',
 }
 
-export default async function ResourcesPage({
-  searchParams,
-}: {
-  searchParams?: Promise<{ page?: string }>
-}) {
-  const articles = await getArticles()
+const PILLAR_GUIDES = [
+  {
+    title: 'What is Generative Engine Optimization (GEO)?',
+    href: '/resources/what-is-geo',
+    description: 'The definitive guide to GEO — how it works, why it matters, and how it differs from traditional SEO.',
+    tag: 'Pillar Guide',
+  },
+  {
+    title: 'How AI Search Works',
+    href: '/resources/how-ai-search-works',
+    description: 'Understand how AI assistants generate answers, select citations, and recommend brands.',
+    tag: 'Pillar Guide',
+  },
+  {
+    title: 'How to Optimize for AI Search',
+    href: '/resources/how-to-optimize-for-ai-search',
+    description: 'Step-by-step guide to increasing your visibility in AI-generated answers.',
+    tag: 'Pillar Guide',
+  },
+  {
+    title: 'AI Visibility Monitoring Guide',
+    href: '/resources/ai-visibility-monitoring-guide',
+    description: 'How to track, measure, and benchmark your brand presence across AI platforms.',
+    tag: 'Pillar Guide',
+  },
+  {
+    title: 'Complete GEO Strategy Guide',
+    href: '/resources/complete-geo-strategy-guide',
+    description: 'From audit to results — build a comprehensive GEO strategy for your brand.',
+    tag: 'Pillar Guide',
+  },
+  {
+    title: 'AI Search Statistics',
+    href: '/resources/ai-search-statistics',
+    description: 'Key data, trends, and market insights on AI search adoption and brand visibility.',
+    tag: 'Data & Research',
+  },
+]
 
-  const totalArticles = articles.length
-  const totalPages = Math.max(1, Math.ceil(totalArticles / PAGE_SIZE))
+const RESOURCE_SECTIONS = [
+  {
+    title: 'GEO Guides',
+    href: '/resources/geo-guides',
+    description: 'Comprehensive knowledge base covering every aspect of Generative Engine Optimization.',
+    icon: '📖',
+  },
+  {
+    title: 'AI Search Library',
+    href: '/resources/ai-search-library',
+    description: 'Deep dives into how ChatGPT, Gemini, Perplexity, Claude, and Copilot rank and cite content.',
+    icon: '🔬',
+  },
+  {
+    title: 'Prompt Database',
+    href: '/resources/prompt-database',
+    description: 'Industry-specific AI prompts that drive brand discovery and recommendations.',
+    icon: '💬',
+  },
+  {
+    title: 'GEO Playbooks',
+    href: '/resources/geo-playbooks',
+    description: 'Step-by-step action guides for specific GEO objectives.',
+    icon: '🎯',
+  },
+  {
+    title: 'Blog',
+    href: '/resources/blog',
+    description: 'Latest articles, insights, and analysis on AI search and GEO.',
+    icon: '✍️',
+  },
+]
 
-  const resolvedSearchParams = searchParams ? await searchParams : undefined
-  const pageParam = resolvedSearchParams?.page
-  let currentPage = 1
-  if (pageParam) {
-    const parsed = parseInt(pageParam, 10)
-    if (!Number.isNaN(parsed) && parsed >= 1 && parsed <= totalPages) {
-      currentPage = parsed
-    }
-  }
-
-  const startIndex = (currentPage - 1) * PAGE_SIZE
-  const pageArticles = articles.slice(startIndex, startIndex + PAGE_SIZE)
-
+export default function ResourcesHub() {
   return (
     <>
-      {/* Debug info for crawlers */}
-      {/* Total articles: {totalArticles}, Page: {currentPage}/{totalPages} */}
       <Navbar />
-      <main className="min-h-screen bg-[#f5f3f0] pt-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          {/* Header */}
-          <div className="mb-12">
-            <h1 className="text-5xl font-bold text-gray-900 mb-4">Resources</h1>
-            <p className="text-xl text-gray-600">
-              Learn how to optimize your content for AI search engines
-            </p>
-          </div>
+      <main className="min-h-screen bg-white pt-24">
+        {/* Hero */}
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <h1 className="text-5xl sm:text-6xl font-bold text-gray-900 mb-6">
+            GEO Knowledge Hub
+          </h1>
+          <p className="text-xl text-gray-600 max-w-3xl">
+            Generative Engine Optimization (GEO) is the practice of optimizing how brands appear in AI-generated answers.
+            Explore our comprehensive guides, research, and tools to master AI search visibility.
+          </p>
+        </section>
 
-          {/* Articles Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {pageArticles.map((article) => (
+        {/* Pillar Guides */}
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8">Core Guides</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {PILLAR_GUIDES.map((guide) => (
               <Link
-                key={article.id}
-                href={`/resources/${article.slug}`}
-                className="group bg-white rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-300 flex flex-col"
+                key={guide.href}
+                href={guide.href}
+                className="group block bg-white border-2 border-gray-200 rounded-2xl p-6 hover:border-black hover:shadow-lg transition-all"
               >
-                {/* Image */}
-                <div className="relative h-64 overflow-hidden">
-                  <img
-                    src={article.image || article.coverImage || '/resources/article1_image.png'}
-                    alt={article.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-
-                {/* Content */}
-                <div className="p-6 flex-1 flex flex-col">
-                  <div className="text-sm text-gray-500 mb-2">
-                    {article.category || 'ARTICLE'} | {article.date || (article.publishAt ? new Date(article.publishAt).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) : '')}
-                  </div>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-gray-700 transition-colors">
-                    {article.title}
-                  </h2>
-                  <p className="text-gray-600 flex-1">
-                    {article.description || article.excerpt || ''}
-                  </p>
-                  <div className="mt-4 text-black font-semibold group-hover:underline">
-                    Read More →
-                  </div>
-                </div>
+                <span className="inline-block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3 bg-gray-100 px-2 py-1 rounded">
+                  {guide.tag}
+                </span>
+                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-black transition-colors">
+                  {guide.title}
+                </h3>
+                <p className="text-gray-600 text-sm">{guide.description}</p>
+                <span className="inline-block mt-4 text-black font-semibold text-sm group-hover:underline">
+                  Read Guide &rarr;
+                </span>
               </Link>
             ))}
           </div>
+        </section>
 
-          {/* Pagination */}
-          {totalPages > 1 && (
-            <Pagination currentPage={currentPage} totalPages={totalPages} />
-          )}
-        </div>
+        {/* Resource Sections */}
+        <section className="bg-gray-50 py-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8">Explore by Category</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {RESOURCE_SECTIONS.map((section) => (
+                <Link
+                  key={section.href}
+                  href={section.href}
+                  className="group block bg-white rounded-2xl p-6 hover:shadow-lg transition-all border border-gray-200"
+                >
+                  <span className="text-3xl mb-4 block">{section.icon}</span>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-black transition-colors">
+                    {section.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm">{section.description}</p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Quick Links */}
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8">Quick Links</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <Link href="/data" className="bg-gray-900 text-white rounded-2xl p-6 hover:bg-black transition">
+              <h3 className="font-bold mb-1">AI Search Data Hub</h3>
+              <p className="text-gray-300 text-sm">Leaderboards, rankings, and trend data</p>
+            </Link>
+            <Link href="/tools" className="bg-gray-900 text-white rounded-2xl p-6 hover:bg-black transition">
+              <h3 className="font-bold mb-1">Free AI Tools</h3>
+              <p className="text-gray-300 text-sm">Check your AI visibility score</p>
+            </Link>
+            <Link href="/case-studies" className="bg-gray-900 text-white rounded-2xl p-6 hover:bg-black transition">
+              <h3 className="font-bold mb-1">Case Studies</h3>
+              <p className="text-gray-300 text-sm">Real GEO results and client success stories</p>
+            </Link>
+            <Link href="/services" className="bg-gray-900 text-white rounded-2xl p-6 hover:bg-black transition">
+              <h3 className="font-bold mb-1">GEO Services</h3>
+              <p className="text-gray-300 text-sm">Professional AI visibility optimization</p>
+            </Link>
+          </div>
+        </section>
+
+        {/* CTA */}
+        <section className="bg-black py-16">
+          <div className="max-w-4xl mx-auto text-center px-4">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+              Ready to Improve Your AI Visibility?
+            </h2>
+            <p className="text-gray-300 mb-8">
+              Get a free GEO audit and discover how AI assistants currently describe your brand.
+            </p>
+            <a
+              href="https://forms.gle/QA6WWgN4cpRHW5VF7"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white text-black px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition inline-block"
+            >
+              Get a Free GEO Audit
+            </a>
+          </div>
+        </section>
       </main>
+      <Footer />
     </>
   )
 }
