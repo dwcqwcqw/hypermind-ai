@@ -3,7 +3,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { getRequestContext } from '@cloudflare/next-on-pages'
 import Pagination from './pagination'
-import { BLOG_CATEGORIES, getCategoryById } from '@/lib/blogConfig'
+import { BLOG_CATEGORIES, getCategoryById, getAutoCategory } from '@/lib/blogConfig'
 import type { Metadata } from 'next'
 
 // Edge runtime is required for Cloudflare KV access via getRequestContext().
@@ -54,7 +54,7 @@ const STATIC_ARTICLES: Article[] = [
     id: 3,
     title: 'Top 7 Mobile AI Marketing Apps for Instant Insights in 2025',
     date: 'Jan 28, 2025',
-    category: 'ai-visibility-analytics',
+    category: 'ai-analytics',
     image: '/resources/article3_image.png',
     description: 'Discover the best mobile AI marketing apps delivering real-time competitive intelligence, brand monitoring, and actionable insights.',
     slug: 'top-7-mobile-ai-marketing-apps-2025',
@@ -64,7 +64,7 @@ const STATIC_ARTICLES: Article[] = [
     id: 2,
     title: 'Top 10 AI Marketing Vendors for Prompt Simulation in 2025',
     date: 'Jan 5, 2025',
-    category: 'ai-answer-ranking',
+    category: 'answer-ranking',
     image: '/resources/article2_image.png',
     description: 'Explore the leading AI marketing vendors specializing in prompt simulation and AI answer optimization.',
     slug: 'top-10-ai-marketing-vendors-prompt-simulation-2025',
@@ -74,7 +74,7 @@ const STATIC_ARTICLES: Article[] = [
     id: 1,
     title: 'The Definitive Comparison of HyperMind vs Top AI Marketing Platforms',
     date: 'Oct 1, 2024',
-    category: 'geo-strategies',
+    category: 'geo-strategy',
     image: '/resources/article1_image.png',
     description: 'Discover how HyperMind stands apart as the only B2B SaaS platform specializing in Generative Engine Optimization (GEO).',
     slug: 'hypermind-vs-top-ai-marketing-platforms',
@@ -136,7 +136,16 @@ export default async function BlogPage({
 }: {
   searchParams?: Promise<{ page?: string; category?: string }>
 }) {
-  const allArticles = await getArticles()
+  const rawArticles = await getArticles()
+
+  // Apply auto-classification: every article always gets a category,
+  // even if none was explicitly set in KV. getAutoCategory() is deterministic
+  // so the same post always resolves to the same category.
+  const allArticles = rawArticles.map((a) => ({
+    ...a,
+    category: a.category ?? getAutoCategory(a.title, a.slug),
+  }))
+
   const resolved = searchParams ? await searchParams : undefined
   const activeCategory = resolved?.category ?? ''
 
@@ -160,12 +169,11 @@ export default async function BlogPage({
   const startIndex = (currentPage - 1) * PAGE_SIZE
   const pageArticles = filteredArticles.slice(startIndex, startIndex + PAGE_SIZE)
 
-  // Build category counts for the filter tabs
+  // Build category counts for the filter tabs — all articles are now classified
   const categoryCounts = BLOG_CATEGORIES.map((cat) => ({
     ...cat,
     count: allArticles.filter((a) => a.category === cat.id).length,
   }))
-  const uncategorizedCount = allArticles.filter((a) => !a.category).length
 
   return (
     <>
@@ -218,18 +226,6 @@ export default async function BlogPage({
                 )
               })}
 
-              {uncategorizedCount > 0 && (
-                <Link
-                  href="/resources/blog?category=uncategorized"
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition whitespace-nowrap ${
-                    activeCategory === 'uncategorized'
-                      ? 'bg-black text-white'
-                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                  }`}
-                >
-                  Other ({uncategorizedCount})
-                </Link>
-              )}
             </div>
           </div>
 

@@ -33,6 +33,8 @@ export default function AdminPage() {
   const [posts, setPosts] = useState<Post[]>([])
   const [showForm, setShowForm] = useState(false)
   const [editingPost, setEditingPost] = useState<Post | null>(null)
+  const [classifying, setClassifying] = useState(false)
+  const [classifyResult, setClassifyResult] = useState<string | null>(null)
 
   // Form state
   const [title, setTitle] = useState('')
@@ -215,6 +217,24 @@ export default function AdminPage() {
     }
   }
 
+  const handleBulkClassify = async () => {
+    if (!confirm('Auto-classify all posts that have no category? This writes to KV and is safe to re-run.')) return
+    setClassifying(true)
+    setClassifyResult(null)
+    try {
+      const res = await fetch('/api/admin/bulk-classify', { method: 'POST' })
+      const data = await res.json() as { message: string; updated: number; alreadyClassified: number; distribution: Record<string, number> }
+      const dist = Object.entries(data.distribution ?? {}).map(([k, v]) => `${k}: ${v}`).join(', ')
+      setClassifyResult(`✅ ${data.message} Distribution → ${dist}`)
+      void fetchPosts()
+    } catch (err) {
+      console.error('Bulk classify error:', err)
+      setClassifyResult('❌ Failed to classify posts. Check console.')
+    } finally {
+      setClassifying(false)
+    }
+  }
+
   const handleDelete = async (id: string) => {
     if (!confirm('Are you sure you want to delete this post?')) return
     try {
@@ -262,14 +282,22 @@ export default function AdminPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="mb-8 flex justify-between items-center">
+        <div className="mb-8 flex flex-wrap justify-between items-center gap-4">
           <h1 className="text-4xl font-bold text-gray-900">Resources Admin</h1>
-          <div className="flex gap-4">
+          <div className="flex flex-wrap gap-3">
             <button
               onClick={() => { showForm ? resetForm() : setShowForm(true) }}
               className="px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition"
             >
               {showForm ? 'Cancel' : '+ New Post'}
+            </button>
+            <button
+              onClick={handleBulkClassify}
+              disabled={classifying}
+              className="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition disabled:bg-indigo-300"
+              title="Auto-assign categories to all posts that have none"
+            >
+              {classifying ? 'Classifying...' : '⚡ Auto-Classify Posts'}
             </button>
             <button onClick={handleLogout}
               className="px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition">
@@ -277,6 +305,12 @@ export default function AdminPage() {
             </button>
           </div>
         </div>
+
+        {classifyResult && (
+          <div className="mb-6 p-4 bg-gray-50 border border-gray-200 rounded-xl text-sm text-gray-700">
+            {classifyResult}
+          </div>
+        )}
 
         {showForm && (
           <div className="bg-white rounded-2xl shadow-sm p-8 mb-8">

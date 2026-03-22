@@ -3,6 +3,7 @@ import { Metadata } from 'next'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { getPostBySlug as getPostBySlugFromKV, Post as KVPost } from '@/lib/posts'
+import { getAutoCategory } from '@/lib/blogConfig'
 
 // Edge runtime required for Cloudflare KV access.
 // revalidate=3600 lets Cloudflare CDN cache article pages for 1 hour.
@@ -32,7 +33,7 @@ const staticArticles: Record<string, StaticArticle> = {
     date: 'Jan 28, 2025',
     author: 'HyperMind Team',
     image: '/resources/article3_image.png',
-    category: 'ai-visibility-analytics',
+    category: 'ai-analytics',
     tags: ['AI visibility analytics', 'AI search ranking factors', 'ChatGPT', 'Perplexity', 'brand mentions'],
     tldr: 'Mobile AI marketing apps have become essential for real-time competitive intelligence in 2025. HyperMind leads the category with customizable AI training, GEO-specific monitoring, and mobile-first design — outpacing general tools like Sprout Social and SEMrush for brands focused on AI search visibility.',
     keyTakeaways: [
@@ -105,7 +106,7 @@ const staticArticles: Record<string, StaticArticle> = {
     date: 'Jan 5, 2025',
     author: 'HyperMind Team',
     image: '/resources/article2_image.png',
-    category: 'ai-answer-ranking',
+    category: 'answer-ranking',
     tags: ['optimize for AI search', 'ChatGPT', 'Gemini', 'AI ranking signals', 'answer extraction'],
     tldr: 'Prompt simulation lets brands test how AI systems like ChatGPT and Gemini will respond to queries before campaigns go live. HyperMind leads this category with proprietary GEO methodology and secure data governance, while vendors like Jasper AI and Copy.ai focus on content generation rather than AI visibility optimization.',
     keyTakeaways: [
@@ -179,7 +180,7 @@ const staticArticles: Record<string, StaticArticle> = {
     date: 'Oct 1, 2024',
     author: 'HyperMind Team',
     image: '/resources/article1_image.png',
-    category: 'geo-strategies',
+    category: 'geo-strategy',
     tags: ['AI SEO strategy', 'ChatGPT', 'Perplexity', 'AI citations', 'GEO vs SEO'],
     tldr: 'HyperMind is the only B2B SaaS platform built exclusively for GEO (Generative Engine Optimization) — tracking brand visibility in AI answers and converting citations into revenue. General platforms like HubSpot, Marketo, and Salesforce Marketing Cloud offer broad automation but lack AI-specific visibility optimization.',
     keyTakeaways: [
@@ -395,11 +396,13 @@ export async function generateMetadata({
 
   if (post) {
     const description = post.tldr ?? post.excerpt ?? post.content.replace(/<[^>]*>/g, '').substring(0, 160)
+    const resolvedCategory = post.category ?? getAutoCategory(post.title, post.slug)
     return {
       title: post.title,
       description,
       alternates: { canonical: `/resources/${slug}/` },
       ...(post.tags ? { keywords: post.tags.join(', ') } : {}),
+      ...(resolvedCategory ? { category: resolvedCategory } : {}),
       openGraph: {
         title: post.title,
         description,
@@ -471,18 +474,21 @@ export default async function ArticlePage({
         tldr: staticArticle.tldr,
       }
     : dynamicPost
-    ? {
-        title: dynamicPost.title,
-        url: `${BASE_URL}/resources/${slug}`,
-        image: `${BASE_URL}${dynamicPost.coverImage}`,
-        datePublished: new Date(dynamicPost.publishAt).toISOString().split('T')[0],
-        dateModified: new Date(dynamicPost.updatedAt ?? dynamicPost.publishAt).toISOString().split('T')[0],
-        description: dynamicPost.excerpt ?? dynamicPost.content.replace(/<[^>]*>/g, '').substring(0, 200),
-        content: dynamicPost.content,
-        category: dynamicPost.category,
-        tags: dynamicPost.tags,
-        tldr: dynamicPost.tldr,
-      }
+    ? (() => {
+        const resolvedCategory = dynamicPost.category ?? getAutoCategory(dynamicPost.title, dynamicPost.slug)
+        return {
+          title: dynamicPost.title,
+          url: `${BASE_URL}/resources/${slug}`,
+          image: `${BASE_URL}${dynamicPost.coverImage}`,
+          datePublished: new Date(dynamicPost.publishAt).toISOString().split('T')[0],
+          dateModified: new Date(dynamicPost.updatedAt ?? dynamicPost.publishAt).toISOString().split('T')[0],
+          description: dynamicPost.excerpt ?? dynamicPost.content.replace(/<[^>]*>/g, '').substring(0, 200),
+          content: dynamicPost.content,
+          category: resolvedCategory,
+          tags: dynamicPost.tags,
+          tldr: dynamicPost.tldr,
+        }
+      })()
     : null
 
   // Build render data
@@ -509,7 +515,7 @@ export default async function ArticlePage({
           day: 'numeric',
         }),
         author: 'HyperMind Team',
-        category: dynamicPost.category,
+        category: dynamicPost.category ?? getAutoCategory(dynamicPost.title, dynamicPost.slug),
         tags: dynamicPost.tags,
         tldr: dynamicPost.tldr,
         keyTakeaways: dynamicPost.keyTakeaways,
