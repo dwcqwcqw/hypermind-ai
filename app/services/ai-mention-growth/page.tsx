@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: 'AI Mention Growth Service | HyperMind',
   description:
     'AI Mention Growth is the strategic process of increasing the number of times AI assistants like ChatGPT, Gemini, Perplexity, and Claude mention your brand. Learn how HyperMind drives measurable AI mention growth.',
+  alternates: {
+    canonical: '/services/ai-mention-growth/',
+  },
 }
 
 const FAQS = [

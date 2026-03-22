@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: 'GEO for Startups | HyperMind',
   description:
     'Generative Engine Optimization for startups. Build AI visibility from day one and outpace incumbents in AI recommendations. Early-mover advantage in AI search is the new competitive moat.',
+  alternates: {
+    canonical: '/solutions/startup-geo/',
+  },
   openGraph: {
     title: 'GEO for Startups | HyperMind',
     description:

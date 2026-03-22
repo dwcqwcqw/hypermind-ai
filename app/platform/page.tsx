@@ -17,6 +17,9 @@ export const metadata: Metadata = {
     url: 'https://www.hypermindai.tech/platform',
     siteName: 'HyperMind',
   },
+  alternates: {
+    canonical: '/platform/',
+  },
 }
 
 interface PlatformFeature {
@@ -74,6 +77,23 @@ export default function PlatformPage() {
   return (
     <main className="min-h-screen bg-white pt-24">
       <Navbar />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [
+              {
+                '@type': 'BreadcrumbList',
+                itemListElement: [
+                  { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.hypermindai.tech/' },
+                  { '@type': 'ListItem', position: 2, name: 'Platform', item: 'https://www.hypermindai.tech/platform/' },
+                ],
+              },
+            ],
+          }),
+        }}
+      />
 
       {/* Hero */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">

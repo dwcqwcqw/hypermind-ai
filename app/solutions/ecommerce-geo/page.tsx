@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: 'GEO for Ecommerce Brands | HyperMind',
   description:
     'Generative Engine Optimization for ecommerce brands. Get your products recommended when shoppers ask AI assistants like ChatGPT, Gemini, and Perplexity for product recommendations and comparisons.',
+  alternates: {
+    canonical: '/solutions/ecommerce-geo/',
+  },
   openGraph: {
     title: 'GEO for Ecommerce Brands | HyperMind',
     description:

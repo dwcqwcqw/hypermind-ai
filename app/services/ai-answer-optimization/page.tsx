@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: 'AI Answer Optimization Service | HyperMind',
   description:
     'AI Answer Optimization is the practice of shaping how AI assistants like ChatGPT, Gemini, Perplexity, and Claude answer questions about your brand, products, and category. Learn how HyperMind optimizes AI answers.',
+  alternates: {
+    canonical: '/services/ai-answer-optimization/',
+  },
 }
 
 const FAQS = [

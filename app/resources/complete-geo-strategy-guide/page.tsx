@@ -9,12 +9,57 @@ export const metadata: Metadata = {
   title: 'Complete GEO Strategy Guide: From Audit to Results | HyperMind',
   description:
     'Build a comprehensive Generative Engine Optimization strategy from scratch. Covers AI visibility auditing, strategy development, implementation, measurement, and industry-specific GEO approaches.',
+  alternates: {
+    canonical: '/resources/complete-geo-strategy-guide/',
+  },
 }
 
 export default function CompleteGeoStrategyGuidePage() {
   return (
     <main className="min-h-screen bg-white pt-24">
       <Navbar />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [
+              {
+                '@type': 'Article',
+                headline: 'Complete GEO Strategy Guide: From Audit to Results',
+                description: 'Build a comprehensive Generative Engine Optimization strategy from scratch. Covers AI visibility auditing, strategy development, implementation, measurement, and industry-specific GEO approaches.',
+                url: 'https://www.hypermindai.tech/resources/complete-geo-strategy-guide/',
+                author: { '@type': 'Organization', name: 'HyperMind', url: 'https://www.hypermindai.tech/' },
+                publisher: { '@type': 'Organization', name: 'HyperMind', logo: { '@type': 'ImageObject', url: 'https://www.hypermindai.tech/asset/logo.png' } },
+                datePublished: '2025-03-15',
+                dateModified: '2025-03-15',
+                mainEntityOfPage: 'https://www.hypermindai.tech/resources/complete-geo-strategy-guide/',
+                inLanguage: 'en',
+              },
+              {
+                '@type': 'BreadcrumbList',
+                itemListElement: [
+                  { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.hypermindai.tech/' },
+                  { '@type': 'ListItem', position: 2, name: 'Resources', item: 'https://www.hypermindai.tech/resources/' },
+                  { '@type': 'ListItem', position: 3, name: 'Complete GEO Strategy Guide', item: 'https://www.hypermindai.tech/resources/complete-geo-strategy-guide/' },
+                ],
+              },
+              {
+                '@type': 'FAQPage',
+                mainEntity: [
+                  { '@type': 'Question', name: 'How do I build a GEO strategy from scratch?', acceptedAnswer: { '@type': 'Answer', text: 'Start with an AI visibility audit to establish baseline data. Then define measurable objectives, prioritize tactics (citation building, content optimization, narrative control), allocate resources, and build a measurement framework. A typical strategy spans 6–12 months.' } },
+                  { '@type': 'Question', name: 'What is the first step in a GEO strategy?', acceptedAnswer: { '@type': 'Answer', text: 'Always start with an AI visibility audit. Query major AI platforms with 50–100 relevant prompts, assess mention accuracy, benchmark against competitors, and map citation sources. Without this baseline, optimization is guesswork.' } },
+                  { '@type': 'Question', name: 'How long does a GEO strategy take to show results?', acceptedAnswer: { '@type': 'Answer', text: 'Quick wins (accuracy corrections, existing content optimization) can show results within 30–60 days. Citation building effects compound over 90–180 days. Full strategy maturity typically requires 6–12 months of consistent execution.' } },
+                  { '@type': 'Question', name: 'Can I do GEO without doing SEO?', acceptedAnswer: { '@type': 'Answer', text: 'You can, but results will be slower. SEO builds the domain authority and content foundation that GEO leverages. Brands with strong SEO see 2.3× faster GEO results. Integrating both disciplines is the recommended approach.' } },
+                  { '@type': 'Question', name: 'Which industries benefit most from GEO?', acceptedAnswer: { '@type': 'Answer', text: 'B2B SaaS (41% of software buyers use AI for research), ecommerce (product recommendation queries are commercially high-value), financial services (comparison queries are a primary use case), and professional services (expertise-driven recommendations).' } },
+                  { '@type': 'Question', name: 'How do I measure GEO ROI?', acceptedAnswer: { '@type': 'Answer', text: 'Track four metric levels: AI visibility (mention frequency, share of voice), quality (sentiment, accuracy), citations (count, diversity, authority), and business impact (AI-referred traffic, conversions, brand search lift).' } },
+                  { '@type': 'Question', name: 'What is the most common GEO mistake?', acceptedAnswer: { '@type': 'Answer', text: 'Skipping the audit and jumping straight to content creation. Without baseline data, you cannot prioritize effectively, measure progress, or identify the specific gaps that matter most.' } },
+                ],
+              },
+            ],
+          }),
+        }}
+      />
       <PillarContent
         title="Complete GEO Strategy Guide: From Audit to Results"
         aiSummary="A comprehensive GEO (Generative Engine Optimization) strategy follows four phases: audit (assess current AI visibility and competitive landscape), strategy development (define objectives, prioritize tactics, and allocate resources), implementation (execute content optimization, citation building, and narrative control), and measurement (track AI mention share, sentiment, and business impact). This guide covers each phase in detail, including industry-specific considerations and how to integrate GEO with existing SEO programs."

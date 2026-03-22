@@ -9,12 +9,58 @@ export const metadata: Metadata = {
   title: 'How AI Search Works: A Complete Guide | HyperMind',
   description:
     'Understand how AI assistants like ChatGPT, Gemini, Perplexity, and Claude generate answers, rank sources, and decide which brands to recommend. A technical guide to AI search mechanisms.',
+  alternates: {
+    canonical: '/resources/how-ai-search-works/',
+  },
 }
 
 export default function HowAiSearchWorksPage() {
   return (
     <main className="min-h-screen bg-white pt-24">
       <Navbar />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [
+              {
+                '@type': 'Article',
+                headline: 'How AI Search Works: A Complete Guide',
+                description: 'Understand how AI assistants like ChatGPT, Gemini, Perplexity, and Claude generate answers, rank sources, and decide which brands to recommend. A technical guide to AI search mechanisms.',
+                url: 'https://www.hypermindai.tech/resources/how-ai-search-works/',
+                author: { '@type': 'Organization', name: 'HyperMind', url: 'https://www.hypermindai.tech/' },
+                publisher: { '@type': 'Organization', name: 'HyperMind', logo: { '@type': 'ImageObject', url: 'https://www.hypermindai.tech/asset/logo.png' } },
+                datePublished: '2025-03-15',
+                dateModified: '2025-03-15',
+                mainEntityOfPage: 'https://www.hypermindai.tech/resources/how-ai-search-works/',
+                inLanguage: 'en',
+              },
+              {
+                '@type': 'BreadcrumbList',
+                itemListElement: [
+                  { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.hypermindai.tech/' },
+                  { '@type': 'ListItem', position: 2, name: 'Resources', item: 'https://www.hypermindai.tech/resources/' },
+                  { '@type': 'ListItem', position: 3, name: 'How AI Search Works', item: 'https://www.hypermindai.tech/resources/how-ai-search-works/' },
+                ],
+              },
+              {
+                '@type': 'FAQPage',
+                mainEntity: [
+                  { '@type': 'Question', name: 'How do AI assistants generate their answers?', acceptedAnswer: { '@type': 'Answer', text: "AI assistants generate answers through a pipeline of query analysis, source retrieval (via RAG for real-time data), authority-based ranking, information synthesis, and natural language generation. The process combines pre-trained knowledge with real-time web retrieval." } },
+                  { '@type': 'Question', name: 'What is Retrieval-Augmented Generation (RAG)?', acceptedAnswer: { '@type': 'Answer', text: 'RAG is a technique that allows AI models to retrieve real-time information from web indexes before generating an answer. Instead of relying solely on training data, the AI fetches current web pages as context, improving accuracy and recency.' } },
+                  { '@type': 'Question', name: 'Do all AI assistants cite their sources?', acceptedAnswer: { '@type': 'Answer', text: 'No. Perplexity provides explicit numbered source citations. ChatGPT with web browsing includes some source links. Claude and standard ChatGPT mention brands inline without formal citations. Google AI Overviews link to source pages beneath the generated summary.' } },
+                  { '@type': 'Question', name: 'How does ChatGPT decide which brands to mention?', acceptedAnswer: { '@type': 'Answer', text: 'ChatGPT relies on the frequency, authority, and consistency of brand mentions across its training data and (when browsing is enabled) real-time web sources. Brands with widespread positive mentions across authoritative sources are most likely to be recommended.' } },
+                  { '@type': 'Question', name: 'Can I influence what AI says about my brand?', acceptedAnswer: { '@type': 'Answer', text: 'Yes, through Generative Engine Optimization (GEO). By building citations on authoritative sources, publishing AI-friendly content, and monitoring your AI presence with tools such as HyperMind, you can increase the frequency and accuracy of AI brand mentions.' } },
+                  { '@type': 'Question', name: 'How important is content structure for AI search?', acceptedAnswer: { '@type': 'Answer', text: 'Extremely important. AI systems prioritize content with clear headings, concise paragraphs, factual claims, and structured data. Well-structured content is 3× more likely to be cited by AI assistants compared to unstructured long-form content.' } },
+                  { '@type': 'Question', name: 'Does traditional SEO help with AI search visibility?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Strong traditional SEO builds the domain authority and content quality that AI systems use as ranking signals. This is especially true for Google AI Overviews, which directly leverage organic search rankings.' } },
+                  { '@type': 'Question', name: 'How fast is AI search growing?', acceptedAnswer: { '@type': 'Answer', text: 'AI search is growing rapidly. AI-referred traffic increased 1,200% year-over-year between 2024 and 2025. ChatGPT alone has over 200 million monthly users, and Google AI Overviews reach billions of search queries.' } },
+                ],
+              },
+            ],
+          }),
+        }}
+      />
       <PillarContent
         title="How AI Search Works: A Complete Guide"
         aiSummary="AI search works through a multi-stage pipeline: user query analysis, retrieval of relevant web sources (RAG), contextual ranking, and natural language synthesis. Each AI platform — ChatGPT, Gemini, Perplexity, Claude — uses variations of this pipeline, resulting in different citation behaviors and brand recommendation patterns. Understanding these mechanisms is essential for Generative Engine Optimization (GEO)."

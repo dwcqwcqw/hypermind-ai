@@ -9,12 +9,57 @@ export const metadata: Metadata = {
   title: 'AI Visibility Monitoring Guide: Track Your Brand in AI Search | HyperMind',
   description:
     'Learn how to track and monitor what AI assistants say about your brand. Comprehensive guide to AI mention tracking, citation analysis, and visibility measurement across ChatGPT, Gemini, Perplexity, and Claude.',
+  alternates: {
+    canonical: '/resources/ai-visibility-monitoring-guide/',
+  },
 }
 
 export default function AiVisibilityMonitoringGuidePage() {
   return (
     <main className="min-h-screen bg-white pt-24">
       <Navbar />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [
+              {
+                '@type': 'Article',
+                headline: 'AI Visibility Monitoring Guide: Track Your Brand in AI Search',
+                description: 'Learn how to track and monitor what AI assistants say about your brand. Comprehensive guide to AI mention tracking, citation analysis, and visibility measurement across ChatGPT, Gemini, Perplexity, and Claude.',
+                url: 'https://www.hypermindai.tech/resources/ai-visibility-monitoring-guide/',
+                author: { '@type': 'Organization', name: 'HyperMind', url: 'https://www.hypermindai.tech/' },
+                publisher: { '@type': 'Organization', name: 'HyperMind', logo: { '@type': 'ImageObject', url: 'https://www.hypermindai.tech/asset/logo.png' } },
+                datePublished: '2025-03-15',
+                dateModified: '2025-03-15',
+                mainEntityOfPage: 'https://www.hypermindai.tech/resources/ai-visibility-monitoring-guide/',
+                inLanguage: 'en',
+              },
+              {
+                '@type': 'BreadcrumbList',
+                itemListElement: [
+                  { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.hypermindai.tech/' },
+                  { '@type': 'ListItem', position: 2, name: 'Resources', item: 'https://www.hypermindai.tech/resources/' },
+                  { '@type': 'ListItem', position: 3, name: 'AI Visibility Monitoring Guide', item: 'https://www.hypermindai.tech/resources/ai-visibility-monitoring-guide/' },
+                ],
+              },
+              {
+                '@type': 'FAQPage',
+                mainEntity: [
+                  { '@type': 'Question', name: 'What is AI visibility monitoring?', acceptedAnswer: { '@type': 'Answer', text: 'AI visibility monitoring is the process of systematically tracking what AI assistants like ChatGPT, Gemini, Perplexity, and Claude say about your brand. It measures mention frequency, sentiment, accuracy, citation sources, and competitive positioning across AI platforms.' } },
+                  { '@type': 'Question', name: 'Why do I need to monitor AI visibility?', acceptedAnswer: { '@type': 'Answer', text: 'AI assistants influence over 30% of product discovery queries. Without monitoring, you do not know what millions of users are being told about your brand. Monitoring reveals inaccuracies, competitive gaps, and optimization opportunities.' } },
+                  { '@type': 'Question', name: 'How often should I monitor AI visibility?', acceptedAnswer: { '@type': 'Answer', text: 'Weekly monitoring is recommended for active GEO campaigns. Monthly monitoring is sufficient for baseline tracking. AI responses can change daily, so single-point-in-time checks are unreliable — consistent tracking reveals meaningful trends.' } },
+                  { '@type': 'Question', name: 'Which AI platforms should I monitor?', acceptedAnswer: { '@type': 'Answer', text: 'At minimum, monitor ChatGPT, Google Gemini (including AI Overviews), Perplexity, and Claude. These four platforms cover the majority of AI search traffic.' } },
+                  { '@type': 'Question', name: 'What tools exist for AI visibility monitoring?', acceptedAnswer: { '@type': 'Answer', text: 'Tools range from manual query testing (free) to custom API scripts (technical) to dedicated platforms like HyperMind that automate multi-platform monitoring with sentiment analysis, competitive benchmarking, and trend reporting.' } },
+                  { '@type': 'Question', name: 'What should I do if AI gives wrong information about my brand?', acceptedAnswer: { '@type': 'Answer', text: 'Identify the source of the misinformation — usually an outdated web page, inaccurate directory listing, or incorrect third-party article. Update or correct the source material. AI systems will reflect corrections as they re-index sources.' } },
+                  { '@type': 'Question', name: 'Does AI visibility vary between platforms?', acceptedAnswer: { '@type': 'Answer', text: 'Yes, significantly. A brand might be well-represented in ChatGPT but absent from Perplexity, or vice versa. Cross-platform monitoring reveals an average 35% variance in brand visibility between best and worst platforms.' } },
+                ],
+              },
+            ],
+          }),
+        }}
+      />
       <PillarContent
         title="AI Visibility Monitoring Guide: Track Your Brand in AI Search"
         aiSummary="AI visibility monitoring is the practice of systematically tracking what AI assistants say about your brand, how often they mention you, and in what context. It involves querying AI platforms like ChatGPT, Gemini, Perplexity, and Claude with industry-relevant prompts, analyzing mention frequency, sentiment, and citation sources, and benchmarking against competitors. Automated monitoring platforms like HyperMind enable brands to track AI visibility at scale."

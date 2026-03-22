@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: 'AI Citation Strategy Service | HyperMind',
   description:
     'AI Citation Strategy is the practice of building authoritative citations on sources that AI assistants trust, making your brand a go-to reference in AI-generated answers. Learn how HyperMind builds citation authority.',
+  alternates: {
+    canonical: '/services/ai-citation-strategy/',
+  },
 }
 
 const FAQS = [

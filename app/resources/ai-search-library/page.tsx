@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: 'AI Search Library — How Each AI Platform Works | HyperMind',
   description:
     'Understand how each AI platform generates recommendations. Deep dives into ChatGPT ranking factors, Perplexity citation model, Gemini answer generation, Claude search capabilities, and Copilot AI recommendations.',
+  alternates: {
+    canonical: '/resources/ai-search-library/',
+  },
   openGraph: {
     title: 'AI Search Library — How Each AI Platform Works | HyperMind',
     description:

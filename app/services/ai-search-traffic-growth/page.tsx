@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: 'AI Search Traffic Growth Service | HyperMind',
   description:
     'AI Search Traffic Growth is the practice of converting AI assistant mentions and recommendations into measurable website traffic and customer acquisition. Learn how HyperMind turns AI visibility into revenue.',
+  alternates: {
+    canonical: '/services/ai-search-traffic-growth/',
+  },
 }
 
 const FAQS = [

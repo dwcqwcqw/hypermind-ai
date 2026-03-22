@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: 'AI Prompt Database — Top Prompts by Industry | HyperMind',
   description:
     'Database of the most common prompts users ask AI assistants, organized by industry. Discover which prompts drive AI recommendations in SaaS, CRM, AI Tools, Fintech, and Ecommerce.',
+  alternates: {
+    canonical: '/resources/prompt-database/',
+  },
   openGraph: {
     title: 'AI Prompt Database — Top Prompts by Industry | HyperMind',
     description:

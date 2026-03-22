@@ -9,12 +9,57 @@ export const metadata: Metadata = {
   title: 'How to Optimize for AI Search: The Complete GEO Guide | HyperMind',
   description:
     'Step-by-step guide to increasing your brand visibility in AI search. Learn content optimization, citation building, and brand narrative control for ChatGPT, Gemini, Perplexity, and Claude.',
+  alternates: {
+    canonical: '/resources/how-to-optimize-for-ai-search/',
+  },
 }
 
 export default function HowToOptimizeForAiSearchPage() {
   return (
     <main className="min-h-screen bg-white pt-24">
       <Navbar />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [
+              {
+                '@type': 'Article',
+                headline: 'How to Optimize for AI Search: The Complete GEO Guide',
+                description: 'Step-by-step guide to increasing your brand visibility in AI search. Learn content optimization, citation building, and brand narrative control for ChatGPT, Gemini, Perplexity, and Claude.',
+                url: 'https://www.hypermindai.tech/resources/how-to-optimize-for-ai-search/',
+                author: { '@type': 'Organization', name: 'HyperMind', url: 'https://www.hypermindai.tech/' },
+                publisher: { '@type': 'Organization', name: 'HyperMind', logo: { '@type': 'ImageObject', url: 'https://www.hypermindai.tech/asset/logo.png' } },
+                datePublished: '2025-03-15',
+                dateModified: '2025-03-15',
+                mainEntityOfPage: 'https://www.hypermindai.tech/resources/how-to-optimize-for-ai-search/',
+                inLanguage: 'en',
+              },
+              {
+                '@type': 'BreadcrumbList',
+                itemListElement: [
+                  { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.hypermindai.tech/' },
+                  { '@type': 'ListItem', position: 2, name: 'Resources', item: 'https://www.hypermindai.tech/resources/' },
+                  { '@type': 'ListItem', position: 3, name: 'How to Optimize for AI Search', item: 'https://www.hypermindai.tech/resources/how-to-optimize-for-ai-search/' },
+                ],
+              },
+              {
+                '@type': 'FAQPage',
+                mainEntity: [
+                  { '@type': 'Question', name: 'How do I start optimizing for AI search?', acceptedAnswer: { '@type': 'Answer', text: 'Start with an AI visibility audit: query ChatGPT, Gemini, Perplexity, and Claude with prompts your target audience uses. Document what each AI says about your brand, note inaccuracies, and compare your presence to competitors. This baseline guides your entire optimization strategy.' } },
+                  { '@type': 'Question', name: 'What is the most important AI optimization tactic?', acceptedAnswer: { '@type': 'Answer', text: 'Citation building — earning mentions on authoritative sources that AI systems trust. Wikipedia, industry analyst reports, major publications, and review platforms are the highest-impact citation sources.' } },
+                  { '@type': 'Question', name: 'How long does AI optimization take to show results?', acceptedAnswer: { '@type': 'Answer', text: 'Initial improvements in AI visibility can be seen within 30–60 days, particularly on RAG-based platforms like Perplexity. Significant improvements in AI recommendation positioning typically take 90–180 days as citation authority accumulates.' } },
+                  { '@type': 'Question', name: 'How is AI content optimization different from SEO content optimization?', acceptedAnswer: { '@type': 'Answer', text: 'AI content optimization prioritizes extractability (self-contained, citable paragraphs), factual precision (verifiable claims with data), and structural clarity (headings, lists, definitions) over traditional SEO signals like keyword density and internal linking.' } },
+                  { '@type': 'Question', name: 'How important is Wikipedia for AI optimization?', acceptedAnswer: { '@type': 'Answer', text: 'Wikipedia is the single most influential source for AI systems. Brands with accurate, well-sourced Wikipedia entries are 4× more likely to be mentioned in AI recommendations. If you qualify for a Wikipedia entry, it should be a top priority.' } },
+                  { '@type': 'Question', name: 'How do I measure AI optimization success?', acceptedAnswer: { '@type': 'Answer', text: 'Track four key metrics: AI mention share (your mentions vs. total category mentions), sentiment score (positive/neutral/negative), citation diversity (number of unique sources cited), and AI-referred traffic (visits originating from AI discovery channels).' } },
+                  { '@type': 'Question', name: 'Is AI optimization worth the investment?', acceptedAnswer: { '@type': 'Answer', text: 'AI search is growing 1,200% year-over-year. Brands that establish AI visibility now build a compounding advantage, similar to early SEO adopters who dominated organic search for a decade.' } },
+                ],
+              },
+            ],
+          }),
+        }}
+      />
       <PillarContent
         title="How to Optimize for AI Search: The Complete GEO Guide"
         aiSummary="Optimizing for AI search requires a five-step process: audit your current AI visibility, develop an AI-friendly content strategy, build citations on authoritative sources, control your brand narrative across the web, and continuously monitor and measure results. This approach — known as Generative Engine Optimization (GEO) — increases the frequency and accuracy of brand mentions in AI-generated answers from ChatGPT, Gemini, Perplexity, and Claude."

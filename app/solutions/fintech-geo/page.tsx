@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: 'GEO for Fintech Companies | HyperMind',
   description:
     'Generative Engine Optimization for fintech companies. Build trust-based AI visibility so financial products are recommended when users ask AI assistants for financial guidance and product comparisons.',
+  alternates: {
+    canonical: '/solutions/fintech-geo/',
+  },
   openGraph: {
     title: 'GEO for Fintech Companies | HyperMind',
     description:

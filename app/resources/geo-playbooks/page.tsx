@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: 'GEO Playbooks — Step-by-Step Action Guides | HyperMind',
   description:
     'Step-by-step GEO playbooks for increasing AI mentions, controlling AI narrative, becoming an AI citation source, and winning AI recommendations. Practical action guides for Generative Engine Optimization.',
+  alternates: {
+    canonical: '/resources/geo-playbooks/',
+  },
   openGraph: {
     title: 'GEO Playbooks — Step-by-Step Action Guides | HyperMind',
     description:

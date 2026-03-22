@@ -6,12 +6,19 @@ import StructuredData from '@/components/StructuredData'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'HyperMind — The GEO Agency for AI Search | Generative Engine Optimization',
+  metadataBase: new URL('https://www.hypermindai.tech'),
+  title: {
+    default: 'HyperMind — The GEO Agency for AI Search | Generative Engine Optimization',
+    template: '%s | HyperMind',
+  },
   description: 'HyperMind is the leading GEO agency helping brands get recommended in AI answers. We optimize your visibility across ChatGPT, Gemini, Perplexity, Claude and other AI assistants through Generative Engine Optimization.',
   icons: {
     icon: '/asset/logo.png',
     shortcut: '/asset/logo.png',
     apple: '/asset/logo.png',
+  },
+  alternates: {
+    canonical: '/',
   },
   openGraph: {
     title: 'HyperMind — The GEO Agency for AI Search | Generative Engine Optimization',
@@ -20,7 +27,7 @@ export const metadata: Metadata = {
     siteName: 'HyperMind',
     images: [
       {
-        url: 'https://www.hypermindai.tech/asset/dashboard.jpg',
+        url: '/asset/dashboard.jpg',
         width: 1200,
         height: 630,
         alt: 'HyperMind — The GEO Agency for AI Search',
@@ -33,8 +40,20 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'HyperMind — The GEO Agency for AI Search | Generative Engine Optimization',
     description: 'HyperMind is the leading GEO agency helping brands get recommended in AI answers. We optimize your visibility across ChatGPT, Gemini, Perplexity, Claude and other AI assistants.',
-    images: ['https://www.hypermindai.tech/asset/dashboard.jpg'],
+    images: ['/asset/dashboard.jpg'],
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {},
 }
 
 export default function RootLayout({

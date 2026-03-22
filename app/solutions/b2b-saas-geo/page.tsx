@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: 'GEO for B2B SaaS Companies | HyperMind',
   description:
     'Generative Engine Optimization for B2B SaaS companies. Get your software recommended when decision-makers ask AI assistants like ChatGPT, Gemini, and Perplexity for product recommendations.',
+  alternates: {
+    canonical: '/solutions/b2b-saas-geo/',
+  },
   openGraph: {
     title: 'GEO for B2B SaaS Companies | HyperMind',
     description:

@@ -9,12 +9,59 @@ export const metadata: Metadata = {
   title: 'What is Generative Engine Optimization (GEO)? | HyperMind',
   description:
     'Generative Engine Optimization (GEO) is the practice of optimizing brand presence so AI assistants like ChatGPT, Gemini, Perplexity, and Claude mention or recommend it. Learn the complete GEO framework.',
+  alternates: {
+    canonical: '/resources/what-is-geo/',
+  },
 }
 
 export default function WhatIsGeoPage() {
   return (
     <main className="min-h-screen bg-white pt-24">
       <Navbar />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [
+              {
+                '@type': 'Article',
+                headline: 'What is Generative Engine Optimization (GEO)?',
+                description: 'Generative Engine Optimization (GEO) is the practice of optimizing brand presence so AI assistants like ChatGPT, Gemini, Perplexity, and Claude mention or recommend it. Learn the complete GEO framework.',
+                url: 'https://www.hypermindai.tech/resources/what-is-geo/',
+                author: { '@type': 'Organization', name: 'HyperMind', url: 'https://www.hypermindai.tech/' },
+                publisher: { '@type': 'Organization', name: 'HyperMind', logo: { '@type': 'ImageObject', url: 'https://www.hypermindai.tech/asset/logo.png' } },
+                datePublished: '2025-03-15',
+                dateModified: '2025-03-15',
+                mainEntityOfPage: 'https://www.hypermindai.tech/resources/what-is-geo/',
+                inLanguage: 'en',
+              },
+              {
+                '@type': 'BreadcrumbList',
+                itemListElement: [
+                  { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.hypermindai.tech/' },
+                  { '@type': 'ListItem', position: 2, name: 'Resources', item: 'https://www.hypermindai.tech/resources/' },
+                  { '@type': 'ListItem', position: 3, name: 'What is GEO?', item: 'https://www.hypermindai.tech/resources/what-is-geo/' },
+                ],
+              },
+              {
+                '@type': 'FAQPage',
+                mainEntity: [
+                  { '@type': 'Question', name: 'What does GEO stand for?', acceptedAnswer: { '@type': 'Answer', text: "GEO stands for Generative Engine Optimization. It is the practice of optimizing your brand's digital presence so AI assistants like ChatGPT, Gemini, Perplexity, and Claude accurately mention, recommend, or cite your brand when answering user queries." } },
+                  { '@type': 'Question', name: 'How is GEO different from SEO?', acceptedAnswer: { '@type': 'Answer', text: 'SEO optimizes for ranked links on search engine results pages. GEO optimizes for inline mentions within AI-generated text. There are no "page-one rankings" in AI answers — your brand either appears in the synthesized answer or it does not.' } },
+                  { '@type': 'Question', name: 'Why is GEO important?', acceptedAnswer: { '@type': 'Answer', text: 'AI assistants now influence over 30% of product and service discovery queries. As AI search adoption grows, brands that are invisible in AI answers lose a significant and growing share of potential customers.' } },
+                  { '@type': 'Question', name: 'Which AI platforms does GEO target?', acceptedAnswer: { '@type': 'Answer', text: 'GEO targets all major AI assistants and AI-powered search engines, including ChatGPT (OpenAI), Gemini (Google), Perplexity, Claude (Anthropic), Microsoft Copilot, and emerging AI search platforms.' } },
+                  { '@type': 'Question', name: 'How long does it take to see GEO results?', acceptedAnswer: { '@type': 'Answer', text: 'Initial improvements in AI mention frequency can be seen within 30–60 days. Significant changes in citation authority and brand positioning typically take 90–180 days, depending on your starting point and industry competitiveness.' } },
+                  { '@type': 'Question', name: 'What is AI visibility?', acceptedAnswer: { '@type': 'Answer', text: "AI visibility measures how frequently and prominently your brand appears in AI-generated answers. It is the GEO equivalent of organic search visibility in traditional SEO." } },
+                  { '@type': 'Question', name: 'Is GEO the same as LLM SEO?', acceptedAnswer: { '@type': 'Answer', text: 'LLM SEO is an alternative term for GEO. Both refer to optimizing content and brand presence specifically for large language models. GEO is the more widely adopted industry term.' } },
+                  { '@type': 'Question', name: 'Does GEO replace SEO?', acceptedAnswer: { '@type': 'Answer', text: 'No. GEO complements SEO. Strong traditional SEO builds the authority and content foundation that GEO leverages. The most effective strategy integrates both disciplines.' } },
+                  { '@type': 'Question', name: 'What is the GEO Framework?', acceptedAnswer: { '@type': 'Answer', text: 'The GEO Framework is a four-stage cycle: Monitor (track AI mentions), Diagnose (identify gaps and inaccuracies), Optimize (improve content and citations), and Measure (quantify results). This cycle is repeated continuously.' } },
+                ],
+              },
+            ],
+          }),
+        }}
+      />
       <PillarContent
         title="What is Generative Engine Optimization (GEO)?"
         aiSummary="Generative Engine Optimization (GEO) is the practice of optimizing a brand's digital presence so that AI assistants — including ChatGPT, Gemini, Perplexity, and Claude — accurately mention, recommend, or cite it when answering user queries. GEO combines content strategy, citation building, and AI visibility monitoring to ensure brands appear in AI-generated answers."

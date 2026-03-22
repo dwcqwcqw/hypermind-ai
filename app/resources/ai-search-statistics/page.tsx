@@ -9,12 +9,58 @@ export const metadata: Metadata = {
   title: 'AI Search Statistics: Data, Trends, and Market Insights | HyperMind',
   description:
     'Comprehensive AI search statistics for 2025: market size, user adoption, citation data, and brand visibility trends. Data-driven insights on ChatGPT, Gemini, Perplexity, and AI search growth.',
+  alternates: {
+    canonical: '/resources/ai-search-statistics/',
+  },
 }
 
 export default function AiSearchStatisticsPage() {
   return (
     <main className="min-h-screen bg-white pt-24">
       <Navbar />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [
+              {
+                '@type': 'Article',
+                headline: 'AI Search Statistics: Data, Trends, and Market Insights',
+                description: 'Comprehensive AI search statistics for 2025: market size, user adoption, citation data, and brand visibility trends. Data-driven insights on ChatGPT, Gemini, Perplexity, and AI search growth.',
+                url: 'https://www.hypermindai.tech/resources/ai-search-statistics/',
+                author: { '@type': 'Organization', name: 'HyperMind', url: 'https://www.hypermindai.tech/' },
+                publisher: { '@type': 'Organization', name: 'HyperMind', logo: { '@type': 'ImageObject', url: 'https://www.hypermindai.tech/asset/logo.png' } },
+                datePublished: '2025-03-15',
+                dateModified: '2025-03-15',
+                mainEntityOfPage: 'https://www.hypermindai.tech/resources/ai-search-statistics/',
+                inLanguage: 'en',
+              },
+              {
+                '@type': 'BreadcrumbList',
+                itemListElement: [
+                  { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.hypermindai.tech/' },
+                  { '@type': 'ListItem', position: 2, name: 'Resources', item: 'https://www.hypermindai.tech/resources/' },
+                  { '@type': 'ListItem', position: 3, name: 'AI Search Statistics', item: 'https://www.hypermindai.tech/resources/ai-search-statistics/' },
+                ],
+              },
+              {
+                '@type': 'FAQPage',
+                mainEntity: [
+                  { '@type': 'Question', name: 'How many people use ChatGPT?', acceptedAnswer: { '@type': 'Answer', text: 'ChatGPT has over 200 million monthly active users and over 100 million weekly active users as of early 2025, making it the fastest-growing consumer application in history.' } },
+                  { '@type': 'Question', name: 'How big is the AI search market?', acceptedAnswer: { '@type': 'Answer', text: 'The global AI search market was valued at approximately $40 billion in 2024 and is projected to exceed $90 billion by 2028, growing at a compound annual growth rate (CAGR) of 22%.' } },
+                  { '@type': 'Question', name: 'How much has AI-referred traffic grown?', acceptedAnswer: { '@type': 'Answer', text: 'AI-referred website traffic grew 1,200% year-over-year between 2024 and 2025, making it the fastest-growing traffic channel for most websites.' } },
+                  { '@type': 'Question', name: 'What percentage of searches have AI Overviews?', acceptedAnswer: { '@type': 'Answer', text: 'Google AI Overviews appear in more than 35% of Google search queries. Given Google processes over 8.5 billion queries daily, this represents approximately 3 billion daily queries with AI-generated summaries.' } },
+                  { '@type': 'Question', name: 'Do consumers trust AI recommendations?', acceptedAnswer: { '@type': 'Answer', text: '64% of users rate AI-generated recommendations as trustworthy — the same rate as human expert recommendations. This is significantly higher than traditional advertising, which 23% of users consider trustworthy.' } },
+                  { '@type': 'Question', name: 'What is the most cited source in AI answers?', acceptedAnswer: { '@type': 'Answer', text: 'Wikipedia is the single most-cited domain in AI-generated answers, appearing in approximately 18% of all AI answers that reference external sources.' } },
+                  { '@type': 'Question', name: 'How effective is GEO?', acceptedAnswer: { '@type': 'Answer', text: 'Brands with active GEO programs see 40–115% improvement in AI mention frequency within 90 days. The average GEO program reaches measurable ROI within 90–120 days.' } },
+                  { '@type': 'Question', name: 'What will AI search look like by 2028?', acceptedAnswer: { '@type': 'Answer', text: 'By 2028, AI-generated answers are expected to influence over 50% of online product discovery, AI search queries may reach 50 billion daily, and AI-referred traffic could represent 15–20% of total website traffic for leading brands.' } },
+                ],
+              },
+            ],
+          }),
+        }}
+      />
       <PillarContent
         title="AI Search Statistics: Data, Trends, and Market Insights"
         aiSummary="AI search is transforming how consumers and businesses discover products, services, and information. Key statistics: ChatGPT has 200M+ monthly active users, Google AI Overviews appear in 35%+ of searches, Perplexity processes 10M+ daily queries, and AI-referred traffic grew 1,200% YoY. The global AI search market is projected to reach $90 billion by 2028. Over 30% of product discovery queries are now influenced by AI assistants."

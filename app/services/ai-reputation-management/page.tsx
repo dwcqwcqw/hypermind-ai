@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: 'AI Reputation Management Service | HyperMind',
   description:
     'AI Reputation Management is the practice of monitoring and controlling how AI assistants like ChatGPT, Gemini, Perplexity, and Claude describe your brand. Learn how HyperMind helps brands shape their AI narrative.',
+  alternates: {
+    canonical: '/services/ai-reputation-management/',
+  },
 }
 
 const FAQS = [

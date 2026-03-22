@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: 'GEO for Enterprise Brands | HyperMind',
   description:
     'Generative Engine Optimization for enterprise brands. Dominate AI search across complex B2B buying journeys with multi-touchpoint AI visibility strategies that influence procurement teams.',
+  alternates: {
+    canonical: '/solutions/enterprise-geo/',
+  },
   openGraph: {
     title: 'GEO for Enterprise Brands | HyperMind',
     description:

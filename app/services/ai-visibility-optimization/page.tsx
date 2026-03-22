@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: 'AI Visibility Optimization Service | HyperMind',
   description:
     'AI Visibility Optimization is the practice of increasing how frequently AI assistants like ChatGPT, Gemini, Perplexity, and Claude recommend your brand. Learn how HyperMind helps brands dominate AI-generated answers.',
+  alternates: {
+    canonical: '/services/ai-visibility-optimization/',
+  },
 }
 
 const FAQS = [

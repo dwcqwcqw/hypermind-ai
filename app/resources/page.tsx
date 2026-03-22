@@ -8,6 +8,9 @@ export const revalidate = 3600
 export const metadata: Metadata = {
   title: 'GEO Resources — Generative Engine Optimization Knowledge Hub | HyperMind',
   description: 'Comprehensive GEO knowledge base including guides, playbooks, AI search library, prompt database, and the latest research on Generative Engine Optimization.',
+  alternates: {
+    canonical: '/resources/',
+  },
 }
 
 const PILLAR_GUIDES = [
@@ -86,6 +89,23 @@ export default function ResourcesHub() {
   return (
     <>
       <Navbar />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [
+              {
+                '@type': 'BreadcrumbList',
+                itemListElement: [
+                  { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.hypermindai.tech/' },
+                  { '@type': 'ListItem', position: 2, name: 'Resources', item: 'https://www.hypermindai.tech/resources/' },
+                ],
+              },
+            ],
+          }),
+        }}
+      />
       <main className="min-h-screen bg-white pt-24">
         {/* Hero */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">

@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: 'GEO Guides — Generative Engine Optimization Knowledge Base | HyperMind',
   description:
     'The complete GEO knowledge base. In-depth guides covering what GEO is, how AI search works, how to optimize for AI search, AI visibility monitoring, and complete GEO strategy frameworks.',
+  alternates: {
+    canonical: '/resources/geo-guides/',
+  },
   openGraph: {
     title: 'GEO Guides — Generative Engine Optimization Knowledge Base | HyperMind',
     description:
