@@ -1,23 +1,32 @@
 /**
- * Canonical category and tag definitions for the HyperMind blog.
- * All blog posts MUST use exactly one category from BLOG_CATEGORIES
- * and 3-5 tags chosen from the tag groups below.
+ * Canonical category + subtopic definitions for the HyperMind blog.
  *
- * Auto-classification: getAutoCategory(title, slug) provides deterministic
- * keyword-based classification with a hash fallback for even distribution
- * when no keywords match. This ensures every post always has a category,
- * even if it was created before categories were introduced.
+ * Auto-classification strategy:
+ *   1. getAutoCategory(title, slug)   — keyword matching + hash fallback (6 categories)
+ *   2. getAutoSubtopic(title, slug, categoryId) — keyword matching + hash fallback per category
+ *
+ * Both functions are deterministic: same inputs always produce same output.
+ * The hash seed for subtopics is slug+categoryId so subtopic distribution
+ * is independent of the category distribution.
  */
 
-// ── Categories ───────────────────────────────────────────────────────────────
+// ── Types ────────────────────────────────────────────────────────────────────
+
+export interface BlogSubtopic {
+  id: string
+  label: string
+}
 
 export interface BlogCategory {
   id: string
   label: string
   description: string
-  color: string     // Tailwind bg class for badge
-  textColor: string // Tailwind text class for badge
+  color: string      // Tailwind bg class for badge
+  textColor: string  // Tailwind text class for badge
+  subtopics: BlogSubtopic[]
 }
+
+// ── Categories ───────────────────────────────────────────────────────────────
 
 export const BLOG_CATEGORIES: BlogCategory[] = [
   {
@@ -26,6 +35,13 @@ export const BLOG_CATEGORIES: BlogCategory[] = [
     description: 'GEO overview, GEO vs SEO, AI search systems, ranking factors, ecosystem',
     color: 'bg-blue-100',
     textColor: 'text-blue-800',
+    subtopics: [
+      { id: 'geo-overview',      label: 'GEO Overview' },
+      { id: 'geo-vs-seo',        label: 'GEO vs SEO' },
+      { id: 'ai-search-systems', label: 'AI Search Systems' },
+      { id: 'ranking-factors',   label: 'Ranking Factors' },
+      { id: 'ecosystem',         label: 'Ecosystem' },
+    ],
   },
   {
     id: 'answer-ranking',
@@ -33,6 +49,13 @@ export const BLOG_CATEGORIES: BlogCategory[] = [
     description: 'ChatGPT ranking, AI answers, featured snippets, zero-click search, answer optimization',
     color: 'bg-purple-100',
     textColor: 'text-purple-800',
+    subtopics: [
+      { id: 'chatgpt-ranking',      label: 'ChatGPT Ranking' },
+      { id: 'ai-answers',           label: 'AI Answers' },
+      { id: 'featured-snippets',    label: 'Featured Snippets' },
+      { id: 'zero-click-search',    label: 'Zero-Click Search' },
+      { id: 'answer-optimization',  label: 'Answer Optimization' },
+    ],
   },
   {
     id: 'ai-mentions',
@@ -40,6 +63,13 @@ export const BLOG_CATEGORIES: BlogCategory[] = [
     description: 'AI citations, brand mentions, authority signals, backlinks, PR',
     color: 'bg-green-100',
     textColor: 'text-green-800',
+    subtopics: [
+      { id: 'ai-citations',      label: 'AI Citations' },
+      { id: 'brand-mentions',    label: 'Brand Mentions' },
+      { id: 'authority-signals', label: 'Authority Signals' },
+      { id: 'backlinks',         label: 'Backlinks' },
+      { id: 'pr',                label: 'PR & Media' },
+    ],
   },
   {
     id: 'content-optimization',
@@ -47,6 +77,13 @@ export const BLOG_CATEGORIES: BlogCategory[] = [
     description: 'LLM content structure, semantic SEO, entity optimization, chunking, RAG',
     color: 'bg-orange-100',
     textColor: 'text-orange-800',
+    subtopics: [
+      { id: 'llm-content-structure', label: 'LLM Content Structure' },
+      { id: 'semantic-seo',          label: 'Semantic SEO' },
+      { id: 'entity-optimization',   label: 'Entity Optimization' },
+      { id: 'chunking',              label: 'Content Chunking' },
+      { id: 'rag',                   label: 'RAG & Retrieval' },
+    ],
   },
   {
     id: 'ai-analytics',
@@ -54,6 +91,13 @@ export const BLOG_CATEGORIES: BlogCategory[] = [
     description: 'Visibility tracking, mention monitoring, GEO metrics, competitor analysis, tools',
     color: 'bg-cyan-100',
     textColor: 'text-cyan-800',
+    subtopics: [
+      { id: 'visibility-tracking',  label: 'Visibility Tracking' },
+      { id: 'mention-monitoring',   label: 'Mention Monitoring' },
+      { id: 'geo-metrics',          label: 'GEO Metrics' },
+      { id: 'competitor-analysis',  label: 'Competitor Analysis' },
+      { id: 'tools',                label: 'Tools & Platforms' },
+    ],
   },
   {
     id: 'geo-strategy',
@@ -61,37 +105,36 @@ export const BLOG_CATEGORIES: BlogCategory[] = [
     description: 'SaaS GEO, eCommerce GEO, B2B GEO, content strategy, case studies',
     color: 'bg-gray-100',
     textColor: 'text-gray-800',
+    subtopics: [
+      { id: 'saas-geo',          label: 'SaaS GEO' },
+      { id: 'ecommerce-geo',     label: 'eCommerce GEO' },
+      { id: 'b2b-geo',           label: 'B2B GEO' },
+      { id: 'content-strategy',  label: 'Content Strategy' },
+      { id: 'case-studies',      label: 'Case Studies' },
+    ],
   },
 ]
 
-/** Ordered list of all category IDs — used for hash-based fallback */
 const CATEGORY_IDS = BLOG_CATEGORIES.map((c) => c.id)
 
 export function getCategoryById(id: string): BlogCategory | undefined {
   return BLOG_CATEGORIES.find((c) => c.id === id)
 }
 
-// ── Auto-classification ───────────────────────────────────────────────────────
+export function getSubtopicLabel(categoryId: string, subtopicId: string): string {
+  const cat = getCategoryById(categoryId)
+  return cat?.subtopics.find((s) => s.id === subtopicId)?.label ?? subtopicId
+}
 
-/**
- * Priority-ordered keyword rules. The FIRST matching rule wins.
- * Each rule maps a category ID to a list of lowercase keyword fragments
- * that are tested against `title + slug` (both lowercased).
- *
- * Design notes:
- * - More specific / rarer terms are listed first to avoid false matches.
- * - Ordering: ai-analytics first because "top 7 / top 10 / vendor / tool"
- *   are unambiguous signals, whereas "strategy" is too generic.
- * - geo-strategy is last intentionally; it catches broad signals as fallback
- *   before the hash fallback runs.
- */
-const KEYWORD_RULES: Array<{ id: string; keywords: string[] }> = [
+// ── Auto-classification (category) ───────────────────────────────────────────
+
+const CATEGORY_KEYWORD_RULES: Array<{ id: string; keywords: string[] }> = [
   {
     id: 'ai-analytics',
     keywords: [
       'top 7', 'top 10', 'top 5', 'best tools', 'best apps', 'mobile ai',
       'vendor comparison', 'platform comparison', 'vs top', 'competitor analysis',
-      'tracking', 'monitoring tool', 'analytics platform', 'kpi', 'roi measurement',
+      'tracking tool', 'monitoring tool', 'analytics platform', 'kpi', 'roi measurement',
       'visibility score', 'benchmark', 'dashboard', 'reporting', 'audit tool',
     ],
   },
@@ -121,8 +164,7 @@ const KEYWORD_RULES: Array<{ id: string; keywords: string[] }> = [
       'content chunking', 'rag', 'retrieval augmented', 'llm content',
       'knowledge graph', 'structured content', 'schema markup', 'faq schema',
       'embedding', 'vector search', 'content for ai', 'content format',
-      'optimize content', 'content readability', 'content clarity',
-      'prompt-friendly', 'ai-readable', 'llm-friendly',
+      'optimize content', 'content readability', 'llm-friendly', 'ai-readable',
     ],
   },
   {
@@ -147,30 +189,97 @@ const KEYWORD_RULES: Array<{ id: string; keywords: string[] }> = [
   },
 ]
 
-/**
- * Returns a deterministic category ID for any post.
- * 1. Tries keyword matching against `title + slug` (combined, lowercased).
- * 2. Falls back to a hash of the slug to distribute evenly across all 6 categories.
- *
- * The hash fallback ensures posts with no recognizable keywords are spread
- * uniformly — approximately 1/6 of unmatched posts per category.
- */
 export function getAutoCategory(title: string, slug: string): string {
   const combined = `${title.toLowerCase()} ${slug.toLowerCase()}`
-
-  for (const { id, keywords } of KEYWORD_RULES) {
-    if (keywords.some((kw) => combined.includes(kw))) {
-      return id
-    }
+  for (const { id, keywords } of CATEGORY_KEYWORD_RULES) {
+    if (keywords.some((kw) => combined.includes(kw))) return id
   }
-
-  // Deterministic hash fallback: ensures even distribution without randomness
   let hash = 0
   for (let i = 0; i < slug.length; i++) {
     hash = ((hash << 5) - hash) + slug.charCodeAt(i)
-    hash |= 0 // Convert to 32-bit integer
+    hash |= 0
   }
   return CATEGORY_IDS[Math.abs(hash) % CATEGORY_IDS.length]
+}
+
+// ── Auto-classification (subtopic) ───────────────────────────────────────────
+
+/**
+ * Per-category subtopic keyword rules.
+ * Each rule maps a subtopic ID → keyword fragments.
+ * If no keyword matches, hash(slug + ':' + categoryId) picks a subtopic
+ * within the category, ensuring even distribution independent of the
+ * category-level hash.
+ */
+const SUBTOPIC_KEYWORD_RULES: Record<string, Array<{ id: string; keywords: string[] }>> = {
+  'geo-basics': [
+    { id: 'geo-vs-seo',        keywords: ['vs seo', 'versus seo', 'seo vs', 'geo and seo', 'difference between geo'] },
+    { id: 'ai-search-systems', keywords: ['how ai search', 'perplexity search', 'chatgpt search', 'gemini search', 'llm search system', 'search engine works'] },
+    { id: 'ranking-factors',   keywords: ['ranking factor', 'ranking signal', 'what factor', 'ai rank criteria', 'ranking criteria'] },
+    { id: 'ecosystem',         keywords: ['ecosystem', 'landscape', 'market overview', 'industry overview', 'ai search market'] },
+    { id: 'geo-overview',      keywords: ['overview', 'what is geo', 'intro to geo', 'basics', '101', 'beginners guide', 'introduction'] },
+  ],
+  'answer-ranking': [
+    { id: 'zero-click-search',   keywords: ['zero-click', 'zero click', 'no-click', 'no click'] },
+    { id: 'featured-snippets',   keywords: ['featured snippet', 'position 0', 'rich result', 'rich snippet'] },
+    { id: 'chatgpt-ranking',     keywords: ['chatgpt', 'openai', 'gpt-4', 'gpt-3', 'gpt4', 'gpt3'] },
+    { id: 'answer-optimization', keywords: ['answer optimization', 'optimize answer', 'answer engine', 'answer format'] },
+    { id: 'ai-answers',          keywords: ['ai answer', 'ai response', 'ai recommendation', 'ai generated answer', 'direct answer'] },
+  ],
+  'ai-mentions': [
+    { id: 'backlinks',         keywords: ['backlink', 'link building', 'inbound link', 'link strategy', 'link equity'] },
+    { id: 'pr',                keywords: ['public relations', 'digital pr', 'press release', 'media coverage', 'earned media'] },
+    { id: 'ai-citations',      keywords: ['ai citation', 'citation strategy', 'cited by ai', 'earn citation', 'cite'] },
+    { id: 'authority-signals', keywords: ['authority signal', 'domain authority', 'credibility signal', 'trust signal'] },
+    { id: 'brand-mentions',    keywords: ['brand mention', 'brand in ai', 'mentioned in ai', 'brand visibility', 'mention monitoring'] },
+  ],
+  'content-optimization': [
+    { id: 'rag',                   keywords: ['rag', 'retrieval augmented', 'retrieval', 'vector search', 'embedding', 'vector'] },
+    { id: 'chunking',              keywords: ['chunking', 'content chunk', 'text chunk', 'passage', 'segment'] },
+    { id: 'entity-optimization',   keywords: ['entity seo', 'entity optimization', 'entity', 'knowledge graph', 'named entity'] },
+    { id: 'semantic-seo',          keywords: ['semantic seo', 'semantic search', 'semantic relevance', 'latent semantic'] },
+    { id: 'llm-content-structure', keywords: ['content structure', 'structured content', 'content format', 'content for llm', 'llm-friendly', 'ai-readable'] },
+  ],
+  'ai-analytics': [
+    { id: 'competitor-analysis', keywords: ['competitor', 'competitive analysis', 'benchmark', 'competitive intel', 'vs competitor'] },
+    { id: 'tools',               keywords: ['tool', 'platform', 'software', 'app', 'mobile', 'top 7', 'top 10', 'vendor', 'best tools'] },
+    { id: 'mention-monitoring',  keywords: ['mention monitoring', 'brand monitoring', 'social listening', 'monitor mention', 'track mention'] },
+    { id: 'geo-metrics',         keywords: ['metric', 'kpi', 'measurement', 'measure', 'roi', 'score', 'performance indicator'] },
+    { id: 'visibility-tracking', keywords: ['visibility tracking', 'track visibility', 'monitor visibility', 'ai visibility', 'visibility score'] },
+  ],
+  'geo-strategy': [
+    { id: 'case-studies',     keywords: ['case study', 'case studies', 'success story', 'example', 'results', 'outcome'] },
+    { id: 'ecommerce-geo',    keywords: ['ecommerce', 'e-commerce', 'online store', 'product listing', 'shopping'] },
+    { id: 'saas-geo',         keywords: ['saas', 'software as a service', 'b2b saas', 'software product'] },
+    { id: 'b2b-geo',          keywords: ['b2b', 'business to business', 'enterprise', 'corporate', 'b2b marketing'] },
+    { id: 'content-strategy', keywords: ['content strategy', 'content plan', 'editorial', 'content calendar', 'content marketing'] },
+  ],
+}
+
+/**
+ * Returns a deterministic subtopic ID for a given post within its category.
+ * Uses keyword matching first, then falls back to a hash that is independent
+ * of the category-level hash (seed = slug + ':' + categoryId).
+ */
+export function getAutoSubtopic(title: string, slug: string, categoryId: string): string {
+  const cat = getCategoryById(categoryId)
+  if (!cat || cat.subtopics.length === 0) return ''
+
+  const combined = `${title.toLowerCase()} ${slug.toLowerCase()}`
+  const rules = SUBTOPIC_KEYWORD_RULES[categoryId] ?? []
+
+  for (const { id, keywords } of rules) {
+    if (keywords.some((kw) => combined.includes(kw))) return id
+  }
+
+  // Hash with a different seed per category for independent distribution
+  const seed = `${slug}:${categoryId}`
+  let hash = 0
+  for (let i = 0; i < seed.length; i++) {
+    hash = ((hash << 5) - hash) + seed.charCodeAt(i)
+    hash |= 0
+  }
+  return cat.subtopics[Math.abs(hash) % cat.subtopics.length].id
 }
 
 // ── Tags ─────────────────────────────────────────────────────────────────────
@@ -198,48 +307,25 @@ export const BLOG_TAG_GROUPS: TagGroup[] = [
   },
   {
     group: 'Platform',
-    tags: [
-      'ChatGPT',
-      'Perplexity',
-      'Gemini',
-      'Claude',
-      'Copilot',
-      'Grok',
-    ],
+    tags: ['ChatGPT', 'Perplexity', 'Gemini', 'Claude', 'Copilot', 'Grok'],
   },
   {
     group: 'Technical',
     tags: [
-      'RAG',
-      'embeddings',
-      'semantic SEO',
-      'entity SEO',
-      'content chunking',
-      'structured data',
-      'FAQ schema',
-      'knowledge graph',
-      'LLM SEO',
+      'RAG', 'embeddings', 'semantic SEO', 'entity SEO',
+      'content chunking', 'structured data', 'FAQ schema', 'knowledge graph', 'LLM SEO',
     ],
   },
   {
     group: 'GEO Mechanism',
     tags: [
-      'AI citations',
-      'brand mentions',
-      'authority signals',
-      'AI ranking signals',
-      'answer extraction',
-      'AI citation strategy',
-      'AI brand monitoring',
-      'AI recommendation rate',
+      'AI citations', 'brand mentions', 'authority signals', 'AI ranking signals',
+      'answer extraction', 'AI citation strategy', 'AI brand monitoring', 'AI recommendation rate',
     ],
   },
 ]
 
-/** Flat list of all available tags for autocomplete / multiselect */
 export const ALL_TAGS: string[] = BLOG_TAG_GROUPS.flatMap((g) => g.tags)
-
-// ── Standard blog template guide (used in admin UI help text) ───────────────
 
 export const BLOG_TEMPLATE_STRUCTURE = [
   'Title (question or definition format)',
