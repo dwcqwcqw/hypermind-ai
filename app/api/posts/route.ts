@@ -25,17 +25,21 @@ export async function POST(request: Request) {
       coverImage: string
       publishAt: string
       excerpt?: string
+      category?: string
+      tags?: string[]
+      tldr?: string
+      keyTakeaways?: string[]
     }
-    const { title, content, coverImage, publishAt, excerpt } = body
+
+    const { title, content, coverImage, publishAt, excerpt, category, tags, tldr, keyTakeaways } = body
 
     if (!title || !content || !coverImage || !publishAt) {
       return NextResponse.json(
-        { error: 'Missing required fields' },
+        { error: 'Missing required fields: title, content, coverImage, publishAt' },
         { status: 400 }
       )
     }
 
-    // Generate slug from title
     const slug = slugify(title)
 
     const post = await createPost({
@@ -44,7 +48,11 @@ export async function POST(request: Request) {
       content,
       coverImage,
       publishAt,
-      excerpt: excerpt || '',
+      excerpt: excerpt ?? '',
+      category,
+      tags,
+      tldr,
+      keyTakeaways,
     })
 
     return NextResponse.json(post, { status: 201 })
@@ -56,4 +64,3 @@ export async function POST(request: Request) {
     )
   }
 }
-
