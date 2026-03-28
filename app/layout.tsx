@@ -78,23 +78,49 @@ gtag('config', 'G-VGPY1N4763');
 
 (function () {
   try {
+    var url = new URL(window.location.href);
+    var utmSourceRaw = (url.searchParams.get('utm_source') || '').trim();
+    var utmMedium = (url.searchParams.get('utm_medium') || '').trim();
+    var utmCampaign = (url.searchParams.get('utm_campaign') || '').trim();
+    var utmContent = (url.searchParams.get('utm_content') || '').trim();
+    var utmTerm = (url.searchParams.get('utm_term') || '').trim();
+
     var referrer = document.referrer || '';
     var ref = referrer.toLowerCase();
-    var source = null;
+    var utmSource = utmSourceRaw.toLowerCase();
 
-    if (ref.includes('chatgpt.com') || ref.includes('openai.com')) {
-      source = 'chatgpt';
-    } else if (ref.includes('gemini.google.com') || ref.includes('bard.google.com')) {
-      source = 'gemini';
-    } else if (ref.includes('perplexity.ai')) {
-      source = 'perplexity';
-    } else if (ref.includes('claude.ai') || ref.includes('anthropic.com')) {
-      source = 'claude';
+    function normalizeAI(value) {
+      if (!value) return null;
+      if (value.includes('chatgpt') || value.includes('openai')) return 'chatgpt';
+      if (value.includes('gemini') || value.includes('bard')) return 'gemini';
+      if (value.includes('perplexity')) return 'perplexity';
+      if (value.includes('claude') || value.includes('anthropic')) return 'claude';
+      return null;
     }
 
-    if (source) {
+    var aiSource = normalizeAI(utmSource);
+
+    if (!aiSource) {
+      if (ref.includes('chatgpt.com') || ref.includes('openai.com')) {
+        aiSource = 'chatgpt';
+      } else if (ref.includes('gemini.google.com') || ref.includes('bard.google.com')) {
+        aiSource = 'gemini';
+      } else if (ref.includes('perplexity.ai')) {
+        aiSource = 'perplexity';
+      } else if (ref.includes('claude.ai') || ref.includes('anthropic.com')) {
+        aiSource = 'claude';
+      }
+    }
+
+    if (aiSource) {
       gtag('event', 'ai_citation_visit', {
-        ai_source: source,
+        ai_source: aiSource,
+        ai_source_detected_by: utmSource ? 'utm' : 'referrer',
+        utm_source: utmSourceRaw,
+        utm_medium: utmMedium,
+        utm_campaign: utmCampaign,
+        utm_content: utmContent,
+        utm_term: utmTerm,
         referrer_url: referrer,
         page_location: window.location.href,
       });
