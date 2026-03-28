@@ -61,7 +61,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/admin/', '/api/'],
       },
     ],
-    sitemap: 'https://www.hypermindai.tech/sitemap.xml',
-    host: 'https://www.hypermindai.tech',
+    sitemap: 'https://hypermindgeo.com/sitemap.xml',
+    host: 'https://hypermindgeo.com',
   }
 }

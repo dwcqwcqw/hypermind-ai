@@ -6,12 +6,12 @@ import StructuredData from '@/components/StructuredData'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.hypermindai.tech'),
+  metadataBase: new URL('https://hypermindgeo.com'),
   title: {
     default: 'HyperMind — The GEO Agency for AI Search | Generative Engine Optimization',
     template: '%s | HyperMind',
   },
-  description: 'HyperMind is the leading GEO agency helping brands get recommended in AI answers. We optimize your visibility across ChatGPT, Gemini, Perplexity, Claude and other AI assistants through Generative Engine Optimization.',
+  description: 'HyperMind is the leading GEO agency helping brands get cited in AI answers across ChatGPT, Gemini, Perplexity, and Claude.',
   icons: {
     icon: '/asset/logo.png',
     shortcut: '/asset/logo.png',
@@ -22,8 +22,8 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'HyperMind — The GEO Agency for AI Search | Generative Engine Optimization',
-    description: 'HyperMind is the leading GEO agency helping brands get recommended in AI answers. We optimize your visibility across ChatGPT, Gemini, Perplexity, Claude and other AI assistants through Generative Engine Optimization.',
-    url: 'https://www.hypermindai.tech/',
+    description: 'HyperMind is the leading GEO agency helping brands get cited in AI answers across ChatGPT, Gemini, Perplexity, and Claude.',
+    url: 'https://hypermindgeo.com/',
     siteName: 'HyperMind',
     images: [
       {
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'HyperMind — The GEO Agency for AI Search | Generative Engine Optimization',
-    description: 'HyperMind is the leading GEO agency helping brands get recommended in AI answers. We optimize your visibility across ChatGPT, Gemini, Perplexity, Claude and other AI assistants.',
+    description: 'HyperMind is the leading GEO agency helping brands get cited in AI answers across ChatGPT, Gemini, Perplexity, and Claude.',
     images: ['/asset/dashboard.jpg'],
   },
   robots: {

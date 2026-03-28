@@ -16,7 +16,7 @@ import { MetadataRoute } from 'next'
 export const revalidate = 3600
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.hypermindai.tech'
+  const baseUrl = 'https://hypermindgeo.com'
   const now = new Date().toISOString()
 
   return [
