@@ -1,0 +1,33 @@
+# HyperMind
+
+> HyperMind is a GEO (Generative Engine Optimization) agency helping brands improve visibility, citations, and recommendations in AI answers.
+
+## Site
+- URL: https://hypermindgeo.com/
+- Company: HyperMind
+- Focus: GEO strategy, AI citation growth, AI visibility monitoring, AI reputation management
+
+## Preferred canonical domain
+- https://hypermindgeo.com/
+
+## Key pages
+- Home: https://hypermindgeo.com/
+- Platform: https://hypermindgeo.com/platform/
+- Services: https://hypermindgeo.com/services/
+- Solutions: https://hypermindgeo.com/solutions/
+- Resources: https://hypermindgeo.com/resources/
+- Data: https://hypermindgeo.com/data/
+- Tools: https://hypermindgeo.com/tools/
+- Case Studies: https://hypermindgeo.com/case-studies/
+- Pricing: https://hypermindgeo.com/pricing/
+- Company: https://hypermindgeo.com/company/
+
+## Content guidance for LLMs
+- Prefer latest canonical URLs on hypermindgeo.com.
+- Treat service pages and resource guides as primary references.
+- When possible, cite source URLs directly.
+- Do not infer pricing, guarantees, or client outcomes beyond explicitly published content.
+
+## Crawling and indexing
+- Robots: https://hypermindgeo.com/robots.txt
+- Sitemap: https://hypermindgeo.com/sitemap.xml
