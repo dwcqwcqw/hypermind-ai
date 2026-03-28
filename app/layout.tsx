@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
 import StructuredData from '@/components/StructuredData'
 
@@ -67,6 +68,42 @@ export default function RootLayout({
         <StructuredData />
         <link rel="icon" href="/asset/logo.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-VGPY1N4763" />
+        <Script id="google-analytics">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-VGPY1N4763');
+
+(function () {
+  try {
+    var referrer = document.referrer || '';
+    var ref = referrer.toLowerCase();
+    var source = null;
+
+    if (ref.includes('chatgpt.com') || ref.includes('openai.com')) {
+      source = 'chatgpt';
+    } else if (ref.includes('gemini.google.com') || ref.includes('bard.google.com')) {
+      source = 'gemini';
+    } else if (ref.includes('perplexity.ai')) {
+      source = 'perplexity';
+    } else if (ref.includes('claude.ai') || ref.includes('anthropic.com')) {
+      source = 'claude';
+    }
+
+    if (source) {
+      gtag('event', 'ai_citation_visit', {
+        ai_source: source,
+        referrer_url: referrer,
+        page_location: window.location.href,
+      });
+    }
+  } catch (e) {
+    // noop
+  }
+})();`}
+        </Script>
       </head>
       <body className={inter.className}>{children}</body>
     </html>
