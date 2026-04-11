@@ -6,7 +6,7 @@ import Footer from '@/components/Footer'
 export const revalidate = 3600
 
 export const metadata: Metadata = {
-  title: 'AI Visibility Optimization Service | HyperMind',
+  title: 'AI Visibility Optimization: Get Recommended by AI Platforms',
   description:
     'AI Visibility Optimization is the practice of increasing how frequently AI assistants like ChatGPT, Gemini, Perplexity, and Claude recommend your brand. Learn how HyperMind helps brands dominate AI-generated answers.',
   alternates: {

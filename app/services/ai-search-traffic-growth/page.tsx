@@ -6,7 +6,7 @@ import Footer from '@/components/Footer'
 export const revalidate = 3600
 
 export const metadata: Metadata = {
-  title: 'AI Search Traffic Growth Service | HyperMind',
+  title: 'AI Search Traffic Growth: Convert AI Visibility into Revenue',
   description:
     'AI Search Traffic Growth is the practice of converting AI assistant mentions and recommendations into measurable website traffic and customer acquisition. Learn how HyperMind turns AI visibility into revenue.',
   alternates: {

@@ -6,7 +6,7 @@ import Footer from '@/components/Footer'
 export const revalidate = 3600
 
 export const metadata: Metadata = {
-  title: 'AI Mention Growth Service | HyperMind',
+  title: 'AI Mention Growth: Get Cited More Often by AI Platforms',
   description:
     'AI Mention Growth is the strategic process of increasing the number of times AI assistants like ChatGPT, Gemini, Perplexity, and Claude mention your brand. Learn how HyperMind drives measurable AI mention growth.',
   alternates: {

@@ -15,10 +15,37 @@ export const runtime = 'edge'
 export const revalidate = 3600
 
 export const metadata: Metadata = {
-  title: 'GEO Blog — AI Visibility & Generative Engine Optimization',
+  title: 'GEO Blog — AI Visibility & GEO Resources | HyperMind',
   description:
     'Expert articles on GEO, AI search ranking, LLM content optimization, and AI citation strategies.',
   alternates: { canonical: '/resources/blog/' },
+}
+
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams?: Promise<{ page?: string; category?: string; subtopic?: string }>
+}): Promise<Metadata> {
+  const resolved = searchParams ? await searchParams : undefined
+  const pageNum = resolved?.page
+  const activeCategory = resolved?.category ?? ''
+  const activeSubtopic = resolved?.subtopic ?? ''
+
+  if (pageNum) {
+    const p = parseInt(pageNum, 10)
+    if (!isNaN(p) && p > 1) {
+      const parts = ['GEO Blog', 'Page', String(p)]
+      if (activeCategory) parts.push(activeCategory.replace(/-/g, ' '))
+      return {
+        title: parts.join(' — '),
+        alternates: { canonical: '/resources/blog/' },
+      }
+    }
+  }
+  return {
+    title: 'GEO Blog — AI Visibility & GEO Resources | HyperMind',
+    alternates: { canonical: '/resources/blog/' },
+  }
 }
 
 // ── Types ────────────────────────────────────────────────────────────────────

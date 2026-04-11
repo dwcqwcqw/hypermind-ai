@@ -6,7 +6,7 @@ import Footer from '@/components/Footer'
 export const revalidate = 3600
 
 export const metadata: Metadata = {
-  title: 'GEO for B2B SaaS Companies | HyperMind',
+  title: 'B2B SaaS GEO: Dominate AI Recommendations for Your Category',
   description:
     'Generative Engine Optimization for B2B SaaS companies. Get your software recommended when decision-makers ask AI assistants like ChatGPT, Gemini, and Perplexity for product recommendations.',
   alternates: {

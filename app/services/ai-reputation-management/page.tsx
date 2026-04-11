@@ -6,7 +6,7 @@ import Footer from '@/components/Footer'
 export const revalidate = 3600
 
 export const metadata: Metadata = {
-  title: 'AI Reputation Management Service | HyperMind',
+  title: 'AI Reputation Management: Control Your Brand Narrative in AI',
   description:
     'AI Reputation Management is the practice of monitoring and controlling how AI assistants like ChatGPT, Gemini, Perplexity, and Claude describe your brand. Learn how HyperMind helps brands shape their AI narrative.',
   alternates: {

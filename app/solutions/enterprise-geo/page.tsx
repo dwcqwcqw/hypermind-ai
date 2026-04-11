@@ -6,7 +6,7 @@ import Footer from '@/components/Footer'
 export const revalidate = 3600
 
 export const metadata: Metadata = {
-  title: 'GEO for Enterprise Brands | HyperMind',
+  title: 'Enterprise GEO: Multi-Brand AI Visibility Strategy',
   description:
     'Generative Engine Optimization for enterprise brands. Dominate AI search across complex B2B buying journeys with multi-touchpoint AI visibility strategies that influence procurement teams.',
   alternates: {

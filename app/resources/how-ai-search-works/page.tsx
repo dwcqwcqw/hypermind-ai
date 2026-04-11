@@ -6,7 +6,7 @@ import PillarContent from '@/components/PillarContent'
 export const revalidate = 3600
 
 export const metadata: Metadata = {
-  title: 'How AI Search Works: A Complete Guide | HyperMind',
+  title: 'How AI Search Works: Complete GEO Guide',
   description:
     'Understand how AI assistants like ChatGPT, Gemini, Perplexity, and Claude generate answers, rank sources, and decide which brands to recommend. A technical guide to AI search mechanisms.',
   alternates: {

@@ -6,7 +6,7 @@ import Footer from '@/components/Footer'
 export const revalidate = 3600
 
 export const metadata: Metadata = {
-  title: 'GEO for Fintech Companies | HyperMind',
+  title: 'Fintech GEO: Build AI Authority in Financial Services',
   description:
     'Generative Engine Optimization for fintech companies. Build trust-based AI visibility so financial products are recommended when users ask AI assistants for financial guidance and product comparisons.',
   alternates: {

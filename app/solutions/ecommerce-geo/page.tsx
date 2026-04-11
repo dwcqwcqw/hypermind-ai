@@ -6,7 +6,7 @@ import Footer from '@/components/Footer'
 export const revalidate = 3600
 
 export const metadata: Metadata = {
-  title: 'GEO for Ecommerce Brands | HyperMind',
+  title: 'Ecommerce GEO: Get Recommended by AI Shopping Assistants',
   description:
     'Generative Engine Optimization for ecommerce brands. Get your products recommended when shoppers ask AI assistants like ChatGPT, Gemini, and Perplexity for product recommendations and comparisons.',
   alternates: {

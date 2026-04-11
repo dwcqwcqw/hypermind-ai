@@ -7,7 +7,7 @@ import type { Metadata } from 'next'
 export const revalidate = 3600
 
 export const metadata: Metadata = {
-  title: 'Pricing — GEO Agency & Platform Plans | HyperMind',
+  title: 'GEO Agency Pricing & Plans',
   description:
     'HyperMind GEO pricing plans: AI Visibility Monitoring, GEO Strategy, Full GEO Agency, and Enterprise GEO. Contact us for custom pricing tailored to your AI search goals.',
   openGraph: {

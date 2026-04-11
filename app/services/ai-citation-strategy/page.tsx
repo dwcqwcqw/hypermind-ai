@@ -6,7 +6,7 @@ import Footer from '@/components/Footer'
 export const revalidate = 3600
 
 export const metadata: Metadata = {
-  title: 'AI Citation Strategy Service | HyperMind',
+  title: 'AI Citation Strategy: Become an Authoritative Source for AI',
   description:
     'AI Citation Strategy is the practice of building authoritative citations on sources that AI assistants trust, making your brand a go-to reference in AI-generated answers. Learn how HyperMind builds citation authority.',
   alternates: {

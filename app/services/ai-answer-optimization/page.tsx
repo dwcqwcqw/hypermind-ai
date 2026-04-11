@@ -6,7 +6,7 @@ import Footer from '@/components/Footer'
 export const revalidate = 3600
 
 export const metadata: Metadata = {
-  title: 'AI Answer Optimization Service | HyperMind',
+  title: 'AI Answer Optimization: Control What AI Says About You',
   description:
     'AI Answer Optimization is the practice of shaping how AI assistants like ChatGPT, Gemini, Perplexity, and Claude answer questions about your brand, products, and category. Learn how HyperMind optimizes AI answers.',
   alternates: {
