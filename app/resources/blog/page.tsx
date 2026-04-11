@@ -14,13 +14,6 @@ import type { Metadata } from 'next'
 export const runtime = 'edge'
 export const revalidate = 3600
 
-export const metadata: Metadata = {
-  title: 'GEO Blog — AI Visibility & GEO Resources | HyperMind',
-  description:
-    'Expert articles on GEO, AI search ranking, LLM content optimization, and AI citation strategies.',
-  alternates: { canonical: '/resources/blog/' },
-}
-
 export async function generateMetadata({
   searchParams,
 }: {
@@ -44,6 +37,8 @@ export async function generateMetadata({
   }
   return {
     title: 'GEO Blog — AI Visibility & GEO Resources | HyperMind',
+    description:
+      'Expert articles on GEO, AI search ranking, LLM content optimization, and AI citation strategies.',
     alternates: { canonical: '/resources/blog/' },
   }
 }
