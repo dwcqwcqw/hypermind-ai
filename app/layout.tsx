@@ -130,6 +130,17 @@ gtag('config', 'G-VGPY1N4763');
   }
 })();`}
         </Script>
+        <Script
+          src="https://seo-fixer.writesonic.com/site-audit/fixer-script/index.js"
+          id="wsAiSeoMb"
+          strategy="afterInteractive"
+        />
+        <Script id="wsAiSeoInitScript" strategy="afterInteractive">
+          {`wsSEOfixer.configure({
+            hostURL: 'https://seo-fixer.writesonic.com',
+            siteID: '69bf80b396e413f1736f2705'
+          });`}
+        </Script>
       </head>
       <body className={inter.className}>{children}</body>
     </html>
