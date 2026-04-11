@@ -144,6 +144,12 @@ gtag('config', 'G-VGPY1N4763');
             siteID: '69bf80b396e413f1736f2705'
           });`}
         </Script>
+        <Script
+          src="https://analytics.ahrefs.com/analytics.js"
+          data-key="mq44eqQWWH9wMf1zEqBftw"
+          strategy="afterInteractive"
+          async
+        />
       </head>
       <body className={inter.className}>{children}</body>
     </html>
