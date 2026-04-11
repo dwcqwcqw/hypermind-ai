@@ -68,8 +68,11 @@ export default function RootLayout({
         <StructuredData />
         <link rel="icon" href="/asset/logo.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-VGPY1N4763" />
-        <Script id="google-analytics">
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-VGPY1N4763"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
           {`window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
@@ -133,9 +136,9 @@ gtag('config', 'G-VGPY1N4763');
         <Script
           src="https://seo-fixer.writesonic.com/site-audit/fixer-script/index.js"
           id="wsAiSeoMb"
-          strategy="afterInteractive"
+          strategy="beforeInteractive"
         />
-        <Script id="wsAiSeoInitScript" strategy="afterInteractive">
+        <Script id="wsAiSeoInitScript" strategy="beforeInteractive">
           {`wsSEOfixer.configure({
             hostURL: 'https://seo-fixer.writesonic.com',
             siteID: '69bf80b396e413f1736f2705'
