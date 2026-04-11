@@ -31,6 +31,8 @@ export async function generateMetadata({
       if (activeCategory) parts.push(activeCategory.replace(/-/g, ' '))
       return {
         title: parts.join(' — '),
+        description:
+          'Expert articles on GEO, AI search ranking, LLM content optimization, and AI citation strategies — page ' + p + '.',
         alternates: { canonical: '/resources/blog/' },
       }
     }

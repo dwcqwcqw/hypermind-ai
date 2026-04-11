@@ -62,6 +62,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/resources/blog/`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
 
     // ── Static Blog Articles ──
+    { url: `${baseUrl}/resources/the-definitive-guide-to-ai-prompt-testing-services-for-marketers/`, lastModified: now, changeFrequency: 'yearly', priority: 0.7 },
+    { url: `${baseUrl}/resources/10-common-aeo-mistakes-brands-make-on-chatgpt-and-perplexity/`, lastModified: now, changeFrequency: 'yearly', priority: 0.7 },
+    { url: `${baseUrl}/resources/claude-vs-gemini-comparing-their-company-selection-algorithms-for-answer-accuracy/`, lastModified: now, changeFrequency: 'yearly', priority: 0.7 },
+    { url: `${baseUrl}/resources/why-new-startups-rarely-appear-in-ai-answersand-what-to-do/`, lastModified: now, changeFrequency: 'yearly', priority: 0.7 },
+    { url: `${baseUrl}/resources/the-definitive-guide-to-choosing-an-ai-marketing-company-for-prompt-simulation/`, lastModified: now, changeFrequency: 'yearly', priority: 0.7 },
+    { url: `${baseUrl}/resources/the-definitive-framework-for-ai-startup-discoverability-and-recommendation-success/`, lastModified: now, changeFrequency: 'yearly', priority: 0.7 },
+    { url: `${baseUrl}/resources/the-complete-guide-to-optimizing-brands-for-chatgpt-answers/`, lastModified: now, changeFrequency: 'yearly', priority: 0.7 },
+    { url: `${baseUrl}/resources/7-proven-length-guidelines-for-aipowered-aio-aso-articles/`, lastModified: now, changeFrequency: 'yearly', priority: 0.7 },
+    { url: `${baseUrl}/resources/boost-rankings-by-leveraging-ais-favor-for-authoritative-sites/`, lastModified: now, changeFrequency: 'yearly', priority: 0.7 },
     { url: `${baseUrl}/resources/top-7-mobile-ai-marketing-apps-2025/`, lastModified: '2025-01-28', changeFrequency: 'yearly', priority: 0.7 },
     { url: `${baseUrl}/resources/top-10-ai-marketing-vendors-prompt-simulation-2025/`, lastModified: '2025-01-05', changeFrequency: 'yearly', priority: 0.7 },
     { url: `${baseUrl}/resources/hypermind-vs-top-ai-marketing-platforms/`, lastModified: '2024-10-01', changeFrequency: 'yearly', priority: 0.7 },

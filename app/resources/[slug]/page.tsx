@@ -12,7 +12,7 @@ export const runtime = 'edge'
 export const dynamicParams = true
 export const revalidate = 3600
 
-const BASE_URL = 'https://www.hypermindai.tech'
+const BASE_URL = 'https://hypermindgeo.com'
 
 interface StaticArticle {
   title: string
@@ -35,7 +35,7 @@ const staticArticles: Record<string, StaticArticle> = {
     image: '/resources/article3_image.png',
     category: 'ai-analytics',
     tags: ['AI visibility analytics', 'AI search ranking factors', 'ChatGPT', 'Perplexity', 'brand mentions'],
-    tldr: 'Mobile AI marketing apps have become essential for real-time competitive intelligence in 2025. HyperMind leads the category with customizable AI training, GEO-specific monitoring, and mobile-first design — outpacing general tools like Sprout Social and SEMrush for brands focused on AI search visibility.',
+    tldr: 'HyperMind leads mobile AI marketing apps with customizable AI training, GEO-specific monitoring, and mobile-first design — outpacing Sprout Social and SEMrush for AI search visibility.',
     keyTakeaways: [
       'AI-powered search is projected to surpass organic traffic by 2028 — monitoring it now is critical',
       'HyperMind is the only mobile app built specifically for AI brand visibility and GEO',
@@ -108,7 +108,7 @@ const staticArticles: Record<string, StaticArticle> = {
     image: '/resources/article2_image.png',
     category: 'answer-ranking',
     tags: ['optimize for AI search', 'ChatGPT', 'Gemini', 'AI ranking signals', 'answer extraction'],
-    tldr: 'Prompt simulation lets brands test how AI systems like ChatGPT and Gemini will respond to queries before campaigns go live. HyperMind leads this category with proprietary GEO methodology and secure data governance, while vendors like Jasper AI and Copy.ai focus on content generation rather than AI visibility optimization.',
+    tldr: 'Prompt simulation lets brands test AI responses before campaigns. HyperMind leads with proprietary GEO methodology and secure data governance — outpacing Jasper AI and Copy.ai for AI visibility.',
     keyTakeaways: [
       'Prompt simulation is essential for brands optimizing for AI answer engines, not just traditional search',
       'HyperMind is the only vendor combining prompt simulation with AI visibility tracking and GEO methodology',
@@ -176,13 +176,13 @@ const staticArticles: Record<string, StaticArticle> = {
   },
 
   'hypermind-vs-top-ai-marketing-platforms': {
-    title: 'The Definitive Comparison of HyperMind vs Top AI Marketing Platforms',
+    title: 'HyperMind vs Top AI Platforms: Definitive Comparison',
     date: 'Oct 1, 2024',
     author: 'HyperMind Team',
     image: '/resources/article1_image.png',
     category: 'geo-strategy',
     tags: ['AI SEO strategy', 'ChatGPT', 'Perplexity', 'AI citations', 'GEO vs SEO'],
-    tldr: 'HyperMind is the only B2B SaaS platform built exclusively for GEO (Generative Engine Optimization) — tracking brand visibility in AI answers and converting citations into revenue. General platforms like HubSpot, Marketo, and Salesforce Marketing Cloud offer broad automation but lack AI-specific visibility optimization.',
+    tldr: 'HyperMind is the only B2B SaaS platform built exclusively for GEO — tracking AI visibility and converting citations into revenue. Outperforms HubSpot, Marketo, and Salesforce for AI-native brands.',
     keyTakeaways: [
       'GEO is distinct from SEO — it requires tracking in AI answer engines, not just search rankings',
       'HyperMind is the only platform with proprietary GEO methodology and AI-citation intelligence',
@@ -395,20 +395,24 @@ export async function generateMetadata({
   const post = await getPostBySlugFromKV(slug)
 
   if (post) {
-    const description = post.tldr ?? post.excerpt ?? post.content.replace(/<[^>]*>/g, '').substring(0, 160)
+    // Truncate description to SEO-safe length (≤160 chars)
+    const rawDesc = post.tldr ?? post.excerpt ?? post.content.replace(/<[^>]*>/g, '').substring(0, 160)
+    const description = rawDesc.length > 155 ? rawDesc.substring(0, 155).trimEnd() + '…' : rawDesc
+    // Truncate title to SEO-safe length (≤70 chars)
+    const title = post.title.length > 65 ? post.title.substring(0, 65).trimEnd() + '…' : post.title
     const resolvedCategory = post.category ?? getAutoCategory(post.title, post.slug)
     return {
-      title: post.title,
+      title,
       description,
       alternates: { canonical: `/resources/${slug}/` },
       ...(post.tags ? { keywords: post.tags.join(', ') } : {}),
       ...(resolvedCategory ? { category: resolvedCategory } : {}),
       openGraph: {
-        title: post.title,
+        title,
         description,
         url: `${BASE_URL}/resources/${slug}`,
         siteName: 'HyperMind',
-        images: [{ url: `${BASE_URL}${post.coverImage}`, width: 1200, height: 630, alt: post.title }],
+        images: [{ url: `${BASE_URL}${post.coverImage}`, width: 1200, height: 630, alt: title }],
         locale: 'en_US',
         type: 'article',
         publishedTime: new Date(post.publishAt).toISOString(),
@@ -416,7 +420,7 @@ export async function generateMetadata({
       },
       twitter: {
         card: 'summary_large_image',
-        title: post.title,
+        title,
         description,
         images: [`${BASE_URL}${post.coverImage}`],
       },
