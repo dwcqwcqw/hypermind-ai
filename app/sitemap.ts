@@ -66,11 +66,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/resources/top-10-ai-marketing-vendors-prompt-simulation-2025/`, lastModified: '2025-01-05', changeFrequency: 'yearly', priority: 0.7 },
     { url: `${baseUrl}/resources/hypermind-vs-top-ai-marketing-platforms/`, lastModified: '2024-10-01', changeFrequency: 'yearly', priority: 0.7 },
 
-    // ── Data Hub ──
-    { url: `${baseUrl}/data/`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
-
     // ── Tools ──
     { url: `${baseUrl}/tools/`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${baseUrl}/tools/ai-brand-audit/`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
+
+    // ── Data Hub ──
+    { url: `${baseUrl}/data/`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${baseUrl}/data/ai-citation-sources-database/`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
 
     // ── Case Studies ──
     { url: `${baseUrl}/case-studies/`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
