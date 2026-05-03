@@ -267,7 +267,7 @@ export default function Home() {
       <Navbar />
       <HomeStructuredData />
 
-      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-[#f7f7f4]">
+      <section className="pt-28 sm:pt-32 pb-14 sm:pb-16 px-4 sm:px-6 lg:px-8 bg-[#f7f7f4]">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div className="space-y-8">
@@ -275,10 +275,10 @@ export default function Home() {
                 <p className="text-sm font-semibold uppercase tracking-wide text-gray-600 mb-4">
                   Research-backed GEO agency for AI answer visibility
                 </p>
-                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-black">
+                <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-black">
                   Become the brand AI recommends
                 </h1>
-                <p className="text-xl text-gray-700 leading-relaxed max-w-2xl">
+                <p className="text-lg sm:text-xl text-gray-700 leading-relaxed max-w-2xl">
                   HyperMind helps brands earn mentions, citations, and recommendations in ChatGPT, Google AI Overviews, Google AI Mode, Gemini, Perplexity, Claude, and Copilot with an agentic GEO system: strategy archive, critic-guided prioritization, live model testing, and hands-on execution.
                 </p>
               </div>
@@ -309,7 +309,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="space-y-6">
+            <div className="space-y-6 max-w-full overflow-hidden">
               <HeroLogos />
               <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
                 <p className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-4">
@@ -334,7 +334,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-14 sm:py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-3xl sm:text-4xl font-bold text-black mb-4">
@@ -351,7 +351,7 @@ export default function Home() {
                 href={item.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block border border-gray-200 rounded-xl p-6 hover:border-black transition bg-gray-50"
+                className="block border border-gray-200 rounded-xl p-5 sm:p-6 hover:border-black transition bg-gray-50 break-words"
               >
                 <div className="text-sm font-semibold text-black mb-2">{item.source}</div>
                 <p className="text-sm text-gray-600 leading-relaxed">{item.finding}</p>
@@ -361,7 +361,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl mb-12">
             <p className="text-sm font-semibold uppercase tracking-wide text-gray-500 mb-3">
@@ -374,11 +374,11 @@ export default function Home() {
               The core product is not another static visibility score. Inspired by AgenticGEO-style research, HyperMind treats GEO as a self-improving execution loop: keep a strategy archive, predict which actions are likely to work, test the highest-value candidates, and feed the results back into the next optimization cycle.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-7 gap-4">
             {METHOD_STEPS.map((item) => (
-              <div key={item.step} className="bg-white border border-gray-200 rounded-xl p-6">
+              <div key={item.step} className="bg-white border border-gray-200 rounded-xl p-5 sm:p-6">
                 <div className="text-xs font-mono text-gray-400 mb-4">{item.step}</div>
-                <h3 className="text-lg font-bold text-black mb-3">{item.title}</h3>
+                <h3 className="text-base lg:text-lg font-bold text-black mb-3">{item.title}</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">{item.description}</p>
               </div>
             ))}
@@ -386,7 +386,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -424,7 +424,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-950 text-white">
+      <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gray-950 text-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -437,7 +437,7 @@ export default function Home() {
               <p className="text-lg text-gray-300 leading-relaxed mb-8">
                 HyperMind tracks the same commercial journey your buyers take: category discovery, vendor comparison, shortlisting, pricing research, risk validation, and final recommendation. Each prompt cluster maps to content changes, citation targets, and conversion pages.
               </p>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
                   ['Prompt clusters', 'Buying intent, competitor intent, and problem intent'],
                   ['Source classes', 'Owned, earned, social, institutional, review, and partner'],
@@ -464,7 +464,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-black mb-4">
@@ -490,7 +490,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-black mb-4">
@@ -516,7 +516,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-black mb-4">
@@ -537,7 +537,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-black text-white">
+      <section className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-black text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold mb-6">
             Find out why AI does or does not recommend your brand

@@ -43,10 +43,10 @@ export default function ArticleContent({
   const cat = category ? getCategoryById(category) : undefined
 
   return (
-    <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 overflow-hidden">
 
       {/* Breadcrumb */}
-      <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-gray-500 mb-8">
+      <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 text-sm text-gray-500 mb-8">
         <Link href="/" className="hover:text-gray-900 transition-colors">Home</Link>
         <span>›</span>
         <Link href="/resources" className="hover:text-gray-900 transition-colors">Resources</Link>
@@ -80,7 +80,7 @@ export default function ArticleContent({
           {author && <span className="text-sm text-gray-500">by {author}</span>}
         </div>
 
-        <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6 leading-tight">{title}</h1>
+        <h1 className="text-3xl sm:text-5xl font-bold text-gray-900 mb-6 leading-tight break-words">{title}</h1>
 
         {/* Tags */}
         {tags && tags.length > 0 && (
@@ -99,14 +99,14 @@ export default function ArticleContent({
 
       {/* Featured Image */}
       {coverImage && (
-        <div className="relative w-full h-80 sm:h-96 mb-10 rounded-2xl overflow-hidden">
+        <div className="relative w-full h-56 sm:h-96 mb-10 rounded-2xl overflow-hidden">
           <img src={coverImage} alt={title} className="w-full h-full object-cover" />
         </div>
       )}
 
       {/* TL;DR Box — AI-extractable quick answer */}
       {tldr && (
-        <div className="mb-8 p-6 bg-blue-50 border border-blue-200 rounded-2xl">
+        <div className="mb-8 p-5 sm:p-6 bg-blue-50 border border-blue-200 rounded-2xl">
           <div className="flex items-center gap-2 mb-2">
             <span className="text-xs font-bold text-blue-700 uppercase tracking-wider">TL;DR</span>
           </div>
@@ -116,7 +116,7 @@ export default function ArticleContent({
 
       {/* Key Takeaways — structured for AI extraction */}
       {keyTakeaways && keyTakeaways.length > 0 && (
-        <div className="mb-10 p-6 bg-gray-50 border border-gray-200 rounded-2xl">
+        <div className="mb-10 p-5 sm:p-6 bg-gray-50 border border-gray-200 rounded-2xl">
           <h2 className="text-lg font-bold text-gray-900 mb-4">Key Takeaways</h2>
           <ul className="space-y-2">
             {keyTakeaways.map((point, i) => (
@@ -131,8 +131,8 @@ export default function ArticleContent({
 
       {/* Article Body */}
       <div
-        className="prose prose-lg prose-headings:font-bold prose-h2:text-3xl prose-h2:mt-10 prose-h2:mb-4 prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-3 prose-p:mb-4 prose-p:text-gray-700 prose-a:text-blue-600 prose-a:underline prose-strong:font-semibold prose-ul:list-disc prose-ul:ml-6 prose-ol:list-decimal prose-ol:ml-6 prose-li:mb-1 prose-img:rounded-xl prose-img:my-6 prose-blockquote:border-l-4 prose-blockquote:border-gray-300 prose-blockquote:pl-4 prose-blockquote:italic prose-blockquote:text-gray-600 max-w-none"
-        style={{ fontSize: '1.125rem', lineHeight: '1.8', color: '#374151' }}
+        className="prose prose-base sm:prose-lg prose-headings:font-bold prose-h2:text-2xl sm:prose-h2:text-3xl prose-h2:mt-10 prose-h2:mb-4 prose-h3:text-xl sm:prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-3 prose-p:mb-4 prose-p:text-gray-700 prose-a:text-blue-600 prose-a:underline prose-strong:font-semibold prose-ul:list-disc prose-ul:ml-6 prose-ol:list-decimal prose-ol:ml-6 prose-li:mb-1 prose-img:rounded-xl prose-img:my-6 prose-blockquote:border-l-4 prose-blockquote:border-gray-300 prose-blockquote:pl-4 prose-blockquote:italic prose-blockquote:text-gray-600 prose-table:block prose-table:w-full prose-table:overflow-x-auto max-w-none break-words"
+        style={{ lineHeight: '1.8', color: '#374151' }}
         dangerouslySetInnerHTML={{ __html: html }}
       />
 
@@ -171,7 +171,7 @@ export default function ArticleContent({
       )}
 
       {/* Internal linking: pillar pages */}
-      <div className="mt-10 p-6 bg-gray-50 rounded-2xl border border-gray-100">
+      <div className="mt-10 p-5 sm:p-6 bg-gray-50 rounded-2xl border border-gray-100">
         <h3 className="font-bold text-gray-900 mb-3">Explore GEO Knowledge Hub</h3>
         <div className="flex flex-wrap gap-3">
           {[
@@ -185,7 +185,7 @@ export default function ArticleContent({
             <Link
               key={link.href}
               href={link.href}
-              className="px-4 py-2 text-sm bg-white border border-gray-200 rounded-full text-gray-700 hover:border-gray-400 hover:text-black transition-all"
+              className="px-4 py-2 text-sm bg-white border border-gray-200 rounded-full text-gray-700 hover:border-gray-400 hover:text-black transition-all break-words"
             >
               {link.label}
             </Link>
@@ -194,8 +194,8 @@ export default function ArticleContent({
       </div>
 
       {/* CTA */}
-      <div className="mt-12 p-8 bg-gray-900 rounded-2xl text-center text-white">
-        <h3 className="text-2xl font-bold mb-3">
+      <div className="mt-12 p-6 sm:p-8 bg-gray-900 rounded-2xl text-center text-white">
+        <h3 className="text-xl sm:text-2xl font-bold mb-3">
           Ready to optimize your brand for AI search?
         </h3>
         <p className="text-gray-300 mb-6 max-w-lg mx-auto">
@@ -205,7 +205,7 @@ export default function ArticleContent({
           href="https://forms.gle/QA6WWgN4cpRHW5VF7"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block bg-white text-black px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition"
+          className="inline-block bg-white text-black px-6 sm:px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition"
         >
           Get Started Free →
         </a>

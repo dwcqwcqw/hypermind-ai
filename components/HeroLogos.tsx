@@ -16,9 +16,9 @@ const LOGOS = [
 
 export default function HeroLogos() {
   return (
-    <div className="relative w-full h-[360px] sm:h-[420px] md:h-[500px] flex items-center justify-center animate-slide-in-3">
+    <div className="relative w-full max-w-[560px] mx-auto h-[300px] sm:h-[420px] md:h-[500px] flex items-center justify-center animate-slide-in-3 overflow-hidden">
       <div className="absolute z-10">
-        <div className="w-52 h-52 rounded-full overflow-hidden bg-gradient-to-br from-blue-50 to-purple-50 shadow-2xl flex items-center justify-center border-4 border-white">
+        <div className="w-36 h-36 sm:w-52 sm:h-52 rounded-full overflow-hidden bg-gradient-to-br from-blue-50 to-purple-50 shadow-2xl flex items-center justify-center border-4 border-white">
           <div className="w-full h-full rounded-full overflow-hidden flex items-center justify-center p-4">
             <Image
               src="/asset/core.png"
@@ -43,7 +43,7 @@ export default function HeroLogos() {
                 '--delay': `${logo.delay}s`,
               } as React.CSSProperties}
             >
-              <div className="w-16 h-16 rounded-full bg-white shadow-lg flex items-center justify-center overflow-hidden border-2 border-gray-100">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-white shadow-lg flex items-center justify-center overflow-hidden border-2 border-gray-100">
                 <Image
                   src={logo.src}
                   alt={logo.alt}
@@ -72,7 +72,7 @@ export default function HeroLogos() {
           position: absolute;
           top: 50%;
           left: 50%;
-          transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-220px) rotate(calc(-1 * var(--angle)));
+            transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-210px) rotate(calc(-1 * var(--angle)));
         }
 
         @keyframes rotate {
@@ -92,7 +92,7 @@ export default function HeroLogos() {
 
         @media (max-width: 640px) {
           .logo-orbit > div {
-            transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-120px) rotate(calc(-1 * var(--angle)));
+            transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-118px) rotate(calc(-1 * var(--angle)));
           }
         }
       `}</style>

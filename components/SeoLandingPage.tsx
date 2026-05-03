@@ -37,15 +37,15 @@ export default function SeoLandingPage({
     <main className="min-h-screen bg-white pt-24">
       <Navbar />
 
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
+      <section className="py-14 sm:py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <p className="text-sm font-semibold uppercase tracking-wide text-gray-500 mb-4">
             {eyebrow}
           </p>
-          <h1 className="text-4xl sm:text-5xl font-bold text-black leading-tight mb-6">
+          <h1 className="text-3xl sm:text-5xl font-bold text-black leading-tight mb-6 break-words">
             {title}
           </h1>
-          <p className="text-lg text-gray-700 leading-relaxed">
+          <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
             {description}
           </p>
         </div>
@@ -57,7 +57,7 @@ export default function SeoLandingPage({
           <p className="text-gray-700 leading-relaxed">{summary}</p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
             {bullets.map((bullet) => (
-              <div key={bullet} className="bg-white border border-gray-200 rounded-xl p-5 text-sm font-medium text-gray-800">
+              <div key={bullet} className="bg-white border border-gray-200 rounded-xl p-4 sm:p-5 text-sm font-medium text-gray-800">
                 {bullet}
               </div>
             ))}
@@ -65,18 +65,18 @@ export default function SeoLandingPage({
         </div>
       </section>
 
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
+      <section className="py-14 sm:py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto space-y-8">
           {sections.map((section) => (
             <div key={section.title} className="border-b border-gray-200 pb-8 last:border-b-0">
-              <h2 className="text-2xl font-bold text-black mb-3">{section.title}</h2>
+              <h2 className="text-xl sm:text-2xl font-bold text-black mb-3">{section.title}</h2>
               <p className="text-gray-700 leading-relaxed">{section.body}</p>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section className="py-14 sm:py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-black mb-6">Related GEO resources</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -84,7 +84,7 @@ export default function SeoLandingPage({
               <Link
                 key={link.href}
                 href={link.href}
-                className="block bg-white border border-gray-200 rounded-xl p-5 text-sm font-semibold text-gray-900 hover:border-black transition"
+                className="block bg-white border border-gray-200 rounded-xl p-4 sm:p-5 text-sm font-semibold text-gray-900 hover:border-black transition break-words"
               >
                 {link.label} &rarr;
               </Link>
@@ -93,9 +93,9 @@ export default function SeoLandingPage({
         </div>
       </section>
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black text-white">
+      <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-black text-white">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-5">Turn this page into an AI answer advantage</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-5">Turn this page into an AI answer advantage</h2>
           <p className="text-gray-300 mb-8">
             HyperMind can audit the prompts, citations, source gaps, and answer language behind this topic for your brand.
           </p>
