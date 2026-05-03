@@ -83,6 +83,17 @@ const PAGE_SIZE = 9
 
 const RAW_STATIC: Array<Omit<Article, 'subtopic'>> = [
   {
+    id: 4,
+    title: 'AI Visibility Platform vs GEO Agency: Profound, Peec, Writesonic, HyperMind',
+    date: '2026-05-03',
+    category: 'geo-strategy',
+    image: '/asset/Understand_What_AI_is_Saying_About_Your_Brand.jpg',
+    description:
+      'A buyer-focused guide to choosing between AI visibility platforms and GEO agencies, with a prompt-to-revenue framework for brands evaluating Profound, Peec AI, Writesonic GEO, and HyperMind.',
+    slug: 'ai-visibility-platform-vs-geo-agency',
+    tags: ['AI visibility platform', 'GEO agency', 'Profound AI', 'Peec AI', 'Writesonic GEO'],
+  },
+  {
     id: 3,
     title: 'Top 7 Mobile AI Marketing Apps for Instant Insights in 2025',
     date: 'Jan 28, 2025',
