@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: 'GEO for Startups | HyperMind',
     description:
       'Build AI visibility from day one. HyperMind helps startups establish presence in AI recommendations before competitors take the space.',
-    url: 'https://www.hypermindai.tech/solutions/startup-geo',
+    url: 'https://hypermindgeo.com/solutions/startup-geo',
     siteName: 'HyperMind',
   },
 }

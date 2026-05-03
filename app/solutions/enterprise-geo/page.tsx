@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: 'GEO for Enterprise Brands | HyperMind',
     description:
       'Multi-stakeholder AI visibility strategies for enterprise brands. Influence procurement teams at every stage of the AI-powered buying journey.',
-    url: 'https://www.hypermindai.tech/solutions/enterprise-geo',
+    url: 'https://hypermindgeo.com/solutions/enterprise-geo',
     siteName: 'HyperMind',
   },
 }

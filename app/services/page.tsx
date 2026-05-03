@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'GEO Services — AI Search Optimization Agency | HyperMind',
     description:
       'Full-service GEO agency services to optimize your brand\'s visibility, mentions, and reputation across AI search platforms.',
-    url: 'https://www.hypermindai.tech/services',
+    url: 'https://hypermindgeo.com/services',
     siteName: 'HyperMind',
   },
   alternates: {
@@ -92,8 +92,8 @@ export default function ServicesPage() {
               {
                 '@type': 'BreadcrumbList',
                 itemListElement: [
-                  { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.hypermindai.tech/' },
-                  { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://www.hypermindai.tech/services/' },
+                  { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://hypermindgeo.com/' },
+                  { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://hypermindgeo.com/services/' },
                 ],
               },
             ],

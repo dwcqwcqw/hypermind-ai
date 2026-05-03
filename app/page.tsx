@@ -6,396 +6,544 @@ import HeroLogos from '@/components/HeroLogos'
 
 export const revalidate = 3600
 
-const GEO_STEPS = [
+const BASE_URL = 'https://hypermindgeo.com'
+
+const RESEARCH_SIGNALS = [
+  {
+    source: 'AgenticGEO, arXiv 2603.20213',
+    finding:
+      'The newest GEO research frames optimization as a self-evolving control problem: maintain a diverse strategy archive, use a critic to predict likely engine feedback, test selectively, and keep adapting as engines change.',
+    href: 'https://arxiv.org/abs/2603.20213',
+  },
+  {
+    source: 'Google Search Central',
+    finding:
+      'AI Overviews and AI Mode rely on the same eligibility foundation as Google Search: crawlability, indexability, internal links, textual content, page experience, and structured data that matches visible content.',
+    href: 'https://developers.google.com/search/docs/appearance/ai-overviews',
+  },
+  {
+    source: 'GEO: Generative Engine Optimization, KDD 2024',
+    finding:
+      'Visibility in generative answers can be improved with answer-friendly writing patterns such as source citation, statistics, quotation, fluency, and domain-specific optimization.',
+    href: 'https://arxiv.org/abs/2311.09735',
+  },
+  {
+    source: 'Profound citation pattern research',
+    finding:
+      'AI platforms cite different source pools. ChatGPT, Google AI Overviews, and Perplexity often require different citation and content distribution strategies.',
+    href: 'https://www.tryprofound.com/blog/ai-platform-citation-patterns',
+  },
+  {
+    source: 'Semrush AI Visibility Toolkit documentation',
+    finding:
+      'Modern AI visibility work now tracks prompts, mentions, citations, sentiment, competitors, and AI referral traffic alongside classic SEO signals.',
+    href: 'https://www.semrush.com/kb/1626-ai-visibility-features',
+  },
+]
+
+const METHOD_STEPS = [
   {
     step: '01',
-    title: 'Monitor',
-    description: 'We track how AI assistants mention (or ignore) your brand across ChatGPT, Gemini, Perplexity, Claude, and more — in real time.',
+    title: 'Prompt Demand Mapping',
+    description:
+      'Build the buying, comparison, problem, and category prompts where a model could recommend your brand, then segment them by intent, market, and platform.',
   },
   {
     step: '02',
-    title: 'Diagnose',
-    description: 'We analyze why competitors outrank you in AI answers, identify content gaps, and map the prompts your audience actually uses.',
+    title: 'Strategy Archive Selection',
+    description:
+      'Maintain a living archive of GEO tactics by content type, prompt intent, source class, and platform behavior so each page gets a content-conditioned strategy instead of a generic checklist.',
   },
   {
     step: '03',
-    title: 'Optimize',
-    description: 'We restructure your content, build authoritative citations, and engineer your digital presence so AI models recommend you by name.',
+    title: 'Critic-Guided Prioritization',
+    description:
+      'Estimate which rewrites, schema changes, citations, and distribution moves are most likely to improve visibility before spending expensive testing cycles on live AI engines.',
   },
   {
     step: '04',
-    title: 'Measure',
-    description: 'We continuously track AI mention share, sentiment, citation rates, and referral traffic — proving ROI with hard data.',
+    title: 'Citation Supply Chain Audit',
+    description:
+      'Identify the pages, publishers, communities, review sites, knowledge bases, and competitors that AI systems already use to answer those prompts.',
+  },
+  {
+    step: '05',
+    title: 'Answer-Ready Content Engineering',
+    description:
+      'Rewrite priority pages into extractable definitions, direct answers, comparison tables, claims with evidence, FAQs, and schema that matches visible text.',
+  },
+  {
+    step: '06',
+    title: 'Source Development',
+    description:
+      'Grow trustworthy third-party signals across earned media, review platforms, documentation, partner pages, community discussions, and data pages.',
+  },
+  {
+    step: '07',
+    title: 'Model Testing and Iteration',
+    description:
+      'Test ChatGPT, Google AI Overviews, AI Mode, Gemini, Perplexity, Claude, and Copilot for mentions, citations, sentiment, and recommendation rank.',
   },
 ]
 
-const CLIENT_RESULTS = [
-  { metric: 'AI Mentions', before: '5', after: '42', label: 'monthly mentions across AI platforms' },
-  { metric: 'AI Referral Traffic', before: '—', after: '+280%', label: 'growth in AI-driven site visits' },
-  { metric: 'AI Share of Voice', before: '3%', after: '31%', label: 'category share in AI answers' },
-  { metric: 'Citation Rate', before: '0', after: '18', label: 'unique AI citations per month' },
+const DIFFERENTIATORS = [
+  {
+    category: 'Profound AI',
+    marketPattern: 'Enterprise analytics for answer-engine visibility, citations, sentiment, and share of voice.',
+    hypermindDifference:
+      'HyperMind uses visibility data as the input, then executes the content, schema, source, and conversion work needed to change AI answers.',
+  },
+  {
+    category: 'Peec AI',
+    marketPattern: 'AI search analytics for marketing teams that need fast prompt tracking and competitor benchmarking.',
+    hypermindDifference:
+      'HyperMind is built for teams that need strategy plus implementation: prompt research, page rewrites, citation source development, and weekly answer testing.',
+  },
+  {
+    category: 'Semrush',
+    marketPattern: 'A broad SEO suite with AI visibility modules, prompt databases, site audit checks, and traffic benchmarking.',
+    hypermindDifference:
+      'HyperMind focuses narrowly on GEO execution for brands that want to become the cited source or recommended vendor in commercial AI answers.',
+  },
+  {
+    category: 'Writesonic GEO',
+    marketPattern: 'A content and GEO workflow for monitoring visibility and creating AI-search-friendly content.',
+    hypermindDifference:
+      'HyperMind emphasizes citation supply chain strategy, entity clarity, external authority building, and revenue attribution beyond content production.',
+  },
 ]
 
-const INDUSTRIES = [
-  { title: 'B2B SaaS', href: '/solutions/b2b-saas-geo', description: 'Get your product recommended when prospects ask AI for software solutions.' },
-  { title: 'Fintech', href: '/solutions/fintech-geo', description: 'Become the trusted financial brand AI assistants recommend to users.' },
-  { title: 'Ecommerce', href: '/solutions/ecommerce-geo', description: 'Appear in AI-powered shopping recommendations and product comparisons.' },
-  { title: 'Enterprise', href: '/solutions/enterprise-geo', description: 'Dominate AI search across complex B2B buying journeys.' },
-  { title: 'Startups', href: '/solutions/startup-geo', description: 'Build AI visibility from day one and outpace incumbent competitors.' },
+const OFFER_AREAS = [
+  {
+    title: 'AI Visibility Audit',
+    href: '/tools/ai-brand-audit',
+    description:
+      'Measure where your brand appears, where it is absent, which competitors are recommended, and which source types influence the answer.',
+  },
+  {
+    title: 'AI Citation Strategy',
+    href: '/services/ai-citation-strategy',
+    description:
+      'Prioritize the publishers, communities, review profiles, partner pages, and data assets most likely to be retrieved by AI systems.',
+  },
+  {
+    title: 'AI Answer Optimization',
+    href: '/services/ai-answer-optimization',
+    description:
+      'Shape answer language around accurate positioning, clear entities, concise definitions, comparison-ready tables, and evidence-rich claims.',
+  },
+  {
+    title: 'AI Search Traffic Growth',
+    href: '/services/ai-search-traffic-growth',
+    description:
+      'Connect AI mentions and citations to landing pages, analytics, forms, attribution, and pipeline reporting.',
+  },
 ]
 
-const AI_STATS = [
-  { value: '40%', label: 'of Gen Z prefers AI search over Google' },
-  { value: '79%', label: 'of consumers will use AI search by 2027' },
-  { value: '900M+', label: 'monthly active ChatGPT users' },
-  { value: '$0', label: 'cost per click from AI referral traffic' },
+const CORE_RESOURCES = [
+  {
+    title: 'AI Visibility Platform vs GEO Agency',
+    href: '/resources/ai-visibility-platform-vs-geo-agency',
+    description:
+      'Decision guide comparing Profound, Peec AI, Writesonic GEO, Semrush-style tooling, and HyperMind execution.',
+  },
+  {
+    title: 'How to Optimize for AI Search',
+    href: '/resources/how-to-optimize-for-ai-search',
+    description:
+      'A practical guide to crawlability, answer formatting, structured data, source authority, and AI answer testing.',
+  },
+  {
+    title: 'AI Citation Sources Database',
+    href: '/data/ai-citation-sources-database',
+    description:
+      'Research hub for the source types that influence AI answers, including owned, earned, social, institutional, and review citations.',
+  },
 ]
+
+const FAQS = [
+  {
+    question: 'What is HyperMind?',
+    answer:
+      'HyperMind is a GEO agency and AI visibility execution partner. It helps brands become mentioned, cited, and recommended in AI answers across ChatGPT, Google AI Overviews, Google AI Mode, Gemini, Perplexity, Claude, Copilot, and other answer engines.',
+  },
+  {
+    question: 'How is HyperMind different from Profound AI, Peec AI, Semrush, and Writesonic?',
+    answer:
+      'Profound, Peec AI, Semrush, and Writesonic primarily help teams measure AI visibility, research prompts, or create AI-search content. HyperMind combines measurement with implementation: prompt strategy, answer-ready content, structured data, citation source development, entity cleanup, and conversion attribution.',
+  },
+  {
+    question: 'What makes content more likely to be cited by AI systems?',
+    answer:
+      'The strongest pattern is not a single trick. Pages need to be indexable, internally linked, text-rich, clearly structured, source-backed, entity-specific, and reinforced by trusted third-party references. AI systems also vary by platform, so a citation strategy must be tested across multiple answer engines.',
+  },
+  {
+    question: 'Does GEO replace SEO?',
+    answer:
+      'No. Google states that the same search fundamentals still matter for AI Overviews and AI Mode. GEO extends SEO by optimizing for AI answer selection, source citation, narrative framing, and recommendation behavior rather than only blue-link ranking.',
+  },
+]
+
+function HomeStructuredData() {
+  const graph = [
+    {
+      '@type': 'Organization',
+      '@id': `${BASE_URL}/#organization`,
+      name: 'HyperMind',
+      url: `${BASE_URL}/`,
+      logo: `${BASE_URL}/asset/logo.png`,
+      description:
+        'HyperMind is a GEO agency and AI visibility execution partner that helps brands become cited and recommended in AI answers.',
+      sameAs: [
+        'https://hypermindgeo.com/',
+      ],
+      knowsAbout: [
+        'Generative Engine Optimization',
+        'Answer Engine Optimization',
+        'AI visibility',
+        'AI citation strategy',
+        'AI Overviews optimization',
+        'LLM brand visibility',
+      ],
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${BASE_URL}/#website`,
+      name: 'HyperMind',
+      url: `${BASE_URL}/`,
+      publisher: { '@id': `${BASE_URL}/#organization` },
+      inLanguage: 'en',
+    },
+    {
+      '@type': 'Service',
+      '@id': `${BASE_URL}/#geo-service`,
+      name: 'GEO agency and AI visibility optimization',
+      provider: { '@id': `${BASE_URL}/#organization` },
+      serviceType: 'Generative Engine Optimization',
+      areaServed: 'Global',
+      description:
+        'Research-backed GEO execution for AI answer visibility, citation growth, prompt testing, entity optimization, and AI search traffic attribution.',
+      audience: {
+        '@type': 'Audience',
+        audienceType: 'B2B SaaS, fintech, ecommerce, startup, and enterprise marketing teams',
+      },
+    },
+    {
+      '@type': 'ItemList',
+      name: 'HyperMind GEO methodology',
+      itemListElement: METHOD_STEPS.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.title,
+        description: item.description,
+      })),
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: FAQS.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.answer,
+        },
+      })),
+    },
+  ]
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }),
+      }}
+    />
+  )
+}
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-white overflow-x-hidden">
       <Navbar />
+      <HomeStructuredData />
 
-      {/* Hero */}
-      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-[#f5f3f0]">
+      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-[#f7f7f4]">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div className="space-y-8">
               <div>
-                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-                  <span className="block text-black animate-slide-in-1">The GEO Agency</span>
-                  <span className="block italic text-black animate-slide-in-2">for AI Search</span>
+                <p className="text-sm font-semibold uppercase tracking-wide text-gray-600 mb-4">
+                  Research-backed GEO agency for AI answer visibility
+                </p>
+                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-black">
+                  Become the brand AI recommends
                 </h1>
-                <p className="text-xl sm:text-2xl text-gray-700 animate-slide-in-3">
-                  We help brands get recommended in AI answers across ChatGPT, Gemini, Perplexity, Claude, and every AI assistant your customers use.
+                <p className="text-xl text-gray-700 leading-relaxed max-w-2xl">
+                  HyperMind helps brands earn mentions, citations, and recommendations in ChatGPT, Google AI Overviews, Google AI Mode, Gemini, Perplexity, Claude, and Copilot with an agentic GEO system: strategy archive, critic-guided prioritization, live model testing, and hands-on execution.
                 </p>
               </div>
-              <div className="flex flex-col sm:flex-row gap-4 animate-slide-in-4">
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
+                {['Strategy archive', 'Critic-guided tests', 'Citation supply chain'].map((item) => (
+                  <div key={item} className="border border-gray-200 bg-white rounded-lg px-4 py-3 font-medium text-gray-800">
+                    {item}
+                  </div>
+                ))}
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4">
                 <a
                   href="https://forms.gle/QA6WWgN4cpRHW5VF7"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-black text-white px-8 py-4 rounded-lg text-lg font-medium hover:bg-gray-800 transition text-center"
                 >
-                  Get a Free GEO Audit
+                  Get a Free AI Visibility Audit
                 </a>
                 <Link
-                  href="/resources/what-is-geo"
+                  href="/resources/ai-visibility-platform-vs-geo-agency"
                   className="border border-gray-300 text-black px-8 py-4 rounded-lg text-lg font-medium hover:bg-white transition text-center"
                 >
-                  What is GEO?
+                  Compare GEO options
                 </Link>
               </div>
             </div>
-            <HeroLogos />
-          </div>
-        </div>
-      </section>
 
-      {/* What is GEO */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-black mb-6">
-            What is Generative Engine Optimization?
-          </h2>
-          <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-            <strong>GEO (Generative Engine Optimization)</strong> is the practice of optimizing your brand&apos;s visibility in AI-generated answers. Unlike traditional SEO that targets search engine rankings, GEO ensures your brand is the one AI assistants <em>recommend</em>, <em>cite</em>, and <em>trust</em> when users ask for solutions.
-          </p>
-          <Link
-            href="/resources/what-is-geo"
-            className="inline-flex items-center gap-2 text-black font-medium border-b-2 border-black pb-1 hover:opacity-70 transition"
-          >
-            Read the full GEO guide
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </Link>
-        </div>
-      </section>
-
-      {/* Why AI Search Matters */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-black mb-4">
-              Why AI Search Matters Now
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              The way people find products, services, and information is fundamentally changing. AI search isn&apos;t coming — it&apos;s here.
-            </p>
-          </div>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {AI_STATS.map((stat) => (
-              <div key={stat.label} className="text-center">
-                <div className="text-4xl sm:text-5xl font-bold text-black mb-3">{stat.value}</div>
-                <p className="text-sm text-gray-600">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* HyperMind GEO Agency Model */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-black mb-4">
-              The HyperMind GEO Framework
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Our proprietary four-step methodology turns AI invisibility into AI dominance.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {GEO_STEPS.map((item) => (
-              <div
-                key={item.step}
-                className="border border-gray-200 rounded-xl p-8 hover:border-black transition-colors group"
-              >
-                <div className="text-sm font-mono text-gray-400 mb-4 group-hover:text-black transition-colors">
-                  {item.step}
+            <div className="space-y-6">
+              <HeroLogos />
+              <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
+                <p className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-4">
+                  What HyperMind optimizes for
+                </p>
+                <div className="grid grid-cols-2 gap-4">
+                  {[
+                    ['Mentions', 'Is the brand named?'],
+                    ['Citations', 'Is the page sourced?'],
+                    ['Sentiment', 'Is the framing useful?'],
+                    ['Revenue', 'Do AI visits convert?'],
+                  ].map(([title, body]) => (
+                    <div key={title} className="border border-gray-100 rounded-lg p-4">
+                      <div className="text-lg font-bold text-black">{title}</div>
+                      <div className="text-xs text-gray-500 mt-1">{body}</div>
+                    </div>
+                  ))}
                 </div>
-                <h3 className="text-xl font-bold text-black mb-3">{item.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl sm:text-4xl font-bold text-black mb-4">
+              GEO is now a citation and selection problem
+            </h2>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              AI search visibility is won when models can find, trust, summarize, and cite your brand. HyperMind designs the full system around that reality: technical eligibility, extractable answers, source authority, entity clarity, and continuous model testing.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {RESEARCH_SIGNALS.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block border border-gray-200 rounded-xl p-6 hover:border-black transition bg-gray-50"
+              >
+                <div className="text-sm font-semibold text-black mb-2">{item.source}</div>
+                <p className="text-sm text-gray-600 leading-relaxed">{item.finding}</p>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="max-w-3xl mb-12">
+            <p className="text-sm font-semibold uppercase tracking-wide text-gray-500 mb-3">
+              HyperMind methodology
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-black mb-4">
+              An agentic operating system for AI citation growth
+            </h2>
+            <p className="text-lg text-gray-600">
+              The core product is not another static visibility score. Inspired by AgenticGEO-style research, HyperMind treats GEO as a self-improving execution loop: keep a strategy archive, predict which actions are likely to work, test the highest-value candidates, and feed the results back into the next optimization cycle.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 gap-4">
+            {METHOD_STEPS.map((item) => (
+              <div key={item.step} className="bg-white border border-gray-200 rounded-xl p-6">
+                <div className="text-xs font-mono text-gray-400 mb-4">{item.step}</div>
+                <h3 className="text-lg font-bold text-black mb-3">{item.title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{item.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Platform Preview */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-black mb-6">
-                Powered by Our AI Visibility Platform
-              </h2>
-              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                Our proprietary platform monitors your brand mentions across every major AI assistant in real time. See exactly how AI talks about you, track competitor visibility, and measure the impact of every optimization.
+              <p className="text-sm font-semibold uppercase tracking-wide text-gray-500 mb-3">
+                Product difference
               </p>
-              <ul className="space-y-3 mb-8">
-                {[
-                  'Real-time AI mention tracking across 9+ platforms',
-                  'Prompt intelligence: see what users ask about your category',
-                  'AI sentiment analysis for your brand',
-                  'Competitor benchmarking in AI search',
-                ].map((feature) => (
-                  <li key={feature} className="flex items-start gap-3 text-gray-700">
-                    <svg className="w-5 h-5 text-black mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                    {feature}
-                  </li>
-                ))}
-              </ul>
+              <h2 className="text-3xl sm:text-4xl font-bold text-black mb-6">
+                HyperMind is the execution layer after AI visibility analytics
+              </h2>
+              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                Many platforms show that your brand is missing. HyperMind fixes why it is missing: insufficient source authority, unclear entity language, weak comparison pages, thin evidence, poor internal linking, missing schema alignment, and no repeatable AI answer testing.
+              </p>
               <Link
-                href="/platform"
+                href="/compare"
                 className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800 transition"
               >
-                Explore the Platform
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
+                View competitor comparisons
+                <span aria-hidden="true">&rarr;</span>
               </Link>
             </div>
-            <div className="relative">
-              <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden">
-                <Image
-                  src="/asset/dashboard.jpg"
-                  alt="HyperMind AI Visibility Platform Dashboard"
-                  width={800}
-                  height={500}
-                  className="w-full h-auto"
-                />
-              </div>
+            <div className="border border-gray-200 rounded-xl overflow-hidden">
+              {DIFFERENTIATORS.map((row) => (
+                <div key={row.category} className="grid grid-cols-1 md:grid-cols-3 border-b border-gray-200 last:border-b-0">
+                  <div className="bg-gray-50 p-5 font-bold text-black">{row.category}</div>
+                  <div className="p-5 text-sm text-gray-600 border-t md:border-t-0 md:border-l border-gray-200">
+                    {row.marketPattern}
+                  </div>
+                  <div className="p-5 text-sm text-gray-800 border-t md:border-t-0 md:border-l border-gray-200">
+                    {row.hypermindDifference}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Client Results */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-950 text-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-black mb-4">
-              Results Our Clients See
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Real outcomes from brands that invested in Generative Engine Optimization with HyperMind.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {CLIENT_RESULTS.map((result) => (
-              <div key={result.metric} className="bg-gray-50 rounded-xl p-8 text-center">
-                <div className="text-sm font-medium text-gray-500 mb-4">{result.metric}</div>
-                <div className="flex items-center justify-center gap-3 mb-4">
-                  <span className="text-2xl text-gray-400 line-through">{result.before}</span>
-                  <svg className="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                  <span className="text-3xl font-bold text-black">{result.after}</span>
-                </div>
-                <p className="text-xs text-gray-500">{result.label}</p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-wide text-gray-400 mb-3">
+                From answer visibility to pipeline
+              </p>
+              <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+                Measure the model, change the sources, prove the outcome
+              </h2>
+              <p className="text-lg text-gray-300 leading-relaxed mb-8">
+                HyperMind tracks the same commercial journey your buyers take: category discovery, vendor comparison, shortlisting, pricing research, risk validation, and final recommendation. Each prompt cluster maps to content changes, citation targets, and conversion pages.
+              </p>
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  ['Prompt clusters', 'Buying intent, competitor intent, and problem intent'],
+                  ['Source classes', 'Owned, earned, social, institutional, review, and partner'],
+                  ['Answer metrics', 'Mention, citation, sentiment, rank, and claim accuracy'],
+                  ['Business metrics', 'AI referrals, assisted conversions, demos, and pipeline'],
+                ].map(([title, body]) => (
+                  <div key={title} className="border border-white/10 rounded-lg p-4">
+                    <div className="font-semibold text-white">{title}</div>
+                    <div className="text-xs text-gray-400 mt-2">{body}</div>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-          <div className="text-center mt-12">
-            <Link
-              href="/case-studies"
-              className="inline-flex items-center gap-2 text-black font-medium border-b-2 border-black pb-1 hover:opacity-70 transition"
-            >
-              View case studies
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
+            </div>
+            <div className="bg-white rounded-xl overflow-hidden border border-white/10">
+              <Image
+                src="/asset/dashboard.jpg"
+                alt="HyperMind AI visibility dashboard showing AI mentions, citations, competitors, and prompt performance"
+                width={900}
+                height={560}
+                className="w-full h-auto"
+              />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* How GEO Works (Process) */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-black mb-4">
-              How GEO Works
-            </h2>
-            <p className="text-lg text-gray-600">
-              Generative Engine Optimization at the highest level — from audit to ongoing growth.
-            </p>
-          </div>
-          <div className="space-y-12">
-            {[
-              {
-                num: '1',
-                title: 'AI Visibility Audit',
-                text: 'We query every major AI platform with the prompts your customers use and map exactly where your brand stands — mentions, sentiment, citations, and competitive position.',
-              },
-              {
-                num: '2',
-                title: 'Content & Authority Strategy',
-                text: 'We identify what AI models need to see in order to recommend you: structured content, authoritative backlinks, entity signals, and semantic coverage gaps.',
-              },
-              {
-                num: '3',
-                title: 'Implementation & Optimization',
-                text: 'Our team executes the strategy — restructuring content, placing citations on high-authority sources, optimizing your digital knowledge graph, and building trust signals.',
-              },
-              {
-                num: '4',
-                title: 'Continuous Measurement & Iteration',
-                text: 'We track results weekly through our platform, refining the strategy based on real data. You get monthly reports showing AI mention growth, traffic impact, and ROI.',
-              },
-            ].map((step) => (
-              <div key={step.num} className="flex gap-6">
-                <div className="shrink-0 w-12 h-12 rounded-full bg-black text-white flex items-center justify-center font-bold text-lg">
-                  {step.num}
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-black mb-2">{step.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{step.text}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Industries Served */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-black mb-4">
-              GEO for Every Industry
+              What HyperMind delivers
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              AI search impacts every vertical. We bring specialized GEO strategies to each.
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              The service model is designed for teams that need AI answer visibility to become an acquisition channel, not just another dashboard.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {INDUSTRIES.map((industry) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {OFFER_AREAS.map((item) => (
               <Link
-                key={industry.href}
-                href={industry.href}
-                className="block border border-gray-200 rounded-xl p-6 hover:border-black hover:shadow-md transition-all group"
+                key={item.href}
+                href={item.href}
+                className="block border border-gray-200 rounded-xl p-6 hover:border-black hover:shadow-md transition group"
               >
-                <h3 className="text-lg font-bold text-black mb-2 group-hover:underline">{industry.title}</h3>
-                <p className="text-sm text-gray-600">{industry.description}</p>
+                <h3 className="text-lg font-bold text-black mb-3 group-hover:underline">{item.title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{item.description}</p>
+                <span className="inline-block mt-5 text-sm font-semibold text-black">Explore &rarr;</span>
               </Link>
             ))}
-            <Link
-              href="/solutions"
-              className="flex items-center justify-center border border-dashed border-gray-300 rounded-xl p-6 hover:border-black transition-colors text-gray-500 hover:text-black font-medium"
-            >
-              View all solutions →
-            </Link>
           </div>
         </div>
       </section>
 
-      {/* Latest GEO Research */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-black mb-4">
-              Latest GEO Research & Guides
+              Start with the pages AI systems can quote
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Stay ahead of the AI search curve with our research, playbooks, and data.
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              These pages are designed as citation targets for prompts about GEO agencies, AI visibility platforms, AI search optimization, and citation source strategy.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                title: 'What is GEO? The Complete Guide',
-                description: 'Everything you need to know about Generative Engine Optimization — what it is, why it matters, and how to start.',
-                href: '/resources/what-is-geo',
-              },
-              {
-                title: 'GEO Guides & Playbooks',
-                description: 'Step-by-step frameworks for optimizing your brand\'s visibility across ChatGPT, Gemini, Perplexity, and more.',
-                href: '/resources/geo-guides',
-              },
-              {
-                title: 'AI Search Library',
-                description: 'Deep dives into how each AI platform discovers, evaluates, and recommends brands in their answers.',
-                href: '/resources/ai-search-library',
-              },
-            ].map((resource) => (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {CORE_RESOURCES.map((resource) => (
               <Link
                 key={resource.href}
                 href={resource.href}
-                className="block bg-white border border-gray-200 rounded-xl p-8 hover:border-black hover:shadow-md transition-all group"
+                className="block bg-white border border-gray-200 rounded-xl p-8 hover:border-black hover:shadow-md transition group"
               >
                 <h3 className="text-lg font-bold text-black mb-3 group-hover:underline">{resource.title}</h3>
-                <p className="text-sm text-gray-600 mb-4 leading-relaxed">{resource.description}</p>
-                <span className="text-sm font-medium text-black">Read more →</span>
+                <p className="text-sm text-gray-600 leading-relaxed mb-5">{resource.description}</p>
+                <span className="text-sm font-semibold text-black">Read resource &rarr;</span>
               </Link>
             ))}
-          </div>
-          <div className="text-center mt-12">
-            <Link
-              href="/resources/geo-guides"
-              className="inline-flex items-center gap-2 text-black font-medium border-b-2 border-black pb-1 hover:opacity-70 transition"
-            >
-              Browse all resources
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-black mb-4">
+              GEO questions AI engines should be able to answer
+            </h2>
+            <p className="text-lg text-gray-600">
+              Clear Q&A blocks help both buyers and answer engines understand the category, the product difference, and the implementation model.
+            </p>
+          </div>
+          <div className="space-y-4">
+            {FAQS.map((faq) => (
+              <div key={faq.question} className="border border-gray-200 rounded-xl p-6">
+                <h3 className="text-lg font-bold text-black mb-3">{faq.question}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-black text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-            Ready to Get Recommended by AI?
+            Find out why AI does or does not recommend your brand
           </h2>
           <p className="text-lg text-gray-300 mb-10 max-w-2xl mx-auto">
-            Get a free GEO audit and see exactly how AI assistants talk about your brand today — and what it takes to become their top recommendation.
+            Get a free AI visibility audit with prompt gaps, competitor mentions, citation sources, page recommendations, and the first implementation priorities.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -404,13 +552,13 @@ export default function Home() {
               rel="noopener noreferrer"
               className="bg-white text-black px-8 py-4 rounded-lg text-lg font-medium hover:bg-gray-100 transition"
             >
-              Get a Free GEO Audit
+              Request Free Audit
             </a>
             <Link
-              href="/pricing"
+              href="/services/ai-visibility-optimization"
               className="border border-gray-600 text-white px-8 py-4 rounded-lg text-lg font-medium hover:border-white transition"
             >
-              View Pricing
+              See GEO service
             </Link>
           </div>
         </div>

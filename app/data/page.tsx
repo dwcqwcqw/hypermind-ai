@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'AI Search Data Hub — AI Visibility Leaderboards & Research | HyperMind',
     description:
       'The most comprehensive AI search data available. Leaderboards, indexes, and trend reports for AI visibility.',
-    url: 'https://www.hypermindai.tech/data',
+    url: 'https://hypermindgeo.com/data',
     siteName: 'HyperMind',
   },
   alternates: {
@@ -80,8 +80,8 @@ export default function DataPage() {
               {
                 '@type': 'BreadcrumbList',
                 itemListElement: [
-                  { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.hypermindai.tech/' },
-                  { '@type': 'ListItem', position: 2, name: 'Data', item: 'https://www.hypermindai.tech/data/' },
+                  { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://hypermindgeo.com/' },
+                  { '@type': 'ListItem', position: 2, name: 'Data', item: 'https://hypermindgeo.com/data/' },
                 ],
               },
             ],

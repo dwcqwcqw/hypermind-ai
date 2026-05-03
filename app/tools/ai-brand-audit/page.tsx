@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: 'AI Brand Audit — Free AI Visibility Analysis | HyperMind',
     description:
       'Discover your AI visibility score. See where your brand is cited — and missing — across AI platforms.',
-    url: 'https://www.hypermindai.tech/tools/ai-brand-audit',
+    url: 'https://hypermindgeo.com/tools/ai-brand-audit',
     siteName: 'HyperMind',
   },
 }

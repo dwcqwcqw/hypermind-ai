@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: 'AI Prompt Database — Top Prompts by Industry | HyperMind',
     description:
       'Discover the prompts that drive AI recommendations in your industry. Track what users ask ChatGPT, Gemini, and Perplexity about your category.',
-    url: 'https://www.hypermindai.tech/resources/prompt-database',
+    url: 'https://hypermindgeo.com/resources/prompt-database',
     siteName: 'HyperMind',
   },
 }

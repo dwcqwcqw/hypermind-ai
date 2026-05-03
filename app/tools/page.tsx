@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'Free AI Visibility Tools | HyperMind',
     description:
       'Free tools to check your brand\'s visibility, mentions, sentiment, and citations across AI search platforms.',
-    url: 'https://www.hypermindai.tech/tools',
+    url: 'https://hypermindgeo.com/tools',
     siteName: 'HyperMind',
   },
   alternates: {
@@ -80,8 +80,8 @@ export default function ToolsPage() {
               {
                 '@type': 'BreadcrumbList',
                 itemListElement: [
-                  { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.hypermindai.tech/' },
-                  { '@type': 'ListItem', position: 2, name: 'Tools', item: 'https://www.hypermindai.tech/tools/' },
+                  { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://hypermindgeo.com/' },
+                  { '@type': 'ListItem', position: 2, name: 'Tools', item: 'https://hypermindgeo.com/tools/' },
                 ],
               },
             ],

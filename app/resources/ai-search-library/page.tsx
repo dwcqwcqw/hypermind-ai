@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: 'AI Search Library — How Each AI Platform Works | HyperMind',
     description:
       'How ChatGPT, Perplexity, Gemini, Claude, and Copilot decide which brands to recommend. Platform-by-platform AI search analysis.',
-    url: 'https://www.hypermindai.tech/resources/ai-search-library',
+    url: 'https://hypermindgeo.com/resources/ai-search-library',
     siteName: 'HyperMind',
   },
 }

@@ -7,14 +7,14 @@ import type { Metadata } from 'next'
 export const revalidate = 3600
 
 export const metadata: Metadata = {
-  title: 'GEO Platform — AI Visibility Monitoring & Intelligence | HyperMind',
+  title: 'Agentic GEO Platform - AI Visibility Execution | HyperMind',
   description:
-    'The HyperMind GEO Platform provides AI visibility monitoring, AI mention tracking, sentiment analysis, prompt intelligence, and competitor benchmarking across ChatGPT, Gemini, Perplexity, and every major AI assistant.',
+    'The HyperMind Agentic GEO Platform combines AI visibility monitoring with strategy archives, critic-guided prioritization, live answer testing, citation source development, and revenue attribution.',
   openGraph: {
-    title: 'GEO Platform — AI Visibility Monitoring & Intelligence | HyperMind',
+    title: 'Agentic GEO Platform - AI Visibility Execution | HyperMind',
     description:
-      'Monitor, measure, and optimize your brand\'s presence in AI-generated answers with HyperMind\'s GEO Platform.',
-    url: 'https://www.hypermindai.tech/platform',
+      'Monitor, measure, and improve your brand\'s presence in AI-generated answers with HyperMind\'s agentic GEO execution platform.',
+    url: 'https://hypermindgeo.com/platform/',
     siteName: 'HyperMind',
   },
   alternates: {
@@ -34,6 +34,18 @@ const PLATFORM_FEATURES: PlatformFeature[] = [
     href: '/platform/ai-visibility-monitoring',
     description:
       'Track your brand\'s visibility score across every major AI assistant in real time. Know exactly when and how AI mentions your brand.',
+  },
+  {
+    title: 'Agentic Strategy Archive',
+    href: '/company/methodology',
+    description:
+      'Store and select diverse GEO strategies by prompt intent, content type, source class, and AI platform behavior so optimization never depends on one static checklist.',
+  },
+  {
+    title: 'Critic-Guided Prioritization',
+    href: '/company/methodology',
+    description:
+      'Score candidate rewrites, schema changes, citation targets, and source development tasks before live testing to focus effort where impact is most likely.',
   },
   {
     title: 'AI Mention Tracking',
@@ -86,8 +98,8 @@ export default function PlatformPage() {
               {
                 '@type': 'BreadcrumbList',
                 itemListElement: [
-                  { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.hypermindai.tech/' },
-                  { '@type': 'ListItem', position: 2, name: 'Platform', item: 'https://www.hypermindai.tech/platform/' },
+                  { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://hypermindgeo.com/' },
+                  { '@type': 'ListItem', position: 2, name: 'Platform', item: 'https://hypermindgeo.com/platform/' },
                 ],
               },
             ],
@@ -99,10 +111,10 @@ export default function PlatformPage() {
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-black mb-6">
-            The GEO Platform for AI Search Intelligence
+            The Agentic GEO Platform for AI Search Execution
           </h1>
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto mb-10 leading-relaxed">
-            The HyperMind GEO Platform is an AI visibility monitoring and intelligence suite that tracks how AI assistants like ChatGPT, Gemini, Perplexity, and Claude mention, recommend, and cite your brand. It provides the data foundation for every GEO strategy.
+            The HyperMind platform tracks how AI assistants mention, recommend, and cite your brand, then turns those signals into prioritized execution. Inspired by AgenticGEO research, HyperMind combines monitoring, strategy archives, critic-guided planning, live answer testing, and citation source development.
           </p>
           <a
             href="https://forms.gle/QA6WWgN4cpRHW5VF7"
@@ -123,7 +135,7 @@ export default function PlatformPage() {
               Platform Capabilities
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Everything you need to monitor, measure, and improve your brand&apos;s presence in AI-generated answers.
+              Everything you need to monitor, measure, and improve your brand&apos;s presence in AI-generated answers, from prompt discovery to source development and revenue attribution.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

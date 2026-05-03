@@ -23,7 +23,7 @@ export default function StructuredData() {
           height: 185,
         },
         description:
-          'HyperMind is the leading GEO (Generative Engine Optimization) agency that helps brands get recommended in AI answers across ChatGPT, Gemini, Perplexity, Claude, and other AI assistants.',
+          'HyperMind is an agentic GEO agency and AI visibility execution partner that helps brands get mentioned, cited, and recommended in AI answers across ChatGPT, Google AI Overviews, Gemini, Perplexity, Claude, Copilot, and other AI assistants.',
         foundingDate: '2024',
         areaServed: 'Worldwide',
         knowsAbout: [
@@ -32,6 +32,8 @@ export default function StructuredData() {
           'AI Search Optimization',
           'AI Visibility Monitoring',
           'AI Citation Strategy',
+          'AgenticGEO',
+          'AI Answer Optimization',
           'AI Brand Monitoring',
           'LLM SEO',
           'Answer Engine Optimization',
@@ -41,9 +43,9 @@ export default function StructuredData() {
         '@type': 'WebSite',
         '@id': 'https://hypermindgeo.com/#website',
         url: 'https://hypermindgeo.com/',
-        name: 'HyperMind — The GEO Agency for AI Search',
+        name: 'HyperMind - Agentic GEO Agency for AI Search',
         description:
-          'Generative Engine Optimization agency helping brands get recommended in AI answers. AI visibility monitoring, citation strategy, and search optimization.',
+          'Agentic Generative Engine Optimization agency helping brands get recommended in AI answers through strategy archives, critic-guided prioritization, citation strategy, answer-ready content, and AI search attribution.',
         publisher: {
           '@id': 'https://hypermindgeo.com/#organization',
         },
@@ -60,41 +62,41 @@ export default function StructuredData() {
       {
         '@type': 'ProfessionalService',
         '@id': 'https://hypermindgeo.com/#service',
-        name: 'HyperMind GEO Agency',
-        serviceType: 'Generative Engine Optimization',
+        name: 'HyperMind Agentic GEO Agency',
+        serviceType: 'Agentic Generative Engine Optimization',
         provider: {
           '@id': 'https://hypermindgeo.com/#organization',
         },
         description:
-          'Full-service GEO agency offering AI visibility monitoring, AI mention tracking, AI citation strategy, AI reputation management, and AI search traffic optimization.',
+          'Full-service agentic GEO agency offering AI visibility monitoring, prompt demand mapping, strategy archive selection, critic-guided prioritization, AI citation strategy, AI answer optimization, and AI search traffic attribution.',
         url: 'https://hypermindgeo.com/services/',
         areaServed: 'Worldwide',
         hasOfferCatalog: {
           '@type': 'OfferCatalog',
-          name: 'GEO Agency & Platform Plans',
+          name: 'Agentic GEO Agency & Platform Plans',
           itemListElement: [
             {
               '@type': 'Offer',
               itemOffered: {
                 '@type': 'Service',
                 name: 'AI Visibility Monitoring',
-                description: 'Track brand mentions across AI assistants. Includes AI mention tracking, sentiment analysis, and competitor benchmarking.',
+                description: 'Track brand mentions, citations, sentiment, and recommendation rank across AI assistants with competitor benchmarking.',
               },
             },
             {
               '@type': 'Offer',
               itemOffered: {
                 '@type': 'Service',
-                name: 'GEO Strategy',
-                description: 'AI visibility monitoring plus GEO strategy development, content optimization, and citation planning.',
+                name: 'Agentic GEO Strategy',
+                description: 'AI visibility monitoring plus prompt demand mapping, strategy archive selection, critic-guided prioritization, content optimization, and citation planning.',
               },
             },
             {
               '@type': 'Offer',
               itemOffered: {
                 '@type': 'Service',
-                name: 'Full GEO Agency',
-                description: 'Complete GEO service including strategy, implementation, content production, citation building, and ongoing optimization.',
+                name: 'Full GEO Execution',
+                description: 'Complete GEO service including strategy, implementation, answer-ready content, citation source development, live model testing, and ongoing optimization.',
               },
             },
             {

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: 'GEO Playbooks — Step-by-Step Action Guides | HyperMind',
     description:
       'Practical GEO playbooks with step-by-step instructions. Learn exactly how to increase AI mentions, control AI narrative, and win AI recommendations.',
-    url: 'https://www.hypermindai.tech/resources/geo-playbooks',
+    url: 'https://hypermindgeo.com/resources/geo-playbooks',
     siteName: 'HyperMind',
   },
 }

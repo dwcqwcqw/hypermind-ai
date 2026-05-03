@@ -9,10 +9,10 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   metadataBase: new URL('https://hypermindgeo.com'),
   title: {
-    default: 'HyperMind — The GEO Agency for AI Search | Generative Engine Optimization',
+    default: 'HyperMind - Agentic GEO Agency for AI Search Visibility',
     template: '%s | HyperMind',
   },
-  description: 'HyperMind is the leading GEO agency helping brands get cited in AI answers across ChatGPT, Gemini, Perplexity, and Claude.',
+  description: 'HyperMind is an agentic GEO agency and AI visibility execution partner helping brands get mentioned, cited, and recommended across ChatGPT, Google AI Overviews, Gemini, Perplexity, Claude, and Copilot.',
   icons: {
     icon: '/asset/logo.png',
     shortcut: '/asset/logo.png',
@@ -22,8 +22,8 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'HyperMind — The GEO Agency for AI Search | Generative Engine Optimization',
-    description: 'HyperMind is the leading GEO agency helping brands get cited in AI answers across ChatGPT, Gemini, Perplexity, and Claude.',
+    title: 'HyperMind - Agentic GEO Agency for AI Search Visibility',
+    description: 'HyperMind helps brands get cited and recommended in AI answers with prompt research, citation strategy, answer-ready content, source development, and AI search attribution.',
     url: 'https://hypermindgeo.com/',
     siteName: 'HyperMind',
     images: [
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
         url: '/asset/dashboard.jpg',
         width: 1200,
         height: 630,
-        alt: 'HyperMind — The GEO Agency for AI Search',
+        alt: 'HyperMind agentic GEO agency for AI search',
       },
     ],
     locale: 'en_US',
@@ -39,8 +39,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'HyperMind — The GEO Agency for AI Search | Generative Engine Optimization',
-    description: 'HyperMind is the leading GEO agency helping brands get cited in AI answers across ChatGPT, Gemini, Perplexity, and Claude.',
+    title: 'HyperMind - Agentic GEO Agency for AI Search Visibility',
+    description: 'HyperMind helps brands get cited and recommended in AI answers with prompt research, citation strategy, answer-ready content, source development, and AI search attribution.',
     images: ['/asset/dashboard.jpg'],
   },
   robots: {
@@ -155,5 +155,4 @@ gtag('config', 'G-VGPY1N4763');
     </html>
   )
 }
-
 

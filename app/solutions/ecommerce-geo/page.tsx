@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: 'GEO for Ecommerce Brands | HyperMind',
     description:
       'Get your products recommended in AI-powered shopping answers. HyperMind delivers product-level AI visibility for ecommerce brands.',
-    url: 'https://www.hypermindai.tech/solutions/ecommerce-geo',
+    url: 'https://hypermindgeo.com/solutions/ecommerce-geo',
     siteName: 'HyperMind',
   },
 }

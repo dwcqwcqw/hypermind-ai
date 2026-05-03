@@ -70,7 +70,7 @@ const NAV_GROUPS: NavGroup[] = [
     items: [
       { label: 'AI Visibility Leaderboard', href: '/data/ai-visibility-leaderboard', desc: 'Top brands in AI search' },
       { label: 'AI Brand Mention Index', href: '/data/ai-brand-mention-index', desc: 'Brand mention rankings' },
-      { label: 'AI Citation Database', href: '/data/ai-citation-database', desc: 'Most cited sources in AI answers' },
+      { label: 'AI Citation Database', href: '/data/ai-citation-sources-database', desc: 'Most cited sources in AI answers' },
       { label: 'AI Search Trends', href: '/data/ai-search-trends', desc: 'Emerging AI search patterns' },
     ],
   },

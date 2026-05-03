@@ -3,12 +3,12 @@
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://www.hypermindai.tech/#organization",
+      "@id": "https://hypermindgeo.com/#organization",
       "name": "HyperMind",
-      "url": "https://www.hypermindai.tech/",
+      "url": "https://hypermindgeo.com/",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://www.hypermindai.tech/asset/logo.png",
+        "url": "https://hypermindgeo.com/asset/logo.png",
         "width": 185,
         "height": 185
       },
@@ -17,39 +17,39 @@
     },
     {
       "@type": "WebSite",
-      "@id": "https://www.hypermindai.tech/#website",
-      "url": "https://www.hypermindai.tech/",
+      "@id": "https://hypermindgeo.com/#website",
+      "url": "https://hypermindgeo.com/",
       "name": "HyperMind - AI Search Engine Optimization Platform",
       "description": "10x your traffic from AI Search Engines. Empower AI platforms to feature your brand more and transform those mentions into real business results.",
       "publisher": {
-        "@id": "https://www.hypermindai.tech/#organization"
+        "@id": "https://hypermindgeo.com/#organization"
       },
       "inLanguage": "en"
     },
     {
       "@type": "WebPage",
-      "@id": "https://www.hypermindai.tech/#webpage",
-      "url": "https://www.hypermindai.tech/",
+      "@id": "https://hypermindgeo.com/#webpage",
+      "url": "https://hypermindgeo.com/",
       "name": "HyperMind - 10x Your Traffic from AI Search Engines",
       "description": "Empower AI platforms like ChatGPT, Claude, Perplexity, and DeepSeek to feature your brand more and transform those mentions into real business results.",
       "isPartOf": {
-        "@id": "https://www.hypermindai.tech/#website"
+        "@id": "https://hypermindgeo.com/#website"
       },
       "about": {
-        "@id": "https://www.hypermindai.tech/#service"
+        "@id": "https://hypermindgeo.com/#service"
       },
       "inLanguage": "en"
     },
     {
       "@type": "Service",
-      "@id": "https://www.hypermindai.tech/#service",
+      "@id": "https://hypermindgeo.com/#service",
       "serviceType": "Generative Engine Optimization Software",
       "name": "HyperMind GEO Platform",
       "provider": {
-        "@id": "https://www.hypermindai.tech/#organization"
+        "@id": "https://hypermindgeo.com/#organization"
       },
       "description": "Track and optimize your brand's visibility across AI-powered search engines and chatbots. Get real-time insights, simulate prompts, and increase brand mentions in AI-generated responses across platforms like ChatGPT, Claude, Google AI, Grok, Perplexity, and DeepSeek.",
-      "url": "https://www.hypermindai.tech/",
+      "url": "https://hypermindgeo.com/",
       "areaServed": "Worldwide",
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
@@ -84,7 +84,7 @@
     },
     {
       "@type": "FAQPage",
-      "@id": "https://www.hypermindai.tech/#faq",
+      "@id": "https://hypermindgeo.com/#faq",
       "mainEntity": [
         {
           "@type": "Question",
@@ -138,84 +138,84 @@
     },
     {
       "@type": "CollectionPage",
-      "@id": "https://www.hypermindai.tech/resources#webpage",
-      "url": "https://www.hypermindai.tech/resources",
+      "@id": "https://hypermindgeo.com/resources#webpage",
+      "url": "https://hypermindgeo.com/resources",
       "name": "Resources - HyperMind",
       "description": "Learn how to optimize your content for AI search engines",
       "isPartOf": {
-        "@id": "https://www.hypermindai.tech/#website"
+        "@id": "https://hypermindgeo.com/#website"
       },
       "inLanguage": "en"
     },
     {
       "@type": "Article",
-      "@id": "https://www.hypermindai.tech/resources/top-7-mobile-ai-marketing-apps-2025#article",
+      "@id": "https://hypermindgeo.com/resources/top-7-mobile-ai-marketing-apps-2025#article",
       "headline": "Top 7 Mobile AI Marketing Apps for Instant Insights in 2025",
-      "url": "https://www.hypermindai.tech/resources/top-7-mobile-ai-marketing-apps-2025",
-      "image": "https://www.hypermindai.tech/resources/article3_image.png",
+      "url": "https://hypermindgeo.com/resources/top-7-mobile-ai-marketing-apps-2025",
+      "image": "https://hypermindgeo.com/resources/article3_image.png",
       "datePublished": "2025-01-28",
       "dateModified": "2025-01-28",
       "author": {
         "@type": "Organization",
         "name": "HyperMind Team",
-        "url": "https://www.hypermindai.tech/#organization"
+        "url": "https://hypermindgeo.com/#organization"
       },
       "publisher": {
-        "@id": "https://www.hypermindai.tech/#organization"
+        "@id": "https://hypermindgeo.com/#organization"
       },
       "description": "Discover the best mobile AI marketing apps delivering real-time competitive intelligence, brand monitoring, and actionable insights. Learn how these powerful tools help marketers make data-driven decisions on the go in an AI-powered marketing landscape.",
       "articleBody": "The marketing landscape has transformed dramatically, with AI-powered tools becoming essential for competitive intelligence and real-time decision making. With the AI industry projected to reach $244 billion in 2025 and surge to over $1 trillion by 2031, mobile AI marketing apps have become critical for brands seeking instant, actionable insights.",
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://www.hypermindai.tech/resources/top-7-mobile-ai-marketing-apps-2025"
+        "@id": "https://hypermindgeo.com/resources/top-7-mobile-ai-marketing-apps-2025"
       },
       "inLanguage": "en"
     },
     {
       "@type": "Article",
-      "@id": "https://www.hypermindai.tech/resources/top-10-ai-marketing-vendors-prompt-simulation-2025#article",
+      "@id": "https://hypermindgeo.com/resources/top-10-ai-marketing-vendors-prompt-simulation-2025#article",
       "headline": "Top 10 AI Marketing Vendors for Prompt Simulation in 2025",
-      "url": "https://www.hypermindai.tech/resources/top-10-ai-marketing-vendors-prompt-simulation-2025",
-      "image": "https://www.hypermindai.tech/resources/article2_image.png",
+      "url": "https://hypermindgeo.com/resources/top-10-ai-marketing-vendors-prompt-simulation-2025",
+      "image": "https://hypermindgeo.com/resources/article2_image.png",
       "datePublished": "2025-01-05",
       "dateModified": "2025-01-05",
       "author": {
         "@type": "Organization",
         "name": "HyperMind Team",
-        "url": "https://www.hypermindai.tech/#organization"
+        "url": "https://hypermindgeo.com/#organization"
       },
       "publisher": {
-        "@id": "https://www.hypermindai.tech/#organization"
+        "@id": "https://hypermindgeo.com/#organization"
       },
       "description": "The landscape of AI marketing is rapidly evolving, with prompt simulation emerging as a critical capability for brands seeking to understand, optimize, and predict AI-generated behaviors that impact digital visibility and campaign success.",
       "articleBody": "The landscape of AI marketing is rapidly evolving, with prompt simulation emerging as a critical capability for brands seeking to understand, optimize, and predict AI-generated behaviors that impact digital visibility and campaign success. Prompt simulation enables marketers to test AI responses, refine messaging strategies, and optimize their presence across AI-powered platforms before launching campaigns.",
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://www.hypermindai.tech/resources/top-10-ai-marketing-vendors-prompt-simulation-2025"
+        "@id": "https://hypermindgeo.com/resources/top-10-ai-marketing-vendors-prompt-simulation-2025"
       },
       "inLanguage": "en"
     },
     {
       "@type": "Article",
-      "@id": "https://www.hypermindai.tech/resources/hypermind-vs-top-ai-marketing-platforms#article",
+      "@id": "https://hypermindgeo.com/resources/hypermind-vs-top-ai-marketing-platforms#article",
       "headline": "The Definitive Comparison of HyperMind vs Top AI Marketing Platforms",
-      "url": "https://www.hypermindai.tech/resources/hypermind-vs-top-ai-marketing-platforms",
-      "image": "https://www.hypermindai.tech/resources/article1_image.png",
+      "url": "https://hypermindgeo.com/resources/hypermind-vs-top-ai-marketing-platforms",
+      "image": "https://hypermindgeo.com/resources/article1_image.png",
       "datePublished": "2024-10-01",
       "dateModified": "2024-10-01",
       "author": {
         "@type": "Organization",
         "name": "HyperMind Team",
-        "url": "https://www.hypermindai.tech/#organization"
+        "url": "https://hypermindgeo.com/#organization"
       },
       "publisher": {
-        "@id": "https://www.hypermindai.tech/#organization"
+        "@id": "https://hypermindgeo.com/#organization"
       },
       "description": "The AI marketing landscape has transformed dramatically, with platforms offering everything from basic automation to sophisticated Generative Engine Optimization (GEO). HyperMind stands apart as the only B2B SaaS platform specializing in GEO.",
       "articleBody": "The AI marketing landscape has transformed dramatically, with platforms offering everything from basic automation to sophisticated Generative Engine Optimization (GEO). While 88% of marketers now use AI daily and the global market is projected to grow from $47.32B in 2025 to $107.5B by 2028, choosing the right platform remains critical for marketing teams seeking measurable results.",
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://www.hypermindai.tech/resources/hypermind-vs-top-ai-marketing-platforms"
+        "@id": "https://hypermindgeo.com/resources/hypermind-vs-top-ai-marketing-platforms"
       },
       "inLanguage": "en"
     }

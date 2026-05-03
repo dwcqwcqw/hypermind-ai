@@ -38,6 +38,7 @@ const FOOTER_SECTIONS = [
       { label: 'How AI Search Works', href: '/resources/how-ai-search-works' },
       { label: 'GEO Guides', href: '/resources/geo-guides' },
       { label: 'AI Search Library', href: '/resources/ai-search-library' },
+      { label: 'AI Visibility Platform vs GEO Agency', href: '/resources/ai-visibility-platform-vs-geo-agency' },
       { label: 'GEO Playbooks', href: '/resources/geo-playbooks' },
       { label: 'Blog', href: '/resources/blog' },
     ],
@@ -46,6 +47,7 @@ const FOOTER_SECTIONS = [
     title: 'Data & Tools',
     links: [
       { label: 'AI Visibility Leaderboard', href: '/data/ai-visibility-leaderboard' },
+      { label: 'AI Citation Sources Database', href: '/data/ai-citation-sources-database' },
       { label: 'AI Search Trends', href: '/data/ai-search-trends' },
       { label: 'AI Visibility Checker', href: '/tools/ai-visibility-checker' },
       { label: 'AI Brand Audit', href: '/tools/ai-brand-audit' },

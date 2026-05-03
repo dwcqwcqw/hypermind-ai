@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'About HyperMind — The GEO Agency | HyperMind',
     description:
       'Learn about HyperMind\'s mission, methodology, and team — the agency built to help brands win in AI search.',
-    url: 'https://www.hypermindai.tech/company',
+    url: 'https://hypermindgeo.com/company',
     siteName: 'HyperMind',
   },
   alternates: {
@@ -35,8 +35,8 @@ export default function CompanyPage() {
               {
                 '@type': 'BreadcrumbList',
                 itemListElement: [
-                  { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.hypermindai.tech/' },
-                  { '@type': 'ListItem', position: 2, name: 'Company', item: 'https://www.hypermindai.tech/company/' },
+                  { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://hypermindgeo.com/' },
+                  { '@type': 'ListItem', position: 2, name: 'Company', item: 'https://hypermindgeo.com/company/' },
                 ],
               },
             ],

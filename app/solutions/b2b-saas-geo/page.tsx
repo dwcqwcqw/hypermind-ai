@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: 'GEO for B2B SaaS Companies | HyperMind',
     description:
       'Get your SaaS product recommended in AI-generated answers. HyperMind delivers tailored GEO strategies for B2B software companies.',
-    url: 'https://www.hypermindai.tech/solutions/b2b-saas-geo',
+    url: 'https://hypermindgeo.com/solutions/b2b-saas-geo',
     siteName: 'HyperMind',
   },
 }

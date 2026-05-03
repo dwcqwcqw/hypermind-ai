@@ -31,15 +31,15 @@ export default function ArticleStructuredData({
     "author": {
       "@type": "Organization",
       "name": "HyperMind Team",
-      "url": "https://www.hypermindai.tech/#organization"
+      "url": "https://hypermindgeo.com/#organization"
     },
     "publisher": {
       "@type": "Organization",
-      "@id": "https://www.hypermindai.tech/#organization",
+      "@id": "https://hypermindgeo.com/#organization",
       "name": "HyperMind",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://www.hypermindai.tech/asset/logo.png",
+        "url": "https://hypermindgeo.com/asset/logo.png",
         "width": 185,
         "height": 185
       }

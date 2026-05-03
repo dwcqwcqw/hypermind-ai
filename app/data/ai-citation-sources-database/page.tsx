@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: 'AI Citation Sources Database | HyperMind',
     description:
       'Which websites does ChatGPT cite most? Which publications influence AI answers? Explore the AI citation landscape.',
-    url: 'https://www.hypermindai.tech/data/ai-citation-sources-database',
+    url: 'https://hypermindgeo.com/data/ai-citation-sources-database',
     siteName: 'HyperMind',
   },
 }

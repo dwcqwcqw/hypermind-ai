@@ -95,5 +95,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // ── Company ──
     { url: `${baseUrl}/company/`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${baseUrl}/company/methodology/`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
   ]
 }

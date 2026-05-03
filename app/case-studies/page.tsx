@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'Case Studies — GEO Results & Client Success Stories | HyperMind',
     description:
       'Real results from brands that invested in Generative Engine Optimization with HyperMind.',
-    url: 'https://www.hypermindai.tech/case-studies',
+    url: 'https://hypermindgeo.com/case-studies',
     siteName: 'HyperMind',
   },
   alternates: {
@@ -98,8 +98,8 @@ export default function CaseStudiesPage() {
               {
                 '@type': 'BreadcrumbList',
                 itemListElement: [
-                  { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.hypermindai.tech/' },
-                  { '@type': 'ListItem', position: 2, name: 'Case Studies', item: 'https://www.hypermindai.tech/case-studies/' },
+                  { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://hypermindgeo.com/' },
+                  { '@type': 'ListItem', position: 2, name: 'Case Studies', item: 'https://hypermindgeo.com/case-studies/' },
                 ],
               },
             ],

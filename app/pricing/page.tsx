@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'Pricing — GEO Agency & Platform Plans | HyperMind',
     description:
       'Explore HyperMind\'s GEO plans — from AI visibility monitoring to full-service enterprise optimization.',
-    url: 'https://www.hypermindai.tech/pricing',
+    url: 'https://hypermindgeo.com/pricing',
     siteName: 'HyperMind',
   },
   alternates: {
@@ -132,8 +132,8 @@ export default function PricingPage() {
               {
                 '@type': 'BreadcrumbList',
                 itemListElement: [
-                  { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.hypermindai.tech/' },
-                  { '@type': 'ListItem', position: 2, name: 'Pricing', item: 'https://www.hypermindai.tech/pricing/' },
+                  { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://hypermindgeo.com/' },
+                  { '@type': 'ListItem', position: 2, name: 'Pricing', item: 'https://hypermindgeo.com/pricing/' },
                 ],
               },
             ],

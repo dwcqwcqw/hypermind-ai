@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: 'GEO Guides — Generative Engine Optimization Knowledge Base | HyperMind',
     description:
       'Comprehensive guides on Generative Engine Optimization. Learn everything about GEO from foundational concepts to advanced strategies.',
-    url: 'https://www.hypermindai.tech/resources/geo-guides',
+    url: 'https://hypermindgeo.com/resources/geo-guides',
     siteName: 'HyperMind',
   },
 }

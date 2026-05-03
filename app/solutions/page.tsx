@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'GEO Solutions by Industry | HyperMind',
     description:
       'Tailored GEO strategies for your industry. Get your brand recommended by AI assistants in your specific vertical.',
-    url: 'https://www.hypermindai.tech/solutions',
+    url: 'https://hypermindgeo.com/solutions',
     siteName: 'HyperMind',
   },
   alternates: {
@@ -80,8 +80,8 @@ export default function SolutionsPage() {
               {
                 '@type': 'BreadcrumbList',
                 itemListElement: [
-                  { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.hypermindai.tech/' },
-                  { '@type': 'ListItem', position: 2, name: 'Solutions', item: 'https://www.hypermindai.tech/solutions/' },
+                  { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://hypermindgeo.com/' },
+                  { '@type': 'ListItem', position: 2, name: 'Solutions', item: 'https://hypermindgeo.com/solutions/' },
                 ],
               },
             ],

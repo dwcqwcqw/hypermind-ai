@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: 'GEO for Fintech Companies | HyperMind',
     description:
       'Get your fintech product recommended in AI-generated answers. Trust-signal optimization for financial services.',
-    url: 'https://www.hypermindai.tech/solutions/fintech-geo',
+    url: 'https://hypermindgeo.com/solutions/fintech-geo',
     siteName: 'HyperMind',
   },
 }
