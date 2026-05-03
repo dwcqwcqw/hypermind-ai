@@ -7,13 +7,13 @@ import type { Metadata } from 'next'
 export const revalidate = 3600
 
 export const metadata: Metadata = {
-  title: 'GEO Agency Pricing & Plans',
+  title: 'GEO Pricing & AI Visibility Plans',
   description:
-    'HyperMind GEO pricing plans: AI Visibility Monitoring, GEO Strategy, Full GEO Agency, and Enterprise GEO. Contact us for custom pricing tailored to your AI search goals.',
+    'HyperMind GEO pricing starts at $79/month for AI visibility monitoring, with $249/month optimization and $799/month done-for-you GEO agency execution.',
   openGraph: {
-    title: 'Pricing — GEO Agency & Platform Plans | HyperMind',
+    title: 'Pricing — High-Value GEO Agency & Platform Plans | HyperMind',
     description:
-      'Explore HyperMind\'s GEO plans — from AI visibility monitoring to full-service enterprise optimization.',
+      'Explore HyperMind\'s lower-cost GEO plans — from AI visibility monitoring to full-service AI search optimization.',
     url: 'https://hypermindgeo.com/pricing',
     siteName: 'HyperMind',
   },
@@ -25,56 +25,71 @@ export const metadata: Metadata = {
 interface PricingTier {
   name: string
   tagline: string
+  price: string
+  unit: string
+  priceNote: string
   features: string[]
   highlighted?: boolean
 }
 
 const PRICING_TIERS: PricingTier[] = [
   {
-    name: 'AI Visibility Monitoring',
-    tagline: 'Track your AI presence across every platform',
+    name: 'Monitor',
+    tagline: 'Affordable AI visibility tracking for focused teams',
+    price: '$79',
+    unit: '/mo',
+    priceNote: 'Start here before paying enterprise-tool prices.',
     features: [
-      'AI visibility score tracking',
-      'AI mention monitoring (3 platforms)',
-      'Monthly AI visibility report',
-      'Basic sentiment analysis',
-      'Competitor tracking (2 competitors)',
-      'Email alerts for new mentions',
+      'Track 100 priority prompts',
+      'AI mention monitoring across 5 platforms',
+      'Weekly AI visibility report',
+      'Sentiment and answer framing review',
+      'Competitor tracking for 3 competitors',
+      'Citation source gap analysis',
     ],
   },
   {
-    name: 'GEO Strategy',
-    tagline: 'Monitoring + strategic roadmap for AI optimization',
+    name: 'Optimize',
+    tagline: 'Strategy, prompt testing, and page recommendations',
+    price: '$249',
+    unit: '/mo',
+    priceNote: 'Built to beat bundled content tools on GEO value.',
     features: [
       'Everything in Monitoring, plus:',
-      'Full 9-platform AI monitoring',
-      'Custom GEO strategy document',
-      'Quarterly strategy sessions',
-      'Prompt intelligence reports',
-      'Competitor tracking (5 competitors)',
-      'AI citation source analysis',
-      'Priority support',
+      'Track 500 priority prompts',
+      'Full 9+ platform AI monitoring',
+      'Monthly GEO action roadmap',
+      'Prompt cluster and buyer journey mapping',
+      'Competitor tracking for 8 competitors',
+      'Citation source prioritization',
+      'Monthly strategy call',
     ],
   },
   {
-    name: 'Full GEO Agency',
-    tagline: 'Done-for-you AI search optimization',
+    name: 'Growth Agency',
+    tagline: 'Done-for-you GEO execution without enterprise lock-in',
+    price: '$799',
+    unit: '/mo',
+    priceNote: 'Execution included, not just another dashboard.',
     highlighted: true,
     features: [
       'Everything in GEO Strategy, plus:',
       'Dedicated GEO strategist',
-      'Content optimization & creation',
-      'AI citation building',
-      'Authority & link engineering',
+      '4 answer-ready content briefs or updates per month',
+      'Citation outreach and source development',
+      'Technical crawl and schema recommendations',
       'Knowledge graph optimization',
-      'Monthly performance reporting',
-      'Competitor tracking (10 competitors)',
-      'AI narrative management',
+      'Biweekly model answer testing',
+      'Competitor tracking for 15 competitors',
+      'AI narrative improvement backlog',
     ],
   },
   {
-    name: 'Enterprise GEO',
-    tagline: 'Custom GEO program for large organizations',
+    name: 'Scale',
+    tagline: 'Custom GEO program for multi-brand teams',
+    price: 'Custom',
+    unit: '',
+    priceNote: 'For teams that need scale, languages, and governance.',
     features: [
       'Everything in Full Agency, plus:',
       'Multi-brand / multi-product support',
@@ -91,12 +106,13 @@ const PRICING_TIERS: PricingTier[] = [
 
 const FEATURE_COMPARISON = [
   { feature: 'AI Visibility Score', tiers: [true, true, true, true] },
-  { feature: 'AI Mention Tracking', tiers: ['3 platforms', '9+ platforms', '9+ platforms', '9+ platforms'] },
-  { feature: 'Competitor Tracking', tiers: ['2', '5', '10', 'Unlimited'] },
-  { feature: 'Sentiment Analysis', tiers: ['Basic', 'Advanced', 'Advanced', 'Advanced'] },
-  { feature: 'Prompt Intelligence', tiers: [false, true, true, true] },
+  { feature: 'Tracked Prompts', tiers: ['100', '500', '1,500', 'Custom'] },
+  { feature: 'AI Mention Tracking', tiers: ['5 platforms', '9+ platforms', '9+ platforms', '9+ platforms'] },
+  { feature: 'Competitor Tracking', tiers: ['3', '8', '15', 'Unlimited'] },
+  { feature: 'Sentiment Analysis', tiers: [true, 'Advanced', 'Advanced', 'Advanced'] },
+  { feature: 'Prompt Intelligence', tiers: ['Core', true, true, true] },
   { feature: 'Citation Source Analysis', tiers: [false, true, true, true] },
-  { feature: 'GEO Strategy Document', tiers: [false, true, true, true] },
+  { feature: 'GEO Action Roadmap', tiers: [false, true, true, true] },
   { feature: 'Content Optimization', tiers: [false, false, true, true] },
   { feature: 'Citation Building', tiers: [false, false, true, true] },
   { feature: 'Dedicated Strategist', tiers: [false, false, true, true] },
@@ -145,10 +161,13 @@ export default function PricingPage() {
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-black mb-6">
-            GEO Plans &amp; Pricing
+            GEO Pricing Built for Better ROI
           </h1>
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Choose the right level of GEO support for your brand. From AI visibility monitoring to full-service agency execution, every plan is designed to improve your presence in AI search. All pricing is custom — contact us for a tailored quote.
+            HyperMind gives teams a lower-cost way to monitor, test, and improve AI visibility without buying an enterprise-only dashboard or a bundled writing suite. Start with focused monitoring, then add strategy and done-for-you GEO execution as the opportunity proves itself.
+          </p>
+          <p className="mt-6 text-sm text-gray-500">
+            Public competitor pricing often starts around $199-$499/month for serious GEO features, with enterprise plans commonly much higher. HyperMind keeps the entry plan lean and puts budget into actions that can improve mentions, citations, and recommendations.
           </p>
         </div>
       </section>
@@ -172,8 +191,12 @@ export default function PricingPage() {
                 <p className={`text-sm mb-6 ${tier.highlighted ? 'text-gray-300' : 'text-gray-600'}`}>
                   {tier.tagline}
                 </p>
-                <div className={`text-2xl font-bold mb-6 ${tier.highlighted ? 'text-white' : 'text-black'}`}>
-                  Contact Us
+                <div className={`mb-3 ${tier.highlighted ? 'text-white' : 'text-black'}`}>
+                  <span className="text-4xl font-bold">{tier.price}</span>
+                  {tier.unit && <span className="text-base font-medium opacity-70">{tier.unit}</span>}
+                </div>
+                <div className={`text-xs leading-relaxed mb-6 ${tier.highlighted ? 'text-gray-300' : 'text-gray-500'}`}>
+                  {tier.priceNote}
                 </div>
                 <ul className="space-y-3 mb-8 flex-1">
                   {tier.features.map((feature) => (
@@ -203,8 +226,20 @@ export default function PricingPage() {
                       : 'bg-black text-white hover:bg-gray-800'
                   }`}
                 >
-                  Get Started
+                  {tier.price === 'Custom' ? 'Talk to Sales' : 'Start with Audit'}
                 </a>
+              </div>
+            ))}
+          </div>
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4">
+            {[
+              ['Lower entry price', 'Monitor starts below the common GEO-feature price floor, so teams can validate demand before scaling spend.'],
+              ['Execution over dashboards', 'Growth Agency includes briefs, citation work, technical recommendations, and repeated model testing.'],
+              ['No forced enterprise lock-in', 'Use the plan that matches your prompt volume and competitive pressure, then expand when results justify it.'],
+            ].map(([title, body]) => (
+              <div key={title} className="bg-white border border-gray-200 rounded-xl p-5">
+                <h3 className="text-sm font-bold text-black mb-2">{title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{body}</p>
               </div>
             ))}
           </div>
@@ -262,8 +297,12 @@ export default function PricingPage() {
           <div className="space-y-8">
             {[
               {
-                q: 'Why is pricing "Contact Us" instead of fixed?',
-                a: 'GEO strategy varies significantly by industry, brand size, competitive landscape, and goals. Custom pricing ensures you only pay for what you need and get a strategy tailored to your situation.',
+                q: 'Why is HyperMind priced lower than many AI visibility platforms?',
+                a: 'HyperMind is designed for teams that want the work done, not just another expensive analytics dashboard. We keep monitoring plans focused, then add strategy and execution only when the prompt opportunity justifies it.',
+              },
+              {
+                q: 'How does this compare with Profound, Peec, or Writesonic?',
+                a: 'Many competitors are strongest as enterprise analytics suites, self-serve monitoring tools, or content platforms with GEO added on top. HyperMind is positioned as a high-value GEO operating system: prompt testing, citation analysis, content recommendations, and done-for-you optimization in one plan.',
               },
               {
                 q: 'How long does it take to see results?',
