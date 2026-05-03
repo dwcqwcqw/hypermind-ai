@@ -83,6 +83,17 @@ const PAGE_SIZE = 9
 
 const RAW_STATIC: Array<Omit<Article, 'subtopic'>> = [
   {
+    id: 5,
+    title: 'MAGEO and Reusable Strategy Learning: HyperMind Core Technology for GEO',
+    date: '2026-05-04',
+    category: 'geo-strategy',
+    image: '/asset/Understand_What_AI_is_Saying_About_Your_Brand.jpg',
+    description:
+      'How HyperMind applies MAGEO-style reusable strategy learning, Skill Banks, and fidelity-aware evaluation as a core technology for AI visibility optimization.',
+    slug: 'mageo-reusable-strategy-learning-geo',
+    tags: ['MAGEO', 'multi-agent GEO', 'reusable strategy learning', 'DSV-CF', 'AI citation fidelity'],
+  },
+  {
     id: 4,
     title: 'AI Visibility Platform vs GEO Agency: Profound, Peec, Writesonic, HyperMind',
     date: '2026-05-03',

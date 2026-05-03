@@ -86,11 +86,11 @@ const RESOURCE_SECTIONS = [
 ]
 
 const FEATURED_ARTICLE = {
-  title: 'AI Visibility Platform vs GEO Agency: Profound, Peec, Writesonic, HyperMind',
-  href: '/resources/ai-visibility-platform-vs-geo-agency',
+  title: 'MAGEO and Reusable Strategy Learning: HyperMind Core Technology for GEO',
+  href: '/resources/mageo-reusable-strategy-learning-geo',
   description:
-    'Decision guide for teams comparing AI visibility software with GEO agency execution, including Profound, Peec AI, Writesonic GEO, and HyperMind.',
-  tag: 'Featured Comparison',
+    'How HyperMind applies MAGEO-style reusable strategy learning, Skill Banks, and fidelity-aware evaluation as a core technology for AI visibility optimization.',
+  tag: 'Featured Research',
 }
 
 export default function ResourcesHub() {
