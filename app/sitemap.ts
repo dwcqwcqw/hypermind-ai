@@ -25,6 +25,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // ── Platform ──
     { url: `${baseUrl}/platform/`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${baseUrl}/platform/ai-visibility-monitoring/`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${baseUrl}/platform/ai-mention-tracking/`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${baseUrl}/platform/ai-sentiment-analysis/`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${baseUrl}/platform/ai-citation-source-analysis/`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${baseUrl}/platform/prompt-intelligence/`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${baseUrl}/platform/competitor-ai-visibility/`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${baseUrl}/platform/ai-traffic-attribution/`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
 
     // ── Services ──
     { url: `${baseUrl}/services/`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
@@ -34,6 +41,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/services/ai-citation-strategy/`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${baseUrl}/services/ai-search-traffic-growth/`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${baseUrl}/services/ai-answer-optimization/`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${baseUrl}/services/ai-knowledge-graph-strategy/`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
+    { url: `${baseUrl}/services/ai-narrative-control/`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
 
     // ── Solutions ──
     { url: `${baseUrl}/solutions/`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
@@ -79,16 +88,34 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // ── Tools ──
     { url: `${baseUrl}/tools/`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${baseUrl}/tools/ai-brand-audit/`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${baseUrl}/tools/ai-visibility-checker/`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
+    { url: `${baseUrl}/tools/ai-mention-tracker/`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
+    { url: `${baseUrl}/tools/ai-citation-checker/`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
+    { url: `${baseUrl}/tools/ai-sentiment-analyzer/`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
 
     // ── Data Hub ──
     { url: `${baseUrl}/data/`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${baseUrl}/data/ai-citation-sources-database/`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${baseUrl}/data/ai-visibility-leaderboard/`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
+    { url: `${baseUrl}/data/ai-brand-mention-index/`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
+    { url: `${baseUrl}/data/ai-brand-sentiment-index/`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
+    { url: `${baseUrl}/data/ai-search-trends/`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
+    { url: `${baseUrl}/data/ai-prompt-trends/`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
 
     // ── Case Studies ──
     { url: `${baseUrl}/case-studies/`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${baseUrl}/case-studies/saas-ai-mention-growth/`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
+    { url: `${baseUrl}/case-studies/ecommerce-product-recommendations/`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
+    { url: `${baseUrl}/case-studies/enterprise-share-of-voice/`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
+    { url: `${baseUrl}/case-studies/fintech-ai-visibility/`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
 
     // ── Compare ──
     { url: `${baseUrl}/compare/`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${baseUrl}/compare/hypermind-vs-profound/`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
+    { url: `${baseUrl}/compare/hypermind-vs-peec/`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
+    { url: `${baseUrl}/compare/hypermind-vs-writesonic/`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
+    { url: `${baseUrl}/compare/hypermind-vs-seo-tools/`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
+    { url: `${baseUrl}/compare/hypermind-vs-pr-agencies/`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
 
     // ── Pricing ──
     { url: `${baseUrl}/pricing/`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
@@ -96,5 +123,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // ── Company ──
     { url: `${baseUrl}/company/`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${baseUrl}/company/methodology/`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
+    { url: `${baseUrl}/company/trust/`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
   ]
 }

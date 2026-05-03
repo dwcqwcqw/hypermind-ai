@@ -176,11 +176,11 @@ export default function ArticleContent({
         <div className="flex flex-wrap gap-3">
           {[
             { label: 'What is GEO?', href: '/resources/what-is-geo' },
-            { label: 'GEO vs SEO', href: '/resources/geo-vs-seo' },
-            { label: 'AI Answer Optimization', href: '/resources/ai-answer-optimization' },
-            { label: 'LLM Content Strategy', href: '/resources/llm-content-optimization' },
-            { label: 'GEO Analytics', href: '/resources/ai-visibility-measurement' },
-            { label: 'GEO for B2B', href: '/resources/geo-for-b2b-brands' },
+            { label: 'How AI Search Works', href: '/resources/how-ai-search-works' },
+            { label: 'AI Search Optimization', href: '/resources/how-to-optimize-for-ai-search' },
+            { label: 'AI Visibility Monitoring', href: '/resources/ai-visibility-monitoring-guide' },
+            { label: 'Complete GEO Strategy', href: '/resources/complete-geo-strategy-guide' },
+            { label: 'AI Search Statistics', href: '/resources/ai-search-statistics' },
           ].map((link) => (
             <Link
               key={link.href}

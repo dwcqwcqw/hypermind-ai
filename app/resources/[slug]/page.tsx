@@ -1,5 +1,6 @@
 import ArticleContent from './client-article'
 import { Metadata } from 'next'
+import { notFound } from 'next/navigation'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { getPostBySlug as getPostBySlugFromKV, Post as KVPost } from '@/lib/posts'
@@ -610,20 +611,7 @@ export default async function ArticlePage({
   }
 
   if (!staticArticle && !dynamicPost) {
-    return (
-      <>
-        <Navbar />
-        <main className="min-h-screen bg-white pt-24">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
-            <h1 className="text-3xl font-bold text-gray-900 mb-4">Article not found</h1>
-            <a href="/resources/blog" className="inline-block mt-4 text-gray-600 hover:text-gray-900 underline">
-              ← Back to Blog
-            </a>
-          </div>
-        </main>
-        <Footer />
-      </>
-    )
+    notFound()
   }
 
   // Build schema data
