@@ -85,6 +85,14 @@ const RESOURCE_SECTIONS = [
   },
 ]
 
+const FEATURED_ARTICLE = {
+  title: 'AI Visibility Platform vs GEO Agency: Profound, Peec, Writesonic, HyperMind',
+  href: '/resources/ai-visibility-platform-vs-geo-agency',
+  description:
+    'Decision guide for teams comparing AI visibility software with GEO agency execution, including Profound, Peec AI, Writesonic GEO, and HyperMind.',
+  tag: 'Featured Comparison',
+}
+
 export default function ResourcesHub() {
   return (
     <>
@@ -98,8 +106,20 @@ export default function ResourcesHub() {
               {
                 '@type': 'BreadcrumbList',
                 itemListElement: [
-                  { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.hypermindai.tech/' },
-                  { '@type': 'ListItem', position: 2, name: 'Resources', item: 'https://www.hypermindai.tech/resources/' },
+                  { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://hypermindgeo.com/' },
+                  { '@type': 'ListItem', position: 2, name: 'Resources', item: 'https://hypermindgeo.com/resources/' },
+                ],
+              },
+              {
+                '@type': 'ItemList',
+                name: 'Featured GEO resources',
+                itemListElement: [
+                  {
+                    '@type': 'ListItem',
+                    position: 1,
+                    name: FEATURED_ARTICLE.title,
+                    url: `https://hypermindgeo.com${FEATURED_ARTICLE.href}/`,
+                  },
                 ],
               },
             ],
@@ -116,6 +136,27 @@ export default function ResourcesHub() {
             Generative Engine Optimization (GEO) is the practice of optimizing how brands appear in AI-generated answers.
             Explore our comprehensive guides, research, and tools to master AI search visibility.
           </p>
+        </section>
+
+        {/* Featured Comparison */}
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+          <Link
+            href={FEATURED_ARTICLE.href}
+            className="group block border-2 border-black bg-gray-950 text-white rounded-2xl p-8 sm:p-10 hover:bg-black transition-all"
+          >
+            <span className="inline-block text-xs font-semibold text-gray-300 uppercase tracking-wide mb-4 bg-white/10 px-3 py-1 rounded">
+              {FEATURED_ARTICLE.tag}
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 group-hover:underline">
+              {FEATURED_ARTICLE.title}
+            </h2>
+            <p className="text-gray-300 max-w-3xl text-lg leading-relaxed">
+              {FEATURED_ARTICLE.description}
+            </p>
+            <span className="inline-block mt-6 text-white font-semibold">
+              Read the decision guide &rarr;
+            </span>
+          </Link>
         </section>
 
         {/* Pillar Guides */}

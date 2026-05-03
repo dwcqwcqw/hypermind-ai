@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'Compare GEO Platforms | HyperMind',
     description:
       'See how HyperMind stacks up against alternative approaches to AI search visibility.',
-    url: 'https://www.hypermindai.tech/compare',
+    url: 'https://hypermindgeo.com/compare/',
     siteName: 'HyperMind',
   },
   alternates: {
@@ -67,6 +67,13 @@ const COMPARISONS: ComparisonItem[] = [
   },
 ]
 
+const DECISION_GUIDE = {
+  title: 'AI Visibility Platform vs GEO Agency',
+  href: '/resources/ai-visibility-platform-vs-geo-agency',
+  description:
+    'Use this guide when comparing Profound, Peec AI, Writesonic GEO, and HyperMind for software monitoring versus hands-on GEO execution.',
+}
+
 export default function ComparePage() {
   return (
     <main className="min-h-screen bg-white pt-24">
@@ -80,8 +87,26 @@ export default function ComparePage() {
               {
                 '@type': 'BreadcrumbList',
                 itemListElement: [
-                  { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.hypermindai.tech/' },
-                  { '@type': 'ListItem', position: 2, name: 'Compare', item: 'https://www.hypermindai.tech/compare/' },
+                  { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://hypermindgeo.com/' },
+                  { '@type': 'ListItem', position: 2, name: 'Compare', item: 'https://hypermindgeo.com/compare/' },
+                ],
+              },
+              {
+                '@type': 'ItemList',
+                name: 'HyperMind comparison resources',
+                itemListElement: [
+                  ...COMPARISONS.map((item, index) => ({
+                    '@type': 'ListItem',
+                    position: index + 1,
+                    name: item.title,
+                    url: `https://hypermindgeo.com/compare/${item.slug}/`,
+                  })),
+                  {
+                    '@type': 'ListItem',
+                    position: COMPARISONS.length + 1,
+                    name: DECISION_GUIDE.title,
+                    url: `https://hypermindgeo.com${DECISION_GUIDE.href}/`,
+                  },
                 ],
               },
             ],
@@ -98,6 +123,26 @@ export default function ComparePage() {
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Evaluating your options for AI search visibility? See how HyperMind&apos;s GEO platform and agency services compare against alternative tools and approaches — from AI monitoring platforms to traditional SEO tools and PR agencies.
           </p>
+        </div>
+      </section>
+
+      {/* Decision Guide */}
+      <section className="px-4 sm:px-6 lg:px-8 pb-8">
+        <div className="max-w-7xl mx-auto">
+          <Link
+            href={DECISION_GUIDE.href}
+            className="block border border-gray-900 bg-gray-950 text-white rounded-2xl p-8 hover:bg-black transition-all group"
+          >
+            <div className="text-xs font-semibold uppercase tracking-wide text-gray-300 mb-3">
+              Featured buyer guide
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-3 group-hover:underline">
+              {DECISION_GUIDE.title}: Profound, Peec AI, Writesonic GEO, and HyperMind
+            </h2>
+            <p className="text-gray-300 max-w-3xl leading-relaxed">
+              {DECISION_GUIDE.description}
+            </p>
+          </Link>
         </div>
       </section>
 

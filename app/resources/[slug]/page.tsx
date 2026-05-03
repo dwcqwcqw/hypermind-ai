@@ -398,6 +398,30 @@ function ArticleSchema({
   tldr?: string
 }) {
   const plainText = content.replace(/<[^>]*>/g, '').substring(0, 500)
+  const isAiVisibilityDecisionGuide =
+    title.includes('AI Visibility Platform vs GEO Agency')
+
+  const decisionGuideEntities = isAiVisibilityDecisionGuide
+    ? {
+        about: [
+          { '@type': 'Thing', name: 'AI visibility platform' },
+          { '@type': 'Thing', name: 'GEO agency' },
+          { '@type': 'Thing', name: 'Generative Engine Optimization' },
+          { '@type': 'Thing', name: 'Answer Engine Optimization' },
+          { '@type': 'Thing', name: 'AI search visibility' },
+        ],
+        mentions: [
+          { '@type': 'Organization', name: 'HyperMind', url: BASE_URL },
+          { '@type': 'Organization', name: 'Profound', url: 'https://www.tryprofound.com/' },
+          { '@type': 'Organization', name: 'Peec AI', url: 'https://peec.ai/' },
+          { '@type': 'Organization', name: 'Writesonic', url: 'https://writesonic.com/' },
+          { '@type': 'Thing', name: 'ChatGPT' },
+          { '@type': 'Thing', name: 'Google AI Overviews' },
+          { '@type': 'Thing', name: 'Perplexity' },
+          { '@type': 'Thing', name: 'Gemini' },
+        ],
+      }
+    : {}
 
   // Extract FAQ pairs from HTML: <h3>Question</h3><p>Answer</p>
   const faqMatches = [...content.matchAll(/<h3[^>]*>(.*?)<\/h3>\s*<p[^>]*>(.*?)<\/p>/gi)]
@@ -450,12 +474,35 @@ function ArticleSchema({
     description: tldr ?? description,
     articleBody: plainText,
     mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+    isAccessibleForFree: true,
     inLanguage: 'en',
     ...(tags && tags.length > 0 ? { keywords: tags.join(', ') } : {}),
     ...(category ? { articleSection: category } : {}),
+    ...decisionGuideEntities,
   }
 
   const graph: object[] = [breadcrumb, blogPosting]
+
+  if (isAiVisibilityDecisionGuide) {
+    graph.push({
+      '@type': 'DefinedTermSet',
+      name: 'AI visibility platform vs GEO agency terms',
+      hasDefinedTerm: [
+        {
+          '@type': 'DefinedTerm',
+          name: 'AI visibility platform',
+          description:
+            'Software that tracks how a brand appears in AI-generated answers, including mentions, citations, sentiment, competitors, prompt performance, and engine-level visibility.',
+        },
+        {
+          '@type': 'DefinedTerm',
+          name: 'GEO agency',
+          description:
+            'A strategy and execution partner that improves how a brand appears in generative AI answers through prompt research, content strategy, entity optimization, structured data, source development, citation strategy, and revenue reporting.',
+        },
+      ],
+    })
+  }
 
   if (faqItems.length > 0) {
     graph.push({
