@@ -85,12 +85,20 @@ const RESOURCE_SECTIONS = [
   },
 ]
 
-const FEATURED_ARTICLE = {
+const FEATURED_RESEARCH = {
   title: 'MAGEO and Reusable Strategy Learning: HyperMind Core Technology for GEO',
   href: '/resources/mageo-reusable-strategy-learning-geo',
   description:
     'How HyperMind applies MAGEO-style reusable strategy learning, Skill Banks, and fidelity-aware evaluation as a core technology for AI visibility optimization.',
   tag: 'Featured Research',
+}
+
+const FEATURED_DECISION_GUIDE = {
+  title: 'AI Visibility Platform vs GEO Agency: Profound, Peec, Writesonic, HyperMind',
+  href: '/resources/ai-visibility-platform-vs-geo-agency',
+  description:
+    'A buyer-focused guide to choosing between AI visibility platforms and GEO agencies, with a platform-vs-agency decision rule and prompt-to-revenue framework.',
+  tag: 'Featured Decision Guide',
 }
 
 export default function ResourcesHub() {
@@ -117,8 +125,14 @@ export default function ResourcesHub() {
                   {
                     '@type': 'ListItem',
                     position: 1,
-                    name: FEATURED_ARTICLE.title,
-                    url: `https://hypermindgeo.com${FEATURED_ARTICLE.href}/`,
+                    name: FEATURED_DECISION_GUIDE.title,
+                    url: `https://hypermindgeo.com${FEATURED_DECISION_GUIDE.href}/`,
+                  },
+                  {
+                    '@type': 'ListItem',
+                    position: 2,
+                    name: FEATURED_RESEARCH.title,
+                    url: `https://hypermindgeo.com${FEATURED_RESEARCH.href}/`,
                   },
                 ],
               },
@@ -138,25 +152,45 @@ export default function ResourcesHub() {
           </p>
         </section>
 
-        {/* Featured Comparison */}
+        {/* Featured */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-          <Link
-            href={FEATURED_ARTICLE.href}
-            className="group block border-2 border-black bg-gray-950 text-white rounded-2xl p-8 sm:p-10 hover:bg-black transition-all"
-          >
-            <span className="inline-block text-xs font-semibold text-gray-300 uppercase tracking-wide mb-4 bg-white/10 px-3 py-1 rounded">
-              {FEATURED_ARTICLE.tag}
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4 group-hover:underline">
-              {FEATURED_ARTICLE.title}
-            </h2>
-            <p className="text-gray-300 max-w-3xl text-lg leading-relaxed">
-              {FEATURED_ARTICLE.description}
-            </p>
-            <span className="inline-block mt-6 text-white font-semibold">
-              Read the decision guide &rarr;
-            </span>
-          </Link>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <Link
+              href={FEATURED_DECISION_GUIDE.href}
+              className="group block border-2 border-black bg-gray-950 text-white rounded-2xl p-8 sm:p-10 hover:bg-black transition-all"
+            >
+              <span className="inline-block text-xs font-semibold text-gray-300 uppercase tracking-wide mb-4 bg-white/10 px-3 py-1 rounded">
+                {FEATURED_DECISION_GUIDE.tag}
+              </span>
+              <h2 className="text-3xl font-bold mb-4 group-hover:underline">
+                {FEATURED_DECISION_GUIDE.title}
+              </h2>
+              <p className="text-gray-300 text-lg leading-relaxed">
+                {FEATURED_DECISION_GUIDE.description}
+              </p>
+              <span className="inline-block mt-6 text-white font-semibold">
+                Read the decision guide &rarr;
+              </span>
+            </Link>
+
+            <Link
+              href={FEATURED_RESEARCH.href}
+              className="group block border-2 border-gray-200 bg-white text-gray-900 rounded-2xl p-8 sm:p-10 hover:border-black hover:shadow-lg transition-all"
+            >
+              <span className="inline-block text-xs font-semibold text-gray-600 uppercase tracking-wide mb-4 bg-gray-100 px-3 py-1 rounded">
+                {FEATURED_RESEARCH.tag}
+              </span>
+              <h2 className="text-3xl font-bold mb-4 group-hover:underline">
+                {FEATURED_RESEARCH.title}
+              </h2>
+              <p className="text-gray-600 text-lg leading-relaxed">
+                {FEATURED_RESEARCH.description}
+              </p>
+              <span className="inline-block mt-6 text-black font-semibold">
+                Read the research &rarr;
+              </span>
+            </Link>
+          </div>
         </section>
 
         {/* Pillar Guides */}

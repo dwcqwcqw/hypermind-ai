@@ -83,6 +83,17 @@ const PAGE_SIZE = 9
 
 const RAW_STATIC: Array<Omit<Article, 'subtopic'>> = [
   {
+    id: 6,
+    title: 'AI Visibility Pricing in 2026: What Buyer Prompts Should You Pay to Track?',
+    date: '2026-05-09',
+    category: 'geo-strategy',
+    image: '/generated/blog/2026-05-09-ai-visibility-pricing-buyer-prompts-cover.png',
+    description:
+      'A buyer guide to AI visibility pricing in 2026, including which prompts to track first, how to compare tool costs, and when execution support matters more than dashboard volume.',
+    slug: 'ai-visibility-pricing-buyer-prompts',
+    tags: ['AI visibility pricing', 'buyer prompts', 'Google AI Mode', 'GEO budget', 'AI search tracking'],
+  },
+  {
     id: 5,
     title: 'MAGEO and Reusable Strategy Learning: HyperMind Core Technology for GEO',
     date: '2026-05-04',

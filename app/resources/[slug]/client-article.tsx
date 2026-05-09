@@ -14,7 +14,9 @@ interface ArticleContentProps {
   coverImage?: string
   content: string
   displayDate: string
+  updatedDate?: string
   author?: string
+  authorBio?: string
   category?: string
   tags?: string[]
   tldr?: string
@@ -32,7 +34,9 @@ export default function ArticleContent({
   coverImage,
   content,
   displayDate,
+  updatedDate,
   author,
+  authorBio,
   category,
   tags,
   tldr,
@@ -77,10 +81,17 @@ export default function ArticleContent({
             <span className="px-3 py-1 text-xs rounded-full bg-gray-100 text-gray-600">ARTICLE</span>
           )}
           <span className="text-sm text-gray-500">{displayDate}</span>
+          {updatedDate && <span className="text-sm text-gray-500">Updated {updatedDate}</span>}
           {author && <span className="text-sm text-gray-500">by {author}</span>}
         </div>
 
         <h1 className="text-3xl sm:text-5xl font-bold text-gray-900 mb-6 leading-tight break-words">{title}</h1>
+
+        {authorBio && (
+          <p className="text-sm sm:text-base text-gray-600 max-w-3xl leading-relaxed">
+            {authorBio}
+          </p>
+        )}
 
         {/* Tags */}
         {tags && tags.length > 0 && (

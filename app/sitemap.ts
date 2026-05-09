@@ -71,8 +71,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/resources/blog/`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
 
     // ── Static Blog Articles ──
+    { url: `${baseUrl}/resources/ai-visibility-pricing-buyer-prompts/`, lastModified: '2026-05-09', changeFrequency: 'monthly', priority: 0.9 },
     { url: `${baseUrl}/resources/mageo-reusable-strategy-learning-geo/`, lastModified: '2026-05-04', changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${baseUrl}/resources/ai-visibility-platform-vs-geo-agency/`, lastModified: '2026-05-03', changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${baseUrl}/resources/ai-visibility-platform-vs-geo-agency/`, lastModified: '2026-05-04', changeFrequency: 'monthly', priority: 0.85 },
     { url: `${baseUrl}/resources/the-definitive-guide-to-ai-prompt-testing-services-for-marketers/`, lastModified: now, changeFrequency: 'yearly', priority: 0.7 },
     { url: `${baseUrl}/resources/10-common-aeo-mistakes-brands-make-on-chatgpt-and-perplexity/`, lastModified: now, changeFrequency: 'yearly', priority: 0.7 },
     { url: `${baseUrl}/resources/claude-vs-gemini-comparing-their-company-selection-algorithms-for-answer-accuracy/`, lastModified: now, changeFrequency: 'yearly', priority: 0.7 },
