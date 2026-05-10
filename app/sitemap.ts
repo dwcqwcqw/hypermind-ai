@@ -71,6 +71,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/resources/blog/`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
 
     // ── Static Blog Articles ──
+    { url: `${baseUrl}/resources/ai-search-traffic-playbook-may-2026/`, lastModified: '2026-05-10', changeFrequency: 'monthly', priority: 0.92 },
     { url: `${baseUrl}/resources/ai-visibility-pricing-buyer-prompts/`, lastModified: '2026-05-09', changeFrequency: 'monthly', priority: 0.9 },
     { url: `${baseUrl}/resources/mageo-reusable-strategy-learning-geo/`, lastModified: '2026-05-04', changeFrequency: 'monthly', priority: 0.9 },
     { url: `${baseUrl}/resources/ai-visibility-platform-vs-geo-agency/`, lastModified: '2026-05-04', changeFrequency: 'monthly', priority: 0.85 },

@@ -83,6 +83,17 @@ const PAGE_SIZE = 9
 
 const RAW_STATIC: Array<Omit<Article, 'subtopic'>> = [
   {
+    id: 7,
+    title: 'AI Search Traffic Playbook: What Changed in the Last Week for AI Answers (May 10, 2026)',
+    date: '2026-05-10',
+    category: 'geo-strategy',
+    image: '/generated/blog/2026-05-10-ai-search-traffic-playbook-cover.png',
+    description:
+      'A weekly AI search traffic playbook for 2026, with prompt clusters that influence qualified traffic and practical execution steps for ChatGPT, Google AI Overviews, Perplexity, and Gemini.',
+    slug: 'ai-search-traffic-playbook-may-2026',
+    tags: ['AI search traffic', 'AI trends', 'AI Mode', 'ChatGPT Search', 'Perplexity', 'citation behavior'],
+  },
+  {
     id: 6,
     title: 'AI Visibility Pricing in 2026: What Buyer Prompts Should You Pay to Track?',
     date: '2026-05-09',
