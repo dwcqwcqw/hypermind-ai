@@ -83,6 +83,17 @@ const PAGE_SIZE = 9
 
 const RAW_STATIC: Array<Omit<Article, 'subtopic'>> = [
   {
+    id: 8,
+    title: 'Google AI Mode & AI Overviews: Winning High-Intent Prompt Clusters (May 11, 2026)',
+    date: '2026-05-11',
+    category: 'geo-strategy',
+    image: '/generated/blog/2026-05-11-google-ai-mode-overviews-prompt-cluster-cover.png',
+    description:
+      'A practical prompt-cluster playbook for May 2026 AI answer surfaces, focused on high-intent comparison, implementation, and trust prompts across Google AI Mode, AI Overviews, ChatGPT, and Perplexity.',
+    slug: 'google-ai-mode-overviews-prompt-cluster',
+    tags: ['Google AI Mode', 'AI Overviews', 'high-intent prompts', 'AI search traffic', 'ChatGPT Search', 'Perplexity'],
+  },
+  {
     id: 7,
     title: 'AI Search Traffic Playbook: What Changed in the Last Week for AI Answers (May 10, 2026)',
     date: '2026-05-10',
