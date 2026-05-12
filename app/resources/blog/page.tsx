@@ -87,7 +87,7 @@ const RAW_STATIC: Array<Omit<Article, 'subtopic'>> = [
     title: 'GEO Gap Audit: The AI Visibility Infrastructure Most Brands Are Missing',
     date: '2026-05-12',
     category: 'geo-strategy',
-    image: '/generated/blog/2026-05-12-geo-gap-audit-ai-visibility-infrastructure-cover.png',
+    image: '/generated/blog/2026-05-12-geo-gap-audit-ai-visibility-infrastructure-codex-cover.png',
     description:
       'A practical GEO gap audit for brands that need more than content: crawler access, llms.txt, entity facts, citation maps, prompt coverage, and conversion measurement.',
     slug: 'geo-gap-audit-ai-visibility-infrastructure',

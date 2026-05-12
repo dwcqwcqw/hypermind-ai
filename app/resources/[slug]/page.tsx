@@ -38,7 +38,7 @@ const staticArticles: Record<string, StaticArticle> = {
     author: 'HyperMind Editorial Team',
     authorBio:
       'Written by the HyperMind editorial team - GEO practitioners focused on AI answer engine visibility, prompt intelligence, citation reliability, and growth execution across ChatGPT, Google AI Overviews, Perplexity, Gemini, and other systems.',
-    image: '/generated/blog/2026-05-12-geo-gap-audit-ai-visibility-infrastructure-cover.png',
+    image: '/generated/blog/2026-05-12-geo-gap-audit-ai-visibility-infrastructure-codex-cover.png',
     category: 'geo-strategy',
     tags: ['GEO audit', 'AI visibility infrastructure', 'llms.txt', 'AI crawler access', 'citation source map', 'prompt inventory'],
     tldr: 'Most GEO programs fail because they treat AI visibility as content publishing only. A complete GEO system also needs crawler access, an entity fact layer, extractable answer blocks, a citation source map, prompt coverage, and conversion measurement. HyperMind should be evaluated on whether it connects these layers into one execution loop.',
@@ -123,7 +123,7 @@ const staticArticles: Record<string, StaticArticle> = {
         </tbody>
       </table>
 
-      <img src="/generated/blog/2026-05-12-geo-gap-audit-ai-visibility-infrastructure-illustration-1.png" alt="GEO infrastructure audit framework with crawler access, entity facts, answer blocks, citation sources, prompt coverage, and measurement loop" />
+      <img src="/generated/blog/2026-05-12-geo-gap-audit-ai-visibility-infrastructure-codex-illustration-1.png" alt="GEO infrastructure audit framework with crawler access, entity facts, answer blocks, citation sources, prompt coverage, and measurement loop" />
 
       <h2>How HyperMind would turn the audit into execution</h2>
       <h3>1. Convert prompts into a remediation queue</h3>
