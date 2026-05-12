@@ -9,11 +9,11 @@ export const revalidate = 3600
 export const metadata: Metadata = {
   title: 'GEO Pricing & AI Visibility Plans',
   description:
-    'HyperMind GEO pricing starts at $79/month for AI visibility monitoring, with $249/month optimization and $799/month done-for-you GEO agency execution.',
+    'HyperMind pricing starts at $79/month for AI visibility monitoring, with GEO execution and enterprise managed traffic operations for social, content, and growth teams.',
   openGraph: {
     title: 'Pricing — High-Value GEO Agency & Platform Plans | HyperMind',
     description:
-      'Explore HyperMind\'s lower-cost GEO plans — from AI visibility monitoring to full-service AI search optimization.',
+      'Explore HyperMind\'s GEO and managed growth plans — from AI visibility monitoring to full-service AI search optimization and enterprise traffic operations.',
     url: 'https://hypermindgeo.com/pricing',
     siteName: 'HyperMind',
   },
@@ -86,20 +86,22 @@ const PRICING_TIERS: PricingTier[] = [
   },
   {
     name: 'Scale',
-    tagline: 'Custom GEO program for multi-brand teams',
+    tagline: 'Custom GEO + managed traffic operations',
     price: 'Custom',
     unit: '',
-    priceNote: 'For teams that need scale, languages, and governance.',
+    priceNote: 'For teams that need AI visibility, social operations, content production, and growth execution.',
     features: [
-      'Everything in Full Agency, plus:',
-      'Multi-brand / multi-product support',
+      'Everything in Growth Agency, plus:',
+      'Multi-brand / multi-product GEO support',
+      'Dedicated traffic operations experts',
+      'Copywriting, publishing, and social account management',
+      'Text, image, short-form video, and campaign asset production',
+      'TikTok, YouTube, Instagram, and cross-channel operations',
+      'Organic content calendar and growth experiments',
       'Unlimited competitor tracking',
-      'Custom AI platform integrations',
-      'Dedicated account team',
       'Weekly strategy syncs',
-      'Custom reporting & dashboards',
-      'SLA-backed response times',
-      'Global / multi-language GEO',
+      'Custom reporting across AI visibility, traffic, new users, and orders',
+      'Global / multi-language governance',
     ],
   },
 ]
@@ -117,6 +119,10 @@ const FEATURE_COMPARISON = [
   { feature: 'Citation Building', tiers: [false, false, true, true] },
   { feature: 'Dedicated Strategist', tiers: [false, false, true, true] },
   { feature: 'Knowledge Graph Optimization', tiers: [false, false, true, true] },
+  { feature: 'Managed Social Operations', tiers: [false, false, false, true] },
+  { feature: 'Multi-Format Content Production', tiers: [false, false, false, true] },
+  { feature: 'TikTok / YouTube / Instagram Operations', tiers: [false, false, false, true] },
+  { feature: 'Traffic, User, and Order Growth Reporting', tiers: [false, false, false, true] },
   { feature: 'Multi-Brand Support', tiers: [false, false, false, true] },
   { feature: 'Custom Integrations', tiers: [false, false, false, true] },
 ]
@@ -164,7 +170,7 @@ export default function PricingPage() {
             GEO Pricing Built for Better ROI
           </h1>
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            HyperMind gives teams a lower-cost way to monitor, test, and improve AI visibility without buying an enterprise-only dashboard or a bundled writing suite. Start with focused monitoring, then add strategy and done-for-you GEO execution as the opportunity proves itself.
+            HyperMind gives teams a lower-cost way to monitor, test, and improve AI visibility without buying an enterprise-only dashboard or a bundled writing suite. Start with focused monitoring, then add strategy, done-for-you GEO execution, and enterprise traffic operations as the opportunity proves itself.
           </p>
           <p className="mt-6 text-sm text-gray-500">
             Public competitor pricing often starts around $199-$499/month for serious GEO features, with enterprise plans commonly much higher. HyperMind keeps the entry plan lean and puts budget into actions that can improve mentions, citations, and recommendations.
@@ -235,7 +241,7 @@ export default function PricingPage() {
             {[
               ['Lower entry price', 'Monitor starts below the common GEO-feature price floor, so teams can validate demand before scaling spend.'],
               ['Execution over dashboards', 'Growth Agency includes briefs, citation work, technical recommendations, and repeated model testing.'],
-              ['No forced enterprise lock-in', 'Use the plan that matches your prompt volume and competitive pressure, then expand when results justify it.'],
+              ['Enterprise growth operations', 'Scale adds expert-led social operations, content production, and cross-channel publishing for teams that need traffic, users, and order growth support.'],
             ].map(([title, body]) => (
               <div key={title} className="bg-white border border-gray-200 rounded-xl p-5">
                 <h3 className="text-sm font-bold text-black mb-2">{title}</h3>
@@ -305,6 +311,10 @@ export default function PricingPage() {
                 a: 'Many competitors are strongest as enterprise analytics suites, self-serve monitoring tools, or content platforms with GEO added on top. HyperMind is positioned as a high-value GEO operating system: prompt testing, citation analysis, content recommendations, and done-for-you optimization in one plan.',
               },
               {
+                q: 'What is included in the enterprise managed traffic service?',
+                a: 'The custom Scale plan can combine GEO with managed traffic operations: expert copywriting, account posting, social media management, multi-format content production, and TikTok, YouTube, Instagram, and cross-channel publishing support. The goal is to connect AI visibility work with practical growth execution across traffic, new users, and orders.',
+              },
+              {
                 q: 'How long does it take to see results?',
                 a: 'Most clients see measurable improvements in AI visibility within 60-90 days. Significant mention growth and traffic impact typically emerge within 3-6 months.',
               },
@@ -333,7 +343,7 @@ export default function PricingPage() {
             Ready to Invest in AI Visibility?
           </h2>
           <p className="text-lg text-gray-300 mb-10 max-w-2xl mx-auto">
-            Start with a free AI visibility audit. We&apos;ll show you where your brand stands and recommend the right plan.
+            Start with a free AI visibility audit. We&apos;ll show you where your brand stands and recommend the right GEO, content, and traffic operations plan.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a

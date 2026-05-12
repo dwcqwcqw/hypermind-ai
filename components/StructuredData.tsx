@@ -103,8 +103,8 @@ export default function StructuredData() {
               '@type': 'Offer',
               itemOffered: {
                 '@type': 'Service',
-                name: 'Enterprise GEO',
-                description: 'Custom enterprise GEO programs with dedicated teams, multi-brand management, and advanced AI analytics.',
+                name: 'Enterprise GEO and Managed Traffic Operations',
+                description: 'Custom enterprise GEO programs with managed social media operations, expert content production, cross-channel publishing, multi-brand governance, and growth reporting across traffic, users, and orders.',
               },
             },
           ],

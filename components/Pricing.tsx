@@ -32,15 +32,18 @@ export default function Pricing() {
     },
     {
       name: 'Enterprise',
-      description: 'For organizations that need custom GEO solutions at scale',
+      description: 'For organizations that need GEO plus managed traffic operations',
       price: 'Custom',
       period: '',
       features: [
         'Everything in Pro',
-        'Dedicated GEO specialist',
-        'Professionally edited blogs',
+        'Dedicated GEO and traffic operations experts',
+        'Professionally edited blogs and social posts',
+        'Text, image, and short-form video content',
+        'TikTok, YouTube, Instagram account operations',
+        'Posting, content calendar, and channel management',
         'Unlimited topics and prompts',
-        'Custom Integrations',
+        'Growth reporting for traffic, users, and orders',
       ],
       cta: 'Book a Demo',
       highlighted: false,
@@ -139,5 +142,4 @@ export default function Pricing() {
     </section>
   )
 }
-
 
