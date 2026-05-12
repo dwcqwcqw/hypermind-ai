@@ -23,6 +23,7 @@ const ADMIN_USERNAME = 'admin'
 const ADMIN_PASSWORD = 'Hypermind2025!@#'
 
 const ALL_TAGS = BLOG_TAG_GROUPS.flatMap((g) => g.tags)
+const DEFAULT_QUICK_COVER_IMAGE = '/asset/Understand_What_AI_is_Saying_About_Your_Brand.jpg'
 
 export default function AdminPage() {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
@@ -35,6 +36,15 @@ export default function AdminPage() {
   const [editingPost, setEditingPost] = useState<Post | null>(null)
   const [classifying, setClassifying] = useState(false)
   const [classifyResult, setClassifyResult] = useState<string | null>(null)
+  const [quickSubmitting, setQuickSubmitting] = useState(false)
+
+  // Quick publish state
+  const [quickTitle, setQuickTitle] = useState('')
+  const [quickContent, setQuickContent] = useState('')
+  const [quickExcerpt, setQuickExcerpt] = useState('')
+  const [quickCategory, setQuickCategory] = useState('geo-strategy')
+  const [quickCoverImage, setQuickCoverImage] = useState(DEFAULT_QUICK_COVER_IMAGE)
+  const [quickPublishAt, setQuickPublishAt] = useState('')
 
   // Form state
   const [title, setTitle] = useState('')
@@ -75,6 +85,7 @@ export default function AdminPage() {
       setIsAuthenticated(true)
       void fetchPosts()
       setPublishAt(defaultPublishAt())
+      setQuickPublishAt(defaultPublishAt())
     }
   }, [fetchPosts])
 
@@ -86,6 +97,7 @@ export default function AdminPage() {
       sessionStorage.setItem('admin_authenticated', 'true')
       void fetchPosts()
       setPublishAt(defaultPublishAt())
+      setQuickPublishAt(defaultPublishAt())
     } else {
       setLoginError('Invalid username or password')
     }
@@ -145,6 +157,53 @@ export default function AdminPage() {
       prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag]
     )
   }, [])
+
+  const resetQuickForm = useCallback(() => {
+    setQuickTitle('')
+    setQuickContent('')
+    setQuickExcerpt('')
+    setQuickCategory('geo-strategy')
+    setQuickCoverImage(DEFAULT_QUICK_COVER_IMAGE)
+    setQuickPublishAt(defaultPublishAt())
+  }, [])
+
+  const handleQuickSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!quickTitle || !quickContent || !quickCategory || !quickPublishAt) {
+      alert('Please fill in title, category, content, and publish time')
+      return
+    }
+
+    setQuickSubmitting(true)
+    try {
+      const coverImage = quickCoverImage.trim() || DEFAULT_QUICK_COVER_IMAGE
+      const postData = {
+        title: quickTitle,
+        content: quickContent,
+        excerpt: quickExcerpt || quickContent.replace(/<[^>]*>/g, '').substring(0, 200),
+        coverImage,
+        publishAt: new Date(quickPublishAt).toISOString(),
+        category: quickCategory,
+      }
+
+      const res = await fetch('/api/posts', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(postData),
+      })
+
+      if (!res.ok) throw new Error('Quick post creation failed')
+      const post = await res.json() as Post
+      alert(`Quick post published: /resources/${post.slug}/`)
+      resetQuickForm()
+      void fetchPosts()
+    } catch (error) {
+      console.error('Quick publish error:', error)
+      alert('Failed to quick publish post. Please check the fields and try again.')
+    } finally {
+      setQuickSubmitting(false)
+    }
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -289,7 +348,7 @@ export default function AdminPage() {
               onClick={() => { showForm ? resetForm() : setShowForm(true) }}
               className="px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition"
             >
-              {showForm ? 'Cancel' : '+ New Post'}
+              {showForm ? 'Cancel' : '+ Full Editor'}
             </button>
             <button
               onClick={handleBulkClassify}
@@ -311,6 +370,115 @@ export default function AdminPage() {
             {classifyResult}
           </div>
         )}
+
+        <div className="bg-gradient-to-br from-slate-950 via-slate-900 to-cyan-950 rounded-2xl shadow-sm p-8 mb-8 text-white">
+          <div className="flex flex-wrap items-start justify-between gap-4 mb-6">
+            <div>
+              <p className="text-xs uppercase tracking-[0.3em] text-cyan-200 mb-2">KV quick publish</p>
+              <h2 className="text-2xl font-bold">Quick Post Entry</h2>
+              <p className="text-sm text-slate-300 mt-2 max-w-2xl">
+                Publish directly to POSTS_KV so the article appears on /resources/blog/ and /resources/&lt;slug&gt;/ without editing source files or triggering a Cloudflare build. Rebuild only when you need the static sitemap or llms.txt refreshed.
+              </p>
+            </div>
+            <span className="px-3 py-1 rounded-full bg-cyan-300/15 text-cyan-100 text-xs border border-cyan-200/20">
+              No code deploy for normal posts
+            </span>
+          </div>
+
+          <form onSubmit={handleQuickSubmit} className="space-y-5">
+            <div className="grid md:grid-cols-3 gap-4">
+              <div className="md:col-span-2">
+                <label className="block text-sm font-medium text-slate-200 mb-2">Title *</label>
+                <input
+                  type="text"
+                  value={quickTitle}
+                  onChange={(e) => setQuickTitle(e.target.value)}
+                  className="w-full px-4 py-3 bg-white/10 border border-white/15 rounded-lg text-white placeholder:text-slate-400 focus:ring-2 focus:ring-cyan-300 focus:border-transparent"
+                  placeholder="Question-style title for AI answer extraction"
+                  required
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-slate-200 mb-2">Category *</label>
+                <select
+                  value={quickCategory}
+                  onChange={(e) => setQuickCategory(e.target.value)}
+                  className="w-full px-4 py-3 bg-slate-950 border border-white/15 rounded-lg text-white focus:ring-2 focus:ring-cyan-300"
+                  required
+                >
+                  {BLOG_CATEGORIES.map((c) => (
+                    <option key={c.id} value={c.id}>{c.label}</option>
+                  ))}
+                </select>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-4">
+              <div>
+                <label className="block text-sm font-medium text-slate-200 mb-2">Cover image path or URL</label>
+                <input
+                  type="text"
+                  value={quickCoverImage}
+                  onChange={(e) => setQuickCoverImage(e.target.value)}
+                  className="w-full px-4 py-3 bg-white/10 border border-white/15 rounded-lg text-white placeholder:text-slate-400 focus:ring-2 focus:ring-cyan-300"
+                  placeholder="/generated/blog/example-cover.png"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-slate-200 mb-2">Publish Date & Time *</label>
+                <input
+                  type="datetime-local"
+                  value={quickPublishAt}
+                  onChange={(e) => setQuickPublishAt(e.target.value)}
+                  className="w-full px-4 py-3 bg-white/10 border border-white/15 rounded-lg text-white focus:ring-2 focus:ring-cyan-300"
+                  required
+                />
+              </div>
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-slate-200 mb-2">Excerpt</label>
+              <textarea
+                value={quickExcerpt}
+                onChange={(e) => setQuickExcerpt(e.target.value)}
+                rows={2}
+                className="w-full px-4 py-3 bg-white/10 border border-white/15 rounded-lg text-white placeholder:text-slate-400 focus:ring-2 focus:ring-cyan-300"
+                placeholder="Short card description. If empty, it is generated from the content."
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-slate-200 mb-2">
+                Content * <span className="text-slate-400">(Markdown or HTML)</span>
+              </label>
+              <textarea
+                value={quickContent}
+                onChange={(e) => setQuickContent(e.target.value)}
+                rows={10}
+                className="w-full px-4 py-3 bg-white/10 border border-white/15 rounded-lg text-white placeholder:text-slate-400 focus:ring-2 focus:ring-cyan-300 font-mono text-sm"
+                placeholder="<h2>Direct Answer</h2><p>...</p>"
+                required
+              />
+            </div>
+
+            <div className="flex flex-wrap gap-3">
+              <button
+                type="submit"
+                disabled={quickSubmitting}
+                className="px-8 py-3 bg-cyan-300 text-slate-950 rounded-lg hover:bg-cyan-200 transition disabled:bg-slate-500 disabled:text-slate-300 font-semibold"
+              >
+                {quickSubmitting ? 'Publishing to KV...' : 'Quick Publish'}
+              </button>
+              <button
+                type="button"
+                onClick={resetQuickForm}
+                className="px-8 py-3 border border-white/20 text-slate-100 rounded-lg hover:bg-white/10 transition"
+              >
+                Reset
+              </button>
+            </div>
+          </form>
+        </div>
 
         {showForm && (
           <div className="bg-white rounded-2xl shadow-sm p-8 mb-8">
