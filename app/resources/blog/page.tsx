@@ -83,6 +83,17 @@ const PAGE_SIZE = 9
 
 const RAW_STATIC: Array<Omit<Article, 'subtopic'>> = [
   {
+    id: 9,
+    title: 'GEO Gap Audit: The AI Visibility Infrastructure Most Brands Are Missing',
+    date: '2026-05-12',
+    category: 'geo-strategy',
+    image: '/generated/blog/2026-05-12-geo-gap-audit-ai-visibility-infrastructure-cover.png',
+    description:
+      'A practical GEO gap audit for brands that need more than content: crawler access, llms.txt, entity facts, citation maps, prompt coverage, and conversion measurement.',
+    slug: 'geo-gap-audit-ai-visibility-infrastructure',
+    tags: ['GEO audit', 'AI visibility infrastructure', 'llms.txt', 'AI crawler access', 'citation source map'],
+  },
+  {
     id: 8,
     title: 'Google AI Mode & AI Overviews: Winning High-Intent Prompt Clusters (May 11, 2026)',
     date: '2026-05-11',
