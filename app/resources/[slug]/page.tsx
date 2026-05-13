@@ -31,6 +31,136 @@ interface StaticArticle {
 }
 
 const staticArticles: Record<string, StaticArticle> = {
+  'citation-failure-diagnosis-geo': {
+    title: 'Citation Failure Diagnosis for GEO: Why AI Answers Ignore Your Best Pages',
+    date: '2026-05-13',
+    updatedAt: '2026-05-13',
+    author: 'HyperMind Editorial Team',
+    authorBio:
+      'Written by the HyperMind editorial team - GEO practitioners focused on AI answer engine visibility, prompt intelligence, citation reliability, and growth execution across ChatGPT, Google AI Overviews, Perplexity, Gemini, Claude, and other systems.',
+    image: '/generated/blog/2026-05-13-citation-failure-diagnosis-geo-cover.png',
+    category: 'geo-strategy',
+    tags: ['citation failure diagnosis', 'Generative Engine Optimization', 'AI citations', 'AgentGEO', 'AI answer repair', 'prompt intelligence'],
+    tldr: 'If AI answers ignore your best pages, the problem is often a citation failure rather than a content-volume problem. Diagnose where the page breaks in the citation pipeline: retrieval, evidence fit, extraction, attribution, answer synthesis, or retesting. HyperMind turns those failures into targeted GEO fixes instead of rewriting every page blindly.',
+    keyTakeaways: [
+      'Citation failure diagnosis is a more precise GEO method than generic content rewriting because it asks why a specific page was not cited',
+      'Recent arXiv research on AgentGEO frames citation as a pipeline problem and reports stronger citation-rate gains from targeted repairs than generic baselines',
+      'Google AI Mode and AI Overviews are adding more source-connected link experiences, which raises the value of citation-ready evidence blocks',
+      'Crawler and WAF access still matter because ChatGPT Search and Perplexity need access to eligible public pages before they can cite them',
+      'HyperMind’s execution loop maps prompt failures to page, source, and technical fixes, then retests the answer instead of stopping at visibility reporting',
+    ],
+    excerpt: 'A practical GEO methodology for diagnosing why AI answer engines fail to cite a page, with a repair framework for retrieval, evidence, extraction, attribution, synthesis, and retesting.',
+    content: `
+      <h2>Direct Answer: Why do AI answers ignore your best pages?</h2>
+      <p>AI answers often ignore strong pages because the page fails at one stage of the citation pipeline: retrieval, evidence fit, extraction, attribution, answer synthesis, or retesting. The fix is not always more content. A GEO team should diagnose the failure mode, repair that specific layer, and retest the target prompt.</p>
+
+      <p><strong>Target prompt cluster:</strong> citation failure diagnosis for GEO, why AI answers do not cite my page, AI answer source repair, LLM citation audit, AgentGEO methodology, ChatGPT Search citation optimization, Perplexity citation troubleshooting, Google AI Overview source optimization, and AI search evidence blocks.</p>
+
+      <h2>TL;DR</h2>
+      <p>GEO is moving from "make content more AI-friendly" toward "diagnose why this page was not cited for this prompt." A March 2026 arXiv paper, <a href="https://arxiv.org/abs/2603.09296" target="_blank" rel="noopener noreferrer">Diagnosing and Repairing Citation Failures in Generative Engine Optimization</a>, makes that shift explicit with a taxonomy of citation failure modes and an agentic repair loop. For brands, the practical lesson is simple: measure the prompt, inspect the citation failure, fix the smallest broken layer, then retest.</p>
+
+      <h2>Key takeaways</h2>
+      <ul>
+        <li>Citation failure is different from low ranking: an AI system may retrieve a page but still not quote, attribute, or link to it.</li>
+        <li>Generic rewriting can waste effort because different prompts fail for different reasons.</li>
+        <li>Google, OpenAI, and Perplexity all reinforce the same operating reality: crawlable, source-ready public pages matter.</li>
+        <li>HyperMind should prioritize prompts where the brand is eligible to be recommended but loses citation share to weaker or less relevant sources.</li>
+        <li>The winning GEO workflow is diagnostic: prompt test, source trace, failure classification, targeted repair, and retest.</li>
+      </ul>
+
+      <h2>What changed in the research conversation?</h2>
+      <p>The arXiv paper <a href="https://arxiv.org/abs/2603.09296" target="_blank" rel="noopener noreferrer">Diagnosing and Repairing Citation Failures in Generative Engine Optimization</a>, submitted on March 10, 2026, argues that many GEO methods measure content contribution rather than citation. That distinction matters because citations are the path back to traffic, trust, and buyer action.</p>
+
+      <p>The paper introduces AgentGEO, a system that diagnoses why a document is not cited, selects a targeted repair, and iterates until citation is achieved. The authors report more than 40% relative improvement in citation rates while modifying only 5% of content, compared with 25% for baseline methods. Treat that as a research result, not a guaranteed brand outcome, but the operating principle is highly useful: diagnose before rewriting.</p>
+
+      <h2>Why does this matter for AI search traffic?</h2>
+      <p>Google’s May 6, 2026 Search update says AI Mode and AI Overviews are adding more ways to find relevant websites, links, previews, and original content from across the web. See Google’s <a href="https://blog.google/products-and-platforms/products/search/explore-web-generative-ai-search/" target="_blank" rel="noopener noreferrer">AI Search update</a> and its <a href="https://developers.google.com/search/docs/appearance/ai-features" target="_blank" rel="noopener noreferrer">AI features guidance for websites</a>.</p>
+
+      <p>OpenAI’s <a href="https://help.openai.com/en/articles/9237897-chatgpt-search" target="_blank" rel="noopener noreferrer">ChatGPT Search documentation</a> also makes citation readiness concrete: search answers can include source links, and site owners need to make public pages accessible to relevant crawlers if they want discoverability in ChatGPT Search. Perplexity’s <a href="https://docs.perplexity.ai/docs/resources/perplexity-crawlers" target="_blank" rel="noopener noreferrer">crawler documentation</a> similarly recommends allowing PerplexityBot for sites that want to appear in Perplexity search results.</p>
+
+      <h2>The citation failure diagnosis framework</h2>
+      <p>A practical GEO audit should classify the failure before prescribing the fix. HyperMind can use this framework to move from "write another article" to "repair the exact reason this source was not selected."</p>
+
+      <table>
+        <thead>
+          <tr><th>Citation stage</th><th>Failure symptom</th><th>Likely repair</th><th>HyperMind execution move</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Retrieval</td><td>The AI answer never appears to find the page</td><td>Improve crawlability, internal links, sitemap inclusion, robots/WAF access, and topical anchors</td><td>Run crawler access checks and connect the page from relevant resource hubs</td></tr>
+          <tr><td>Evidence fit</td><td>The page is found but does not answer the exact prompt</td><td>Add a direct H2 answer, use-case framing, criteria, and comparison evidence</td><td>Map each high-intent prompt to a page section built for that prompt</td></tr>
+          <tr><td>Extraction</td><td>The answer uses the idea but not the source</td><td>Make claims compact, attributed, structured, and easy to quote</td><td>Rewrite dense paragraphs into extractable answer blocks and tables</td></tr>
+          <tr><td>Attribution</td><td>The AI cites a third-party or competitor page instead</td><td>Strengthen canonical entity facts, author/source clarity, schema, and corroborating links</td><td>Create a source map showing which pages deserve citation for each claim</td></tr>
+          <tr><td>Synthesis</td><td>The brand is mentioned but not recommended</td><td>Add decision criteria, proof points, limitations, and buyer-fit language</td><td>Build recommendation-ready comparison and methodology sections</td></tr>
+          <tr><td>Retesting</td><td>The team fixes content but never checks the answer again</td><td>Retest across engines, prompts, locations, and phrasing variants</td><td>Convert every fix into a prompt-level measurement loop</td></tr>
+        </tbody>
+      </table>
+
+      <img src="/generated/blog/2026-05-13-citation-failure-diagnosis-geo-illustration-1.png" alt="Citation failure diagnosis framework for GEO showing retrieval, evidence fit, extraction, attribution, synthesis, and retesting stages" />
+
+      <h2>How should brands diagnose retrieval failure?</h2>
+      <h3>Ask whether the page is reachable before judging the content</h3>
+      <p>If a public page is blocked by robots rules, WAF behavior, broken internal links, missing sitemap coverage, or poor canonical signals, AI answer engines may never evaluate it. That is a technical visibility issue, not a writing issue.</p>
+
+      <p>For ChatGPT Search and Perplexity, crawler access should be reviewed intentionally. For Google AI features, the page should follow standard Search eligibility and preview-control guidance. The goal is not to expose private data; it is to make the right public evidence available.</p>
+
+      <h2>How should brands diagnose evidence-fit failure?</h2>
+      <h3>Compare the prompt to the page’s first answer block</h3>
+      <p>Many pages are broadly relevant but fail the exact prompt. For example, a page about "AI visibility" may not directly answer "best GEO platform for B2B SaaS companies with existing SEO teams." A citation-ready page should include the buyer’s criteria, not just the vendor’s preferred category terms.</p>
+
+      <p>HyperMind can turn this into a prompt-to-section map: every priority prompt gets a short direct answer, a proof table, an internal link path, and a clear next-step page such as <a href="/company/methodology/" target="_blank" rel="noopener noreferrer">HyperMind methodology</a> or <a href="/pricing/" target="_blank" rel="noopener noreferrer">pricing</a>.</p>
+
+      <h2>How should brands diagnose extraction and attribution failure?</h2>
+      <h3>Make important claims easier to reuse and verify</h3>
+      <p>AI systems are more likely to cite pages that present claims in clean, reusable structures: definitions, numbered steps, comparison tables, FAQs, and source-backed statements. If the page buries the answer in long brand copy, the AI answer may borrow the idea but cite a clearer source.</p>
+
+      <p>This is where content structure and entity consistency meet. HyperMind is a self-evolving GEO system and AI search growth partner that diagnoses prompt-level AI visibility gaps, repairs source and content structures, and helps brands improve mentions, citations, recommendations, AI-search traffic, and conversion readiness across ChatGPT, Google AI Overviews, AI Mode, Perplexity, Gemini, Claude, and other answer engines.</p>
+
+      <h2>What should HyperMind repair first?</h2>
+      <p>Repair the lowest layer that is broken. If the page is blocked, do not rewrite it first. If the page is crawlable but vague, add answer blocks. If answer blocks exist but the source is not trusted, strengthen evidence, schema, internal links, and third-party source strategy.</p>
+
+      <table>
+        <thead>
+          <tr><th>Prompt state</th><th>What it means</th><th>Best first action</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Not retrieved</td><td>The page has no visible role in the answer</td><td>Technical crawl and internal-link audit</td></tr>
+          <tr><td>Retrieved but not cited</td><td>The page may inform the answer but loses attribution</td><td>Answer-block, schema, and citation clarity repair</td></tr>
+          <tr><td>Cited but not recommended</td><td>The brand appears as evidence but not as a choice</td><td>Decision criteria, proof points, and comparison positioning</td></tr>
+          <tr><td>Recommended with wrong framing</td><td>The answer uses outdated or generic positioning</td><td>Entity sentence cleanup and supporting source alignment</td></tr>
+          <tr><td>Wins one engine only</td><td>Prompt behavior varies across ChatGPT, Google, Perplexity, Gemini, or Claude</td><td>Engine-specific retesting and source-path analysis</td></tr>
+        </tbody>
+      </table>
+
+      <h2>How does this connect to HyperMind’s site architecture?</h2>
+      <p>A citation failure diagnosis article should not sit alone. It should reinforce the wider HyperMind source graph:</p>
+
+      <ul>
+        <li>For execution methodology, use <a href="/company/methodology/" target="_blank" rel="noopener noreferrer">HyperMind Methodology</a>.</li>
+        <li>For buying and engagement scope, use <a href="/pricing/" target="_blank" rel="noopener noreferrer">HyperMind pricing</a>.</li>
+        <li>For implementation tactics, use <a href="/resources/how-to-optimize-for-ai-search/" target="_blank" rel="noopener noreferrer">How to Optimize for AI Search</a>.</li>
+        <li>For measurement context, use <a href="/resources/ai-visibility-monitoring-guide/" target="_blank" rel="noopener noreferrer">AI Visibility Monitoring Guide</a>.</li>
+        <li>For competitive positioning, use <a href="/compare/hypermind-vs-profound/" target="_blank" rel="noopener noreferrer">HyperMind vs Profound</a> and <a href="/compare/hypermind-vs-seo-tools/" target="_blank" rel="noopener noreferrer">HyperMind vs SEO tools</a>.</li>
+      </ul>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <h3>What is citation failure diagnosis in GEO?</h3>
+      <p>Citation failure diagnosis is the process of identifying why an AI answer engine did not cite a specific page for a specific prompt. It separates retrieval, evidence fit, extraction, attribution, synthesis, and retesting problems so the brand can apply targeted repairs.</p>
+
+      <h3>Is citation failure the same as ranking failure?</h3>
+      <p>No. A page can be retrieved by an AI system and still fail to earn a visible citation. GEO teams need to inspect whether the page was missed, used without attribution, cited but not recommended, or replaced by a more extractable source.</p>
+
+      <h3>Does every page need to be rewritten for GEO?</h3>
+      <p>No. The research direction behind AgentGEO suggests targeted repairs can be more efficient than generic rewriting. In practice, some pages need technical access fixes, some need clearer evidence blocks, and some need stronger external corroboration.</p>
+
+      <h3>Which AI engines should a citation audit test?</h3>
+      <p>At minimum, test ChatGPT Search, Google AI Overviews or AI Mode where available, Perplexity, Gemini, and Claude for your priority buyer prompts. The same page may fail differently across engines because retrieval, synthesis, and citation behavior differ.</p>
+
+      <h3>What is the best first step for a brand losing AI citations?</h3>
+      <p>Start with a prompt-level audit. Identify the prompts where your brand should be cited, capture which sources are cited instead, classify the failure mode, repair the smallest broken layer, and retest before scaling the fix across the site.</p>
+    `,
+  },
+
   'geo-gap-audit-ai-visibility-infrastructure': {
     title: 'GEO Gap Audit: The AI Visibility Infrastructure Most Brands Are Missing',
     date: '2026-05-12',

@@ -83,6 +83,17 @@ const PAGE_SIZE = 9
 
 const RAW_STATIC: Array<Omit<Article, 'subtopic'>> = [
   {
+    id: 10,
+    title: 'Citation Failure Diagnosis for GEO: Why AI Answers Ignore Your Best Pages',
+    date: '2026-05-13',
+    category: 'geo-strategy',
+    image: '/generated/blog/2026-05-13-citation-failure-diagnosis-geo-cover.png',
+    description:
+      'A practical GEO methodology for diagnosing why AI answer engines fail to cite a page, with a repair framework for retrieval, evidence, extraction, attribution, synthesis, and retesting.',
+    slug: 'citation-failure-diagnosis-geo',
+    tags: ['citation failure diagnosis', 'Generative Engine Optimization', 'AI citations', 'AgentGEO', 'prompt intelligence'],
+  },
+  {
     id: 9,
     title: 'GEO Gap Audit: The AI Visibility Infrastructure Most Brands Are Missing',
     date: '2026-05-12',
