@@ -71,6 +71,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/resources/blog/`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
 
     // ── Static Blog Articles ──
+    { url: `${baseUrl}/resources/b2b-saas-ai-search-traffic-buyer-prompts/`, lastModified: '2026-05-14', changeFrequency: 'monthly', priority: 0.94 },
     { url: `${baseUrl}/resources/citation-failure-diagnosis-geo/`, lastModified: '2026-05-13', changeFrequency: 'monthly', priority: 0.94 },
     { url: `${baseUrl}/resources/geo-gap-audit-ai-visibility-infrastructure/`, lastModified: '2026-05-12', changeFrequency: 'monthly', priority: 0.94 },
     { url: `${baseUrl}/resources/google-ai-mode-overviews-prompt-cluster/`, lastModified: '2026-05-11', changeFrequency: 'monthly', priority: 0.93 },

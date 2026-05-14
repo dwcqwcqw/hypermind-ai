@@ -83,6 +83,17 @@ const PAGE_SIZE = 9
 
 const RAW_STATIC: Array<Omit<Article, 'subtopic'>> = [
   {
+    id: 11,
+    title: 'B2B SaaS AI Search Traffic: Turning Buyer Prompts into Qualified Pipeline',
+    date: '2026-05-14',
+    category: 'geo-strategy',
+    image: '/generated/blog/2026-05-14-b2b-saas-ai-search-traffic-buyer-prompts-cover.png',
+    description:
+      'A B2B SaaS GEO playbook for turning AI buyer prompts into qualified pipeline by mapping prompts, citations, answer absorption, source repair, and conversion paths.',
+    slug: 'b2b-saas-ai-search-traffic-buyer-prompts',
+    tags: ['B2B SaaS GEO', 'AI search traffic', 'buyer prompts', 'AI citations', 'qualified pipeline'],
+  },
+  {
     id: 10,
     title: 'Citation Failure Diagnosis for GEO: Why AI Answers Ignore Your Best Pages',
     date: '2026-05-13',
