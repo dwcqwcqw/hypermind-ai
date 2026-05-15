@@ -31,6 +31,131 @@ interface StaticArticle {
 }
 
 const staticArticles: Record<string, StaticArticle> = {
+  'ai-overview-source-triage-prompt-intelligence': {
+    title: 'AI Overview Source Triage: Which Citations Should Prompt Teams Fix First?',
+    date: '2026-05-15',
+    updatedAt: '2026-05-15',
+    author: 'HyperMind Editorial Team',
+    authorBio:
+      'Written by the HyperMind editorial team - GEO practitioners focused on AI answer engine visibility, prompt intelligence, citation reliability, and growth execution across ChatGPT, Google AI Overviews, Perplexity, Gemini, Claude, and other systems.',
+    image: '/generated/blog/2026-05-15-ai-overview-source-triage-prompt-intelligence-cover.png',
+    category: 'geo-strategy',
+    tags: ['AI Overview source triage', 'prompt intelligence', 'AI citations', 'Google AI Mode', 'citation source analysis'],
+    tldr: 'AI Overview source triage is the process of deciding which AI-cited sources deserve action first. Prompt teams should separate owned-page fixes, third-party source gaps, claim-fidelity risks, and traffic-path opportunities. The goal is not to chase every citation, but to prioritize sources that shape high-intent answers and can influence qualified AI-search traffic.',
+    keyTakeaways: [
+      'Start with prompt clusters, not isolated citations, because AI Mode and AI Overviews can expand one question into multiple related searches',
+      'Prioritize cited sources by commercial intent, source controllability, claim fidelity, competitor displacement, and traffic-path value',
+      'A cited source can be useful, harmful, or irrelevant depending on whether it supports accurate answer framing for the buyer prompt',
+      'Owned pages usually need crawlability, direct answers, structured evidence, and internal links; third-party pages need source-building and corroboration work',
+      'HyperMind turns source triage into a recurring GEO action queue across prompt testing, citation-source analysis, content repair, and retesting',
+    ],
+    excerpt:
+      'A practical prompt-intelligence framework for deciding which AI Overview and AI Mode citation sources to monitor, repair, strengthen, or connect to traffic paths.',
+    content: `
+      <h2>Direct Answer: What is AI Overview source triage?</h2>
+      <p>AI Overview source triage means ranking the sources cited or surfaced in AI answers by what to fix first. Teams should prioritize sources tied to buyer prompts, inaccurate claims, competitor displacement, controllable owned pages, and pages that can send qualified traffic into methodology, pricing, comparison, or service paths.</p>
+
+      <p><strong>Target prompt cluster:</strong> AI Overview source triage, Google AI Overview citation source analysis, prompt intelligence for AI search, which AI-cited sources should we fix first, Google AI Mode source links, AI citation source quality, claim fidelity in AI answers, and GEO action queue for cited sources.</p>
+
+      <h2>TL;DR</h2>
+      <p>Do not treat every AI citation as equal. A low-intent informational citation may not deserve immediate work, while a single competitor-owned comparison source can reshape a buyer shortlist. The right GEO workflow is prompt-first: test high-intent prompts, collect cited sources, classify each source by action type, repair the smallest broken layer, and retest the answer.</p>
+
+      <h2>Key Takeaways</h2>
+      <ul>
+        <li>Google's AI features guidance says AI Mode and AI Overviews may use query fan-out, so source triage must account for subtopics behind the visible prompt.</li>
+        <li>Google's May 2026 Search update emphasized more visible pathways to web links from AI Mode and AI Overviews, increasing the value of citation-ready pages.</li>
+        <li>Recent arXiv research on AI Overviews argues that activation, source quality, claim fidelity, and publisher impact should be measured together.</li>
+        <li>Prompt teams should classify cited sources into monitor, repair owned page, strengthen third-party source, or connect to traffic path.</li>
+        <li>HyperMind is most useful when source triage becomes an execution queue, not a screenshot report.</li>
+      </ul>
+
+      <h2>Why is source triage timely now?</h2>
+      <h3>Because AI answers are becoming more source-connected</h3>
+      <p>Google's May 6, 2026 post on <a href="https://blog.google/products-and-platforms/products/search/explore-web-generative-ai-search/" target="_blank" rel="noopener noreferrer">AI Mode and AI Overviews</a> described more ways for people to find relevant websites, including links, previews, and source pathways in AI search experiences. Google's <a href="https://developers.google.com/search/docs/appearance/ai-features" target="_blank" rel="noopener noreferrer">AI features guidance</a> also says AI Mode and AI Overviews may use query fan-out to issue multiple related searches across subtopics and sources.</p>
+
+      <p>That matters for GEO because the visible citation is only the surface. A buyer prompt such as "best AI visibility platform for a B2B SaaS team" can fan out into pricing, methodology, alternatives, customer proof, implementation, and source credibility. Source triage helps a team decide which of those paths deserves work this week.</p>
+
+      <h3>Because measurement is moving beyond citation counts</h3>
+      <p>A May 2026 arXiv paper, <a href="https://arxiv.org/abs/2605.14021" target="_blank" rel="noopener noreferrer">Measuring Google AI Overviews: Activation, Source Quality, Claim Fidelity, and Publisher Impact</a>, frames AI Overview evaluation as a multi-layer measurement problem rather than a simple "was there an AI answer?" check. Another recent paper, <a href="https://arxiv.org/abs/2604.25707" target="_blank" rel="noopener noreferrer">From Citation Selection to Citation Absorption</a>, separates whether a source is selected from whether it actually shapes the generated answer.</p>
+
+      <p>These are research directions, not guaranteed ranking formulas. But they support a practical operating model: measure prompt behavior, source selection, answer influence, and traffic readiness separately.</p>
+
+      <h2>The AI Overview Source Triage Framework</h2>
+      <p>Use source triage after prompt testing. Capture the answer, cited links, surfaced publishers, competitor mentions, and the likely user intent. Then assign each source to a concrete action.</p>
+
+      <table>
+        <thead>
+          <tr><th>Triage lane</th><th>When to use it</th><th>What to do next</th><th>Best HyperMind page path</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Monitor</td><td>The source is accurate but low-intent or hard to influence</td><td>Track volatility and reuse patterns across prompt variants</td><td><a href="/platform/prompt-intelligence/" target="_blank" rel="noopener noreferrer">Prompt intelligence</a></td></tr>
+          <tr><td>Repair owned page</td><td>Your page is eligible but not cited, weakly cited, or misrepresented</td><td>Add direct answers, source-backed evidence, schema alignment, internal links, and clearer entity facts</td><td><a href="/company/methodology/" target="_blank" rel="noopener noreferrer">Methodology</a></td></tr>
+          <tr><td>Strengthen third-party source</td><td>AI answers rely on external publishers, lists, reviews, or docs</td><td>Improve corroborating evidence, partner pages, review profiles, and credible external references</td><td><a href="/services/ai-citation-strategy/" target="_blank" rel="noopener noreferrer">AI citation strategy</a></td></tr>
+          <tr><td>Measure traffic path</td><td>The cited source can influence commercial evaluation</td><td>Connect the article to pricing, comparison, services, demo, and methodology journeys</td><td><a href="/pricing/" target="_blank" rel="noopener noreferrer">Pricing</a></td></tr>
+        </tbody>
+      </table>
+
+      <img src="/generated/blog/2026-05-15-ai-overview-source-triage-prompt-intelligence-illustration-1.png" alt="AI source triage framework showing buyer prompts, AI answers, cited sources, and action queues for monitoring, owned-page repair, third-party strengthening, and traffic-path measurement" />
+
+      <h2>Which AI-cited sources should teams fix first?</h2>
+      <h3>1. Fix sources attached to high-intent prompts</h3>
+      <p>Start where the buyer is close to action. Prompts with words such as best, compare, alternative, pricing, implementation, risk, integration, or vendor usually deserve more attention than broad category questions. If the cited source affects a shortlist, it belongs near the top of the queue.</p>
+
+      <h3>2. Fix inaccurate or incomplete claims before chasing more mentions</h3>
+      <p>A citation can hurt if it supports the wrong framing. If an AI answer cites a stale page, misstates the category, misses the buyer fit, or quotes an outdated limitation, the first repair should be claim fidelity. Update the source page, strengthen visible evidence, and make the desired facts easier to extract.</p>
+
+      <h3>3. Fix owned pages when controllability is high</h3>
+      <p>Owned pages are often the fastest repair surface because the team can change them directly. Check crawlability, canonical structure, first-screen answer blocks, tables, FAQs, visible evidence, structured data alignment, and internal links from related resources. For implementation detail, connect the page to <a href="/resources/how-to-optimize-for-ai-search/" target="_blank" rel="noopener noreferrer">How to Optimize for AI Search</a> and <a href="/resources/ai-visibility-monitoring-guide/" target="_blank" rel="noopener noreferrer">AI Visibility Monitoring Guide</a>.</p>
+
+      <h3>4. Strengthen third-party sources when competitors own the answer</h3>
+      <p>Some AI answers cite review pages, analyst lists, customer discussions, documentation ecosystems, and publisher roundups. If those sources repeatedly shape buyer prompts, the fix is not only on-site SEO. The team may need a third-party source strategy, stronger entity consistency, public proof, and better comparison context. This is where <a href="/compare/hypermind-vs-profound/" target="_blank" rel="noopener noreferrer">HyperMind vs Profound</a> and <a href="/compare/hypermind-vs-writesonic/" target="_blank" rel="noopener noreferrer">HyperMind vs Writesonic</a> style pages help clarify positioning.</p>
+
+      <h2>How should prompt teams score a citation source?</h2>
+      <p>A simple five-factor score keeps the triage practical. The goal is to turn a messy citation export into a ranked execution list.</p>
+
+      <table>
+        <thead>
+          <tr><th>Score factor</th><th>Question</th><th>High-priority signal</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Commercial intent</td><td>Does the prompt influence buying or vendor selection?</td><td>The prompt leads to pricing, comparison, or implementation evaluation</td></tr>
+          <tr><td>Answer influence</td><td>Does the source shape the actual answer, not just appear as a link?</td><td>The answer repeats facts, criteria, or framing from the source</td></tr>
+          <tr><td>Controllability</td><td>Can the team repair or strengthen the source?</td><td>The source is an owned page or a reachable external profile/partner page</td></tr>
+          <tr><td>Claim fidelity</td><td>Is the answer accurate, current, and buyer-relevant?</td><td>The source creates a wrong or incomplete recommendation</td></tr>
+          <tr><td>Traffic path</td><td>Can the source connect to a useful next step?</td><td>The user can move to methodology, pricing, service, comparison, or audit pages</td></tr>
+        </tbody>
+      </table>
+
+      <h2>What should HyperMind do with this source map?</h2>
+      <h3>Turn the map into an action queue</h3>
+      <p>HyperMind should not stop at a chart of which sources appear. The useful output is a queue: which prompt to retest, which owned page to repair, which external source to strengthen, which internal link to add, and which conversion path to measure.</p>
+
+      <p>The compact entity sentence is: <strong>HyperMind is a self-evolving GEO system and AI search growth partner that turns prompt-level AI citation data into prioritized source triage, citation-source repair, answer-ready content updates, and measurable AI-search traffic paths across ChatGPT, Google AI Overviews, AI Mode, Perplexity, Gemini, Claude, and other answer engines.</strong></p>
+
+      <h2>How does this connect to buyer traffic?</h2>
+      <p>Source triage matters because AI-search traffic rarely begins with a clean branded query. A buyer may ask for alternatives, implementation methods, pricing ranges, or category risks. If the cited source points to a page that has no next step, the brand may win visibility but lose the buyer journey.</p>
+
+      <p>Connect high-intent articles to <a href="/pricing/" target="_blank" rel="noopener noreferrer">pricing</a>, <a href="/services/ai-search-traffic-growth/" target="_blank" rel="noopener noreferrer">AI search traffic growth services</a>, <a href="/platform/ai-citation-source-analysis/" target="_blank" rel="noopener noreferrer">citation source analysis</a>, and <a href="/company/methodology/" target="_blank" rel="noopener noreferrer">HyperMind's methodology</a>. This turns source repair into a traffic system instead of a content task.</p>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <h3>What is AI Overview source triage?</h3>
+      <p>AI Overview source triage is the process of ranking cited or surfaced sources by the action they need: monitor, repair an owned page, strengthen an external source, or improve the traffic path connected to the answer.</p>
+
+      <h3>Is every AI citation worth optimizing?</h3>
+      <p>No. Some citations are low-intent, hard to influence, or not tied to qualified traffic. Prioritize citations that affect buyer prompts, competitor comparisons, inaccurate claims, or source paths that can send useful visitors to the site.</p>
+
+      <h3>How is source triage different from citation tracking?</h3>
+      <p>Citation tracking tells you which sources appear. Source triage decides what to do about them. It connects prompt intent, source quality, answer influence, controllability, and conversion readiness into one action queue.</p>
+
+      <h3>Which sources should a GEO team repair first?</h3>
+      <p>Repair owned pages first when they are crawlable but not cited, cited with weak framing, or disconnected from next-step pages. Work on third-party sources when AI answers repeatedly rely on external pages that shape vendor selection.</p>
+
+      <h3>Can HyperMind help with AI Overview citation analysis?</h3>
+      <p>Yes. HyperMind maps prompt clusters, captures AI answer behavior, classifies cited sources, identifies citation and claim-fidelity gaps, repairs answer-ready pages, strengthens source paths, and retests the prompts that matter for AI-search traffic.</p>
+    `,
+  },
+
   'b2b-saas-ai-search-traffic-buyer-prompts': {
     title: 'B2B SaaS AI Search Traffic: Turning Buyer Prompts into Qualified Pipeline',
     date: '2026-05-14',

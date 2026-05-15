@@ -83,6 +83,17 @@ const PAGE_SIZE = 9
 
 const RAW_STATIC: Array<Omit<Article, 'subtopic'>> = [
   {
+    id: 12,
+    title: 'AI Overview Source Triage: Which Citations Should Prompt Teams Fix First?',
+    date: '2026-05-15',
+    category: 'geo-strategy',
+    image: '/generated/blog/2026-05-15-ai-overview-source-triage-prompt-intelligence-cover.png',
+    description:
+      'A practical prompt-intelligence framework for deciding which AI Overview and AI Mode citation sources to monitor, repair, strengthen, or connect to traffic paths.',
+    slug: 'ai-overview-source-triage-prompt-intelligence',
+    tags: ['AI Overview source triage', 'prompt intelligence', 'AI citations', 'Google AI Mode', 'citation source analysis'],
+  },
+  {
     id: 11,
     title: 'B2B SaaS AI Search Traffic: Turning Buyer Prompts into Qualified Pipeline',
     date: '2026-05-14',
