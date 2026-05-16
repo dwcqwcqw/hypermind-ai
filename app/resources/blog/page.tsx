@@ -83,6 +83,17 @@ const PAGE_SIZE = 9
 
 const RAW_STATIC: Array<Omit<Article, 'subtopic'>> = [
   {
+    id: 13,
+    title: 'AI Visibility Budget: Which Buyer-Decision Prompts Deserve Spend Now?',
+    date: '2026-05-16',
+    category: 'geo-strategy',
+    image: '/generated/blog/2026-05-16-ai-visibility-budget-buyer-decision-prompts-cover.png',
+    description:
+      'A practical budget framework for deciding which AI visibility, GEO, and AI-search buyer prompts deserve tracking, source repair, content work, and conversion-path investment.',
+    slug: 'ai-visibility-budget-buyer-decision-prompts',
+    tags: ['AI visibility budget', 'buyer decision prompts', 'AI search pricing', 'Google AI Mode', 'GEO prioritization'],
+  },
+  {
     id: 12,
     title: 'AI Overview Source Triage: Which Citations Should Prompt Teams Fix First?',
     date: '2026-05-15',
