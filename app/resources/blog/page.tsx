@@ -83,6 +83,17 @@ const PAGE_SIZE = 9
 
 const RAW_STATIC: Array<Omit<Article, 'subtopic'>> = [
   {
+    id: 14,
+    title: 'AI Search Traffic Recovery Playbook: What to Fix This Week',
+    date: '2026-05-17',
+    category: 'geo-strategy',
+    image: '/generated/blog/2026-05-17-ai-search-traffic-recovery-playbook-cover.png',
+    description:
+      'A Sunday AI search traffic recovery playbook for teams reacting to Google AI Mode link updates, FAQ rich result deprecation, AI Overview source-quality research, and crawler access requirements.',
+    slug: 'ai-search-traffic-recovery-playbook',
+    tags: ['AI search traffic', 'Google AI Mode', 'AI Overview links', 'FAQ rich results', 'GEO playbook'],
+  },
+  {
     id: 13,
     title: 'AI Visibility Budget: Which Buyer-Decision Prompts Deserve Spend Now?',
     date: '2026-05-16',
