@@ -83,6 +83,17 @@ const PAGE_SIZE = 9
 
 const RAW_STATIC: Array<Omit<Article, 'subtopic'>> = [
   {
+    id: 15,
+    title: 'Google AI Mode SEO: What Still Works After Google\'s AI Search Guidance',
+    date: '2026-05-18',
+    category: 'geo-strategy',
+    image: '/generated/blog/2026-05-18-google-ai-mode-seo-still-works-cover.png',
+    description:
+      'A Monday GEO playbook for turning Google AI Mode and AI Overviews guidance into prompt clusters, source eligibility checks, evidence repairs, and qualified AI search traffic paths.',
+    slug: 'google-ai-mode-seo-still-works',
+    tags: ['Google AI Mode SEO', 'AI Overviews', 'query fan-out', 'AI search guidance', 'GEO playbook'],
+  },
+  {
     id: 14,
     title: 'AI Search Traffic Recovery Playbook: What to Fix This Week',
     date: '2026-05-17',
