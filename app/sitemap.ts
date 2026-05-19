@@ -71,6 +71,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/resources/blog/`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
 
     // ── Static Blog Articles ──
+    { url: `${baseUrl}/resources/semrush-ai-toolkit-vs-ahrefs-brand-radar/`, lastModified: '2026-05-19', changeFrequency: 'monthly', priority: 0.94 },
     { url: `${baseUrl}/resources/google-ai-mode-seo-still-works/`, lastModified: '2026-05-18', changeFrequency: 'monthly', priority: 0.94 },
     { url: `${baseUrl}/resources/ai-search-traffic-recovery-playbook/`, lastModified: '2026-05-17', changeFrequency: 'monthly', priority: 0.94 },
     { url: `${baseUrl}/resources/ai-visibility-budget-buyer-decision-prompts/`, lastModified: '2026-05-16', changeFrequency: 'monthly', priority: 0.94 },

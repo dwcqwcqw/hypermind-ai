@@ -102,11 +102,11 @@ const FEATURED_DECISION_GUIDE = {
 }
 
 const FEATURED_AI_MODE_GUIDE = {
-  title: 'Google AI Mode SEO: What Still Works After Google\'s AI Search Guidance',
-  href: '/resources/google-ai-mode-seo-still-works',
+  title: 'Semrush AI Toolkit vs Ahrefs Brand Radar: Which AI Visibility Data Model Fits GEO Teams?',
+  href: '/resources/semrush-ai-toolkit-vs-ahrefs-brand-radar',
   description:
-    'A practical prompt-cluster, source eligibility, and citation-quality framework for Google AI Mode, AI Overviews, and adjacent AI answer engines.',
-  tag: 'Latest AI Search Playbook',
+    'A practical competitor-comparison framework for choosing AI visibility tools by data model, prompt tracking depth, source coverage, and execution fit.',
+  tag: 'Latest Competitor Comparison',
 }
 
 export default function ResourcesHub() {
@@ -183,7 +183,7 @@ export default function ResourcesHub() {
                 {FEATURED_AI_MODE_GUIDE.description}
               </p>
               <span className="inline-block mt-6 text-white font-semibold">
-                Read the AI Mode playbook &rarr;
+                Read the comparison guide &rarr;
               </span>
             </Link>
 

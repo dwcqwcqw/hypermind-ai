@@ -83,6 +83,17 @@ const PAGE_SIZE = 9
 
 const RAW_STATIC: Array<Omit<Article, 'subtopic'>> = [
   {
+    id: 16,
+    title: 'Semrush AI Toolkit vs Ahrefs Brand Radar: Which AI Visibility Data Model Fits GEO Teams?',
+    date: '2026-05-19',
+    category: 'geo-strategy',
+    image: '/generated/blog/2026-05-19-semrush-ai-toolkit-vs-ahrefs-brand-radar-cover.png',
+    description:
+      'A Tuesday competitor-comparison guide for choosing between Semrush AI Visibility Toolkit, Ahrefs Brand Radar, and execution-led GEO workflows based on data model fit.',
+    slug: 'semrush-ai-toolkit-vs-ahrefs-brand-radar',
+    tags: ['Semrush AI Visibility Toolkit', 'Ahrefs Brand Radar', 'AI visibility tools', 'GEO platforms', 'prompt tracking'],
+  },
+  {
     id: 15,
     title: 'Google AI Mode SEO: What Still Works After Google\'s AI Search Guidance',
     date: '2026-05-18',
