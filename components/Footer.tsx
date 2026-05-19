@@ -36,6 +36,7 @@ const FOOTER_SECTIONS = [
     links: [
       { label: 'What is GEO', href: '/resources/what-is-geo' },
       { label: 'How AI Search Works', href: '/resources/how-ai-search-works' },
+      { label: 'Google AI Mode SEO', href: '/resources/google-ai-mode-seo-still-works' },
       { label: 'GEO Guides', href: '/resources/geo-guides' },
       { label: 'AI Search Library', href: '/resources/ai-search-library' },
       { label: 'AI Visibility Platform vs GEO Agency', href: '/resources/ai-visibility-platform-vs-geo-agency' },

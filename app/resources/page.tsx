@@ -101,6 +101,14 @@ const FEATURED_DECISION_GUIDE = {
   tag: 'Featured Decision Guide',
 }
 
+const FEATURED_AI_MODE_GUIDE = {
+  title: 'Google AI Mode SEO: What Still Works After Google\'s AI Search Guidance',
+  href: '/resources/google-ai-mode-seo-still-works',
+  description:
+    'A practical prompt-cluster, source eligibility, and citation-quality framework for Google AI Mode, AI Overviews, and adjacent AI answer engines.',
+  tag: 'Latest AI Search Playbook',
+}
+
 export default function ResourcesHub() {
   return (
     <>
@@ -125,12 +133,18 @@ export default function ResourcesHub() {
                   {
                     '@type': 'ListItem',
                     position: 1,
+                    name: FEATURED_AI_MODE_GUIDE.title,
+                    url: `https://hypermindgeo.com${FEATURED_AI_MODE_GUIDE.href}/`,
+                  },
+                  {
+                    '@type': 'ListItem',
+                    position: 2,
                     name: FEATURED_DECISION_GUIDE.title,
                     url: `https://hypermindgeo.com${FEATURED_DECISION_GUIDE.href}/`,
                   },
                   {
                     '@type': 'ListItem',
-                    position: 2,
+                    position: 3,
                     name: FEATURED_RESEARCH.title,
                     url: `https://hypermindgeo.com${FEATURED_RESEARCH.href}/`,
                   },
@@ -154,21 +168,39 @@ export default function ResourcesHub() {
 
         {/* Featured */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <Link
-              href={FEATURED_DECISION_GUIDE.href}
+              href={FEATURED_AI_MODE_GUIDE.href}
               className="group block border-2 border-black bg-gray-950 text-white rounded-2xl p-8 sm:p-10 hover:bg-black transition-all"
             >
               <span className="inline-block text-xs font-semibold text-gray-300 uppercase tracking-wide mb-4 bg-white/10 px-3 py-1 rounded">
+                {FEATURED_AI_MODE_GUIDE.tag}
+              </span>
+              <h2 className="text-3xl font-bold mb-4 group-hover:underline">
+                {FEATURED_AI_MODE_GUIDE.title}
+              </h2>
+              <p className="text-gray-300 text-lg leading-relaxed">
+                {FEATURED_AI_MODE_GUIDE.description}
+              </p>
+              <span className="inline-block mt-6 text-white font-semibold">
+                Read the AI Mode playbook &rarr;
+              </span>
+            </Link>
+
+            <Link
+              href={FEATURED_DECISION_GUIDE.href}
+              className="group block border-2 border-gray-200 bg-white text-gray-900 rounded-2xl p-8 sm:p-10 hover:border-black hover:shadow-lg transition-all"
+            >
+              <span className="inline-block text-xs font-semibold text-gray-600 uppercase tracking-wide mb-4 bg-gray-100 px-3 py-1 rounded">
                 {FEATURED_DECISION_GUIDE.tag}
               </span>
               <h2 className="text-3xl font-bold mb-4 group-hover:underline">
                 {FEATURED_DECISION_GUIDE.title}
               </h2>
-              <p className="text-gray-300 text-lg leading-relaxed">
+              <p className="text-gray-600 text-lg leading-relaxed">
                 {FEATURED_DECISION_GUIDE.description}
               </p>
-              <span className="inline-block mt-6 text-white font-semibold">
+              <span className="inline-block mt-6 text-black font-semibold">
                 Read the decision guide &rarr;
               </span>
             </Link>

@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import Script from 'next/script'
 import './globals.css'
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     default: 'HyperMind - Agentic GEO Agency for AI Search Visibility',
     template: '%s | HyperMind',
   },
-  description: 'HyperMind is an agentic GEO agency and AI visibility execution partner helping brands get mentioned, cited, and recommended across ChatGPT, Google AI Overviews, Gemini, Perplexity, Claude, and Copilot.',
+  description: 'HyperMind helps brands improve AI visibility with GEO strategy, citation repair, prompt intelligence, and AI search traffic growth across major answer engines.',
   icons: {
     icon: '/asset/logo.png',
     shortcut: '/asset/logo.png',
@@ -57,6 +57,11 @@ export const metadata: Metadata = {
   verification: {},
 }
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -67,7 +72,6 @@ export default function RootLayout({
       <head>
         <StructuredData />
         <link rel="icon" href="/asset/logo.png" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-VGPY1N4763"
           strategy="afterInteractive"
@@ -136,9 +140,9 @@ gtag('config', 'G-VGPY1N4763');
         <Script
           src="https://seo-fixer.writesonic.com/site-audit/fixer-script/index.js"
           id="wsAiSeoMb"
-          strategy="beforeInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="wsAiSeoInitScript" strategy="beforeInteractive">
+        <Script id="wsAiSeoInitScript" strategy="lazyOnload">
           {`wsSEOfixer.configure({
             hostURL: 'https://seo-fixer.writesonic.com',
             siteID: '69bf80b396e413f1736f2705'
@@ -155,4 +159,3 @@ gtag('config', 'G-VGPY1N4763');
     </html>
   )
 }
-
