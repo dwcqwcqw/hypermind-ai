@@ -83,6 +83,17 @@ const PAGE_SIZE = 9
 
 const RAW_STATIC: Array<Omit<Article, 'subtopic'>> = [
   {
+    id: 17,
+    title: 'Google AI Mode Information Agents: The GEO Playbook for Always-On Search',
+    date: '2026-05-20',
+    category: 'geo-strategy',
+    image: '/generated/blog/2026-05-20-ai-mode-information-agents-geo-cover.png',
+    description:
+      'A Wednesday GEO methodology playbook for Google AI Mode information agents, always-on AI search monitoring, citation freshness, source eligibility, and prompt retesting.',
+    slug: 'ai-mode-information-agents-geo',
+    tags: ['Google AI Mode', 'information agents', 'agentic search', 'GEO methodology', 'AI search freshness'],
+  },
+  {
     id: 16,
     title: 'Semrush AI Toolkit vs Ahrefs Brand Radar: Which AI Visibility Data Model Fits GEO Teams?',
     date: '2026-05-19',

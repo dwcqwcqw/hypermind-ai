@@ -102,11 +102,11 @@ const FEATURED_DECISION_GUIDE = {
 }
 
 const FEATURED_AI_MODE_GUIDE = {
-  title: 'Semrush AI Toolkit vs Ahrefs Brand Radar: Which AI Visibility Data Model Fits GEO Teams?',
-  href: '/resources/semrush-ai-toolkit-vs-ahrefs-brand-radar',
+  title: 'Google AI Mode Information Agents: The GEO Playbook for Always-On Search',
+  href: '/resources/ai-mode-information-agents-geo',
   description:
-    'A practical competitor-comparison framework for choosing AI visibility tools by data model, prompt tracking depth, source coverage, and execution fit.',
-  tag: 'Latest Competitor Comparison',
+    'A timely GEO methodology guide for preparing source freshness, citation fidelity, prompt monitoring, and traffic paths for agentic AI search.',
+  tag: 'Latest AI Mode Playbook',
 }
 
 export default function ResourcesHub() {
