@@ -83,6 +83,17 @@ const PAGE_SIZE = 9
 
 const RAW_STATIC: Array<Omit<Article, 'subtopic'>> = [
   {
+    id: 18,
+    title: 'Ecommerce GEO for Agentic Shopping: How Retailers Should Prepare for AI Mode Buyers',
+    date: '2026-05-21',
+    category: 'geo-strategy',
+    image: '/generated/blog/2026-05-21-ecommerce-geo-agentic-shopping-cover.png',
+    description:
+      'A Thursday ecommerce GEO playbook for agentic shopping, Google Universal Cart, UCP, product data readiness, AI answer citations, and checkout-oriented traffic paths.',
+    slug: 'ecommerce-geo-agentic-shopping',
+    tags: ['ecommerce GEO', 'agentic shopping', 'Google Universal Cart', 'AI Mode shopping', 'product data'],
+  },
+  {
     id: 17,
     title: 'Google AI Mode Information Agents: The GEO Playbook for Always-On Search',
     date: '2026-05-20',
