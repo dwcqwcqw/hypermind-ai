@@ -83,6 +83,17 @@ const PAGE_SIZE = 9
 
 const RAW_STATIC: Array<Omit<Article, 'subtopic'>> = [
   {
+    id: 19,
+    title: 'AI Visibility Pricing: Pay for Citation Source Analysis, Not Prompt Volume',
+    date: '2026-05-23',
+    category: 'geo-strategy',
+    image: '/generated/blog/2026-05-23-ai-visibility-pricing-citation-source-analysis-cover.png',
+    description:
+      'A Saturday buyer-decision guide for AI visibility pricing, prompt intelligence budgets, citation-source analysis, and GEO spend decisions in 2026.',
+    slug: 'ai-visibility-pricing-citation-source-analysis',
+    tags: ['AI visibility pricing', 'citation source analysis', 'prompt intelligence', 'GEO budget', 'AI search ROI'],
+  },
+  {
     id: 18,
     title: 'Ecommerce GEO for Agentic Shopping: How Retailers Should Prepare for AI Mode Buyers',
     date: '2026-05-21',

@@ -102,11 +102,11 @@ const FEATURED_DECISION_GUIDE = {
 }
 
 const FEATURED_AI_MODE_GUIDE = {
-  title: 'Google AI Mode Information Agents: The GEO Playbook for Always-On Search',
-  href: '/resources/ai-mode-information-agents-geo',
+  title: 'AI Visibility Pricing: Pay for Citation Source Analysis, Not Prompt Volume',
+  href: '/resources/ai-visibility-pricing-citation-source-analysis',
   description:
-    'A timely GEO methodology guide for preparing source freshness, citation fidelity, prompt monitoring, and traffic paths for agentic AI search.',
-  tag: 'Latest AI Mode Playbook',
+    'A buyer-decision guide for pricing AI visibility by prompt intent, citation evidence, claim fidelity, and execution capacity.',
+  tag: 'Latest Buyer Guide',
 }
 
 export default function ResourcesHub() {
@@ -183,7 +183,7 @@ export default function ResourcesHub() {
                 {FEATURED_AI_MODE_GUIDE.description}
               </p>
               <span className="inline-block mt-6 text-white font-semibold">
-                Read the comparison guide &rarr;
+                Read the buyer guide &rarr;
               </span>
             </Link>
 
