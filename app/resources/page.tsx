@@ -102,10 +102,10 @@ const FEATURED_DECISION_GUIDE = {
 }
 
 const FEATURED_AI_MODE_GUIDE = {
-  title: 'AI Visibility Pricing: Pay for Citation Source Analysis, Not Prompt Volume',
-  href: '/resources/ai-visibility-pricing-citation-source-analysis',
+  title: 'Agentic AI Search Budget: Which Buyer Prompts Deserve Spend After Google AI Mode?',
+  href: '/resources/agentic-ai-search-budget-buyer-prompts',
   description:
-    'A buyer-decision guide for pricing AI visibility by prompt intent, citation evidence, claim fidelity, and execution capacity.',
+    'A buyer-decision guide for allocating AI visibility budget by prompt intent, source evidence, claim fidelity, and conversion path.',
   tag: 'Latest Buyer Guide',
 }
 

@@ -83,6 +83,17 @@ const PAGE_SIZE = 9
 
 const RAW_STATIC: Array<Omit<Article, 'subtopic'>> = [
   {
+    id: 20,
+    title: 'Agentic AI Search Budget: Which Buyer Prompts Deserve Spend After Google AI Mode?',
+    date: '2026-05-23',
+    category: 'geo-strategy',
+    image: '/generated/blog/2026-05-23-agentic-ai-search-budget-buyer-prompts-cover.png',
+    description:
+      'A Saturday buyer-decision guide for allocating AI visibility budget after Google AI Mode, agentic search, ChatGPT Search, Perplexity citations, and GEO prompt volatility.',
+    slug: 'agentic-ai-search-budget-buyer-prompts',
+    tags: ['agentic AI search budget', 'buyer prompts', 'Google AI Mode', 'GEO budget', 'AI visibility ROI'],
+  },
+  {
     id: 19,
     title: 'AI Visibility Pricing: Pay for Citation Source Analysis, Not Prompt Volume',
     date: '2026-05-23',
