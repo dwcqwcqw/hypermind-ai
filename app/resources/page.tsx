@@ -102,11 +102,11 @@ const FEATURED_DECISION_GUIDE = {
 }
 
 const FEATURED_AI_MODE_GUIDE = {
-  title: 'Agentic AI Search Budget: Which Buyer Prompts Deserve Spend After Google AI Mode?',
-  href: '/resources/agentic-ai-search-budget-buyer-prompts',
+  title: 'Google AI Mode Follow-Up Loops: Optimize Prompt Branches, Not AI Search Hacks',
+  href: '/resources/google-ai-mode-follow-up-loops',
   description:
-    'A buyer-decision guide for allocating AI visibility budget by prompt intent, source evidence, claim fidelity, and conversion path.',
-  tag: 'Latest Buyer Guide',
+    'A Monday AI Mode playbook for mapping follow-up prompts, source eligibility, claim fidelity, and conversion routes.',
+  tag: 'Latest AI Mode Guide',
 }
 
 export default function ResourcesHub() {

@@ -83,6 +83,17 @@ const PAGE_SIZE = 9
 
 const RAW_STATIC: Array<Omit<Article, 'subtopic'>> = [
   {
+    id: 21,
+    title: 'Google AI Mode Follow-Up Loops: Optimize Prompt Branches, Not AI Search Hacks',
+    date: '2026-05-25',
+    category: 'geo-strategy',
+    image: '/generated/blog/2026-05-25-google-ai-mode-follow-up-loops-cover.png',
+    description:
+      'A Monday Google AI Mode playbook for turning follow-up questions and query fan-out into prompt branch maps, source eligibility checks, claim-fidelity repairs, and qualified AI search traffic paths.',
+    slug: 'google-ai-mode-follow-up-loops',
+    tags: ['Google AI Mode', 'query fan-out', 'follow-up prompts', 'AI search SEO', 'GEO prompt branches'],
+  },
+  {
     id: 20,
     title: 'Agentic AI Search Budget: Which Buyer Prompts Deserve Spend After Google AI Mode?',
     date: '2026-05-23',

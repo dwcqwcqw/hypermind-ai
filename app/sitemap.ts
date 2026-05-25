@@ -71,6 +71,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/resources/blog/`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
 
     // ── Static Blog Articles ──
+    { url: `${baseUrl}/resources/google-ai-mode-follow-up-loops/`, lastModified: '2026-05-25', changeFrequency: 'monthly', priority: 0.95 },
     { url: `${baseUrl}/resources/agentic-ai-search-budget-buyer-prompts/`, lastModified: '2026-05-23', changeFrequency: 'monthly', priority: 0.94 },
     { url: `${baseUrl}/resources/ai-visibility-pricing-citation-source-analysis/`, lastModified: '2026-05-23', changeFrequency: 'monthly', priority: 0.94 },
     { url: `${baseUrl}/resources/ecommerce-geo-agentic-shopping/`, lastModified: '2026-05-21', changeFrequency: 'monthly', priority: 0.94 },
