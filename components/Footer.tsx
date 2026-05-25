@@ -63,6 +63,7 @@ const FOOTER_SECTIONS = [
       { label: 'Pricing', href: '/pricing' },
       { label: 'Compare', href: '/compare' },
       { label: 'Trust & Security', href: '/company/trust' },
+      { label: 'Privacy Policy', href: '/privacy-policy' },
     ],
   },
 ]
