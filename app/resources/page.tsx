@@ -102,11 +102,11 @@ const FEATURED_DECISION_GUIDE = {
 }
 
 const FEATURED_AI_MODE_GUIDE = {
-  title: 'Google AI Mode Follow-Up Loops: Optimize Prompt Branches, Not AI Search Hacks',
-  href: '/resources/google-ai-mode-follow-up-loops',
+  title: 'Profound vs Peec vs Writesonic GEO: Which AI Visibility Platform Needs an Execution Layer?',
+  href: '/resources/profound-peec-writesonic-geo-platforms',
   description:
-    'A Monday AI Mode playbook for mapping follow-up prompts, source eligibility, claim fidelity, and conversion routes.',
-  tag: 'Latest AI Mode Guide',
+    'A Tuesday competitor-comparison guide for choosing AI visibility software and the execution layer needed after dashboards.',
+  tag: 'Latest Comparison Guide',
 }
 
 export default function ResourcesHub() {

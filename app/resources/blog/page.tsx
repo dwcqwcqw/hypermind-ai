@@ -83,6 +83,17 @@ const PAGE_SIZE = 9
 
 const RAW_STATIC: Array<Omit<Article, 'subtopic'>> = [
   {
+    id: 22,
+    title: 'Profound vs Peec vs Writesonic GEO: Which AI Visibility Platform Needs an Execution Layer?',
+    date: '2026-05-26',
+    category: 'geo-strategy',
+    image: '/generated/blog/2026-05-26-profound-peec-writesonic-geo-platforms-cover.png',
+    description:
+      'A Tuesday competitor-comparison guide for choosing between Profound, Peec AI, Writesonic GEO, and an execution-led HyperMind workflow after Google AI Mode.',
+    slug: 'profound-peec-writesonic-geo-platforms',
+    tags: ['Profound', 'Peec AI', 'Writesonic GEO', 'AI visibility platforms', 'GEO software comparison'],
+  },
+  {
     id: 21,
     title: 'Google AI Mode Follow-Up Loops: Optimize Prompt Branches, Not AI Search Hacks',
     date: '2026-05-25',
