@@ -102,11 +102,11 @@ const FEATURED_DECISION_GUIDE = {
 }
 
 const FEATURED_AI_MODE_GUIDE = {
-  title: 'Profound vs Peec vs Writesonic GEO: Which AI Visibility Platform Needs an Execution Layer?',
-  href: '/resources/profound-peec-writesonic-geo-platforms',
+  title: 'Enterprise GEO After AI Mode: Build a Source-Fidelity Operating System',
+  href: '/resources/enterprise-geo-source-fidelity-operating-system',
   description:
-    'A Tuesday competitor-comparison guide for choosing AI visibility software and the execution layer needed after dashboards.',
-  tag: 'Latest Comparison Guide',
+    'A Thursday enterprise GEO playbook for source fidelity, AI citation governance, reusable operating workflows, and AI Mode retesting.',
+  tag: 'Latest Enterprise Guide',
 }
 
 export default function ResourcesHub() {

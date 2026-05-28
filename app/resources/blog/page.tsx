@@ -83,6 +83,17 @@ const PAGE_SIZE = 9
 
 const RAW_STATIC: Array<Omit<Article, 'subtopic'>> = [
   {
+    id: 23,
+    title: 'Enterprise GEO After AI Mode: Build a Source-Fidelity Operating System, Not Another Content Queue',
+    date: '2026-05-28',
+    category: 'geo-strategy',
+    image: '/generated/blog/2026-05-28-reusable-geo-strategy-learning-cover.png',
+    description:
+      'A Thursday enterprise GEO playbook for turning AI Mode volatility, source fidelity, and citation governance into reusable operating workflows.',
+    slug: 'enterprise-geo-source-fidelity-operating-system',
+    tags: ['enterprise GEO', 'source fidelity', 'AI Mode', 'AI citation governance', 'reusable GEO strategy'],
+  },
+  {
     id: 22,
     title: 'Profound vs Peec vs Writesonic GEO: Which AI Visibility Platform Needs an Execution Layer?',
     date: '2026-05-26',
