@@ -71,6 +71,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/resources/blog/`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
 
     // ── Static Blog Articles ──
+    { url: `${baseUrl}/resources/personalized-ai-mode-prompt-intelligence/`, lastModified: '2026-05-29', changeFrequency: 'monthly', priority: 0.95 },
     { url: `${baseUrl}/resources/enterprise-geo-source-fidelity-operating-system/`, lastModified: '2026-05-28', changeFrequency: 'monthly', priority: 0.95 },
     { url: `${baseUrl}/resources/profound-peec-writesonic-geo-platforms/`, lastModified: '2026-05-26', changeFrequency: 'monthly', priority: 0.95 },
     { url: `${baseUrl}/resources/google-ai-mode-follow-up-loops/`, lastModified: '2026-05-25', changeFrequency: 'monthly', priority: 0.95 },

@@ -83,6 +83,17 @@ const PAGE_SIZE = 9
 
 const RAW_STATIC: Array<Omit<Article, 'subtopic'>> = [
   {
+    id: 24,
+    title: 'Personalized AI Mode Prompt Intelligence: Test Context Variants, Not Average Rankings',
+    date: '2026-05-29',
+    category: 'geo-strategy',
+    image: '/generated/blog/2026-05-29-personalized-ai-mode-prompt-intelligence-cover.png',
+    description:
+      'A Friday prompt-intelligence playbook for testing AI Mode personalization, ChatGPT shopping research, Perplexity crawler access, citation fidelity, and context-variant traffic paths.',
+    slug: 'personalized-ai-mode-prompt-intelligence',
+    tags: ['personalized AI search', 'AI Mode', 'prompt intelligence', 'citation source analysis', 'AI search testing'],
+  },
+  {
     id: 23,
     title: 'Enterprise GEO After AI Mode: Build a Source-Fidelity Operating System, Not Another Content Queue',
     date: '2026-05-28',

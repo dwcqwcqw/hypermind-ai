@@ -102,11 +102,11 @@ const FEATURED_DECISION_GUIDE = {
 }
 
 const FEATURED_AI_MODE_GUIDE = {
-  title: 'Enterprise GEO After AI Mode: Build a Source-Fidelity Operating System',
-  href: '/resources/enterprise-geo-source-fidelity-operating-system',
+  title: 'Personalized AI Mode Prompt Intelligence: Test Context Variants',
+  href: '/resources/personalized-ai-mode-prompt-intelligence',
   description:
-    'A Thursday enterprise GEO playbook for source fidelity, AI citation governance, reusable operating workflows, and AI Mode retesting.',
-  tag: 'Latest Enterprise Guide',
+    'A Friday prompt-intelligence playbook for AI Mode personalization, ChatGPT shopping research, crawler access, citation fidelity, and context-variant traffic paths.',
+  tag: 'Latest Prompt Intelligence Guide',
 }
 
 export default function ResourcesHub() {

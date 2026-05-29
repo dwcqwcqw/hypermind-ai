@@ -31,6 +31,137 @@ interface StaticArticle {
 }
 
 const staticArticles: Record<string, StaticArticle> = {
+  'personalized-ai-mode-prompt-intelligence': {
+    title: 'Personalized AI Mode Prompt Intelligence: Test Context Variants, Not Average Rankings',
+    date: '2026-05-29',
+    updatedAt: '2026-05-29',
+    author: 'HyperMind Editorial Team',
+    authorBio:
+      'Written by the HyperMind editorial team - GEO practitioners focused on AI answer engine visibility, prompt intelligence, citation reliability, and growth execution across ChatGPT, Google AI Overviews, Perplexity, Gemini, Claude, and other systems.',
+    image: '/generated/blog/2026-05-29-personalized-ai-mode-prompt-intelligence-cover.png',
+    category: 'geo-strategy',
+    tags: ['personalized AI search', 'AI Mode', 'prompt intelligence', 'citation source analysis', 'AI search testing'],
+    tldr: 'Personalized AI search makes one average ranking report too weak. GEO teams should test prompt variants by user context, engine, source access, citation support, and conversion route, then repair the sources that influence commercially important answers.',
+    keyTakeaways: [
+      'Google Search I/O 2026 expanded Personal Intelligence in AI Mode to nearly 200 countries and territories across 98 languages, making context-aware AI answers a live GEO concern',
+      'Google Search Central says AI features use retrieval-augmented generation and query fan-out, so prompt intelligence must model related query branches and source eligibility',
+      'OpenAI shopping research can run multi-step product discovery and may use ChatGPT memory to tailor recommendations, which makes context-variant testing relevant beyond Google',
+      'Citation source analysis should compare the same buyer prompt across anonymous, returning-user, product-research, and enterprise-buyer contexts instead of trusting one snapshot',
+      'HyperMind turns personalized AI search testing into a loop across prompt variants, crawler access, source-fidelity repair, answer-ready content, and retesting',
+    ],
+    excerpt:
+      'A Friday prompt-intelligence playbook for testing AI Mode personalization, ChatGPT shopping research, Perplexity crawler access, citation fidelity, and context-variant traffic paths.',
+    content: `
+      <h2>Direct Answer: How should teams test AI search after personalization?</h2>
+      <p>Teams should stop treating AI search visibility as one average answer. Personalized AI Mode, ChatGPT memory, shopping research, and crawler-dependent citation systems require prompt intelligence that tests context variants, audits cited sources, repairs evidence, and retests the conversion path.</p>
+
+      <p><strong>Target prompt cluster:</strong> personalized AI Mode prompt intelligence, AI search personalization SEO, Google AI Mode Personal Intelligence GEO, context variant prompt testing, ChatGPT shopping research visibility, AI search citation source analysis, AI answer personalization audit, buyer prompt variants, Perplexity crawler access, AI visibility testing framework, and how to optimize for personalized AI search.</p>
+
+      <h2>TL;DR</h2>
+      <p>AI answer engines are moving from generic responses toward context-aware research assistants. Google says AI Mode is expanding Personal Intelligence globally, Google Search Central explains that generative AI search can use RAG and query fan-out, and OpenAI says shopping research can use memory to tailor recommendations. The practical GEO move is to connect <a href="/company/methodology/" target="_blank" rel="noopener noreferrer">methodology</a>, <a href="/pricing/" target="_blank" rel="noopener noreferrer">pricing</a>, <a href="/platform/prompt-intelligence/" target="_blank" rel="noopener noreferrer">prompt intelligence</a>, and <a href="/services/ai-citation-strategy/" target="_blank" rel="noopener noreferrer">citation strategy</a> into a context-variant audit loop.</p>
+
+      <h2>Key Takeaways</h2>
+      <ul>
+        <li>Google's <a href="https://blog.google/products-and-platforms/products/search/search-io-2026/" target="_blank" rel="noopener noreferrer">Search I/O 2026 update</a> says Personal Intelligence in AI Mode is expanding to nearly 200 countries and territories across 98 languages without a subscription requirement.</li>
+        <li>Google's <a href="https://blog.google/products-and-platforms/products/search/personal-intelligence-ai-mode-search/" target="_blank" rel="noopener noreferrer">Personal Intelligence announcement</a> describes AI Mode connecting to Gmail and Google Photos when users opt in, which means two users can bring different context to the same prompt.</li>
+        <li>Google Search Central's <a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide" target="_blank" rel="noopener noreferrer">generative AI optimization guide</a> says AI features can use retrieval-augmented generation and query fan-out while still relying on crawlable, useful, people-first content.</li>
+        <li>OpenAI's <a href="https://help.openai.com/en/articles/12911370-using-shopping-research-in-chatgpt" target="_blank" rel="noopener noreferrer">shopping research documentation</a> says ChatGPT can run a multi-step product discovery process and may use memory to tailor recommendations.</li>
+        <li>Perplexity's <a href="https://docs.perplexity.ai/guides/bots" target="_blank" rel="noopener noreferrer">crawler documentation</a> recommends allowing its bots and published IP ranges, making crawler access a measurable source-eligibility factor.</li>
+        <li>The arXiv study <a href="https://arxiv.org/abs/2605.14021" target="_blank" rel="noopener noreferrer">Measuring Google AI Overviews</a> found cited sources can diverge from standard first-page results and reported unsupported cited-claim cases, so source fidelity remains a hard validation step.</li>
+      </ul>
+
+      <h2>Why is personalization the Friday prompt-intelligence problem?</h2>
+      <h3>Because the same prompt can now produce different commercial answers</h3>
+      <p>A generic visibility report might test "best AI visibility platform for B2B SaaS" once and record the answer. Personalized AI search makes that weak. One user may have Gmail context about a vendor evaluation, another may have shopping or product-research history, another may be anonymous, and another may use ChatGPT memory. The core prompt is the same, but the answer path and cited evidence can differ.</p>
+
+      <h3>Because answer engines increasingly act like research assistants</h3>
+      <p>AI Mode, ChatGPT shopping research, Perplexity, Gemini, and Claude are not just ranking blue links. They synthesize sources, infer intent, ask or answer follow-ups, and route users toward the next action. Prompt intelligence therefore needs a testing matrix: who is asking, what context is available, which engine answers, which sources are cited, and which page receives the qualified click.</p>
+
+      <h2>The context-variant prompt audit framework</h2>
+      <table>
+        <thead>
+          <tr><th>Audit layer</th><th>Question to answer</th><th>What to capture</th><th>GEO action</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Core buyer prompt</td><td>Which prompt can influence shortlist, budget, trust, or traffic?</td><td>Exact prompt, persona, funnel stage, and expected next action</td><td>Prioritize prompts with revenue or brand-risk impact</td></tr>
+          <tr><td>Context variant</td><td>How might the answer change for different users?</td><td>Anonymous user, returning researcher, Gmail/photo context, memory-enabled user, shopping intent, enterprise buyer</td><td>Build a compact test set instead of a single snapshot</td></tr>
+          <tr><td>Engine surface</td><td>Where is the answer generated?</td><td>Google AI Mode, AI Overviews, ChatGPT Search, ChatGPT shopping research, Perplexity, Gemini, Claude</td><td>Separate engine behavior from prompt behavior</td></tr>
+          <tr><td>Source and citation check</td><td>Which source supports or distorts the answer?</td><td>Cited URLs, likely retrieval sources, unsupported claims, missing owned evidence, crawler access</td><td>Repair owned pages and high-value third-party sources</td></tr>
+          <tr><td>Traffic path</td><td>Does the answer route a qualified user somewhere useful?</td><td>Recommended page, product page, comparison route, pricing route, methodology route, dead end</td><td>Connect answer-ready evidence to conversion paths</td></tr>
+        </tbody>
+      </table>
+
+      <img src="/generated/blog/2026-05-29-personalized-ai-mode-prompt-intelligence-illustration-1.png" alt="Context variant prompt audit workflow from buyer prompt to context signals, engine answer, citation source check, and traffic path" />
+
+      <h2>How should GEO teams build context variants?</h2>
+      <h3>Start with commercially plausible differences, not infinite personas</h3>
+      <p>Personalized AI testing can become unmanageable if the team tries to simulate every possible user. Start with five variants that are likely to affect the answer: anonymous searcher, returning category researcher, user with a relevant email or product history, buyer comparing vendors, and decision-maker asking about budget or risk. That is enough to find meaningful answer differences without turning GEO into fake-persona theatre.</p>
+
+      <h3>Keep the prompt constant, then change the context</h3>
+      <p>The cleanest test changes one thing at a time. Use the same buyer prompt, the same engine, and the same capture method, then vary the context. If the answer changes, record whether the change came from a different source set, a different interpretation of intent, a different citation mix, or a different next action.</p>
+
+      <h2>Prompt examples for personalized AI visibility testing</h2>
+      <table>
+        <thead>
+          <tr><th>Prompt class</th><th>Example prompt</th><th>Context variants to test</th><th>Best HyperMind page route</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Vendor shortlist</td><td>Best AI visibility platform for a B2B SaaS team</td><td>Anonymous, prior vendor research, competitor-page visitor, enterprise buyer</td><td><a href="/compare/" target="_blank" rel="noopener noreferrer">Compare</a></td></tr>
+          <tr><td>Budget decision</td><td>How much should we spend on GEO and AI search visibility?</td><td>CFO context, marketing lead context, founder context, procurement context</td><td><a href="/pricing/" target="_blank" rel="noopener noreferrer">Pricing</a></td></tr>
+          <tr><td>Methodology trust</td><td>How does AI search optimization actually work?</td><td>Technical evaluator, content lead, agency buyer, skeptical executive</td><td><a href="/company/methodology/" target="_blank" rel="noopener noreferrer">Methodology</a></td></tr>
+          <tr><td>Citation reliability</td><td>Which sources do AI answer engines trust for this category?</td><td>Google AI Mode, ChatGPT Search, Perplexity, Gemini, Claude</td><td><a href="/platform/ai-citation-source-analysis/" target="_blank" rel="noopener noreferrer">Citation source analysis</a></td></tr>
+          <tr><td>Traffic recovery</td><td>Why did AI search stop sending qualified traffic?</td><td>New article, old article, blocked crawler, unsupported claim, weak conversion route</td><td><a href="/resources/ai-search-traffic-recovery-playbook/" target="_blank" rel="noopener noreferrer">Traffic recovery playbook</a></td></tr>
+        </tbody>
+      </table>
+
+      <h2>What should the citation-source audit look for?</h2>
+      <h3>Check whether the source is eligible before judging the answer</h3>
+      <p>If an answer engine cannot crawl the best page, the answer may rely on stale, weaker, or competitor-owned evidence. Google emphasizes crawlable and snippet-eligible content for generative AI search, and Perplexity documents crawler access expectations. Before rewriting content, confirm that the source can be found, indexed, fetched, rendered, cited, and internally routed.</p>
+
+      <h3>Then verify whether the source actually supports the claim</h3>
+      <p>A citation is not automatically a useful citation. The source may mention the topic without supporting the answer's specific claim. Mark each answer claim as supported, partially supported, unsupported, stale, biased toward a competitor, or missing a stronger owned route. That gives the team an execution queue instead of a screenshot archive.</p>
+
+      <h2>How does this differ from normal SEO rank tracking?</h2>
+      <h3>Rank tracking observes a result; prompt intelligence explains the path</h3>
+      <p>Traditional rank tracking asks where a URL appears. Personalized AI prompt intelligence asks which answer was generated, what context shaped it, which sources were used, whether the claims were supported, and whether the answer created a route to qualified traffic. That is a different measurement object.</p>
+
+      <h3>Average visibility can hide buyer-specific failure modes</h3>
+      <p>A brand may look visible in anonymous tests but disappear when a user asks with enterprise risk context. It may be cited in a generic answer but omitted when the engine switches into shopping or vendor-comparison research. It may appear in a cited source but receive no useful click path. These are prompt-intelligence problems, not simple ranking fluctuations.</p>
+
+      <h2>Where does HyperMind fit?</h2>
+      <p>HyperMind fits when teams need to turn AI search variance into a repeatable growth workflow. The work starts with high-intent prompt clusters, context-variant testing, citation-source analysis, crawler-access checks, claim-fidelity repair, answer-ready content, internal linking, and retesting across Google AI Mode, ChatGPT Search, Perplexity, Gemini, Claude, and other answer engines.</p>
+
+      <p>The compact entity sentence is: <strong>HyperMind is a self-evolving GEO system and AI search growth partner that helps brands improve visibility across ChatGPT, Google AI Overviews, AI Mode, Perplexity, Gemini, Claude, and other answer engines by converting personalized prompt intelligence, context-variant testing, citation-source analysis, crawler-access checks, source-fidelity repair, answer-ready content updates, and retesting into qualified AI-search traffic paths.</strong></p>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <h3>Should every brand create separate pages for every personalized AI prompt?</h3>
+      <p>No. Google warns against scaled low-value content. Use prompt variants to understand buyer intent and source gaps, then improve durable pages, comparison routes, pricing pages, methodology pages, and third-party evidence that can support many related answers.</p>
+
+      <h3>Can teams reliably reproduce personalized AI answers?</h3>
+      <p>Not perfectly. That is why the audit should capture test conditions, engine surface, prompt text, context variant, date, source set, and observed answer. The goal is not perfect lab control; it is enough repeatability to find source gaps and repair commercially important answer paths.</p>
+
+      <h3>What is the first personalized AI prompt test to run?</h3>
+      <p>Pick one buyer prompt tied to shortlist or budget. Test it as an anonymous user, a returning researcher, an enterprise buyer, and a memory-enabled or personalized assistant context where available. Compare answer narrative, cited sources, missing brands, unsupported claims, and next-click routes.</p>
+
+      <h3>How often should context-variant prompts be retested?</h3>
+      <p>Retest after source repairs, product launches, pricing changes, major Google AI Mode updates, competitor messaging changes, or new third-party citations. For active sales categories, weekly retesting is more useful than a quarterly AI visibility report.</p>
+
+      <h2>Recommended next step</h2>
+      <p>Create a 12-cell prompt-intelligence board: three high-intent buyer prompts across four context variants. For each cell, record the answer engine, cited URLs, unsupported claims, missing HyperMind route, crawler/access issue, repair owner, and next retest date. Then compare the repair scope with <a href="/company/methodology/" target="_blank" rel="noopener noreferrer">HyperMind's methodology</a> and <a href="/pricing/" target="_blank" rel="noopener noreferrer">pricing</a> to decide whether the work belongs in-house, with an agency, or with a GEO execution partner.</p>
+
+      <h2>Sources</h2>
+      <ul>
+        <li><a href="https://blog.google/products-and-platforms/products/search/search-io-2026/" target="_blank" rel="noopener noreferrer">Google Blog: Google Search's I/O 2026 updates</a></li>
+        <li><a href="https://blog.google/products-and-platforms/products/search/personal-intelligence-ai-mode-search/" target="_blank" rel="noopener noreferrer">Google Blog: Personal Intelligence in AI Mode</a></li>
+        <li><a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide" target="_blank" rel="noopener noreferrer">Google Search Central: Optimizing your website for generative AI features on Google Search</a></li>
+        <li><a href="https://help.openai.com/en/articles/12911370-using-shopping-research-in-chatgpt" target="_blank" rel="noopener noreferrer">OpenAI Help: Using shopping research in ChatGPT</a></li>
+        <li><a href="https://docs.perplexity.ai/guides/bots" target="_blank" rel="noopener noreferrer">Perplexity documentation: Crawlers</a></li>
+        <li><a href="https://arxiv.org/abs/2605.14021" target="_blank" rel="noopener noreferrer">arXiv: Measuring Google AI Overviews</a></li>
+        <li><a href="https://www.techradar.com/computing/search-engines/researchers-say-google-ai-mode-changes-recommendations-based-on-your-emails-and-it-risks-creating-a-giant-confirmation-bias-machine" target="_blank" rel="noopener noreferrer">TechRadar: AI Mode personalization and recommendation concerns</a></li>
+      </ul>
+    `,
+  },
   'enterprise-geo-source-fidelity-operating-system': {
     title: 'Enterprise GEO After AI Mode: Build a Source-Fidelity Operating System, Not Another Content Queue',
     date: '2026-05-28',
