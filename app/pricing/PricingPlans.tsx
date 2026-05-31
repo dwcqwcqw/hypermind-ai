@@ -28,7 +28,7 @@ const PRICING_TIERS: PricingTier[] = [
     monthlyNote: '2,000 trial credits on sign-up',
     yearlyNote: 'One-time grant, valid for one year',
     creditLine: '2,000 trial credits',
-    cta: 'Current Plan',
+    cta: 'Get Started',
     included: [
       'AI GEO diagnostics',
       'Competitor tracking',
@@ -57,7 +57,7 @@ const PRICING_TIERS: PricingTier[] = [
     monthlyNote: 'per month',
     yearlyNote: 'per month, billed yearly at $950',
     creditLine: '30,000 credits / month',
-    cta: 'Upgrade',
+    cta: 'Get Started',
     highlighted: true,
     included: [
       'Everything in Free',
@@ -89,7 +89,7 @@ const PRICING_TIERS: PricingTier[] = [
     monthlyNote: 'per month',
     yearlyNote: 'per month, billed yearly at $2,870',
     creditLine: '100,000 credits / month, lower unit cost',
-    cta: 'Upgrade',
+    cta: 'Get Started',
     included: [
       'Everything in Pro',
       'Unlimited projects',
@@ -356,8 +356,8 @@ export default function PricingPlans() {
                 a: 'Credits measure AI work. Prompt analysis, visibility scans, reports, and content generation consume credits based on complexity.',
               },
               {
-                q: 'Can I change plans?',
-                a: 'Yes. Upgrades take effect immediately; downgrades apply after the current billing cycle.',
+                q: 'Can I choose a plan after contacting the team?',
+                a: 'Yes. Start from the form and our team will help match the right membership or Enterprise scope to your goals.',
               },
               {
                 q: 'Do free credits roll over?',
