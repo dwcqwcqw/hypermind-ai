@@ -102,11 +102,11 @@ const FEATURED_DECISION_GUIDE = {
 }
 
 const FEATURED_AI_MODE_GUIDE = {
-  title: 'Personalized AI Mode Prompt Intelligence: Test Context Variants',
-  href: '/resources/personalized-ai-mode-prompt-intelligence',
+  title: 'AI Search Traffic Firewall Check: Crawlable Answers',
+  href: '/resources/ai-search-traffic-firewall-check',
   description:
-    'A Friday prompt-intelligence playbook for AI Mode personalization, ChatGPT shopping research, crawler access, citation fidelity, and context-variant traffic paths.',
-  tag: 'Latest Prompt Intelligence Guide',
+    'A Sunday GEO playbook for crawler access, source fidelity, answer routes, and retesting before teams rewrite content.',
+  tag: 'Latest Traffic Playbook',
 }
 
 export default function ResourcesHub() {

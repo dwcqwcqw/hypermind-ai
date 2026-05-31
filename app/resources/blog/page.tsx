@@ -83,6 +83,28 @@ const PAGE_SIZE = 9
 
 const RAW_STATIC: Array<Omit<Article, 'subtopic'>> = [
   {
+    id: 26,
+    title: 'AI Search Traffic Firewall Check: The Sunday GEO Playbook for Crawlable Answers',
+    date: '2026-05-31',
+    category: 'geo-strategy',
+    image: '/generated/blog/2026-05-31-ai-search-traffic-firewall-check-cover.png',
+    description:
+      'A Sunday AI search traffic playbook for checking crawler access, source fidelity, answer routes, and retesting before teams rewrite content for Google AI Mode, ChatGPT Search, Perplexity, Gemini, and Claude.',
+    slug: 'ai-search-traffic-firewall-check',
+    tags: ['AI search traffic', 'crawler access', 'AI Mode', 'ChatGPT Search', 'Perplexity citations'],
+  },
+  {
+    id: 25,
+    title: 'AI Visibility Source-Trust Budget: Which Preferred-Source Prompts Deserve Spend?',
+    date: '2026-05-30',
+    category: 'geo-strategy',
+    image: '/generated/blog/2026-05-30-ai-visibility-source-trust-budget-cover.png',
+    description:
+      'A Saturday buyer-decision guide for funding AI visibility work around Preferred Sources, Highly Cited labels, source trust, citation fidelity, and qualified AI-search traffic paths.',
+    slug: 'ai-visibility-source-trust-budget',
+    tags: ['AI visibility budget', 'Preferred Sources', 'AI Mode', 'source trust', 'buyer-decision prompts'],
+  },
+  {
     id: 24,
     title: 'Personalized AI Mode Prompt Intelligence: Test Context Variants, Not Average Rankings',
     date: '2026-05-29',
