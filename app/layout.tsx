@@ -143,10 +143,19 @@ gtag('config', 'G-VGPY1N4763');
           strategy="lazyOnload"
         />
         <Script id="wsAiSeoInitScript" strategy="lazyOnload">
-          {`wsSEOfixer.configure({
-            hostURL: 'https://seo-fixer.writesonic.com',
-            siteID: '69bf80b396e413f1736f2705'
-          });`}
+          {`
+            (function configureWsSeoFixer() {
+              if (window.wsSEOfixer && typeof window.wsSEOfixer.configure === 'function') {
+                window.wsSEOfixer.configure({
+                  hostURL: 'https://seo-fixer.writesonic.com',
+                  siteID: '69bf80b396e413f1736f2705'
+                });
+                return;
+              }
+
+              window.setTimeout(configureWsSeoFixer, 500);
+            })();
+          `}
         </Script>
         <Script
           src="https://analytics.ahrefs.com/analytics.js"

@@ -7,13 +7,13 @@ import type { Metadata } from 'next'
 export const revalidate = 3600
 
 export const metadata: Metadata = {
-  title: 'GEO Pricing & AI Visibility Plans',
+  title: 'Membership & Credit Plans',
   description:
-    'HyperMind pricing starts at $79/month for AI visibility monitoring, with GEO execution and enterprise managed traffic operations for social, content, and growth teams.',
+    'HyperMind membership and credit plans include Free trial credits, Pro AI visibility growth, Max high-frequency monitoring, and Enterprise managed GEO, SEO, and social operations.',
   openGraph: {
-    title: 'Pricing — High-Value GEO Agency & Platform Plans | HyperMind',
+    title: 'Membership & Credit Plans | HyperMind',
     description:
-      'Explore HyperMind\'s GEO and managed growth plans — from AI visibility monitoring to full-service AI search optimization and enterprise traffic operations.',
+      'Compare HyperMind Free, Pro, Max, and Enterprise plans with monthly and yearly pricing, credit allowances, prompt capacity, AI engines, and managed growth services.',
     url: 'https://hypermindgeo.com/pricing',
     siteName: 'HyperMind',
   },
@@ -25,112 +25,141 @@ export const metadata: Metadata = {
 interface PricingTier {
   name: string
   tagline: string
-  price: string
-  unit: string
-  priceNote: string
-  features: string[]
+  monthlyPrice: string
+  yearlyPrice: string
+  monthlyNote: string
+  yearlyNote: string
+  creditLine: string
+  cta: string
   highlighted?: boolean
+  included: string[]
+  unavailable?: string[]
 }
 
 const PRICING_TIERS: PricingTier[] = [
   {
-    name: 'Monitor',
-    tagline: 'Affordable AI visibility tracking for focused teams',
-    price: '$79',
-    unit: '/mo',
-    priceNote: 'Start here before paying enterprise-tool prices.',
-    features: [
-      'Track 100 priority prompts',
-      'AI mention monitoring across 5 platforms',
-      'Weekly AI visibility report',
-      'Sentiment and answer framing review',
-      'Competitor tracking for 3 competitors',
-      'Citation source gap analysis',
+    name: 'Free',
+    tagline: 'Trial credits for new users',
+    monthlyPrice: 'Free',
+    yearlyPrice: 'Free',
+    monthlyNote: '2,000 trial credits on sign-up',
+    yearlyNote: 'One-time grant, valid for one year',
+    creditLine: '2,000 trial credits',
+    cta: 'Current Plan',
+    included: [
+      'AI GEO diagnostics',
+      'Competitor tracking',
+      'Content gap analysis',
+      'Basic keyword research',
+      'Up to 1 project',
+      '1 market per project',
+      '50 prompts',
+      'Up to 1 AI engine per project',
+      '2,000 trial credits',
+      'Trial credits valid for one year',
+      'Community support',
+    ],
+    unavailable: [
+      'Advanced skills',
+      'More project capacity',
+      'More prompt capacity',
+      'Priority processing',
     ],
   },
   {
-    name: 'Optimize',
-    tagline: 'Strategy, prompt testing, and page recommendations',
-    price: '$249',
-    unit: '/mo',
-    priceNote: 'Built to beat bundled content tools on GEO value.',
-    features: [
-      'Everything in Monitoring, plus:',
-      'Track 500 priority prompts',
-      'Full 9+ platform AI monitoring',
-      'Monthly GEO action roadmap',
-      'Prompt cluster and buyer journey mapping',
-      'Competitor tracking for 8 competitors',
-      'Citation source prioritization',
-      'Monthly strategy call',
-    ],
-  },
-  {
-    name: 'Growth Agency',
-    tagline: 'Done-for-you GEO execution without enterprise lock-in',
-    price: '$799',
-    unit: '/mo',
-    priceNote: 'Execution included, not just another dashboard.',
+    name: 'Pro',
+    tagline: 'Core toolkit for AI visibility growth',
+    monthlyPrice: '$99',
+    yearlyPrice: '$79',
+    monthlyNote: 'per month',
+    yearlyNote: 'per month, billed yearly at $950',
+    creditLine: '30,000 credits / month',
+    cta: 'Upgrade',
     highlighted: true,
-    features: [
-      'Everything in GEO Strategy, plus:',
-      'Dedicated GEO strategist',
-      '4 answer-ready content briefs or updates per month',
-      'Citation outreach and source development',
-      'Technical crawl and schema recommendations',
-      'Knowledge graph optimization',
-      'Biweekly model answer testing',
-      'Competitor tracking for 15 competitors',
-      'AI narrative improvement backlog',
+    included: [
+      'Everything in Free',
+      'AI visibility performance analysis',
+      'Website health and technical audit',
+      'Ongoing AI visibility monitoring',
+      'Growth strategy and action plan generation',
+      'GEO and SEO content production',
+      'Executive summary reports',
+      'Up to 3 projects',
+      '1 market per project',
+      '50 prompts',
+      'Up to 3 AI engines per project',
+      '30,000 credits / month',
+      'Add credits while membership is active',
+      'Priority email support',
+    ],
+    unavailable: [
+      'Unlimited projects',
+      '200-prompt capacity',
+      'Dedicated account manager',
     ],
   },
   {
-    name: 'Scale',
-    tagline: 'Custom GEO + managed traffic operations',
-    price: 'Custom',
-    unit: '',
-    priceNote: 'For teams that need AI visibility, social operations, content production, and growth execution.',
-    features: [
-      'Everything in Growth Agency, plus:',
-      'Multi-brand / multi-product GEO support',
-      'Dedicated traffic operations experts',
-      'Copywriting, publishing, and social account management',
-      'Text, image, short-form video, and campaign asset production',
-      'TikTok, YouTube, Instagram, and cross-channel operations',
-      'Organic content calendar and growth experiments',
-      'Unlimited competitor tracking',
-      'Weekly strategy syncs',
-      'Custom reporting across AI visibility, traffic, new users, and orders',
-      'Global / multi-language governance',
+    name: 'Max',
+    tagline: 'Advanced workspace for high-frequency growth teams',
+    monthlyPrice: '$299',
+    yearlyPrice: '$239',
+    monthlyNote: 'per month',
+    yearlyNote: 'per month, billed yearly at $2,870',
+    creditLine: '100,000 credits / month, lower unit cost',
+    cta: 'Upgrade',
+    included: [
+      'Everything in Pro',
+      'Unlimited projects',
+      'Up to 200 prompts per project',
+      'Up to 3 AI engines per project',
+      '100,000 credits / month, lower unit cost',
+      'Add credits while membership is active',
+      '20 GB file storage',
+      'Dedicated account manager',
+      'Priority processing queue',
+    ],
+  },
+  {
+    name: 'Enterprise',
+    tagline: 'Set the growth target. We make it happen.',
+    monthlyPrice: 'Custom',
+    yearlyPrice: 'Custom',
+    monthlyNote: 'tiered pricing by delivery complexity',
+    yearlyNote: 'annual scopes available for managed operations',
+    creditLine: 'Custom GEO, SEO, and social operations',
+    cta: 'Talk to Sales',
+    included: [
+      'You set the growth target; our ops team delivers it',
+      'No self-serve system work required',
+      'Managed GEO and SEO optimization steps',
+      'Managed social content, publishing, and account operations',
+      'Tiered custom quote based on target difficulty',
+      'Private audience operations and conversion support',
+      'Cross-platform growth reviews, optimization, and execution',
+      'Dedicated account and delivery management',
     ],
   },
 ]
 
 const FEATURE_COMPARISON = [
-  { feature: 'AI Visibility Score', tiers: [true, true, true, true] },
-  { feature: 'Tracked Prompts', tiers: ['100', '500', '1,500', 'Custom'] },
-  { feature: 'AI Mention Tracking', tiers: ['5 platforms', '9+ platforms', '9+ platforms', '9+ platforms'] },
-  { feature: 'Competitor Tracking', tiers: ['3', '8', '15', 'Unlimited'] },
-  { feature: 'Sentiment Analysis', tiers: [true, 'Advanced', 'Advanced', 'Advanced'] },
-  { feature: 'Prompt Intelligence', tiers: ['Core', true, true, true] },
-  { feature: 'Citation Source Analysis', tiers: [false, true, true, true] },
-  { feature: 'GEO Action Roadmap', tiers: [false, true, true, true] },
-  { feature: 'Content Optimization', tiers: [false, false, true, true] },
-  { feature: 'Citation Building', tiers: [false, false, true, true] },
-  { feature: 'Dedicated Strategist', tiers: [false, false, true, true] },
-  { feature: 'Knowledge Graph Optimization', tiers: [false, false, true, true] },
-  { feature: 'Managed Social Operations', tiers: [false, false, false, true] },
-  { feature: 'Multi-Format Content Production', tiers: [false, false, false, true] },
-  { feature: 'TikTok / YouTube / Instagram Operations', tiers: [false, false, false, true] },
-  { feature: 'Traffic, User, and Order Growth Reporting', tiers: [false, false, false, true] },
-  { feature: 'Multi-Brand Support', tiers: [false, false, false, true] },
-  { feature: 'Custom Integrations', tiers: [false, false, false, true] },
+  { feature: 'Projects', tiers: ['1', '3', 'Unlimited', 'Custom'] },
+  { feature: 'Markets per project', tiers: ['1', '1', 'Custom', 'Custom'] },
+  { feature: 'Prompt capacity', tiers: ['50', '50', '200 per project', 'Custom'] },
+  { feature: 'AI engines per project', tiers: ['1', '3', '3', 'Custom'] },
+  { feature: 'Credits', tiers: ['2,000 trial credits', '30,000 / month', '100,000 / month', 'Custom'] },
+  { feature: 'AI visibility monitoring', tiers: ['Diagnostics', true, true, true] },
+  { feature: 'Website technical audit', tiers: [false, true, true, true] },
+  { feature: 'Growth strategy generation', tiers: [false, true, true, true] },
+  { feature: 'GEO and SEO content production', tiers: [false, true, true, true] },
+  { feature: 'Managed social operations', tiers: [false, false, false, true] },
+  { feature: 'Dedicated account manager', tiers: [false, false, true, true] },
+  { feature: 'Priority processing', tiers: [false, false, true, true] },
 ]
 
 function renderTierValue(value: boolean | string) {
   if (value === true) {
     return (
-      <svg className="w-5 h-5 text-black mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+      <svg className="w-5 h-5 text-emerald-600 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
       </svg>
     )
@@ -139,6 +168,24 @@ function renderTierValue(value: boolean | string) {
     return <span className="text-gray-300">—</span>
   }
   return <span className="text-sm text-gray-700">{value}</span>
+}
+
+function CheckIcon({ muted = false }: { muted?: boolean }) {
+  return (
+    <svg
+      className={`w-4 h-4 mt-0.5 shrink-0 ${muted ? 'text-gray-300' : 'text-emerald-600'}`}
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      strokeWidth={2}
+    >
+      {muted ? (
+        <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
+      ) : (
+        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+      )}
+    </svg>
+  )
 }
 
 export default function PricingPage() {
@@ -163,113 +210,116 @@ export default function PricingPage() {
         }}
       />
 
-      {/* Hero */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
+          <p className="text-xs font-bold tracking-[0.2em] text-gray-500 uppercase mb-4">
+            Membership & Credits
+          </p>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-black mb-6">
-            GEO Pricing Built for Better ROI
+            Membership & Credit Plans
           </h1>
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            HyperMind gives teams a lower-cost way to monitor, test, and improve AI visibility without buying an enterprise-only dashboard or a bundled writing suite. Start with focused monitoring, then add strategy, done-for-you GEO execution, and enterprise traffic operations as the opportunity proves itself.
+            New users receive 2,000 one-time trial credits valid for one year. Max supports self-serve upgrades; Enterprise lets you set the growth target while our operations team executes GEO, SEO, and managed social operations with tiered custom pricing by target difficulty.
           </p>
-          <p className="mt-6 text-sm text-gray-500">
-            Public competitor pricing often starts around $199-$499/month for serious GEO features, with enterprise plans commonly much higher. HyperMind keeps the entry plan lean and puts budget into actions that can improve mentions, citations, and recommendations.
-          </p>
+          <div className="mt-8 inline-flex flex-wrap items-center justify-center gap-2 rounded-xl border border-gray-200 bg-gray-50 p-1 text-sm font-medium text-gray-700">
+            <span className="rounded-lg bg-white px-4 py-2 shadow-sm">Monthly</span>
+            <span className="rounded-lg px-4 py-2">Yearly <span className="text-emerald-600">Save 20%</span></span>
+          </div>
         </div>
       </section>
 
-      {/* Pricing Cards */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section className="pb-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
             {PRICING_TIERS.map((tier) => (
               <div
                 key={tier.name}
-                className={`rounded-2xl p-8 flex flex-col ${
+                className={`relative rounded-2xl p-6 flex flex-col border ${
                   tier.highlighted
-                    ? 'bg-black text-white border-2 border-black'
-                    : 'bg-white border border-gray-200'
+                    ? 'bg-white border-violet-500 shadow-[0_0_0_1px_rgba(139,92,246,0.35),0_24px_70px_rgba(124,58,237,0.16)]'
+                    : 'bg-white border-gray-200'
                 }`}
               >
-                <h3 className={`text-xl font-bold mb-2 ${tier.highlighted ? 'text-white' : 'text-black'}`}>
-                  {tier.name}
-                </h3>
-                <p className={`text-sm mb-6 ${tier.highlighted ? 'text-gray-300' : 'text-gray-600'}`}>
-                  {tier.tagline}
-                </p>
-                <div className={`mb-3 ${tier.highlighted ? 'text-white' : 'text-black'}`}>
-                  <span className="text-4xl font-bold">{tier.price}</span>
-                  {tier.unit && <span className="text-base font-medium opacity-70">{tier.unit}</span>}
+                {tier.highlighted && (
+                  <div className="absolute -top-3 right-5 rounded-full bg-violet-600 px-3 py-1 text-xs font-bold text-white">
+                    Popular
+                  </div>
+                )}
+                <h3 className="text-2xl font-bold text-black mb-2">{tier.name}</h3>
+                <p className="text-sm text-gray-500 min-h-[40px]">{tier.tagline}</p>
+
+                <div className="mt-6 grid grid-cols-1 gap-3">
+                  <div className="rounded-xl border border-gray-200 p-4">
+                    <div className="text-xs font-semibold uppercase tracking-wide text-gray-500">Monthly</div>
+                    <div className="mt-2 flex items-end gap-1 text-black">
+                      <span className="text-4xl font-bold">{tier.monthlyPrice}</span>
+                      {tier.monthlyPrice.startsWith('$') && <span className="pb-1 text-sm text-gray-500">/mo</span>}
+                    </div>
+                    <p className="mt-2 text-xs text-gray-500">{tier.monthlyNote}</p>
+                  </div>
+                  <div className="rounded-xl border border-emerald-200 bg-emerald-50/60 p-4">
+                    <div className="text-xs font-semibold uppercase tracking-wide text-emerald-700">Yearly</div>
+                    <div className="mt-2 flex items-end gap-1 text-black">
+                      <span className="text-4xl font-bold">{tier.yearlyPrice}</span>
+                      {tier.yearlyPrice.startsWith('$') && <span className="pb-1 text-sm text-gray-500">/mo</span>}
+                    </div>
+                    <p className="mt-2 text-xs text-gray-600">{tier.yearlyNote}</p>
+                  </div>
                 </div>
-                <div className={`text-xs leading-relaxed mb-6 ${tier.highlighted ? 'text-gray-300' : 'text-gray-500'}`}>
-                  {tier.priceNote}
-                </div>
-                <ul className="space-y-3 mb-8 flex-1">
-                  {tier.features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-2.5">
-                      <svg
-                        className={`w-4 h-4 mt-0.5 shrink-0 ${tier.highlighted ? 'text-white' : 'text-black'}`}
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth={2}
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className={`text-sm ${tier.highlighted ? 'text-gray-200' : 'text-gray-600'}`}>
-                        {feature}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
+
+                <p className="mt-4 text-sm font-semibold text-violet-700">{tier.creditLine}</p>
                 <a
                   href="https://forms.gle/QA6WWgN4cpRHW5VF7"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`block text-center px-6 py-3 rounded-lg text-sm font-medium transition ${
+                  className={`mt-6 block rounded-lg px-5 py-3 text-center text-sm font-bold transition ${
                     tier.highlighted
-                      ? 'bg-white text-black hover:bg-gray-100'
-                      : 'bg-black text-white hover:bg-gray-800'
+                      ? 'bg-violet-600 text-white hover:bg-violet-700'
+                      : tier.name === 'Free'
+                        ? 'border border-gray-200 bg-gray-50 text-gray-700 hover:bg-gray-100'
+                        : 'bg-black text-white hover:bg-gray-800'
                   }`}
                 >
-                  {tier.price === 'Custom' ? 'Talk to Sales' : 'Start with Audit'}
+                  {tier.cta}
                 </a>
-              </div>
-            ))}
-          </div>
-          <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4">
-            {[
-              ['Lower entry price', 'Monitor starts below the common GEO-feature price floor, so teams can validate demand before scaling spend.'],
-              ['Execution over dashboards', 'Growth Agency includes briefs, citation work, technical recommendations, and repeated model testing.'],
-              ['Enterprise growth operations', 'Scale adds expert-led social operations, content production, and cross-channel publishing for teams that need traffic, users, and order growth support.'],
-            ].map(([title, body]) => (
-              <div key={title} className="bg-white border border-gray-200 rounded-xl p-5">
-                <h3 className="text-sm font-bold text-black mb-2">{title}</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">{body}</p>
+
+                <ul className="mt-6 space-y-3 flex-1">
+                  {tier.included.map((feature) => (
+                    <li key={feature} className="flex items-start gap-2.5">
+                      <CheckIcon />
+                      <span className="text-sm text-gray-700">{feature}</span>
+                    </li>
+                  ))}
+                  {tier.unavailable?.map((feature) => (
+                    <li key={feature} className="flex items-start gap-2.5">
+                      <CheckIcon muted />
+                      <span className="text-sm text-gray-400">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Feature Comparison Table */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-black mb-4">
-              Feature Comparison
+              Plan Limits and Service Coverage
             </h2>
             <p className="text-lg text-gray-600">
-              See exactly what&apos;s included in each plan.
+              Compare credits, projects, prompt capacity, AI engines, and managed operations.
             </p>
           </div>
-          <div className="overflow-x-auto">
+          <div className="overflow-x-auto rounded-2xl border border-gray-200 bg-white">
             <table className="w-full border-collapse">
               <thead>
                 <tr className="border-b border-gray-200">
-                  <th className="text-left py-4 pr-4 text-sm font-medium text-gray-500 w-1/3">Feature</th>
+                  <th className="text-left py-4 px-5 text-sm font-medium text-gray-500 w-1/3">Feature</th>
                   {PRICING_TIERS.map((tier) => (
-                    <th key={tier.name} className="py-4 px-4 text-sm font-bold text-black text-center">
+                    <th key={tier.name} className="py-4 px-5 text-sm font-bold text-black text-center">
                       {tier.name}
                     </th>
                   ))}
@@ -277,10 +327,10 @@ export default function PricingPage() {
               </thead>
               <tbody>
                 {FEATURE_COMPARISON.map((row) => (
-                  <tr key={row.feature} className="border-b border-gray-100">
-                    <td className="py-4 pr-4 text-sm text-gray-700">{row.feature}</td>
+                  <tr key={row.feature} className="border-b border-gray-100 last:border-0">
+                    <td className="py-4 px-5 text-sm text-gray-700">{row.feature}</td>
                     {row.tiers.map((value, i) => (
-                      <td key={i} className="py-4 px-4 text-center">
+                      <td key={i} className="py-4 px-5 text-center">
                         {renderTierValue(value)}
                       </td>
                     ))}
@@ -292,39 +342,30 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-black mb-4">
-              Frequently Asked Questions
+              FAQ
             </h2>
           </div>
           <div className="space-y-8">
             {[
               {
-                q: 'Why is HyperMind priced lower than many AI visibility platforms?',
-                a: 'HyperMind is designed for teams that want the work done, not just another expensive analytics dashboard. We keep monitoring plans focused, then add strategy and execution only when the prompt opportunity justifies it.',
+                q: 'How are credits used?',
+                a: 'Credits measure AI work. Prompt analysis, visibility scans, reports, and content generation consume credits based on complexity.',
               },
               {
-                q: 'How does this compare with Profound, Peec, or Writesonic?',
-                a: 'Many competitors are strongest as enterprise analytics suites, self-serve monitoring tools, or content platforms with GEO added on top. HyperMind is positioned as a high-value GEO operating system: prompt testing, citation analysis, content recommendations, and done-for-you optimization in one plan.',
+                q: 'Can I change plans?',
+                a: 'Yes. Upgrades take effect immediately; downgrades apply after the current billing cycle.',
               },
               {
-                q: 'What is included in the enterprise managed traffic service?',
-                a: 'The custom Scale plan can combine GEO with managed traffic operations: expert copywriting, account posting, social media management, multi-format content production, and TikTok, YouTube, Instagram, and cross-channel publishing support. The goal is to connect AI visibility work with practical growth execution across traffic, new users, and orders.',
+                q: 'Do free credits roll over?',
+                a: 'New users receive 2,000 trial credits once. They are valid for one year and do not refresh daily.',
               },
               {
-                q: 'How long does it take to see results?',
-                a: 'Most clients see measurable improvements in AI visibility within 60-90 days. Significant mention growth and traffic impact typically emerge within 3-6 months.',
-              },
-              {
-                q: 'Do you require long-term contracts?',
-                a: 'We offer flexible engagement terms. Most clients start with a 3-month pilot to prove ROI before committing to longer engagements.',
-              },
-              {
-                q: 'What AI platforms do you cover?',
-                a: 'We monitor and optimize across ChatGPT, Google Gemini, Perplexity, Claude, Microsoft Copilot, Meta AI, Grok, SearchGPT, DeepSeek, and more as new platforms emerge.',
+                q: 'Who is Enterprise for?',
+                a: 'Enterprise is for teams that want to set growth targets and have our operations team execute GEO, SEO, and social-media optimization end to end, with tiered custom pricing based on delivery complexity.',
               },
             ].map((item) => (
               <div key={item.q} className="border border-gray-200 rounded-xl p-6 bg-white">
@@ -336,14 +377,13 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* CTA */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-black text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-            Ready to Invest in AI Visibility?
+            Choose the Plan That Matches Your Growth Target
           </h2>
           <p className="text-lg text-gray-300 mb-10 max-w-2xl mx-auto">
-            Start with a free AI visibility audit. We&apos;ll show you where your brand stands and recommend the right GEO, content, and traffic operations plan.
+            Start with trial credits, upgrade to self-serve visibility growth, or set an enterprise target and let the HyperMind operations team execute the plan.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -352,7 +392,7 @@ export default function PricingPage() {
               rel="noopener noreferrer"
               className="bg-white text-black px-8 py-4 rounded-lg text-lg font-medium hover:bg-gray-100 transition"
             >
-              Get a Free GEO Audit
+              Talk to Sales
             </a>
             <Link
               href="/case-studies"
