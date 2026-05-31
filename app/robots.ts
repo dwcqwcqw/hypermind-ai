@@ -3,9 +3,10 @@ import { MetadataRoute } from 'next'
 /**
  * Robots.txt configuration.
  *
- * Explicitly allows major search engine bots AND AI assistant crawlers
- * (GPTBot, ChatGPT-User, Google-Extended, PerplexityBot, ClaudeBot, etc.)
- * to ensure content is discoverable by both traditional search and AI systems.
+ * Keep robots.txt fully open for AI and search crawlers. Private or utility
+ * surfaces such as /admin and /api are protected from indexing with
+ * X-Robots-Tag headers in next.config.js instead of robots exclusions, because
+ * crawler analytics tools treat any Disallow rule as partial crawlability.
  */
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -13,52 +14,6 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/admin/', '/api/'],
-      },
-      {
-        userAgent: 'GPTBot',
-        allow: '/',
-        disallow: ['/admin/', '/api/'],
-      },
-      {
-        userAgent: 'ChatGPT-User',
-        allow: '/',
-        disallow: ['/admin/', '/api/'],
-      },
-      {
-        userAgent: 'Google-Extended',
-        allow: '/',
-        disallow: ['/admin/', '/api/'],
-      },
-      {
-        userAgent: 'Googlebot',
-        allow: '/',
-        disallow: ['/admin/', '/api/'],
-      },
-      {
-        userAgent: 'Bingbot',
-        allow: '/',
-        disallow: ['/admin/', '/api/'],
-      },
-      {
-        userAgent: 'PerplexityBot',
-        allow: '/',
-        disallow: ['/admin/', '/api/'],
-      },
-      {
-        userAgent: 'ClaudeBot',
-        allow: '/',
-        disallow: ['/admin/', '/api/'],
-      },
-      {
-        userAgent: 'Anthropic-ai',
-        allow: '/',
-        disallow: ['/admin/', '/api/'],
-      },
-      {
-        userAgent: 'cohere-ai',
-        allow: '/',
-        disallow: ['/admin/', '/api/'],
       },
     ],
     sitemap: 'https://hypermindgeo.com/sitemap.xml',
