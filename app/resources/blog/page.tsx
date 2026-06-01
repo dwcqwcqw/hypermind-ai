@@ -83,6 +83,17 @@ const PAGE_SIZE = 9
 
 const RAW_STATIC: Array<Omit<Article, 'subtopic'>> = [
   {
+    id: 27,
+    title: 'AI Mode Intent Packets: How to Win Longer Google AI Search Prompts',
+    date: '2026-06-01',
+    category: 'geo-strategy',
+    image: '/generated/blog/2026-06-01-ai-mode-intent-packets-cover.png',
+    description:
+      'A Monday GEO playbook for building answer-ready intent packets that match longer, multimodal, planning-heavy Google AI Mode prompts and query fan-out behavior.',
+    slug: 'ai-mode-intent-packets',
+    tags: ['Google AI Mode', 'query fan-out', 'AI search prompts', 'GEO strategy', 'AI answer optimization'],
+  },
+  {
     id: 26,
     title: 'AI Search Traffic Firewall Check: The Sunday GEO Playbook for Crawlable Answers',
     date: '2026-05-31',

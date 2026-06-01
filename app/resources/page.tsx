@@ -102,11 +102,11 @@ const FEATURED_DECISION_GUIDE = {
 }
 
 const FEATURED_AI_MODE_GUIDE = {
-  title: 'AI Search Traffic Firewall Check: Crawlable Answers',
-  href: '/resources/ai-search-traffic-firewall-check',
+  title: 'AI Mode Intent Packets: Longer Search Prompts',
+  href: '/resources/ai-mode-intent-packets',
   description:
-    'A Sunday GEO playbook for crawler access, source fidelity, answer routes, and retesting before teams rewrite content.',
-  tag: 'Latest Traffic Playbook',
+    'A Monday GEO playbook for turning longer, multimodal, planning-heavy AI Mode prompts into answer-ready source routes.',
+  tag: 'Latest AI Mode Playbook',
 }
 
 export default function ResourcesHub() {
