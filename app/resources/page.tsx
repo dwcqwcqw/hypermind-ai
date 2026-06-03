@@ -102,11 +102,11 @@ const FEATURED_DECISION_GUIDE = {
 }
 
 const FEATURED_AI_MODE_GUIDE = {
-  title: 'AI Mode Intent Packets: Longer Search Prompts',
-  href: '/resources/ai-mode-intent-packets',
+  title: 'Citation Absorption GEO: Answer Influence',
+  href: '/resources/citation-absorption-geo',
   description:
-    'A Monday GEO playbook for turning longer, multimodal, planning-heavy AI Mode prompts into answer-ready source routes.',
-  tag: 'Latest AI Mode Playbook',
+    'A Wednesday methodology guide for measuring whether cited pages actually shape AI-generated answers.',
+  tag: 'Latest GEO Methodology',
 }
 
 export default function ResourcesHub() {

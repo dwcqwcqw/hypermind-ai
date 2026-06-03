@@ -83,6 +83,17 @@ const PAGE_SIZE = 9
 
 const RAW_STATIC: Array<Omit<Article, 'subtopic'>> = [
   {
+    id: 28,
+    title: 'Citation Absorption GEO: Measure Answer Influence, Not Just AI Citations',
+    date: '2026-06-03',
+    category: 'geo-strategy',
+    image: '/generated/blog/2026-06-03-citation-absorption-geo-cover.png',
+    description:
+      'A Wednesday GEO methodology guide for measuring whether cited pages actually influence AI answers across ChatGPT, Google AI Overviews, AI Mode, Gemini, Perplexity, and Claude.',
+    slug: 'citation-absorption-geo',
+    tags: ['citation absorption', 'GEO methodology', 'AI citations', 'AI answer influence', 'citation source analysis'],
+  },
+  {
     id: 27,
     title: 'AI Mode Intent Packets: How to Win Longer Google AI Search Prompts',
     date: '2026-06-01',
