@@ -102,11 +102,11 @@ const FEATURED_DECISION_GUIDE = {
 }
 
 const FEATURED_AI_MODE_GUIDE = {
-  title: 'Citation Absorption GEO: Answer Influence',
-  href: '/resources/citation-absorption-geo',
+  title: 'B2B SaaS AI Search Pipeline Board',
+  href: '/resources/b2b-saas-ai-search-pipeline-board',
   description:
-    'A Wednesday methodology guide for measuring whether cited pages actually shape AI-generated answers.',
-  tag: 'Latest GEO Methodology',
+    'A Thursday SaaS GEO playbook for connecting AI search reports, citations, product routes, and qualified demand.',
+  tag: 'Latest SaaS GEO Playbook',
 }
 
 export default function ResourcesHub() {
@@ -183,7 +183,7 @@ export default function ResourcesHub() {
                 {FEATURED_AI_MODE_GUIDE.description}
               </p>
               <span className="inline-block mt-6 text-white font-semibold">
-                Read the buyer guide &rarr;
+                Read the playbook &rarr;
               </span>
             </Link>
 

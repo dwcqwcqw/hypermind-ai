@@ -83,6 +83,17 @@ const PAGE_SIZE = 9
 
 const RAW_STATIC: Array<Omit<Article, 'subtopic'>> = [
   {
+    id: 29,
+    title: 'B2B SaaS AI Search Pipeline Board: Turn GEO Reports Into Qualified Demand',
+    date: '2026-06-04',
+    category: 'geo-strategy',
+    image: '/generated/blog/2026-06-04-b2b-saas-ai-search-pipeline-board-cover.png',
+    description:
+      'A Thursday B2B SaaS GEO playbook for connecting Google AI Search Console reports, cross-engine citation evidence, product-route repair, and qualified pipeline attribution.',
+    slug: 'b2b-saas-ai-search-pipeline-board',
+    tags: ['B2B SaaS GEO', 'AI search pipeline', 'Search Console AI reports', 'AI visibility reporting', 'qualified AI traffic'],
+  },
+  {
     id: 28,
     title: 'Citation Absorption GEO: Measure Answer Influence, Not Just AI Citations',
     date: '2026-06-03',

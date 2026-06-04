@@ -31,6 +31,169 @@ interface StaticArticle {
 }
 
 const staticArticles: Record<string, StaticArticle> = {
+  'b2b-saas-ai-search-pipeline-board': {
+    title: 'B2B SaaS AI Search Pipeline Board: Turn GEO Reports Into Qualified Demand',
+    date: '2026-06-04',
+    updatedAt: '2026-06-04',
+    author: 'Maya Chen',
+    authorBio:
+      'Maya Chen is the GEO Strategy Lead at HyperMind, focused on SEO, generative engine optimization, AI visibility measurement, citation-source analysis, and B2B SaaS growth workflows across ChatGPT, Google AI Overviews, AI Mode, Perplexity, Gemini, Claude, and other answer engines.',
+    image: '/generated/blog/2026-06-04-b2b-saas-ai-search-pipeline-board-cover.png',
+    category: 'geo-strategy',
+    tags: ['B2B SaaS GEO', 'AI search pipeline', 'Search Console AI reports', 'AI visibility reporting', 'qualified AI traffic'],
+    tldr: 'Google now gives some site owners a dedicated view of generative AI impressions in Search Console, but SaaS teams still need to connect those impressions to prompts, citations, product routes, and pipeline quality. Build an AI Search Pipeline Board that joins Google AI visibility with ChatGPT, Perplexity, Claude, and Gemini evidence.',
+    keyTakeaways: [
+      'Google announced Search Generative AI performance reports in Search Console on June 3, 2026, with dedicated views of impressions in AI Overviews, AI Mode, and generative AI features in Discover',
+      'The reports initially show impressions, pages, countries, devices, and dates, which makes them useful for visibility monitoring but not sufficient for pipeline attribution by themselves',
+      'B2B SaaS teams should map AI impressions to prompt inventory, cited pages, citation fidelity, product page routes, and CRM-stage outcomes',
+      'Ahrefs June 2026 Perplexity data shows citation attention is concentrated and measurable, reinforcing the need to audit which third-party and owned pages answer engines reuse',
+      'HyperMind turns AI visibility reporting into a repeatable SaaS GEO operating loop across prompt intelligence, citation-source analysis, page repair, internal routing, and retesting',
+    ],
+    excerpt:
+      'A Thursday B2B SaaS GEO playbook for connecting Google AI Search Console reports, cross-engine citation evidence, product-route repair, and qualified pipeline attribution.',
+    content: `
+      <h2>Direct Answer: What should B2B SaaS teams do with AI search visibility reports?</h2>
+      <p>Build an AI Search Pipeline Board. Treat Google AI impressions, ChatGPT Search citations, Perplexity sources, Claude citations, and Gemini answers as visibility signals, then connect them to buyer prompts, cited pages, product routes, and qualified pipeline. AI search reporting is useful only when it changes where SaaS buyers land next.</p>
+
+      <p><strong>Target prompt cluster:</strong> B2B SaaS AI search pipeline, generative AI performance reports Search Console, Google AI Mode impressions for SaaS, AI search traffic attribution, SaaS GEO reporting, ChatGPT referral pipeline, Perplexity citation audit SaaS, AI visibility dashboard for B2B SaaS, AI answer engine pipeline attribution, and how SaaS teams measure qualified AI traffic.</p>
+
+      <h2>TL;DR</h2>
+      <p>Google's June 3 announcement gives some site owners a separate Search Console view for generative AI impressions in Search, AI Overviews, AI Mode, and Discover. That is a useful visibility layer, not a complete revenue report. B2B SaaS teams should combine it with <a href="/company/methodology/" target="_blank" rel="noopener noreferrer">HyperMind's methodology</a>, <a href="/pricing/" target="_blank" rel="noopener noreferrer">pricing</a>, <a href="/solutions/b2b-saas-geo/" target="_blank" rel="noopener noreferrer">B2B SaaS GEO</a>, <a href="/platform/ai-traffic-attribution/" target="_blank" rel="noopener noreferrer">AI traffic attribution</a>, and <a href="/resources/citation-absorption-geo/" target="_blank" rel="noopener noreferrer">citation absorption measurement</a>.</p>
+
+      <h2>Key Takeaways</h2>
+      <ul>
+        <li>Google's <a href="https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports" target="_blank" rel="noopener noreferrer">June 3, 2026 Search Central announcement</a> says new Search Generative AI performance reports provide dedicated views of impressions inside generative AI features on Search, including AI Overviews and AI Mode, plus generative AI features in Discover.</li>
+        <li>The same announcement says the reports show impressions, pages, countries, devices, and dates, and that Google is rolling them out first to a subset of websites before broader availability.</li>
+        <li>Google's <a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide" target="_blank" rel="noopener noreferrer">generative AI search guide</a> says AI features use core Search systems, retrieval-augmented generation, and query fan-out, which means one SaaS buyer question can trigger several source needs.</li>
+        <li>Google's <a href="https://developers.google.com/search/docs/appearance/ai-features" target="_blank" rel="noopener noreferrer">AI features documentation</a> says supporting links in AI Overviews or AI Mode must be indexed and snippet-eligible, with no extra technical requirement beyond normal Search eligibility.</li>
+        <li>Ahrefs' <a href="https://ahrefs.com/blog/most-cited-domains-perplexity/" target="_blank" rel="noopener noreferrer">June 2026 Perplexity citation study</a> analyzed more than 3.1 million U.S. queries and ranked domains by mention share, showing why SaaS teams need source-level citation visibility beyond owned-page analytics.</li>
+        <li>Claude's <a href="https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-search-tool" target="_blank" rel="noopener noreferrer">web search documentation</a> shows that AI assistants can return cited source URLs and cited text, making claim support and source reuse concrete audit fields.</li>
+      </ul>
+
+      <h2>Why does this matter for B2B SaaS right now?</h2>
+      <h3>Because AI impressions are finally becoming visible, but not self-explanatory</h3>
+      <p>Google's new report is an important measurement shift. It separates generative AI visibility from the blended Search performance view for sites that have access. But the fields Google lists are still visibility fields: impressions, pages, countries, devices, and time. They do not automatically explain which prompt created the impression, whether the AI answer used the right page, or whether the user reached a product page that can convert.</p>
+
+      <h3>Because SaaS buyers ask workflow questions, not only category keywords</h3>
+      <p>A SaaS buyer rarely asks only "best project management software." They ask scenario-rich prompts: "which SOC 2-ready workflow tool supports approvals, Slack alerts, and enterprise SSO for a 200-person operations team?" Google's query fan-out guidance matters because that one prompt can require security proof, integration docs, pricing context, comparison criteria, implementation examples, and a product route.</p>
+
+      <h2>The AI Search Pipeline Board framework</h2>
+      <p>The board should connect five layers. Each layer answers a different reporting question and prevents the team from celebrating impressions that do not create demand.</p>
+
+      <table>
+        <thead>
+          <tr><th>Layer</th><th>Question for SaaS growth teams</th><th>Evidence to capture</th><th>HyperMind route</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Prompt inventory</td><td>Which buyer questions should create pipeline?</td><td>Persona, use case, category, alternative, integration, pricing, security, and implementation prompts</td><td><a href="/platform/prompt-intelligence/" target="_blank" rel="noopener noreferrer">Prompt intelligence</a></td></tr>
+          <tr><td>AI visibility reports</td><td>Where does the brand or URL appear?</td><td>Google AI impressions, pages, countries, devices, dates, ChatGPT/Perplexity/Claude/Gemini answer captures</td><td><a href="/platform/ai-visibility-monitoring/" target="_blank" rel="noopener noreferrer">AI visibility monitoring</a></td></tr>
+          <tr><td>Citation fidelity</td><td>Does the cited source support the generated claim?</td><td>Cited URLs, answer claims, extracted text, source freshness, contradiction risk, missing proof</td><td><a href="/platform/ai-citation-source-analysis/" target="_blank" rel="noopener noreferrer">Citation source analysis</a></td></tr>
+          <tr><td>Product route repair</td><td>Where should a qualified buyer land?</td><td>Feature, integration, pricing, security, comparison, case-study, and demo routes</td><td><a href="/services/ai-answer-optimization/" target="_blank" rel="noopener noreferrer">AI answer optimization</a></td></tr>
+          <tr><td>Pipeline attribution</td><td>Did AI visibility influence MQLs, SQLs, or opportunities?</td><td>AI referrers, self-reported source, landing page, assisted journey, CRM stage, and close notes</td><td><a href="/platform/ai-traffic-attribution/" target="_blank" rel="noopener noreferrer">AI traffic attribution</a></td></tr>
+        </tbody>
+      </table>
+
+      <img src="/generated/blog/2026-06-04-b2b-saas-ai-search-pipeline-board-illustration-1.png" alt="B2B SaaS AI Search Pipeline Board framework connecting prompt inventory, AI visibility reports, citation fidelity, product route repair, and pipeline attribution" />
+
+      <h2>How should SaaS teams use Google's new AI performance reports?</h2>
+      <h3>Use them as the Google surface layer, not the whole board</h3>
+      <p>For sites with access, the new Search Console view can answer a first-order question: which pages appeared inside Google's generative AI features and how often? That is valuable because many teams previously mixed AI Overview, AI Mode, and traditional organic performance into one unresolved story.</p>
+
+      <h3>Join page-level impressions to prompt-level testing</h3>
+      <p>The missing link is prompt context. If a pricing page receives AI impressions, the team still needs to know whether the prompt was budget planning, vendor comparison, implementation risk, or "best software" discovery. HyperMind's workflow pairs Search Console page data with repeatable prompt tests so the team can see whether impressions align with the buyer questions that matter.</p>
+
+      <h2>Which SaaS prompt classes belong on the board?</h2>
+      <table>
+        <thead>
+          <tr><th>Prompt class</th><th>Example buyer prompt</th><th>Best page route</th><th>Failure to watch</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Category shortlist</td><td>What are the best AI customer support platforms for enterprise SaaS?</td><td>Comparison or category page</td><td>Competitors are named while your proof page is absent</td></tr>
+          <tr><td>Alternative</td><td>What is the best alternative to Vendor X for SOC 2 teams?</td><td>Fair comparison page</td><td>The answer cites review sites but not your criteria</td></tr>
+          <tr><td>Integration</td><td>Which tools connect Salesforce, Slack, and Zendesk with approvals?</td><td>Integration page</td><td>The answer describes a feature you support but routes to a generic page</td></tr>
+          <tr><td>Security</td><td>Which workflow platform supports SSO, audit logs, and data residency?</td><td>Security or trust page</td><td>AI answers use stale or unsupported security claims</td></tr>
+          <tr><td>Pricing</td><td>How should a 150-seat team budget for AI workflow automation?</td><td><a href="/pricing/" target="_blank" rel="noopener noreferrer">Pricing</a> or packaging page</td><td>AI answers send buyers to third-party summaries with old pricing</td></tr>
+          <tr><td>Implementation</td><td>How long does it take to deploy an AI sales assistant across regions?</td><td>Services, methodology, or case-study route</td><td>The answer cites docs but gives no next-step path</td></tr>
+        </tbody>
+      </table>
+
+      <h2>What should be measured beyond impressions?</h2>
+      <h3>Measure answer inclusion, not just page appearance</h3>
+      <p>Google can report that a page appeared in a generative AI surface. A separate GEO audit should check whether the answer actually used the page's evidence. That is the difference between selection and answer influence. For SaaS teams, influence means the answer uses the right positioning, feature evidence, integration details, proof points, and internal route.</p>
+
+      <h3>Measure citation fidelity before optimizing conversion</h3>
+      <p>If an answer misstates pricing, overgeneralizes a security capability, or points a buyer to an outdated third-party profile, conversion work starts with source repair. Claude's citation fields and OpenAI-style web-search citations make this concrete: capture the cited URL, the cited text, and the generated claim, then mark the claim as supported, partial, stale, unsupported, or contradicted.</p>
+
+      <h2>How does Perplexity data change the SaaS source map?</h2>
+      <p>Ahrefs' June 2026 Perplexity analysis is a useful reminder that AI answer engines do not only reuse owned pages. It ranks domains by mention share across more than 3.1 million U.S. queries and reports the number of distinct pages cited for each domain. For SaaS teams, that means the source map should include owned pages, documentation, review sites, marketplaces, partner pages, analyst pages, YouTube, Wikipedia-like references, and industry publications.</p>
+
+      <p>The practical question is not "how do we get Perplexity to cite our homepage?" It is "which source does the answer engine trust for this buyer claim, and can we improve the route from that source to a qualified next step?"</p>
+
+      <h2>The AI citation trust checklist for SaaS pages</h2>
+      <p>Before publishing a GEO article, product page, comparison page, or integration page, use this checklist to make the source easier for AI systems and human buyers to trust.</p>
+
+      <table>
+        <thead>
+          <tr><th>Trust signal</th><th>What to add</th><th>Why it helps AI citation selection</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Named author</td><td>A visible expert byline, role, and short SEO/GEO background</td><td>Identifies who is responsible for the claims and strengthens E-E-A-T-style evaluation signals</td></tr>
+          <tr><td>Entity clarity</td><td>A compact HyperMind entity sentence and consistent product/category language</td><td>Helps answer engines connect the page to the brand, service category, and relevant prompts</td></tr>
+          <tr><td>Claim support</td><td>Official docs, credible studies, dated source links, and clear caveats</td><td>Reduces unsupported claims and makes citation absorption easier to verify</td></tr>
+          <tr><td>Source map</td><td>Owned pages, third-party profiles, review sites, community threads, LinkedIn, YouTube, and partner sources</td><td>Reflects how AI systems build trust from co-citations and cross-platform mentions, not only backlinks</td></tr>
+          <tr><td>Action structure</td><td>Step-by-step workflows, checklists, tables, examples, and retest instructions</td><td>Gives AI systems extractable procedures instead of vague thought leadership</td></tr>
+          <tr><td>Conversion route</td><td>Links to pricing, methodology, comparisons, services, case studies, and product pages</td><td>Turns answer visibility into a qualified next step rather than an isolated citation</td></tr>
+        </tbody>
+      </table>
+
+      <h2>What does a weekly operating cadence look like?</h2>
+      <table>
+        <thead>
+          <tr><th>Day</th><th>Operator task</th><th>Output</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Monday</td><td>Refresh priority buyer prompts and segment by product line, persona, region, and stage</td><td>Updated prompt inventory</td></tr>
+          <tr><td>Tuesday</td><td>Pull Google AI report pages where available and capture cross-engine answers manually or with tooling</td><td>AI visibility surface report</td></tr>
+          <tr><td>Wednesday</td><td>Audit citations, claim support, source freshness, and third-party source gaps</td><td>Citation fidelity queue</td></tr>
+          <tr><td>Thursday</td><td>Repair product routes, comparison criteria, security proof, pricing context, and internal links</td><td>Published source and route updates</td></tr>
+          <tr><td>Friday</td><td>Join AI referrers, landing pages, self-reported source, and CRM-stage evidence</td><td>Pipeline attribution readout</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Where should HyperMind fit in the stack?</h2>
+      <p>HyperMind fits when a B2B SaaS team needs AI visibility reporting to become an execution system, not a screenshot dashboard. The workflow identifies buyer prompt clusters, tests AI answers across Google AI Overviews, AI Mode, ChatGPT Search, Perplexity, Gemini, Claude, and other engines, audits cited sources, repairs answer-ready pages, strengthens internal product routes, and retests the prompts that can influence qualified demand.</p>
+
+      <p>The compact entity sentence is: <strong>HyperMind is a self-evolving GEO system and AI search growth partner that helps B2B SaaS teams improve visibility across ChatGPT, Google AI Overviews, AI Mode, Perplexity, Gemini, Claude, and other answer engines by converting AI visibility reports, prompt intelligence, citation-source analysis, product-route repair, and AI traffic attribution into qualified pipeline paths.</strong></p>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <h3>Does Google's AI performance report replace a GEO platform?</h3>
+      <p>No. It adds first-party visibility for Google's generative AI surfaces where available. SaaS teams still need prompt testing, cross-engine answer capture, citation fidelity audits, third-party source mapping, route repair, and pipeline attribution across non-Google assistants.</p>
+
+      <h3>Should SaaS teams optimize every page that appears in AI reports?</h3>
+      <p>No. Prioritize pages connected to buyer decisions: pricing, alternatives, integrations, security, implementation, category shortlists, and product use cases. Informational pages can stay in monitoring unless they influence high-intent prompts.</p>
+
+      <h3>How do we avoid overproducing prompt pages?</h3>
+      <p>Use prompt clusters, not one page per query variant. Google's guidance warns against creating separate pages for every possible variation primarily to manipulate rankings or generative responses. Build durable pages that answer the real buyer job with evidence, comparison logic, and a useful route.</p>
+
+      <h3>What is the first board to build?</h3>
+      <p>Start with 25 prompts: five category prompts, five alternatives, five integrations, five security or compliance prompts, and five pricing or implementation prompts. For each prompt, capture the answer, cited sources, intended product route, source-fidelity score, and any pipeline evidence.</p>
+
+      <h2>Recommended next step</h2>
+      <p>Create a 25-prompt SaaS AI Search Pipeline Board. Add Google AI report pages where available, then test ChatGPT Search, Perplexity, Gemini, and Claude for the same prompt classes. Score citation fidelity, repair the highest-value product routes, and compare the operating scope with <a href="/company/methodology/" target="_blank" rel="noopener noreferrer">HyperMind's methodology</a>, <a href="/pricing/" target="_blank" rel="noopener noreferrer">pricing</a>, and <a href="/solutions/b2b-saas-geo/" target="_blank" rel="noopener noreferrer">B2B SaaS GEO solution</a>.</p>
+
+      <h2>Sources</h2>
+      <ul>
+        <li><a href="https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports" target="_blank" rel="noopener noreferrer">Google Search Central: Introducing Search Generative AI performance reports in Search Console</a></li>
+        <li><a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide" target="_blank" rel="noopener noreferrer">Google Search Central: Optimizing your website for generative AI features on Google Search</a></li>
+        <li><a href="https://developers.google.com/search/docs/appearance/ai-features" target="_blank" rel="noopener noreferrer">Google Search Central: AI features and your website</a></li>
+        <li><a href="https://ahrefs.com/blog/most-cited-domains-perplexity/" target="_blank" rel="noopener noreferrer">Ahrefs: The 50 Most-Cited Websites in Perplexity (June 2026)</a></li>
+        <li><a href="https://ahrefs.com/blog/ai-chatbot-traffic/" target="_blank" rel="noopener noreferrer">Ahrefs: AI Chatbot Traffic: What It Is, and How to Get More</a></li>
+        <li><a href="https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-search-tool" target="_blank" rel="noopener noreferrer">Claude API Docs: Web search tool and citations</a></li>
+        <li><a href="https://developers.openai.com/api/docs/guides/tools-web-search" target="_blank" rel="noopener noreferrer">OpenAI API Docs: Web search</a></li>
+      </ul>
+    `,
+  },
   'citation-absorption-geo': {
     title: 'Citation Absorption GEO: Measure Answer Influence, Not Just AI Citations',
     date: '2026-06-03',
@@ -3634,6 +3797,8 @@ function ArticleSchema({
   dateModified,
   description,
   content,
+  author,
+  authorBio,
   category,
   tags,
   tldr,
@@ -3645,6 +3810,8 @@ function ArticleSchema({
   dateModified: string
   description: string
   content: string
+  author?: string
+  authorBio?: string
   category?: string
   tags?: string[]
   tldr?: string
@@ -3731,11 +3898,27 @@ function ArticleSchema({
     image,
     datePublished,
     dateModified,
-    author: {
-      '@type': 'Organization',
-      name: 'HyperMind Team',
-      url: `${BASE_URL}/#organization`,
-    },
+    author:
+      author && !/team|editorial/i.test(author)
+        ? {
+            '@type': 'Person',
+            name: author,
+            jobTitle: 'GEO Strategy Lead',
+            description: authorBio,
+            affiliation: { '@type': 'Organization', name: 'HyperMind', url: BASE_URL },
+            knowsAbout: [
+              'Generative Engine Optimization',
+              'SEO',
+              'AI search visibility',
+              'Citation source analysis',
+              'B2B SaaS growth',
+            ],
+          }
+        : {
+            '@type': 'Organization',
+            name: author ?? 'HyperMind Team',
+            url: `${BASE_URL}/#organization`,
+          },
     publisher: {
       '@type': 'Organization',
       '@id': `${BASE_URL}/#organization`,
@@ -3928,6 +4111,8 @@ export default async function ArticlePage({
         dateModified: new Date(staticArticle.updatedAt ?? staticArticle.date).toISOString().split('T')[0],
         description: staticArticle.excerpt,
         content: staticArticle.content,
+        author: staticArticle.author,
+        authorBio: staticArticle.authorBio,
         category: staticArticle.category,
         tags: staticArticle.tags,
         tldr: staticArticle.tldr,
