@@ -83,6 +83,17 @@ const PAGE_SIZE = 9
 
 const RAW_STATIC: Array<Omit<Article, 'subtopic'>> = [
   {
+    id: 30,
+    title: 'AI Visibility Pricing Control Room: Budget GEO Spend After Google AI Reports',
+    date: '2026-06-06',
+    category: 'geo-strategy',
+    image: '/generated/blog/2026-06-06-ai-visibility-pricing-control-room-cover.png',
+    description:
+      'A Saturday buyer-decision playbook for scoping AI visibility and GEO pricing after Google Search Console generative AI reports, AI Mode, ChatGPT Search, and cross-engine citation audits.',
+    slug: 'ai-visibility-pricing-control-room',
+    tags: ['AI visibility pricing', 'GEO budget', 'Google AI reports', 'buyer-decision prompts', 'citation source analysis'],
+  },
+  {
     id: 29,
     title: 'B2B SaaS AI Search Pipeline Board: Turn GEO Reports Into Qualified Demand',
     date: '2026-06-04',

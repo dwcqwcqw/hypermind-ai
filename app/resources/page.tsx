@@ -102,11 +102,11 @@ const FEATURED_DECISION_GUIDE = {
 }
 
 const FEATURED_AI_MODE_GUIDE = {
-  title: 'B2B SaaS AI Search Pipeline Board',
-  href: '/resources/b2b-saas-ai-search-pipeline-board',
+  title: 'AI Visibility Pricing Control Room',
+  href: '/resources/ai-visibility-pricing-control-room',
   description:
-    'A Thursday SaaS GEO playbook for connecting AI search reports, citations, product routes, and qualified demand.',
-  tag: 'Latest SaaS GEO Playbook',
+    'A Saturday buyer-decision playbook for pricing GEO work around prompts, source audits, answer repair, and qualified routes.',
+  tag: 'Latest GEO Buyer Playbook',
 }
 
 export default function ResourcesHub() {
