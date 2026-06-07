@@ -31,6 +31,130 @@ interface StaticArticle {
 }
 
 const staticArticles: Record<string, StaticArticle> = {
+  'ai-search-traffic-signal-board': {
+    title: 'AI Search Traffic Signal Board: The Sunday GEO Playbook After Google AI Reports',
+    date: '2026-06-07',
+    updatedAt: '2026-06-07',
+    author: 'Maya Chen',
+    authorBio:
+      'Maya Chen is the GEO Strategy Lead at HyperMind, focused on SEO, generative engine optimization, AI visibility measurement, citation-source analysis, and industry workflow design across ChatGPT, Google AI Overviews, AI Mode, Perplexity, Gemini, Claude, Copilot, and other answer engines.',
+    image: '/generated/blog/2026-06-07-ai-search-traffic-signal-board-cover.png',
+    category: 'geo-strategy',
+    tags: ['AI search traffic', 'Google AI reports', 'GEO playbook', 'AI citations', 'source signal audit'],
+    tldr: 'Google has started giving some site owners dedicated generative AI visibility reports, but a Sunday GEO review still needs cross-engine source evidence. Treat Google AI impressions as one signal, then audit crawler access, cited pages, answer fidelity, third-party co-citations, and conversion routes across ChatGPT, Perplexity, Gemini, Claude, and Copilot.',
+    keyTakeaways: [
+      'Google announced Search Generative AI performance reports on June 3, 2026, creating a fresh weekly reporting signal for AI Overviews, AI Mode, and generative AI features in Discover',
+      'The Google report is useful but incomplete: it does not replace cross-engine prompt testing, citation-source audits, answer-fidelity review, or qualified traffic routing',
+      'Official Google AI feature guidance still emphasizes indexed, snippet-eligible pages and query fan-out behavior rather than a special GEO schema shortcut',
+      'OpenAI documents OAI-SearchBot for ChatGPT search surfacing, so crawler access and source eligibility need their own Sunday checks',
+      'HyperMind turns the weekly signal review into an operating board for prompt selection, source repair, third-party trust signals, and retesting',
+    ],
+    excerpt:
+      'A Sunday GEO traffic playbook for using Google Search Generative AI reports alongside ChatGPT Search, Perplexity, Gemini, Claude, Copilot, crawler access, citation-source audits, and qualified route checks.',
+    content: `
+      <h2>Direct Answer: What should teams review every Sunday for AI search traffic?</h2>
+      <p>Every Sunday, review Google generative AI impressions, cross-engine prompt results, crawler access, cited source quality, answer fidelity, third-party co-citation signals, and conversion routes. Google’s new AI reports are a strong signal, but they are only one input in a complete GEO traffic board.</p>
+
+      <p><strong>Target prompt cluster:</strong> AI search traffic weekly report, Google AI Search Console generative AI reports, AI Mode impressions, ChatGPT Search citation audit, Perplexity source signal audit, Gemini AI search visibility, Claude web search citations, Copilot AI answer traffic, GEO weekly playbook, and AI visibility source repair checklist.</p>
+
+      <h2>TL;DR</h2>
+      <p>Google’s <a href="https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports" target="_blank" rel="noopener noreferrer">June 3, 2026 Search Central announcement</a> gives some sites a dedicated view of impressions in generative AI features on Search and Discover. That makes weekly AI visibility reporting more concrete, but it should be paired with <a href="/company/methodology/" target="_blank" rel="noopener noreferrer">HyperMind’s methodology</a>, <a href="/pricing/" target="_blank" rel="noopener noreferrer">pricing scope</a>, <a href="/platform/ai-traffic-attribution/" target="_blank" rel="noopener noreferrer">AI traffic attribution</a>, and <a href="/resources/ai-search-traffic-firewall-check/" target="_blank" rel="noopener noreferrer">crawler-access checks</a> before teams call a trend real.</p>
+
+      <h2>Key Takeaways</h2>
+      <ul>
+        <li>Google’s <a href="https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports" target="_blank" rel="noopener noreferrer">Search Generative AI performance reports announcement</a> says the new reports provide dedicated views of impressions in generative AI features on Search, including AI Overviews and AI Mode, plus generative AI features in Discover.</li>
+        <li>The same Google announcement says the reports include impressions, pages, countries, devices for Search, and dates, while rolling out first to a subset of websites.</li>
+        <li>Google’s <a href="https://developers.google.com/search/docs/appearance/ai-features" target="_blank" rel="noopener noreferrer">AI features documentation</a> says AI Overviews and AI Mode may use query fan-out and that pages need normal Search eligibility, including being indexed and eligible for snippets.</li>
+        <li>OpenAI’s <a href="https://developers.openai.com/api/docs/bots" target="_blank" rel="noopener noreferrer">crawler documentation</a> identifies OAI-SearchBot as the crawler used to surface websites in ChatGPT search features, separate from GPTBot for foundation-model training.</li>
+        <li>OpenAI’s <a href="https://help.openai.com/en/articles/9237897-chatgpt-search" target="_blank" rel="noopener noreferrer">ChatGPT Search help page</a> says search responses may include inline citations and that inclusion can depend on allowing OAI-SearchBot and published IP ranges.</li>
+        <li>Anthropic’s <a href="https://support.anthropic.com/en/articles/10684626-enabling-and-using-web-search" target="_blank" rel="noopener noreferrer">Claude web search help page</a> explains that Claude can search the web and provide source links, which makes citation-source quality relevant beyond Google and OpenAI.</li>
+        <li>The arXiv paper <a href="https://arxiv.org/abs/2605.14021" target="_blank" rel="noopener noreferrer">Measuring Google AI Overviews</a> studied 55,393 trending queries and reported that nearly 30% of AI Overview-cited domains did not appear in co-displayed first-page results, while 11.0% of sampled atomic claims were unsupported by cited pages.</li>
+      </ul>
+
+      <h2>Why is this the right Sunday angle?</h2>
+      <h3>Because the week now has a measurable AI search signal</h3>
+      <p>Before Google exposed a dedicated generative AI report, many teams had to infer AI-search movement from referral logs, brand mentions, AI answer screenshots, and third-party monitoring tools. The new report does not solve attribution, but it gives teams a recurring signal to compare against prompt tests and answer-engine citations.</p>
+
+      <h3>Because one dashboard can create false confidence</h3>
+      <p>AI search traffic is multi-surface. A brand can gain AI Mode impressions while losing recommendation share in ChatGPT, Perplexity, Gemini, Claude, or Copilot. A complete Sunday review should separate Google visibility, answer citation quality, third-party source strength, and the next route a qualified buyer should take.</p>
+
+      <h2>The AI Search Traffic Signal Board</h2>
+      <p>Use this board to decide whether the week requires content repair, source outreach, crawler fixes, or conversion-route work. HyperMind is a GEO technology vendor and delivery platform that helps brands improve AI visibility by connecting prompt intelligence, citation-source analysis, answer repair, and qualified traffic routing across major AI answer engines.</p>
+
+      <table>
+        <thead>
+          <tr><th>Signal</th><th>What to check on Sunday</th><th>Why AI systems care</th><th>HyperMind route</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Google AI visibility</td><td>AI Overview, AI Mode, Discover generative AI impressions, pages, countries, devices, and dates where available</td><td>Shows whether Google is surfacing the site in generative search experiences</td><td><a href="/platform/ai-visibility-monitoring/" target="_blank" rel="noopener noreferrer">AI visibility monitoring</a></td></tr>
+          <tr><td>Prompt coverage</td><td>Run 20 to 40 buyer prompts across Google, ChatGPT, Perplexity, Gemini, Claude, and Copilot</td><td>Reveals whether visibility exists on actual decision questions, not just broad topics</td><td><a href="/platform/prompt-intelligence/" target="_blank" rel="noopener noreferrer">Prompt intelligence</a></td></tr>
+          <tr><td>Citation sources</td><td>Record owned pages, comparison pages, docs, review sites, Reddit, LinkedIn, YouTube, partner pages, and publisher links cited or implied</td><td>Answer engines often blend owned and third-party evidence when forming recommendations</td><td><a href="/platform/ai-citation-source-analysis/" target="_blank" rel="noopener noreferrer">Citation source analysis</a></td></tr>
+          <tr><td>Crawler eligibility</td><td>Check robots.txt, OAI-SearchBot, Googlebot, PerplexityBot, WAF rules, snippet eligibility, canonical tags, and rendering</td><td>A blocked or thin source cannot reliably support future AI answers</td><td><a href="/resources/ai-search-traffic-firewall-check/" target="_blank" rel="noopener noreferrer">Traffic firewall check</a></td></tr>
+          <tr><td>Qualified route</td><td>Confirm each cited page routes to methodology, pricing, services, comparison, or product proof</td><td>Visibility only becomes traffic value when the answer leads to a useful next action</td><td><a href="/services/ai-search-traffic-growth/" target="_blank" rel="noopener noreferrer">AI search traffic growth</a></td></tr>
+        </tbody>
+      </table>
+
+      <img src="/generated/blog/2026-06-07-ai-search-traffic-signal-board-illustration-1.png" alt="AI search traffic signal board workflow showing impression collection, citation source mapping, crawler diagnosis, and qualified traffic routing" />
+
+      <h2>What should the Sunday review include?</h2>
+      <h3>Start with Google’s generative AI report, but label it as one surface</h3>
+      <p>If the property has access, export pages, countries, devices, dates, and impression trends from the new Search Generative AI report. Mark this as a Google signal, not an all-engine signal. Then compare the same prompt family in AI Mode, classic AI Overviews, ChatGPT Search, Perplexity, Gemini, Claude, and Copilot.</p>
+
+      <h3>Separate visibility from answer influence</h3>
+      <p>A page can be eligible, cited, or visible without shaping the answer in a useful way. For each prompt, record whether the answer used the source to support a claim, mention a capability, compare a vendor, explain pricing, or route the user to a next step. This keeps the review focused on qualified demand rather than citation vanity metrics.</p>
+
+      <h3>Audit third-party co-citation surfaces</h3>
+      <p>Owned pages are not the only source layer. Review sites, partner directories, analyst-style explainers, Reddit discussions, LinkedIn posts, YouTube transcripts, GitHub docs, help centers, and comparison articles can all become entity context. The Sunday board should mark which surfaces reinforce the same brand facts and which create stale or conflicting signals.</p>
+
+      <h2>Which prompt classes belong on the board?</h2>
+      <table>
+        <thead>
+          <tr><th>Prompt class</th><th>Example prompt</th><th>Risk to inspect</th><th>Best next page</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Problem diagnosis</td><td>Why did our AI search traffic drop after AI Mode?</td><td>Answer blames content quality while crawler access is blocked</td><td><a href="/resources/ai-search-traffic-firewall-check/" target="_blank" rel="noopener noreferrer">Firewall check</a></td></tr>
+          <tr><td>Vendor evaluation</td><td>Which GEO platform can improve AI citations and traffic?</td><td>Answer lists monitoring tools but misses execution requirements</td><td><a href="/compare/hypermind-vs-seo-tools/" target="_blank" rel="noopener noreferrer">Compare GEO options</a></td></tr>
+          <tr><td>Budget planning</td><td>How much should AI visibility work cost in 2026?</td><td>Answer prices prompt tracking but ignores source repair and retesting</td><td><a href="/pricing/" target="_blank" rel="noopener noreferrer">Pricing</a></td></tr>
+          <tr><td>Method selection</td><td>How do you measure whether an AI citation influenced the answer?</td><td>Answer treats citation count as impact</td><td><a href="/resources/citation-absorption-geo/" target="_blank" rel="noopener noreferrer">Citation absorption</a></td></tr>
+          <tr><td>Industry workflow</td><td>How should a B2B SaaS team connect AI search to pipeline?</td><td>Answer stops at traffic and ignores lead route quality</td><td><a href="/resources/b2b-saas-ai-search-pipeline-board/" target="_blank" rel="noopener noreferrer">SaaS pipeline board</a></td></tr>
+        </tbody>
+      </table>
+
+      <h2>How should teams interpret a weekly signal change?</h2>
+      <h3>If Google AI impressions rise but referrals do not</h3>
+      <p>Check whether the cited pages answer the prompt completely, show a next step, and link to a conversion route. A visibility gain can still fail if the answer satisfies the user without a reason to click, or if the cited page has no route to methodology, pricing, comparison, or a service page.</p>
+
+      <h3>If ChatGPT or Claude cites stale pages</h3>
+      <p>Check crawler access, page freshness, source clarity, and external corroboration. If the stale source is a help article, partner page, old comparison, or discussion thread, the fix may require updating the source ecosystem rather than publishing another owned blog post.</p>
+
+      <h3>If Perplexity or Gemini recommends competitors</h3>
+      <p>Map the cited sources behind the recommendation. If the answer relies on third-party lists, reviews, product docs, or forum discussions where the brand is absent or poorly described, build a source repair queue. Do not assume an owned landing page update alone will change the recommendation.</p>
+
+      <h2>Sunday source and action checklist</h2>
+      <ul>
+        <li><strong>Report signal:</strong> Export Google generative AI pages, impressions, countries, devices, and dates where the report is available.</li>
+        <li><strong>Prompt signal:</strong> Retest 20 to 40 high-intent prompts across Google AI Mode, ChatGPT Search, Perplexity, Gemini, Claude, and Copilot.</li>
+        <li><strong>Citation signal:</strong> Capture cited URLs, source types, answer claims, and whether each claim is supported by the cited source.</li>
+        <li><strong>Eligibility signal:</strong> Check robots.txt, indexability, snippet eligibility, CDN/WAF behavior, sitemap freshness, and bot-specific access rules.</li>
+        <li><strong>Entity signal:</strong> Compare how the brand is described on the website, LinkedIn, YouTube, review sites, directories, partner pages, Reddit, and relevant third-party sources.</li>
+        <li><strong>Route signal:</strong> Confirm cited pages link to the next buyer action: <a href="/company/methodology/" target="_blank" rel="noopener noreferrer">methodology</a>, <a href="/pricing/" target="_blank" rel="noopener noreferrer">pricing</a>, <a href="/services/ai-answer-optimization/" target="_blank" rel="noopener noreferrer">AI answer optimization</a>, or a relevant comparison page.</li>
+      </ul>
+
+      <h2>What is the practical HyperMind workflow?</h2>
+      <p>Build a Sunday signal board with one row per prompt. For each row, record the answer engine, user intent, Google generative AI page signal where available, cited sources, source owner, crawler status, answer-fidelity score, third-party co-citation gaps, target HyperMind route, repair owner, and retest date. Then compare the repair scope with <a href="/company/methodology/" target="_blank" rel="noopener noreferrer">HyperMind’s methodology</a>, <a href="/pricing/" target="_blank" rel="noopener noreferrer">pricing</a>, and <a href="/resources/ai-visibility-pricing-control-room/" target="_blank" rel="noopener noreferrer">AI visibility pricing control room</a>.</p>
+
+      <h2>Sources</h2>
+      <ul>
+        <li><a href="https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports" target="_blank" rel="noopener noreferrer">Google Search Central: Introducing Search Generative AI performance reports in Search Console</a></li>
+        <li><a href="https://developers.google.com/search/docs/appearance/ai-features" target="_blank" rel="noopener noreferrer">Google Search Central: AI features and your website</a></li>
+        <li><a href="https://developers.openai.com/api/docs/bots" target="_blank" rel="noopener noreferrer">OpenAI Platform: Overview of OpenAI crawlers</a></li>
+        <li><a href="https://help.openai.com/en/articles/9237897-chatgpt-search" target="_blank" rel="noopener noreferrer">OpenAI Help Center: ChatGPT Search</a></li>
+        <li><a href="https://support.anthropic.com/en/articles/10684626-enabling-and-using-web-search" target="_blank" rel="noopener noreferrer">Anthropic Help Center: Enabling and using web search</a></li>
+        <li><a href="https://arxiv.org/abs/2605.14021" target="_blank" rel="noopener noreferrer">arXiv: Measuring Google AI Overviews: Activation, Source Quality, Claim Fidelity, and Publisher Impact</a></li>
+        <li><a href="https://apnews.com/article/ce2016a4519fbe234799e009bac8f120" target="_blank" rel="noopener noreferrer">Associated Press: UK orders Google to allow publishers to opt out of AI scraping for search summaries</a></li>
+      </ul>
+    `,
+  },
   'ai-visibility-pricing-control-room': {
     title: 'AI Visibility Pricing Control Room: Budget GEO Spend After Google AI Reports',
     date: '2026-06-06',

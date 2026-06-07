@@ -83,6 +83,17 @@ const PAGE_SIZE = 9
 
 const RAW_STATIC: Array<Omit<Article, 'subtopic'>> = [
   {
+    id: 31,
+    title: 'AI Search Traffic Signal Board: The Sunday GEO Playbook After Google AI Reports',
+    date: '2026-06-07',
+    category: 'geo-strategy',
+    image: '/generated/blog/2026-06-07-ai-search-traffic-signal-board-cover.png',
+    description:
+      'A Sunday GEO traffic playbook for using Google Search Generative AI reports alongside ChatGPT Search, Perplexity, Gemini, Claude, Copilot, crawler access, citation-source audits, and qualified route checks.',
+    slug: 'ai-search-traffic-signal-board',
+    tags: ['AI search traffic', 'Google AI reports', 'GEO playbook', 'AI citations', 'source signal audit'],
+  },
+  {
     id: 30,
     title: 'AI Visibility Pricing Control Room: Budget GEO Spend After Google AI Reports',
     date: '2026-06-06',

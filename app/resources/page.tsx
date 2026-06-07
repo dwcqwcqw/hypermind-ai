@@ -102,11 +102,11 @@ const FEATURED_DECISION_GUIDE = {
 }
 
 const FEATURED_AI_MODE_GUIDE = {
-  title: 'AI Visibility Pricing Control Room',
-  href: '/resources/ai-visibility-pricing-control-room',
+  title: 'AI Search Traffic Signal Board',
+  href: '/resources/ai-search-traffic-signal-board',
   description:
-    'A Saturday buyer-decision playbook for pricing GEO work around prompts, source audits, answer repair, and qualified routes.',
-  tag: 'Latest GEO Buyer Playbook',
+    'A Sunday GEO playbook for reading Google AI reports alongside cross-engine prompt tests, citation-source audits, crawler access, and qualified traffic routes.',
+  tag: 'Latest AI Search Traffic Playbook',
 }
 
 export default function ResourcesHub() {
