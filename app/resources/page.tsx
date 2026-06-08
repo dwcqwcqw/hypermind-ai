@@ -102,11 +102,11 @@ const FEATURED_DECISION_GUIDE = {
 }
 
 const FEATURED_AI_MODE_GUIDE = {
-  title: 'AI Search Traffic Signal Board',
-  href: '/resources/ai-search-traffic-signal-board',
+  title: 'AI Mode Impression Map',
+  href: '/resources/ai-mode-impression-map',
   description:
-    'A Sunday GEO playbook for reading Google AI reports alongside cross-engine prompt tests, citation-source audits, crawler access, and qualified traffic routes.',
-  tag: 'Latest AI Search Traffic Playbook',
+    'A Monday GEO playbook for turning Google generative AI impressions into prompt clusters, citation-source audits, answer-influence checks, and qualified traffic routes.',
+  tag: 'Latest AI Mode Playbook',
 }
 
 export default function ResourcesHub() {

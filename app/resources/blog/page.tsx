@@ -83,6 +83,17 @@ const PAGE_SIZE = 9
 
 const RAW_STATIC: Array<Omit<Article, 'subtopic'>> = [
   {
+    id: 32,
+    title: "AI Mode Impression Map: Turn Google's New AI Report Into Prompt-Level GEO Actions",
+    date: '2026-06-08',
+    category: 'geo-strategy',
+    image: '/generated/blog/2026-06-08-ai-mode-impression-map-cover.png',
+    description:
+      'A Monday GEO playbook for turning Google Search Console generative AI impressions into prompt clusters, citation-source audits, answer-influence checks, and qualified AI search traffic routes.',
+    slug: 'ai-mode-impression-map',
+    tags: ['Google AI Mode', 'AI impressions', 'GEO workflow', 'Search Console AI reports', 'prompt intelligence'],
+  },
+  {
     id: 31,
     title: 'AI Search Traffic Signal Board: The Sunday GEO Playbook After Google AI Reports',
     date: '2026-06-07',

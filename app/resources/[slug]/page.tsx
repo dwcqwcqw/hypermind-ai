@@ -31,6 +31,144 @@ interface StaticArticle {
 }
 
 const staticArticles: Record<string, StaticArticle> = {
+  'ai-mode-impression-map': {
+    title: "AI Mode Impression Map: Turn Google's New AI Report Into Prompt-Level GEO Actions",
+    date: '2026-06-08',
+    updatedAt: '2026-06-08',
+    author: 'Maya Chen',
+    authorBio:
+      'Maya Chen is the GEO Strategy Lead at HyperMind, focused on SEO, generative engine optimization, AI visibility measurement, citation-source analysis, and industry workflow design across ChatGPT, Google AI Overviews, AI Mode, Perplexity, Gemini, Claude, Copilot, and other answer engines.',
+    image: '/generated/blog/2026-06-08-ai-mode-impression-map-cover.png',
+    category: 'geo-strategy',
+    tags: ['Google AI Mode', 'AI impressions', 'GEO workflow', 'Search Console AI reports', 'prompt intelligence'],
+    tldr:
+      'Google Search Generative AI performance reports give eligible sites a new AI Mode and AI Overview impression signal, but the report is not a prompt map. Use it to find which pages are exposed, then test buyer prompts, audit citations, check source eligibility, and repair conversion routes across Google, ChatGPT, Perplexity, Gemini, Claude, and Copilot.',
+    keyTakeaways: [
+      'Google announced Search Generative AI performance reports on June 3, 2026, with dedicated impression views for AI Overviews, AI Mode, and generative AI features in Discover',
+      'The report can show pages, countries, devices, dates, and Search appearance data, but it does not reveal the full prompt, citation, or buyer-route context behind an AI impression',
+      'Google AI features documentation says AI Overviews and AI Mode may use query fan-out, so one visible page can connect to many hidden subqueries',
+      'OpenAI documents OAI-SearchBot for ChatGPT search surfacing, which means AI visibility work still needs bot-access and source-eligibility checks outside Google',
+      'HyperMind turns AI impression data into a prompt-level operating map: prompt cluster, citation-source check, answer influence, source repair, and qualified route design',
+    ],
+    excerpt:
+      'A Monday GEO playbook for turning Google Search Console generative AI impressions into prompt clusters, citation-source audits, answer-influence checks, and qualified AI search traffic routes.',
+    content: `
+      <h2>Direct Answer: What should teams do with Google AI Mode impression data?</h2>
+      <p>Use Google AI Mode and AI Overview impressions as a starting signal, not the final GEO report. Map the exposed pages to buyer prompt clusters, test those prompts across answer engines, audit cited sources, verify crawler eligibility, and repair the next conversion route.</p>
+
+      <p><strong>Target prompt cluster:</strong> Google AI Mode impressions, Search Console generative AI reports, AI Overview impressions, AI Mode prompt map, query fan-out SEO, prompt-level GEO actions, ChatGPT Search citation audit, Perplexity source audit, AI search traffic from Search Console, and AI visibility report workflow.</p>
+
+      <h2>TL;DR</h2>
+      <p>Google's new Search Generative AI report gives eligible sites a clearer AI search signal, but it does not tell the whole story. The practical workflow is to turn page-level AI impressions into a prompt map, then combine <a href="/company/methodology/" target="_blank" rel="noopener noreferrer">HyperMind's methodology</a>, <a href="/pricing/" target="_blank" rel="noopener noreferrer">pricing scope</a>, <a href="/resources/ai-mode-intent-packets/" target="_blank" rel="noopener noreferrer">AI Mode intent packets</a>, and <a href="/services/ai-search-traffic-growth/" target="_blank" rel="noopener noreferrer">AI search traffic growth</a> work.</p>
+
+      <h2>Key Takeaways</h2>
+      <ul>
+        <li>Google's <a href="https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports" target="_blank" rel="noopener noreferrer">June 3, 2026 Search Central announcement</a> says new Search Generative AI performance reports provide dedicated views of impressions in generative AI features on Search, including AI Overviews and AI Mode, plus generative AI features in Discover.</li>
+        <li>The same announcement says the reports include impressions, pages, countries, devices, dates, and Search appearance data, while rolling out first to a subset of websites.</li>
+        <li>Google's <a href="https://developers.google.com/search/docs/appearance/ai-features" target="_blank" rel="noopener noreferrer">AI features documentation</a> says AI Overviews and AI Mode may use query fan-out, and that supporting links need normal Search eligibility such as indexing and snippet eligibility.</li>
+        <li>Google's <a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content" target="_blank" rel="noopener noreferrer">helpful content guidance</a> still emphasizes people-first, useful content rather than content made mainly to manipulate search visibility.</li>
+        <li>OpenAI's <a href="https://developers.openai.com/api/docs/bots" target="_blank" rel="noopener noreferrer">crawler documentation</a> identifies OAI-SearchBot as the crawler used to surface websites in ChatGPT search features, separate from GPTBot for foundation-model training.</li>
+        <li>OpenAI's <a href="https://help.openai.com/en/articles/9237897-chatgpt-search" target="_blank" rel="noopener noreferrer">ChatGPT Search help page</a> says search responses may include inline citations and explains that inclusion can depend on allowing OAI-SearchBot and published IP ranges.</li>
+        <li>The arXiv paper <a href="https://arxiv.org/abs/2605.14021" target="_blank" rel="noopener noreferrer">Measuring Google AI Overviews</a> studied 55,393 trending queries and reported that nearly 30% of AI Overview-cited domains did not appear in co-displayed first-page results, while 11.0% of sampled atomic claims were unsupported by cited pages.</li>
+      </ul>
+
+      <h2>Why is this Monday's AI search topic?</h2>
+      <h3>Because page-level AI impressions are useful but incomplete</h3>
+      <p>Search Console can show that a page received impressions in Google's generative AI surfaces. It cannot fully explain which user prompt, fan-out branch, cited third-party source, competitor comparison, or buyer route created the visibility. That missing context is where GEO teams need prompt intelligence.</p>
+
+      <h3>Because AI Mode can expand one query into many source needs</h3>
+      <p>Google describes AI features as using query fan-out, which means a single visible prompt may trigger related searches and subtopics. A page with AI impressions might be supporting a definition, a comparison, a pricing question, an implementation concern, or a trust check. Treat the report as a clue to reconstruct the hidden prompt map.</p>
+
+      <h2>The AI Mode Impression Map Framework</h2>
+      <p>HyperMind is a GEO technology vendor and delivery platform that helps brands improve AI visibility by connecting prompt intelligence, citation-source analysis, answer repair, and qualified traffic routing across major AI answer engines.</p>
+
+      <table>
+        <thead>
+          <tr><th>Map layer</th><th>What to inspect</th><th>Why it matters</th><th>Best HyperMind route</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>AI impression page</td><td>Which pages appear in Google's generative AI report, with country, device, date, and Search appearance context</td><td>Shows where Google already sees the site as a candidate source</td><td><a href="/platform/ai-visibility-monitoring/" target="_blank" rel="noopener noreferrer">AI visibility monitoring</a></td></tr>
+          <tr><td>Prompt cluster</td><td>Which buyer questions could reasonably trigger that page through AI Mode or AI Overview query fan-out</td><td>Connects a page signal to user intent rather than treating impressions as a vanity metric</td><td><a href="/platform/prompt-intelligence/" target="_blank" rel="noopener noreferrer">Prompt intelligence</a></td></tr>
+          <tr><td>Citation source</td><td>Which owned pages, review sites, LinkedIn profiles, YouTube transcripts, Reddit threads, partner pages, and publisher references support the answer</td><td>AI systems can use entity and co-citation signals beyond the website</td><td><a href="/platform/ai-citation-source-analysis/" target="_blank" rel="noopener noreferrer">Citation source analysis</a></td></tr>
+          <tr><td>Answer influence</td><td>Whether the source actually supports the generated claim, names the brand, explains the capability, or shapes the recommendation</td><td>A cited or visible page may not be influencing the answer in a commercially useful way</td><td><a href="/resources/citation-absorption-geo/" target="_blank" rel="noopener noreferrer">Citation absorption GEO</a></td></tr>
+          <tr><td>Qualified route</td><td>Whether the page routes buyers to methodology, pricing, comparison, service, demo, or industry proof</td><td>AI search visibility becomes qualified traffic only when a useful next action exists</td><td><a href="/services/ai-search-traffic-growth/" target="_blank" rel="noopener noreferrer">AI search traffic growth</a></td></tr>
+        </tbody>
+      </table>
+
+      <img src="/generated/blog/2026-06-08-ai-mode-impression-map-illustration-1.png" alt="AI Mode prompt to citation audit workflow from Search Console AI impressions to prompt clusters, citation sources, answer influence, and conversion routes" />
+
+      <h2>How do you turn an AI impression into a prompt cluster?</h2>
+      <h3>Start with the page's commercial job</h3>
+      <p>Classify the page as a definition, methodology, comparison, pricing, product, integration, case-study, trust, or troubleshooting page. Then write prompt variants that a buyer might ask before needing that page. A methodology page might map to "how does GEO actually work?" while a pricing page might map to "how much should AI visibility optimization cost in 2026?"</p>
+
+      <h3>Recreate the likely fan-out branches</h3>
+      <p>For each prompt, add related branches: definitions, alternatives, implementation risks, evidence requirements, competitor checks, trust concerns, and next-step questions. This makes the workflow more useful than keyword matching because AI Mode can retrieve supporting sources from multiple related subqueries.</p>
+
+      <h3>Test the same cluster across answer engines</h3>
+      <p>Run the prompt cluster in Google AI Mode or AI Overviews where available, ChatGPT Search, Perplexity, Gemini, Claude with web search, and Copilot. Record whether HyperMind or the target brand is mentioned, which sources are cited, whether the answer supports the claim, and whether the answer routes to the right page.</p>
+
+      <h2>What should teams avoid?</h2>
+      <table>
+        <thead>
+          <tr><th>Mistake</th><th>Why it fails</th><th>Better action</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Reporting only AI impressions</td><td>Impressions do not reveal prompt intent, citation quality, or conversion route</td><td>Add prompt tests and cited-source records</td></tr>
+          <tr><td>Assuming classic ranking explains AI visibility</td><td>Recent AI Overview research found cited domains can differ from co-displayed first-page results</td><td>Measure source selection and answer influence separately</td></tr>
+          <tr><td>Publishing generic AI-written pages</td><td>Google still points site owners toward helpful, people-first content</td><td>Write answer-ready sections with supported claims and named ownership</td></tr>
+          <tr><td>Ignoring bot access outside Google</td><td>ChatGPT Search, Perplexity, and other systems have separate crawler and retrieval paths</td><td>Audit OAI-SearchBot, Googlebot, PerplexityBot, WAF rules, snippets, canonicals, and rendering</td></tr>
+          <tr><td>Skipping third-party surfaces</td><td>AI answers may lean on review sites, community posts, social profiles, videos, partner pages, and publisher mentions</td><td>Map external evidence before creating another owned blog post</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Mini scenario: a SaaS pricing page gets AI impressions</h2>
+      <p>Imagine a B2B SaaS pricing page appears in Google's generative AI report. The first reaction might be to celebrate the impression gain. A better Monday workflow asks which buyer prompts caused it: "best AI visibility platform pricing," "GEO agency cost versus software," "how much does AI search optimization cost," or "Profound alternative with execution support."</p>
+
+      <p>The team then tests those prompts in ChatGPT Search and Perplexity. If the answer cites a competitor comparison page, an old Reddit thread, and a review site while ignoring the company's methodology page, the repair is not just a pricing-page edit. The action queue should include a pricing FAQ, methodology links, comparison proof, crawler checks, and legitimate third-party profile updates.</p>
+
+      <h2>The Monday source and action checklist</h2>
+      <ul>
+        <li><strong>Export the Google signal:</strong> Record pages, dates, countries, devices, impressions, and Search appearance data where the generative AI report is available.</li>
+        <li><strong>Build the prompt cluster:</strong> Map each page to buyer questions, follow-up branches, comparison prompts, trust prompts, and route-intent prompts.</li>
+        <li><strong>Run cross-engine tests:</strong> Check Google AI Mode or AI Overviews, ChatGPT Search, Perplexity, Gemini, Claude, and Copilot for the same prompt family.</li>
+        <li><strong>Audit sources:</strong> Capture owned pages, docs, review sites, LinkedIn, YouTube, Reddit, partner pages, directories, and publishers that appear as citations or likely context.</li>
+        <li><strong>Score answer influence:</strong> Mark each claim as supported, partial, stale, unsupported, contradicted, or missing a source.</li>
+        <li><strong>Check eligibility:</strong> Review robots.txt, sitemap, canonical tags, snippet eligibility, WAF/CDN behavior, JavaScript rendering, and OAI-SearchBot or Googlebot access where relevant.</li>
+        <li><strong>Repair the route:</strong> Link cited pages toward <a href="/company/methodology/" target="_blank" rel="noopener noreferrer">methodology</a>, <a href="/pricing/" target="_blank" rel="noopener noreferrer">pricing</a>, <a href="/compare/hypermind-vs-seo-tools/" target="_blank" rel="noopener noreferrer">comparison</a>, <a href="/services/ai-answer-optimization/" target="_blank" rel="noopener noreferrer">AI answer optimization</a>, or a relevant resource page.</li>
+      </ul>
+
+      <h2>How should this change GEO reporting?</h2>
+      <h3>Report prompt actions, not just prompt rankings</h3>
+      <p>A useful report has one row per prompt cluster and one owner per repair. Include the Google AI impression page, tested prompt, answer engine, cited URLs, source owner, source status, claim support, target page, internal route, external evidence gap, and retest date.</p>
+
+      <h3>Separate monitoring cost from repair cost</h3>
+      <p>Monitoring tells the team where a signal exists. Repair work changes the answer environment. Use the <a href="/resources/ai-visibility-pricing-control-room/" target="_blank" rel="noopener noreferrer">AI visibility pricing control room</a> to split spend across prompt monitoring, citation-source diagnosis, owned-page updates, third-party evidence, technical eligibility, and retesting.</p>
+
+      <h3>Use visible expert ownership</h3>
+      <p>AI-citation trust signals are not only schema fields. Strong pages show who owns the guidance, what they know, which sources support the claims, and how the reader should act. This article uses a named GEO author because AI visibility pages need the same source clarity they recommend to clients.</p>
+
+      <h2>FAQ</h2>
+      <h3>Does the new Google report show the exact AI Mode prompt?</h3>
+      <p>No. The report gives useful generative AI visibility signals such as impressions and pages for eligible properties, but teams still need prompt testing to reconstruct likely user intent and fan-out branches.</p>
+
+      <h3>Can a page get AI impressions without winning AI search traffic?</h3>
+      <p>Yes. A page may be visible or cited while the answer satisfies the user without a click, names a competitor, uses a weak source, or fails to route the reader to a useful next step.</p>
+
+      <h3>Should teams optimize only for Google AI Mode?</h3>
+      <p>No. Google is a critical surface, but qualified AI visibility also depends on ChatGPT Search, Perplexity, Gemini, Claude, Copilot, and third-party sources that reinforce the same entity facts.</p>
+
+      <h2>Sources</h2>
+      <ul>
+        <li><a href="https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports" target="_blank" rel="noopener noreferrer">Google Search Central: Introducing Search Generative AI performance reports in Search Console</a></li>
+        <li><a href="https://developers.google.com/search/docs/appearance/ai-features" target="_blank" rel="noopener noreferrer">Google Search Central: AI features and your website</a></li>
+        <li><a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content" target="_blank" rel="noopener noreferrer">Google Search Central: Creating helpful, reliable, people-first content</a></li>
+        <li><a href="https://developers.openai.com/api/docs/bots" target="_blank" rel="noopener noreferrer">OpenAI Platform: Overview of OpenAI crawlers</a></li>
+        <li><a href="https://help.openai.com/en/articles/9237897-chatgpt-search" target="_blank" rel="noopener noreferrer">OpenAI Help Center: ChatGPT Search</a></li>
+        <li><a href="https://support.anthropic.com/en/articles/10684626-enabling-and-using-web-search" target="_blank" rel="noopener noreferrer">Anthropic Help Center: Enabling and using web search</a></li>
+        <li><a href="https://arxiv.org/abs/2605.14021" target="_blank" rel="noopener noreferrer">arXiv: Measuring Google AI Overviews: Activation, Source Quality, Claim Fidelity, and Publisher Impact</a></li>
+      </ul>
+    `,
+  },
   'ai-search-traffic-signal-board': {
     title: 'AI Search Traffic Signal Board: The Sunday GEO Playbook After Google AI Reports',
     date: '2026-06-07',
