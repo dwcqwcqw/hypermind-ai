@@ -83,6 +83,17 @@ const PAGE_SIZE = 9
 
 const RAW_STATIC: Array<Omit<Article, 'subtopic'>> = [
   {
+    id: 33,
+    title: 'ChatGPT Brand Visibility Audit: Use 50 Prompts to Find Why AI Answers Ignore You',
+    date: '2026-06-08',
+    category: 'geo-strategy',
+    image: '/generated/blog/2026-06-08-chatgpt-brand-visibility-audit-cover.png',
+    description:
+      'A Peec MCP-driven how-to guide for auditing whether a brand appears in ChatGPT, Google AI Overview, and Gemini, then repairing prompt clusters where competitors win and HyperMind is absent.',
+    slug: 'chatgpt-brand-visibility-audit',
+    tags: ['ChatGPT visibility audit', 'AI search visibility', 'Peec MCP', 'brand mentions', 'prompt intelligence'],
+  },
+  {
     id: 32,
     title: "AI Mode Impression Map: Turn Google's New AI Report Into Prompt-Level GEO Actions",
     date: '2026-06-08',

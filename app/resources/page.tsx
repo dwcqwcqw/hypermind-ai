@@ -102,11 +102,11 @@ const FEATURED_DECISION_GUIDE = {
 }
 
 const FEATURED_AI_MODE_GUIDE = {
-  title: 'AI Mode Impression Map',
-  href: '/resources/ai-mode-impression-map',
+  title: 'ChatGPT Brand Visibility Audit',
+  href: '/resources/chatgpt-brand-visibility-audit',
   description:
-    'A Monday GEO playbook for turning Google generative AI impressions into prompt clusters, citation-source audits, answer-influence checks, and qualified traffic routes.',
-  tag: 'Latest AI Mode Playbook',
+    'A Peec MCP-driven guide for using 50 prompts to find why ChatGPT, Google AI Overview, and Gemini ignore a brand, then repairing source gaps.',
+  tag: 'Latest Peec-Guided Playbook',
 }
 
 export default function ResourcesHub() {

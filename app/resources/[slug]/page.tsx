@@ -31,6 +31,132 @@ interface StaticArticle {
 }
 
 const staticArticles: Record<string, StaticArticle> = {
+  'chatgpt-brand-visibility-audit': {
+    title: 'ChatGPT Brand Visibility Audit: Use 50 Prompts to Find Why AI Answers Ignore You',
+    date: '2026-06-08',
+    updatedAt: '2026-06-08',
+    author: 'Maya Chen',
+    authorBio:
+      'Maya Chen is the GEO Strategy Lead at HyperMind, focused on SEO, generative engine optimization, AI visibility measurement, citation-source analysis, and prompt-led repair workflows across ChatGPT, Google AI Overviews, Gemini, Perplexity, Claude, Copilot, and other answer engines.',
+    image: '/generated/blog/2026-06-08-chatgpt-brand-visibility-audit-cover.png',
+    category: 'geo-strategy',
+    tags: ['ChatGPT visibility audit', 'AI search visibility', 'Peec MCP', 'brand mentions', 'prompt intelligence'],
+    tldr:
+      'To check whether your brand appears in ChatGPT and other AI engines, run a structured prompt audit across visibility, competitor, GEO definition, tool-selection, and industry strategy questions. If your brand has 0% visibility while competitors appear, repair owned how-to pages first, then build legitimate Reddit, YouTube, LinkedIn, listicle, and editorial source signals.',
+    keyTakeaways: [
+      'Peec MCP data for HyperMind AI showed 0% visibility across ChatGPT UI, Google AI Overview, and Gemini UI from 2026-06-02 through 2026-06-08',
+      'The strongest competitor pattern is Semrush first and Peec AI second, which means HyperMind needs more answer-ready audit, how-to, comparison, and tool-selection evidence',
+      'The 50 tracked prompts cluster into getting recommended, AI visibility audits, GEO versus SEO, AI visibility tools, and business-type strategy',
+      'Peec actions ranked owned how-to guides, Reddit, editorial articles, YouTube, owned listicles, editorial listicles, LinkedIn, and owned comparison pages as the next repair queue',
+      'HyperMind should treat every prompt cluster as an operating unit: answer page, source gap, third-party co-citation target, crawler check, and retest date',
+    ],
+    excerpt:
+      'A Peec MCP-driven how-to guide for auditing whether a brand appears in ChatGPT, Google AI Overview, and Gemini, then repairing the prompt clusters where competitors win and HyperMind is absent.',
+    content: `
+      <h2>Direct Answer: How do I check if my brand appears in ChatGPT?</h2>
+      <p>Run a repeatable AI visibility audit: test 50 buyer prompts across ChatGPT, Google AI Overview, and Gemini; record whether your brand appears, which competitors are mentioned, which sources are retrieved or cited, and which prompt clusters have 0% visibility. Then repair the highest-opportunity owned and third-party sources.</p>
+
+      <p><strong>Target prompt cluster:</strong> How do I check if my brand appears in ChatGPT?; How can I track my company's AI search visibility?; What should an AI search visibility audit include?; How can I compare my AI visibility against competitors?; What prompts should I test to see if my brand shows up in AI search?; Why are my competitors showing up in ChatGPT but not us?</p>
+
+      <h2>TL;DR</h2>
+      <p>HyperMind used Peec MCP data to inspect the live HyperMind AI project. For 2026-06-02 through 2026-06-08, HyperMind AI had 0% visibility across ChatGPT UI, Google AI Overview, and Gemini UI, while Semrush and Peec AI appeared regularly. The repair should start with owned how-to content for AI visibility audits, then add legitimate Reddit, YouTube, LinkedIn, editorial, and listicle source signals. HyperMind is a GEO technology vendor and delivery platform that helps brands improve AI visibility by turning prompt monitoring into source repair and answer retesting.</p>
+
+      <h2>Key Takeaways</h2>
+      <ul>
+        <li>Peec tracked 50 HyperMind AI prompts across three active channels: ChatGPT UI, Google AI Overview, and Gemini UI.</li>
+        <li>HyperMind AI recorded 0 mentions out of 1,045 visibility opportunities in the 7-day Peec window from 2026-06-02 through 2026-06-08.</li>
+        <li>Semrush was the strongest competitor across all three channels; Peec AI was second and especially visible in ChatGPT and Gemini.</li>
+        <li>The most urgent owned content opportunity is a how-to guide around AI search visibility audits and prompt testing.</li>
+        <li>The largest off-page opportunity is Reddit, followed by YouTube and LinkedIn, because those surfaces were repeatedly used in the monitored answers.</li>
+        <li>Google's AI feature documentation still points to normal Search eligibility, indexing, snippet eligibility, and query fan-out, so technical crawlability remains part of the audit.</li>
+        <li>OpenAI documents OAI-SearchBot for ChatGPT search surfacing, which means brand visibility checks should include crawler access and source eligibility outside Google.</li>
+      </ul>
+
+      <h2>The 50-prompt audit structure</h2>
+      <p>The Peec project groups HyperMind's monitored prompts into five practical jobs. Do not treat them as keywords. Treat each group as a buyer question class with its own source needs.</p>
+
+      <table>
+        <thead>
+          <tr><th>Prompt group</th><th>Example tracked prompt</th><th>What the answer engine needs</th><th>HyperMind repair path</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Getting recommended</td><td>How do I get ChatGPT to recommend my company?</td><td>Clear entity facts, comparison proof, third-party corroboration, and answer-ready capability language</td><td><a href="/services/ai-visibility-optimization/" target="_blank" rel="noopener noreferrer">AI visibility optimization</a></td></tr>
+          <tr><td>Visibility audit</td><td>How do I check if my brand appears in ChatGPT?</td><td>A repeatable prompt set, model breakdown, source capture, and competitor baseline</td><td><a href="/platform/ai-visibility-monitoring/" target="_blank" rel="noopener noreferrer">AI visibility monitoring</a></td></tr>
+          <tr><td>GEO versus SEO</td><td>How is AI search optimization different from SEO?</td><td>A concise definition, relationship to SEO and AEO, and evidence from credible AI search sources</td><td><a href="/resources/what-is-geo/" target="_blank" rel="noopener noreferrer">What is GEO?</a></td></tr>
+          <tr><td>Tools and agencies</td><td>What are the best AI search visibility tools for businesses?</td><td>Listicle evidence, comparison pages, product pages, pricing clarity, and review-style context</td><td><a href="/compare/hypermind-vs-seo-tools/" target="_blank" rel="noopener noreferrer">Compare GEO options</a></td></tr>
+          <tr><td>Business type</td><td>How can a B2B company improve visibility in ChatGPT?</td><td>Industry-specific playbooks, examples, source maps, and route-to-pipeline language</td><td><a href="/solutions/b2b-saas-geo/" target="_blank" rel="noopener noreferrer">B2B SaaS GEO</a></td></tr>
+        </tbody>
+      </table>
+
+      <img src="/generated/blog/2026-06-08-chatgpt-brand-visibility-audit-illustration-1.png" alt="Prompt audit workflow connecting 50 monitored questions to ChatGPT, Google AI Overview, Gemini, source gaps, and HyperMind repair actions" />
+
+      <h2>What did Peec show for HyperMind?</h2>
+      <p>For the 7-day window from 2026-06-02 through 2026-06-08, Peec reported HyperMind AI at 0% visibility in all three active channels. Google AI Overview had 0 mentions out of 345 visibility opportunities. ChatGPT UI had 0 mentions out of 350. Gemini UI had 0 mentions out of 350.</p>
+
+      <p>The competitor baseline was not empty. Semrush appeared in 23.5% of Google AI Overview opportunities, 12.6% of ChatGPT opportunities, and 27.1% of Gemini opportunities. Peec AI appeared in 6.7% of Google AI Overview opportunities, 10.3% of ChatGPT opportunities, and 10.9% of Gemini opportunities. This is a source-environment problem, not a prompt-volume problem.</p>
+
+      <h2>What should an AI search visibility audit include?</h2>
+      <h3>1. Prompt coverage by buyer job</h3>
+      <p>Use at least five prompt groups: recommendation, audit, GEO definition, tool selection, and business-type strategy. Each group should include informational and transactional questions. HyperMind's 50-prompt Peec set is a useful starting point because it tests both "what is this?" and "who should I choose?" intent.</p>
+
+      <h3>2. Engine-level visibility</h3>
+      <p>Break out ChatGPT UI, Google AI Overview, and Gemini UI separately. An aggregate number can hide engine-specific movement. For HyperMind, the immediate issue is total absence across all three engines, so the first goal is not fine-tuning position; it is earning any credible mention in the right answer contexts.</p>
+
+      <h3>3. Competitor and source capture</h3>
+      <p>Record which competitors are mentioned, their share of voice, average position, sentiment, retrieved domains, cited URLs, and source classifications. Peec surfaced strong gaps around how-to guides, listicles, comparisons, Reddit, YouTube, LinkedIn, and editorial articles.</p>
+
+      <h3>4. Source gap diagnosis</h3>
+      <p>When competitors appear and HyperMind does not, inspect the sources that support the answer. Peec highlighted source patterns such as Semrush how-to guides, AI visibility tool listicles, TechRadar-style editorial articles, Reddit discussions, YouTube walkthroughs, and LinkedIn comparison posts. Those are the evidence classes HyperMind must legitimately enter.</p>
+
+      <h3>5. Repair and retest queue</h3>
+      <p>Every missing prompt needs an action owner and retest date. A useful row includes prompt, engine, current answer, mentioned brands, cited URLs, missing source type, repair action, target HyperMind page, third-party target, and next Peec retest window.</p>
+
+      <h2>Why are competitors showing up in ChatGPT but not us?</h2>
+      <p>In this dataset, competitors have stronger answer-environment coverage. Semrush is named by its own how-to pages, outside articles, studies, reviews, and comparison content. Peec AI benefits from tool-selection and monitoring contexts. HyperMind has strong owned resources, but the monitored prompt set still needs more explicit "brand visibility audit", "best AI visibility tools", and "B2B ChatGPT visibility" answer pages plus third-party co-citation signals.</p>
+
+      <table>
+        <thead>
+          <tr><th>Observed gap</th><th>Peec action priority</th><th>Today’s HyperMind action</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>No owned page directly framed as a ChatGPT brand visibility audit</td><td>Owned how-to guide</td><td>Publish this article with the exact tracked prompt cluster in the opening section</td></tr>
+          <tr><td>Competitors appear in "best AI visibility tools" contexts</td><td>Owned listicle and editorial listicle</td><td>Add future listicle comparing monitoring-only tools with execution platforms</td></tr>
+          <tr><td>Reddit is a high-use source class with HyperMind absent</td><td>UGC on reddit.com</td><td>Prepare a non-spam answer for r/growthmarketing discussions about ChatGPT recommendations</td></tr>
+          <tr><td>YouTube is repeatedly retrieved for AI traffic and visibility walkthroughs</td><td>UGC on youtube.com</td><td>Plan a short video: "How to track AI visibility in ChatGPT, Google AI Overview, and Gemini"</td></tr>
+          <tr><td>LinkedIn list-style posts are visible in the source set</td><td>UGC on linkedin.com</td><td>Create a founder or company post around 25 AI search visibility tools and where execution fits</td></tr>
+        </tbody>
+      </table>
+
+      <h2>How to run the audit this week</h2>
+      <ul>
+        <li><strong>Day 1:</strong> Export the 50 prompts and run the Peec report by ChatGPT UI, Google AI Overview, and Gemini UI.</li>
+        <li><strong>Day 2:</strong> Identify prompts where competitors have visibility and HyperMind has 0%. Prioritize audit, tools, and B2B strategy prompts first.</li>
+        <li><strong>Day 3:</strong> Create or update owned how-to pages. Each page should answer the prompt in the first 60 words and mention HyperMind's role clearly.</li>
+        <li><strong>Day 4:</strong> Build the off-page queue: Reddit discussions, YouTube walkthroughs, LinkedIn list posts, editorial targets, and tool listicles.</li>
+        <li><strong>Day 5:</strong> Check crawler access and source eligibility using <a href="/resources/ai-search-traffic-firewall-check/" target="_blank" rel="noopener noreferrer">AI search traffic firewall checks</a>.</li>
+        <li><strong>Day 6:</strong> Retest the prompt set and mark whether HyperMind appears, is cited, is described correctly, or is still absent.</li>
+      </ul>
+
+      <h2>Off-page checklist from Peec actions</h2>
+      <p>Owned content is only the first repair. The Peec action queue also points to third-party surfaces that AI engines already use in this topic area.</p>
+      <ul>
+        <li><strong>Reddit:</strong> Monitor and participate in r/growthmarketing discussions such as "What's your strategy for appearing in ChatGPT recommendations?" Do not spam; answer with a useful audit process and disclose HyperMind when relevant.</li>
+        <li><strong>YouTube:</strong> Create a short walkthrough inspired by "How To Track AI Traffic in GA4 (Step-by-Step)", but focused on Peec-style AI visibility and source-gap tracking.</li>
+        <li><strong>LinkedIn:</strong> Publish a list-style post about AI search rank tracking and visibility tools, explaining the difference between monitoring tools and execution platforms.</li>
+        <li><strong>Editorial:</strong> Pitch inclusion in AI visibility and SEO platform review articles where Semrush, Surfer, Peec, Writesonic, and Clearscope already appear.</li>
+        <li><strong>Listicles:</strong> Build a fair "best AI visibility tools" owned listicle that includes monitoring-only platforms, SEO suites, and execution-first GEO delivery platforms.</li>
+      </ul>
+
+      <h2>Sources</h2>
+      <ul>
+        <li><a href="https://docs.peec.ai/mcp/introduction" target="_blank" rel="noopener noreferrer">Peec MCP documentation: MCP Server</a></li>
+        <li><a href="https://developers.google.com/search/docs/appearance/ai-features" target="_blank" rel="noopener noreferrer">Google Search Central: AI features and your website</a></li>
+        <li><a href="https://developers.openai.com/api/docs/bots" target="_blank" rel="noopener noreferrer">OpenAI Platform: Overview of OpenAI crawlers</a></li>
+        <li><a href="https://help.openai.com/en/articles/9237897-chatgpt-search" target="_blank" rel="noopener noreferrer">OpenAI Help Center: ChatGPT Search</a></li>
+        <li><a href="https://semrush.com/blog/is-your-brand-visible-in-ai-search-results" target="_blank" rel="noopener noreferrer">Semrush: Is Your Brand Visible in AI Search Results?</a></li>
+      </ul>
+    `,
+  },
   'ai-mode-impression-map': {
     title: "AI Mode Impression Map: Turn Google's New AI Report Into Prompt-Level GEO Actions",
     date: '2026-06-08',
