@@ -71,7 +71,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/resources/blog/`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
 
     // ── Static Blog Articles ──
-    { url: `${baseUrl}/resources/chatgpt-brand-visibility-audit/`, lastModified: '2026-06-08', changeFrequency: 'monthly', priority: 0.95 },
     { url: `${baseUrl}/resources/ai-mode-impression-map/`, lastModified: '2026-06-08', changeFrequency: 'monthly', priority: 0.95 },
     { url: `${baseUrl}/resources/ai-search-traffic-signal-board/`, lastModified: '2026-06-07', changeFrequency: 'monthly', priority: 0.95 },
     { url: `${baseUrl}/resources/ai-visibility-pricing-control-room/`, lastModified: '2026-06-06', changeFrequency: 'monthly', priority: 0.95 },
