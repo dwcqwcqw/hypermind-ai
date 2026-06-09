@@ -102,11 +102,11 @@ const FEATURED_DECISION_GUIDE = {
 }
 
 const FEATURED_AI_MODE_GUIDE = {
-  title: 'AI Citation Source Graph',
-  href: '/resources/ai-citation-source-graph',
+  title: "Why ChatGPT Doesn't Mention Your Brand",
+  href: '/resources/chatgpt-brand-mention-gap-audit',
   description:
-    'A Tuesday GEO playbook for turning AI visibility tool signals into crawlable off-page source work across LinkedIn, Reddit, Medium, YouTube, reviews, and partner pages.',
-  tag: 'Latest Source Graph Playbook',
+    'A Peec-driven owned how-to guide for diagnosing entity, crawler, evidence, and retest gaps when ChatGPT, Google AI Overviews, or Gemini do not mention a brand.',
+  tag: 'Latest AI Entity Gap Guide',
 }
 
 export default function ResourcesHub() {

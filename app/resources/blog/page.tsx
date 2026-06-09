@@ -83,6 +83,17 @@ const PAGE_SIZE = 9
 
 const RAW_STATIC: Array<Omit<Article, 'subtopic'>> = [
   {
+    id: 34,
+    title: "Why ChatGPT Doesn't Mention Your Brand: The AI Entity Gap Audit",
+    date: '2026-06-09',
+    category: 'geo-strategy',
+    image: '/generated/blog/2026-06-09-chatgpt-brand-mention-gap-audit-cover.png',
+    description:
+      'A Peec-driven owned how-to guide for diagnosing why ChatGPT, Google AI Overviews, and Gemini do not mention a brand, with a practical AI entity gap audit and retest checklist.',
+    slug: 'chatgpt-brand-mention-gap-audit',
+    tags: ['ChatGPT brand mentions', 'AI entity audit', 'AI visibility audit', 'GEO how-to guide', 'answer engine optimization'],
+  },
+  {
     id: 33,
     title: 'AI Citation Source Graph: LinkedIn, Reddit, and Medium GEO Playbook',
     date: '2026-06-09',
