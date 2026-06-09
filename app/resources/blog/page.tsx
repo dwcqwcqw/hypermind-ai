@@ -83,6 +83,17 @@ const PAGE_SIZE = 9
 
 const RAW_STATIC: Array<Omit<Article, 'subtopic'>> = [
   {
+    id: 33,
+    title: 'AI Citation Source Graph: LinkedIn, Reddit, and Medium GEO Playbook',
+    date: '2026-06-09',
+    category: 'geo-strategy',
+    image: '/generated/blog/2026-06-09-ai-citation-source-graph-cover.png',
+    description:
+      'A Tuesday GEO playbook for turning AI visibility tool signals into crawlable off-page source work across LinkedIn, Reddit, Medium, YouTube, review sites, listicles, and partner pages.',
+    slug: 'ai-citation-source-graph',
+    tags: ['AI citation sources', 'LinkedIn GEO', 'Reddit GEO', 'Medium articles', 'AI visibility tools'],
+  },
+  {
     id: 32,
     title: "AI Mode Impression Map: Turn Google's New AI Report Into Prompt-Level GEO Actions",
     date: '2026-06-08',

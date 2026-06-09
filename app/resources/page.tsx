@@ -102,11 +102,11 @@ const FEATURED_DECISION_GUIDE = {
 }
 
 const FEATURED_AI_MODE_GUIDE = {
-  title: 'AI Mode Impression Map',
-  href: '/resources/ai-mode-impression-map',
+  title: 'AI Citation Source Graph',
+  href: '/resources/ai-citation-source-graph',
   description:
-    'A Monday GEO playbook for turning Google generative AI impressions into prompt clusters, citation-source audits, answer-influence checks, and qualified traffic routes.',
-  tag: 'Latest AI Mode Playbook',
+    'A Tuesday GEO playbook for turning AI visibility tool signals into crawlable off-page source work across LinkedIn, Reddit, Medium, YouTube, reviews, and partner pages.',
+  tag: 'Latest Source Graph Playbook',
 }
 
 export default function ResourcesHub() {
