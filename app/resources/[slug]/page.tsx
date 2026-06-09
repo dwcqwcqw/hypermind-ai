@@ -4888,6 +4888,7 @@ export default async function ArticlePage({
       <Navbar />
       <main className="min-h-screen bg-white pt-24">
         <ArticleContent
+          slug={slug}
           title={renderData.title}
           coverImage={renderData.coverImage}
           content={renderData.content}

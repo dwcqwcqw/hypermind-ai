@@ -115,6 +115,11 @@ export default function StructuredData() {
         '@id': 'https://hypermindgeo.com/#navigation',
         name: 'Main Navigation',
         hasPart: [
+          { '@type': 'WebPage', name: 'Try Free AI Visibility Audit', url: 'https://hypermindgeo.com/tools/ai-brand-audit/' },
+          { '@type': 'WebPage', name: 'AI Visibility Monitoring', url: 'https://hypermindgeo.com/platform/ai-visibility-monitoring/' },
+          { '@type': 'WebPage', name: 'AI Citation Strategy', url: 'https://hypermindgeo.com/services/ai-citation-strategy/' },
+          { '@type': 'WebPage', name: 'See Pricing Plans', url: 'https://hypermindgeo.com/pricing/' },
+          { '@type': 'WebPage', name: 'Compare HyperMind vs Peec', url: 'https://hypermindgeo.com/compare/hypermind-vs-peec/' },
           { '@type': 'WebPage', name: 'Platform', url: 'https://hypermindgeo.com/platform/' },
           { '@type': 'WebPage', name: 'Services', url: 'https://hypermindgeo.com/services/' },
           { '@type': 'WebPage', name: 'Solutions', url: 'https://hypermindgeo.com/solutions/' },

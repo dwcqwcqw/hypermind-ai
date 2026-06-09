@@ -140,6 +140,39 @@ const OFFER_AREAS = [
   },
 ]
 
+const SEARCH_SITELINK_TARGETS = [
+  {
+    title: 'Try Free AI Visibility Audit',
+    href: '/tools/ai-brand-audit',
+    description:
+      'Check where your brand appears across ChatGPT, Google AI Overviews, Gemini, Perplexity, Claude, and Copilot.',
+  },
+  {
+    title: 'AI Visibility Monitoring',
+    href: '/platform/ai-visibility-monitoring',
+    description:
+      'Track brand mentions, citations, sentiment, share of voice, and competitor visibility in AI answers.',
+  },
+  {
+    title: 'AI Citation Strategy',
+    href: '/services/ai-citation-strategy',
+    description:
+      'Build the source graph that helps AI systems cite, trust, and recommend your brand.',
+  },
+  {
+    title: 'See Pricing Plans',
+    href: '/pricing',
+    description:
+      'Choose a GEO plan for AI visibility monitoring, prompt intelligence, answer optimization, and managed execution.',
+  },
+  {
+    title: 'Compare HyperMind vs Peec',
+    href: '/compare/hypermind-vs-peec',
+    description:
+      'Compare AI visibility tracking with HyperMind implementation workflows for source repair and answer growth.',
+  },
+]
+
 const CORE_RESOURCES = [
   {
     title: 'AI Visibility Platform vs GEO Agency',
@@ -229,12 +262,40 @@ function HomeStructuredData() {
       },
     },
     {
+      '@type': 'WebPage',
+      '@id': `${BASE_URL}/#homepage`,
+      name: 'HyperMind - Agentic GEO Agency for AI Search Visibility',
+      url: `${BASE_URL}/`,
+      isPartOf: { '@id': `${BASE_URL}/#website` },
+      about: { '@id': `${BASE_URL}/#organization` },
+      primaryImageOfPage: `${BASE_URL}/asset/dashboard.jpg`,
+      description:
+        'HyperMind helps brands earn mentions, citations, and recommendations in AI answers through GEO strategy, AI visibility monitoring, citation strategy, answer optimization, and traffic attribution.',
+      hasPart: SEARCH_SITELINK_TARGETS.map((item) => ({
+        '@type': 'WebPage',
+        name: item.title,
+        url: `${BASE_URL}${item.href}/`,
+        description: item.description,
+      })),
+    },
+    {
       '@type': 'ItemList',
       name: 'HyperMind GEO methodology',
       itemListElement: METHOD_STEPS.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         name: item.title,
+        description: item.description,
+      })),
+    },
+    {
+      '@type': 'ItemList',
+      name: 'Popular HyperMind pages',
+      itemListElement: SEARCH_SITELINK_TARGETS.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.title,
+        url: `${BASE_URL}${item.href}/`,
         description: item.description,
       })),
     },
@@ -307,6 +368,36 @@ export default function Home() {
                   Compare GEO options
                 </Link>
               </div>
+
+              <nav
+                aria-label="Popular HyperMind pages"
+                className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm"
+              >
+                <p className="px-5 pt-4 pb-2 text-xs font-semibold uppercase tracking-wide text-gray-500">
+                  Popular HyperMind pages
+                </p>
+                <div className="divide-y divide-gray-200">
+                  {SEARCH_SITELINK_TARGETS.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="group flex items-center justify-between gap-4 px-5 py-4 hover:bg-gray-50 transition"
+                    >
+                      <span className="min-w-0">
+                        <span className="block text-base sm:text-lg font-semibold text-blue-700 group-hover:underline">
+                          {item.title}
+                        </span>
+                        <span className="block text-sm text-gray-600 leading-relaxed mt-1">
+                          {item.description}
+                        </span>
+                      </span>
+                      <span aria-hidden="true" className="text-2xl text-gray-400 group-hover:text-black shrink-0">
+                        &rsaquo;
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              </nav>
             </div>
 
             <div className="space-y-6 max-w-full overflow-hidden">
