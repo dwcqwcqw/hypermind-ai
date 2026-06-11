@@ -102,11 +102,11 @@ const FEATURED_DECISION_GUIDE = {
 }
 
 const FEATURED_AI_MODE_GUIDE = {
-  title: 'AI Visibility Platform Evaluation Playbook',
-  href: '/resources/ai-visibility-platform-evaluation-playbook',
+  title: 'AI Source Coverage Matrix',
+  href: '/resources/ai-source-coverage-matrix',
   description:
-    'A Peec-driven buyer guide for separating AI visibility monitoring from source repair, owned content updates, off-page evidence, and retesting.',
-  tag: 'Latest Platform Evaluation Guide',
+    'A Peec-driven source coverage guide for turning missing UGC, video, editorial, review, directory, partner, and owned evidence into a GEO action matrix.',
+  tag: 'Latest Source Coverage Guide',
 }
 
 export default function ResourcesHub() {

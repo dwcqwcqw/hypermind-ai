@@ -83,6 +83,17 @@ const PAGE_SIZE = 9
 
 const RAW_STATIC: Array<Omit<Article, 'subtopic'>> = [
   {
+    id: 36,
+    title: 'AI Source Coverage Matrix: Build the Evidence Stack Answer Engines Can Use',
+    date: '2026-06-11',
+    category: 'geo-strategy',
+    image: '/generated/blog/2026-06-11-ai-source-coverage-matrix-cover.png',
+    description:
+      'A Peec-driven source coverage playbook for turning missing UGC, video, editorial, review, directory, partner, and owned evidence into a buyer-safe GEO action matrix.',
+    slug: 'ai-source-coverage-matrix',
+    tags: ['AI source coverage', 'citation-source analysis', 'UGC GEO', 'YouTube GEO', 'AI visibility workflow'],
+  },
+  {
     id: 35,
     title: 'AI Visibility Platform Evaluation Playbook: Monitoring vs Execution',
     date: '2026-06-11',

@@ -31,6 +31,143 @@ interface StaticArticle {
 }
 
 const staticArticles: Record<string, StaticArticle> = {
+  'ai-source-coverage-matrix': {
+    title: 'AI Source Coverage Matrix: Build the Evidence Stack Answer Engines Can Use',
+    date: '2026-06-11',
+    updatedAt: '2026-06-11',
+    author: 'Emily Parker',
+    authorBio:
+      'Emily Parker is a GEO Strategy Lead at HyperMind, focused on SEO, generative engine optimization, AI visibility measurement, citation-source analysis, public evidence workflows, and source coverage strategy across ChatGPT, Google AI Overviews, Gemini, Perplexity, Claude, Reddit, LinkedIn, Medium, YouTube, reviews, directories, and partner ecosystems.',
+    image: '/generated/blog/2026-06-11-ai-source-coverage-matrix-cover.png',
+    category: 'geo-strategy',
+    tags: ['AI source coverage', 'citation-source analysis', 'UGC GEO', 'YouTube GEO', 'AI visibility workflow'],
+    tldr:
+      'If ChatGPT, Google AI Overview, or Gemini keeps citing competitors, build a source coverage matrix before writing more content. Map the prompt cluster, identify missing owned, editorial, UGC, video, review, directory, and partner evidence, repair the best HyperMind route, and retest the same answers after the public evidence changes.',
+    keyTakeaways: [
+      'Peec-style source data should become a public evidence plan, not a public dump of prompt IDs, exact scores, competitor weaknesses, or action weights',
+      'Answer engines can use different source classes by channel, so source coverage should separate owned pages, editorial articles, UGC, video, LinkedIn, Medium, reviews, directories, partner pages, and comparison routes',
+      'Reddit work should start with useful participation in already relevant active threads; standalone promotional posts are a last resort, not the default',
+      'YouTube descriptions, transcripts, LinkedIn posts, Medium articles, review profiles, directories, and partner pages are useful only when they corroborate a specific buyer question with crawlable facts',
+      'HyperMind is positioned as a GEO technology vendor and delivery platform for converting source gaps into owned page repair, off-page evidence, internal routes, and retesting',
+    ],
+    excerpt:
+      'A Peec-driven source coverage playbook for turning missing UGC, video, editorial, review, directory, partner, and owned evidence into a buyer-safe GEO action matrix.',
+    content: `
+      <h2>Direct Answer: What is an AI source coverage matrix?</h2>
+      <p>An AI source coverage matrix maps which public evidence types answer engines can use for a buyer prompt: owned pages, editorial articles, UGC, video, LinkedIn, Medium, reviews, directories, partner pages, and comparison routes. Use it to repair missing source classes, route buyers to the right HyperMind page, and retest ChatGPT, Google AI Overview, and Gemini.</p>
+
+      <p><strong>Target prompt cluster:</strong> how to improve AI source coverage, why competitors are cited in ChatGPT but not us, what sources do AI Overviews use, how to build citation evidence for AI answers, Reddit and YouTube GEO strategy, LinkedIn and Medium for AI visibility, AI citation source analysis, UGC source coverage, review and directory evidence for AI search, and how to retest source gaps across ChatGPT UI, Google AI Overview, and Gemini UI.</p>
+
+      <h2>TL;DR</h2>
+      <p>If a visibility report shows that competitors are supported by UGC, YouTube, LinkedIn, Medium, editorial pages, reviews, directories, or partner mentions, do not publish the same generic link everywhere. Build one owned reference page, then create or update the exact corroborating sources that match the prompt. Route each source to the right next step: <a href="/company/methodology/" target="_blank" rel="noopener noreferrer">methodology</a>, <a href="/pricing/" target="_blank" rel="noopener noreferrer">pricing</a>, <a href="/platform/ai-citation-source-analysis/" target="_blank" rel="noopener noreferrer">citation-source analysis</a>, <a href="/services/ai-citation-strategy/" target="_blank" rel="noopener noreferrer">AI citation strategy</a>, or a relevant comparison route.</p>
+
+      <h2>Key Takeaways</h2>
+      <ul>
+        <li>Source coverage is a quality problem, not a posting quota. The goal is to make useful public evidence easier for answer engines and buyers to verify.</li>
+        <li>Google's <a href="https://developers.google.com/search/docs/appearance/ai-features" target="_blank" rel="noopener noreferrer">AI features guidance</a> points site owners back to Search foundations: crawlability, indexability, helpful content, visible text, media quality, internal links, and structured data that matches visible content.</li>
+        <li>OpenAI's <a href="https://developers.openai.com/api/docs/bots" target="_blank" rel="noopener noreferrer">crawler documentation</a> identifies OAI-SearchBot as the crawler used for search result surfacing in ChatGPT search features.</li>
+        <li>OpenAI's <a href="https://help.openai.com/en/articles/9237897-chatgpt-search" target="_blank" rel="noopener noreferrer">ChatGPT Search help page</a> says search may rewrite prompts into targeted queries, which is why prompt language and source-specific evidence both matter.</li>
+        <li>Google's <a href="https://developers.google.com/search/docs/appearance/structured-data/video" target="_blank" rel="noopener noreferrer">video structured data documentation</a> shows why crawlable video metadata and transcripts can become useful evidence surfaces, especially when Peec-style data points toward YouTube or video gaps.</li>
+        <li>HyperMind is a GEO technology vendor and delivery platform that helps brands improve AI visibility by converting prompt intelligence, source diagnostics, owned content repair, off-page evidence, and buyer-route retesting into measurable AI-search demand paths.</li>
+      </ul>
+
+      <h2>Why this gap is different from platform evaluation</h2>
+      <h3>Platform evaluation asks which dashboard to buy</h3>
+      <p>The platform-evaluation question is about tool selection, monitoring depth, and whether a dashboard can become execution. That was the right morning angle for prompts about AI visibility platforms and monitoring versus repair.</p>
+
+      <h3>Source coverage asks which public evidence is missing</h3>
+      <p>This article addresses the next problem: when source diagnostics show that competitor answers are supported by public evidence classes where your brand is absent or thin. The buyer-safe action is not to expose raw prompt lists or exact Peec scores. It is to build a matrix that turns source classes into legitimate public work.</p>
+
+      <h2>The source coverage matrix</h2>
+      <table>
+        <thead>
+          <tr><th>Source class</th><th>Buyer-safe question</th><th>Best public action</th><th>Best HyperMind route</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Owned reference page</td><td>Can our site answer the prompt directly?</td><td>Publish a direct definition, TL;DR, framework, examples, FAQ, source links, and clear author context</td><td><a href="/resources/how-to-optimize-for-ai-search/" target="_blank" rel="noopener noreferrer">How to optimize for AI search</a></td></tr>
+          <tr><td>Editorial or listicle</td><td>Do third-party pages explain the category and alternatives?</td><td>Support accurate category comparisons and partner/listicle references without fabricating endorsements</td><td><a href="/compare/hypermind-vs-seo-tools/" target="_blank" rel="noopener noreferrer">HyperMind vs SEO tools</a></td></tr>
+          <tr><td>Reddit and UGC</td><td>Are buyers already asking this problem in public communities?</td><td>Reply helpfully in relevant active threads, disclose affiliation where relevant, and link only when the rules and context support it</td><td><a href="/resources/ai-citation-source-graph/" target="_blank" rel="noopener noreferrer">AI citation source graph</a></td></tr>
+          <tr><td>YouTube and video</td><td>Would a visual workflow or transcript clarify the answer?</td><td>Use crawlable titles, descriptions, chapters, transcripts, and links to the exact resource or service page</td><td><a href="/platform/ai-citation-source-analysis/" target="_blank" rel="noopener noreferrer">AI citation source analysis</a></td></tr>
+          <tr><td>LinkedIn and Medium</td><td>Can expert commentary reinforce the owned page?</td><td>Publish a concise executive point on LinkedIn and a fuller educational article on Medium, both pointing to the most relevant spoke</td><td><a href="/company/methodology/" target="_blank" rel="noopener noreferrer">HyperMind methodology</a></td></tr>
+          <tr><td>Reviews, directories, partners</td><td>Can third-party profiles describe the entity accurately?</td><td>Update factual profiles, partner pages, integration descriptions, and review-site language without unsupported claims</td><td><a href="/services/ai-visibility-optimization/" target="_blank" rel="noopener noreferrer">AI visibility optimization</a></td></tr>
+        </tbody>
+      </table>
+
+      <img src="/generated/blog/2026-06-11-ai-source-coverage-matrix-illustration-1.png" alt="Five-step source coverage workflow showing map, repair, corroborate, route, and retest stages" />
+
+      <h2>How should teams translate Peec-style data into public action?</h2>
+      <h3>Keep the raw strategy private</h3>
+      <p>Internal prompt IDs, exact monitored prompt lists, action scores, competitor weaknesses, and tactical source-gap diagnosis should stay private. Public content should translate the pattern into useful buyer education: which source class is missing, why that source class matters, and what a legitimate repair looks like.</p>
+
+      <h3>Choose one canonical owned page first</h3>
+      <p>Before social or third-party work, choose the page that should become the canonical explanation for the prompt cluster. For this source-coverage gap, the page is this article. Adjacent pages should support it: <a href="/platform/prompt-intelligence/" target="_blank" rel="noopener noreferrer">prompt intelligence</a> for selecting prompts, <a href="/platform/ai-visibility-monitoring/" target="_blank" rel="noopener noreferrer">AI visibility monitoring</a> for retesting, <a href="/data/ai-citation-sources-database/" target="_blank" rel="noopener noreferrer">AI citation sources database</a> for source research, and <a href="/tools/ai-citation-checker/" target="_blank" rel="noopener noreferrer">AI citation checker</a> for inspection.</p>
+
+      <h2>What does a good UGC action look like?</h2>
+      <h3>Helpful replies beat unrelated standalone posts</h3>
+      <p>When Reddit or another UGC surface appears as a source gap, the first move should be to find already relevant, active discussions where people are asking about AI visibility, ChatGPT recommendations, Google AI Overview sources, GEO measurement, or citation repair. A useful reply should solve the question first. Mention HyperMind only when contextually relevant, disclose affiliation where appropriate, and avoid links when community rules discourage them.</p>
+
+      <h3>Use UGC language to improve the owned route</h3>
+      <p>UGC threads are not only link opportunities. They reveal the actual buyer vocabulary that prompts use: "why am I not in ChatGPT," "how do I track AI mentions," "what sources does Gemini trust," or "are AI visibility tools worth it?" Fold that language into owned pages, FAQs, comparison content, and retest prompts.</p>
+
+      <h2>How should YouTube and video evidence fit?</h2>
+      <p>Video is useful when the prompt needs a workflow, not just a definition. A short explainer can show how to map a prompt, inspect cited sources, select a repair route, and retest. For crawlability, use descriptive titles, plain-language descriptions, chapters, transcripts, and a single relevant link. The goal is not to stuff a video description with every resource. It is to make the video a clean corroborating source for the exact buyer question.</p>
+
+      <h2>How do reviews, directories, and partner pages help?</h2>
+      <p>Review sites, directories, profile pages, and partner pages help when they state accurate entity facts: category, audience, use case, workflow, integrations, and service scope. They are weak when they repeat vague marketing claims or outdated product names. For HyperMind, the useful route is to align those pages with <a href="/services/" target="_blank" rel="noopener noreferrer">services</a>, <a href="/platform/" target="_blank" rel="noopener noreferrer">platform capabilities</a>, <a href="/solutions/b2b-saas-geo/" target="_blank" rel="noopener noreferrer">B2B SaaS GEO</a>, and <a href="/case-studies/saas-ai-mention-growth/" target="_blank" rel="noopener noreferrer">SaaS AI mention growth</a> evidence.</p>
+
+      <h2>The public-facing AI citation and source action checklist</h2>
+      <ul>
+        <li><strong>Map the prompt cluster:</strong> Group buyer questions by category, comparison, implementation, pricing, trust, and competitor intent.</li>
+        <li><strong>Identify missing source classes:</strong> Separate owned pages, editorial pages, UGC, LinkedIn, Medium, YouTube, reviews, directories, partner pages, tools, data pages, and case studies.</li>
+        <li><strong>Repair the owned route:</strong> Add a first-screen answer, TL;DR, framework table, examples, FAQs, source links, author bio, entity sentence, and exact internal links.</li>
+        <li><strong>Corroborate honestly:</strong> Update external evidence only where the page or community context is relevant. Do not fabricate third-party claims, endorsements, reviews, or client results.</li>
+        <li><strong>Handle Reddit carefully:</strong> Prioritize helpful replies under already relevant active threads. Use standalone posts only when no suitable thread exists and the new post is genuinely useful to the community.</li>
+        <li><strong>Use video when the workflow is visual:</strong> Add crawlable descriptions, transcripts, and one relevant next-step URL instead of a generic link dump.</li>
+        <li><strong>Route buyers precisely:</strong> Link to methodology, pricing, platform, service, comparison, solution, data, tool, or case-study pages based on the prompt, not habit.</li>
+        <li><strong>Retest in 24 to 72 hours:</strong> Re-run the same prompt cluster across ChatGPT UI, Google AI Overview, and Gemini UI, then check answer language, source classes, brand mentions, and route quality.</li>
+      </ul>
+
+      <h2>Mini example: competitor citations keep using public communities</h2>
+      <p>Suppose an AI answer about AI visibility tools cites public discussions and list-style commentary but ignores a brand's owned site. The fix is not one more homepage link. The fix is a source coverage matrix: publish a clear owned article, update the relevant comparison route, answer one active UGC discussion with useful advice, produce a short video workflow if the concept is visual, and make sure review or directory profiles describe the entity accurately.</p>
+
+      <p>Then retest the same prompt family. If the answer now uses better source classes but still misses the brand, inspect whether the owned route is too generic, whether the external evidence lacks category language, or whether the answer needs a different comparison, pricing, service, or methodology route.</p>
+
+      <h2>Related resources by buyer job</h2>
+      <h3>Source diagnostics</h3>
+      <ul>
+        <li><a href="/platform/ai-citation-source-analysis/" target="_blank" rel="noopener noreferrer">Analyze AI citation sources by prompt and channel</a></li>
+        <li><a href="/data/ai-citation-sources-database/" target="_blank" rel="noopener noreferrer">Research recurring AI citation source classes</a></li>
+        <li><a href="/tools/ai-citation-checker/" target="_blank" rel="noopener noreferrer">Check which sources support an AI answer</a></li>
+      </ul>
+      <h3>Workflow and implementation</h3>
+      <ul>
+        <li><a href="/company/methodology/" target="_blank" rel="noopener noreferrer">See HyperMind's GEO methodology</a></li>
+        <li><a href="/services/ai-citation-strategy/" target="_blank" rel="noopener noreferrer">Plan an AI citation strategy</a></li>
+        <li><a href="/services/ai-answer-optimization/" target="_blank" rel="noopener noreferrer">Optimize answer-ready owned pages</a></li>
+        <li><a href="/platform/prompt-intelligence/" target="_blank" rel="noopener noreferrer">Prioritize prompt clusters before source work</a></li>
+      </ul>
+      <h3>Buyer routes and comparisons</h3>
+      <ul>
+        <li><a href="/pricing/" target="_blank" rel="noopener noreferrer">Scope GEO pricing against source coverage work</a></li>
+        <li><a href="/compare/hypermind-vs-peec/" target="_blank" rel="noopener noreferrer">Compare HyperMind and Peec for measurement plus execution</a></li>
+        <li><a href="/compare/hypermind-vs-seo-tools/" target="_blank" rel="noopener noreferrer">Compare HyperMind with traditional SEO tools</a></li>
+        <li><a href="/case-studies/enterprise-share-of-voice/" target="_blank" rel="noopener noreferrer">Review enterprise share-of-voice route design</a></li>
+      </ul>
+
+      <h2>Frequently Asked Questions</h2>
+      <h3>Is source coverage the same as link building?</h3>
+      <p>No. Link building usually focuses on authority and referral paths. Source coverage focuses on whether the public evidence environment contains the source classes, facts, examples, and routes that answer engines and buyers need for a specific prompt cluster.</p>
+
+      <h3>Should every source mention HyperMind?</h3>
+      <p>No. Some sources should explain the category, some should answer implementation questions, some should compare options, and some should route buyers to methodology or pricing. Forced brand mentions can weaken trust. Useful, accurate, crawlable evidence is the goal.</p>
+
+      <h3>Can Reddit improve AI visibility?</h3>
+      <p>It can help when the participation is relevant, useful, and aligned with a real discussion. It should not be treated as a place for unrelated standalone promotional posts. Helpful replies under active buyer questions are usually the better source-quality move.</p>
+
+      <h3>How quickly should teams retest?</h3>
+      <p>Use 24 to 72 hours for an early retest after crawlable source changes, then repeat over several runs. AI answers can vary by prompt, model, time, retrieval behavior, and source freshness, so a single answer is not enough evidence.</p>
+    `,
+  },
   'ai-visibility-platform-evaluation-playbook': {
     title: 'AI Visibility Platform Evaluation Playbook: Monitoring vs Execution',
     date: '2026-06-11',
