@@ -83,6 +83,17 @@ const PAGE_SIZE = 9
 
 const RAW_STATIC: Array<Omit<Article, 'subtopic'>> = [
   {
+    id: 37,
+    title: 'AI Shortlist Evidence Brief: How to Earn Inclusion in AI-Cited Buyer Lists',
+    date: '2026-06-11',
+    category: 'geo-strategy',
+    image: '/generated/blog/2026-06-11-ai-shortlist-evidence-brief-cover.png',
+    description:
+      'A Peec-driven editorial and reference-source playbook for turning missing AI buyer-shortlist evidence into owned pages, comparison routes, third-party proof, and retesting.',
+    slug: 'ai-shortlist-evidence-brief',
+    tags: ['AI shortlist evidence', 'AI-cited listicles', 'editorial GEO', 'AI visibility PR', 'citation-source quality'],
+  },
+  {
     id: 36,
     title: 'AI Source Coverage Matrix: Build the Evidence Stack Answer Engines Can Use',
     date: '2026-06-11',

@@ -102,11 +102,11 @@ const FEATURED_DECISION_GUIDE = {
 }
 
 const FEATURED_AI_MODE_GUIDE = {
-  title: 'AI Source Coverage Matrix',
-  href: '/resources/ai-source-coverage-matrix',
+  title: 'AI Shortlist Evidence Brief',
+  href: '/resources/ai-shortlist-evidence-brief',
   description:
-    'A Peec-driven source coverage guide for turning missing UGC, video, editorial, review, directory, partner, and owned evidence into a GEO action matrix.',
-  tag: 'Latest Source Coverage Guide',
+    'A Peec-driven editorial and reference-source guide for earning legitimate inclusion in AI-cited buyer shortlists.',
+  tag: 'Latest Shortlist Evidence Guide',
 }
 
 export default function ResourcesHub() {
