@@ -102,11 +102,11 @@ const FEATURED_DECISION_GUIDE = {
 }
 
 const FEATURED_AI_MODE_GUIDE = {
-  title: "Why ChatGPT Doesn't Mention Your Brand",
-  href: '/resources/chatgpt-brand-mention-gap-audit',
+  title: 'AI Visibility Platform Evaluation Playbook',
+  href: '/resources/ai-visibility-platform-evaluation-playbook',
   description:
-    'A Peec-driven owned how-to guide for diagnosing entity, crawler, evidence, and retest gaps when ChatGPT, Google AI Overviews, or Gemini do not mention a brand.',
-  tag: 'Latest AI Entity Gap Guide',
+    'A Peec-driven buyer guide for separating AI visibility monitoring from source repair, owned content updates, off-page evidence, and retesting.',
+  tag: 'Latest Platform Evaluation Guide',
 }
 
 export default function ResourcesHub() {

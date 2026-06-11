@@ -83,6 +83,17 @@ const PAGE_SIZE = 9
 
 const RAW_STATIC: Array<Omit<Article, 'subtopic'>> = [
   {
+    id: 35,
+    title: 'AI Visibility Platform Evaluation Playbook: Monitoring vs Execution',
+    date: '2026-06-11',
+    category: 'geo-strategy',
+    image: '/generated/blog/2026-06-11-ai-visibility-platform-evaluation-playbook-cover.png',
+    description:
+      'A Peec-driven buyer playbook for evaluating AI visibility platforms by separating dashboards, source diagnostics, off-page evidence, owned content repair, and retesting workflows.',
+    slug: 'ai-visibility-platform-evaluation-playbook',
+    tags: ['AI visibility platforms', 'GEO execution', 'Peec alternatives', 'AI search monitoring', 'answer engine optimization'],
+  },
+  {
     id: 34,
     title: "Why ChatGPT Doesn't Mention Your Brand: The AI Entity Gap Audit",
     date: '2026-06-09',
