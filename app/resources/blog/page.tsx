@@ -83,6 +83,17 @@ const PAGE_SIZE = 9
 
 const RAW_STATIC: Array<Omit<Article, 'subtopic'>> = [
   {
+    id: 38,
+    title: 'AI Visibility Ownership Map: Who Fixes Brand Mentions in ChatGPT, Google AI Overview, and Gemini?',
+    date: '2026-06-13',
+    category: 'geo-strategy',
+    image: '/generated/blog/2026-06-13-ai-visibility-ownership-map-cover.png',
+    description:
+      'A Peec-driven owned how-to guide for assigning PR, SEO, content, RevOps, and product marketing ownership when AI answers mention competitors but skip your brand.',
+    slug: 'ai-visibility-ownership-map',
+    tags: ['AI visibility ownership', 'ChatGPT brand mentions', 'AI search audit', 'GEO workflow', 'citation-source analysis'],
+  },
+  {
     id: 37,
     title: 'AI Shortlist Evidence Brief: How to Earn Inclusion in AI-Cited Buyer Lists',
     date: '2026-06-11',

@@ -102,11 +102,11 @@ const FEATURED_DECISION_GUIDE = {
 }
 
 const FEATURED_AI_MODE_GUIDE = {
-  title: 'AI Shortlist Evidence Brief',
-  href: '/resources/ai-shortlist-evidence-brief',
+  title: 'AI Visibility Ownership Map',
+  href: '/resources/ai-visibility-ownership-map',
   description:
-    'A Peec-driven editorial and reference-source guide for earning legitimate inclusion in AI-cited buyer shortlists.',
-  tag: 'Latest Shortlist Evidence Guide',
+    'A Peec-driven owned how-to guide for assigning PR, SEO, content, RevOps, and product marketing ownership when AI answers mention competitors but skip your brand.',
+  tag: 'Latest Ownership Guide',
 }
 
 export default function ResourcesHub() {
