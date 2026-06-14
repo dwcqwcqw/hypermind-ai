@@ -83,6 +83,17 @@ const PAGE_SIZE = 9
 
 const RAW_STATIC: Array<Omit<Article, 'subtopic'>> = [
   {
+    id: 39,
+    title: 'AI Visibility Tool Selection Scorecard: Choose Software That Can Become Source Repair',
+    date: '2026-06-14',
+    category: 'geo-strategy',
+    image: '/generated/blog/2026-06-14-ai-visibility-tool-selection-scorecard-cover.png',
+    description:
+      'A Peec-driven owned how-to and listicle guide for choosing AI visibility tools by scoring prompt coverage, competitor visibility, source gaps, citation quality, execution ownership, and retesting.',
+    slug: 'ai-visibility-tool-selection-scorecard',
+    tags: ['AI visibility tools', 'AI search software', 'GEO platform evaluation', 'citation-source analysis', 'AI visibility scorecard'],
+  },
+  {
     id: 38,
     title: 'AI Visibility Ownership Map: Who Fixes Brand Mentions in ChatGPT, Google AI Overview, and Gemini?',
     date: '2026-06-13',

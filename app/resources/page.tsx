@@ -102,11 +102,11 @@ const FEATURED_DECISION_GUIDE = {
 }
 
 const FEATURED_AI_MODE_GUIDE = {
-  title: 'AI Visibility Ownership Map',
-  href: '/resources/ai-visibility-ownership-map',
+  title: 'AI Visibility Tool Selection Scorecard',
+  href: '/resources/ai-visibility-tool-selection-scorecard',
   description:
-    'A Peec-driven owned how-to guide for assigning PR, SEO, content, RevOps, and product marketing ownership when AI answers mention competitors but skip your brand.',
-  tag: 'Latest Ownership Guide',
+    'A Peec-driven owned how-to and listicle guide for choosing AI visibility tools by scoring prompt coverage, source gaps, execution ownership, and retesting.',
+  tag: 'Latest Tool Guide',
 }
 
 export default function ResourcesHub() {
