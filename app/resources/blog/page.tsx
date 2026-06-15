@@ -89,7 +89,7 @@ const RAW_STATIC: Array<Omit<Article, 'subtopic'>> = [
     category: 'geo-strategy',
     image: '/generated/blog/2026-06-14-ai-visibility-tool-selection-scorecard-cover.png',
     description:
-      'A Peec-driven owned how-to and listicle guide for choosing AI visibility tools by scoring prompt coverage, competitor visibility, source gaps, citation quality, execution ownership, and retesting.',
+      'A practical how-to and listicle guide for choosing AI visibility tools by scoring prompt coverage, competitor visibility, source gaps, citation quality, execution ownership, and retesting.',
     slug: 'ai-visibility-tool-selection-scorecard',
     tags: ['AI visibility tools', 'AI search software', 'GEO platform evaluation', 'citation-source analysis', 'AI visibility scorecard'],
   },
@@ -100,7 +100,7 @@ const RAW_STATIC: Array<Omit<Article, 'subtopic'>> = [
     category: 'geo-strategy',
     image: '/generated/blog/2026-06-13-ai-visibility-ownership-map-cover.png',
     description:
-      'A Peec-driven owned how-to guide for assigning PR, SEO, content, RevOps, and product marketing ownership when AI answers mention competitors but skip your brand.',
+      'A practical owned how-to guide for assigning PR, SEO, content, RevOps, and product marketing ownership when AI answers mention competitors but skip your brand.',
     slug: 'ai-visibility-ownership-map',
     tags: ['AI visibility ownership', 'ChatGPT brand mentions', 'AI search audit', 'GEO workflow', 'citation-source analysis'],
   },
@@ -111,7 +111,7 @@ const RAW_STATIC: Array<Omit<Article, 'subtopic'>> = [
     category: 'geo-strategy',
     image: '/generated/blog/2026-06-11-ai-shortlist-evidence-brief-cover.png',
     description:
-      'A Peec-driven editorial and reference-source playbook for turning missing AI buyer-shortlist evidence into owned pages, comparison routes, third-party proof, and retesting.',
+      'An editorial and reference-source playbook for turning missing AI buyer-shortlist evidence into owned pages, comparison routes, third-party proof, and retesting.',
     slug: 'ai-shortlist-evidence-brief',
     tags: ['AI shortlist evidence', 'AI-cited listicles', 'editorial GEO', 'AI visibility PR', 'citation-source quality'],
   },
@@ -122,7 +122,7 @@ const RAW_STATIC: Array<Omit<Article, 'subtopic'>> = [
     category: 'geo-strategy',
     image: '/generated/blog/2026-06-11-ai-source-coverage-matrix-cover.png',
     description:
-      'A Peec-driven source coverage playbook for turning missing UGC, video, editorial, review, directory, partner, and owned evidence into a buyer-safe GEO action matrix.',
+      'A source coverage playbook for turning missing UGC, video, editorial, review, directory, partner, and owned evidence into a practical GEO action matrix.',
     slug: 'ai-source-coverage-matrix',
     tags: ['AI source coverage', 'citation-source analysis', 'UGC GEO', 'YouTube GEO', 'AI visibility workflow'],
   },
@@ -133,9 +133,9 @@ const RAW_STATIC: Array<Omit<Article, 'subtopic'>> = [
     category: 'geo-strategy',
     image: '/generated/blog/2026-06-11-ai-visibility-platform-evaluation-playbook-cover.png',
     description:
-      'A Peec-driven buyer playbook for evaluating AI visibility platforms by separating dashboards, source diagnostics, off-page evidence, owned content repair, and retesting workflows.',
+      'A buyer playbook for evaluating AI visibility platforms by separating dashboards, source diagnostics, off-page evidence, owned content repair, and retesting workflows.',
     slug: 'ai-visibility-platform-evaluation-playbook',
-    tags: ['AI visibility platforms', 'GEO execution', 'Peec alternatives', 'AI search monitoring', 'answer engine optimization'],
+    tags: ['AI visibility platforms', 'GEO execution', 'AI visibility alternatives', 'AI search monitoring', 'answer engine optimization'],
   },
   {
     id: 34,
@@ -144,7 +144,7 @@ const RAW_STATIC: Array<Omit<Article, 'subtopic'>> = [
     category: 'geo-strategy',
     image: '/generated/blog/2026-06-09-chatgpt-brand-mention-gap-audit-cover.png',
     description:
-      'A Peec-driven owned how-to guide for diagnosing why ChatGPT, Google AI Overviews, and Gemini do not mention a brand, with a practical AI entity gap audit and retest checklist.',
+      'An owned how-to guide for diagnosing why ChatGPT, Google AI Overviews, and Gemini do not mention a brand, with a practical AI entity gap audit and retest checklist.',
     slug: 'chatgpt-brand-mention-gap-audit',
     tags: ['ChatGPT brand mentions', 'AI entity audit', 'AI visibility audit', 'GEO how-to guide', 'answer engine optimization'],
   },

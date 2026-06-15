@@ -119,7 +119,7 @@ export default function StructuredData() {
           { '@type': 'WebPage', name: 'AI Visibility Monitoring', url: 'https://hypermindgeo.com/platform/ai-visibility-monitoring/' },
           { '@type': 'WebPage', name: 'AI Citation Strategy', url: 'https://hypermindgeo.com/services/ai-citation-strategy/' },
           { '@type': 'WebPage', name: 'See Pricing Plans', url: 'https://hypermindgeo.com/pricing/' },
-          { '@type': 'WebPage', name: 'Compare HyperMind vs Peec', url: 'https://hypermindgeo.com/compare/hypermind-vs-peec/' },
+          { '@type': 'WebPage', name: 'Compare HyperMind vs SEO Tools', url: 'https://hypermindgeo.com/compare/hypermind-vs-seo-tools/' },
           { '@type': 'WebPage', name: 'Platform', url: 'https://hypermindgeo.com/platform/' },
           { '@type': 'WebPage', name: 'Services', url: 'https://hypermindgeo.com/services/' },
           { '@type': 'WebPage', name: 'Solutions', url: 'https://hypermindgeo.com/solutions/' },

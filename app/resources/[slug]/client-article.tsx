@@ -127,10 +127,10 @@ const KNOWLEDGE_LINK_RULES: Array<{ keywords: string[]; links: KnowledgeHubLink[
   {
     keywords: ['platform', 'profound', 'peec', 'writesonic', 'semrush', 'ahrefs', 'competitor'],
     links: [
-      { label: 'HyperMind vs Peec', href: '/compare/hypermind-vs-peec' },
+      { label: 'HyperMind vs SEO Tools', href: '/compare/hypermind-vs-seo-tools' },
       { label: 'HyperMind vs Profound', href: '/compare/hypermind-vs-profound' },
       { label: 'HyperMind vs Writesonic', href: '/compare/hypermind-vs-writesonic' },
-      { label: 'GEO Platform Comparison', href: '/resources/profound-peec-writesonic-geo-platforms' },
+      { label: 'Platform Evaluation Playbook', href: '/resources/ai-visibility-platform-evaluation-playbook' },
       { label: 'Semrush vs Ahrefs AI Visibility', href: '/resources/semrush-ai-toolkit-vs-ahrefs-brand-radar' },
       { label: 'Competitor AI Visibility', href: '/platform/competitor-ai-visibility' },
     ],

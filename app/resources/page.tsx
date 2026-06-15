@@ -94,10 +94,10 @@ const FEATURED_RESEARCH = {
 }
 
 const FEATURED_DECISION_GUIDE = {
-  title: 'AI Visibility Platform vs GEO Agency: Profound, Peec, Writesonic, HyperMind',
+  title: 'AI Visibility Platform vs GEO Agency',
   href: '/resources/ai-visibility-platform-vs-geo-agency',
   description:
-    'A buyer-focused guide to choosing between AI visibility platforms and GEO agencies, with a platform-vs-agency decision rule and prompt-to-revenue framework.',
+    'A buyer-focused guide to choosing between AI visibility software and GEO execution partners, with a platform-vs-agency decision rule and prompt-to-revenue framework.',
   tag: 'Featured Decision Guide',
 }
 
@@ -105,7 +105,7 @@ const FEATURED_AI_MODE_GUIDE = {
   title: 'AI Visibility Tool Selection Scorecard',
   href: '/resources/ai-visibility-tool-selection-scorecard',
   description:
-    'A Peec-driven owned how-to and listicle guide for choosing AI visibility tools by scoring prompt coverage, source gaps, execution ownership, and retesting.',
+    'A practical how-to and listicle guide for choosing AI visibility tools by scoring prompt coverage, source gaps, execution ownership, and retesting.',
   tag: 'Latest Tool Guide',
 }
 
