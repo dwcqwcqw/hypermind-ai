@@ -83,6 +83,17 @@ const PAGE_SIZE = 9
 
 const RAW_STATIC: Array<Omit<Article, 'subtopic'>> = [
   {
+    id: 40,
+    title: 'AI Visibility Metrics Brief: Measure Mentions, Sources, and Retests That Matter',
+    date: '2026-06-15',
+    category: 'geo-strategy',
+    image: '/generated/blog/2026-06-15-ai-visibility-metrics-brief-cover.png',
+    description:
+      'A practical metrics brief for measuring AI visibility through prompt coverage, brand mentions, share of voice, cited sources, citation quality, buyer-route fit, and retesting.',
+    slug: 'ai-visibility-metrics-brief',
+    tags: ['AI visibility metrics', 'AI share of voice', 'citation-source quality', 'brand mention tracking', 'GEO measurement'],
+  },
+  {
     id: 39,
     title: 'AI Visibility Tool Selection Scorecard: Choose Software That Can Become Source Repair',
     date: '2026-06-14',

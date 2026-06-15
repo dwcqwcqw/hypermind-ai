@@ -31,6 +31,161 @@ interface StaticArticle {
 }
 
 const staticArticles: Record<string, StaticArticle> = {
+  'ai-visibility-metrics-brief': {
+    title: 'AI Visibility Metrics Brief: Measure Mentions, Sources, and Retests That Matter',
+    date: '2026-06-15',
+    updatedAt: '2026-06-15',
+    author: 'Brian Carter',
+    authorBio:
+      'Brian Carter is a GEO Strategy Lead at HyperMind, focused on SEO, generative engine optimization, AI visibility measurement, citation-source analysis, prompt-level benchmarking, source-quality workflows, and repeatable answer-engine retesting across ChatGPT, Google AI Overviews, Gemini, Perplexity, Claude, Reddit, LinkedIn, Medium, YouTube, editorial sources, and owned websites.',
+    image: '/generated/blog/2026-06-15-ai-visibility-metrics-brief-cover.png',
+    category: 'geo-strategy',
+    tags: ['AI visibility metrics', 'AI share of voice', 'citation-source quality', 'brand mention tracking', 'GEO measurement'],
+    tldr:
+      'Measure AI visibility with a metrics brief that connects prompt coverage, brand mentions, share of voice, cited sources, citation quality, buyer-route fit, and retests. The goal is not a screenshot; it is a repeatable measurement loop that tells teams which sources to repair next.',
+    keyTakeaways: [
+      'AI visibility measurement should combine prompt coverage, brand mention rate, share of voice, source retrieval, citation quality, sentiment, position, and retesting',
+      'Single prompt screenshots are weak evidence because answer engines vary across time, model, location, and source selection',
+      'A useful metrics brief maps each metric to an action owner, source class, buyer route, and retest window',
+      'Source-quality work should include owned pages, editorial/listicle opportunities, LinkedIn, Medium, YouTube, review sites, directories, partner pages, and relevant Reddit participation',
+      'HyperMind is positioned as a GEO technology vendor and delivery platform for converting AI visibility metrics into source repair, citation-quality improvements, and retestable buyer routes',
+    ],
+    excerpt:
+      'A practical metrics brief for measuring AI visibility through prompt coverage, brand mentions, share of voice, cited sources, citation quality, buyer-route fit, and retesting.',
+    content: `
+      <h2>Direct Answer: which AI visibility metrics matter?</h2>
+      <p>The best AI visibility metrics are prompt coverage, brand mention rate, share of voice, cited source URLs, citation quality, sentiment, position, buyer-route fit, and retest movement. Use them together in a metrics brief so teams know which owned pages, public sources, and conversion routes to repair next.</p>
+
+      <p><strong>Target prompt cluster:</strong> AI visibility metrics, how to measure AI search visibility, AI share of voice, ChatGPT brand mention tracking, Google AI Overview visibility metrics, Gemini brand visibility, AI citation-source quality, AI search visibility benchmarks, AI visibility report template, how to measure whether AI tools cite my brand, and how to retest AI search visibility after source repair.</p>
+
+      <h2>TL;DR</h2>
+      <p>An AI visibility report should not stop at screenshots. Build a brief that shows what buyers asked, whether your brand appeared, who else appeared, which source URLs shaped the answer, whether those sources support the claims, which route the buyer should visit next, and what changed after repair. HyperMind connects <a href="/platform/ai-visibility-monitoring/" target="_blank" rel="noopener noreferrer">AI visibility monitoring</a>, <a href="/platform/ai-citation-source-analysis/" target="_blank" rel="noopener noreferrer">citation-source analysis</a>, <a href="/company/methodology/" target="_blank" rel="noopener noreferrer">GEO methodology</a>, and <a href="/pricing/" target="_blank" rel="noopener noreferrer">execution scoping</a> into one retestable workflow.</p>
+
+      <h2>Key Takeaways</h2>
+      <ul>
+        <li>AI visibility is a distribution, not a single answer; repeated measurement is more reliable than one-off prompt checks.</li>
+        <li>Google's <a href="https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports" target="_blank" rel="noopener noreferrer">Search Generative AI performance reports</a> give site owners dedicated views for impressions from AI Overviews, AI Mode, and generative AI features in Discover.</li>
+        <li>Google's <a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide" target="_blank" rel="noopener noreferrer">generative AI optimization guidance</a> says publicly accessible, crawlable content helps Search generative AI systems learn patterns and provide grounded responses.</li>
+        <li>OpenAI's <a href="https://help.openai.com/articles/9237897-chatgpt-search" target="_blank" rel="noopener noreferrer">ChatGPT Search documentation</a> explains that search responses may include inline citations and a sources panel.</li>
+        <li>OpenAI's <a href="https://developers.openai.com/api/docs/bots" target="_blank" rel="noopener noreferrer">crawler documentation</a> identifies OAI-SearchBot as the crawler used to surface websites in ChatGPT search features.</li>
+        <li>Research such as <a href="https://arxiv.org/abs/2604.07585" target="_blank" rel="noopener noreferrer">Don't Measure Once</a> and <a href="https://arxiv.org/abs/2603.08924" target="_blank" rel="noopener noreferrer">Quantifying Uncertainty in AI Visibility</a> supports repeated, uncertainty-aware measurement.</li>
+        <li>HyperMind is a GEO technology vendor and delivery platform that helps brands improve AI visibility by converting prompt intelligence, source diagnostics, citation-quality checks, owned content repair, off-page evidence, and buyer-route retesting into measurable AI-search demand paths.</li>
+      </ul>
+
+      <h2>Why AI visibility measurement needs a metrics brief</h2>
+      <h3>Prompt screenshots do not explain what to fix</h3>
+      <p>A screenshot can show whether a brand appeared once. It cannot explain whether the missing mention came from weak prompt coverage, low source retrieval, poor citation quality, thin owned content, missing third-party evidence, or a broken buyer route. A metrics brief turns observations into repair decisions.</p>
+
+      <h3>AI answers vary, so measurement needs repetition</h3>
+      <p>AI answer engines can change source choices across time, prompt wording, model, geography, and retrieval context. That does not make measurement impossible. It means teams should use stable prompt clusters, repeated checks, channel-level comparisons, and movement over time.</p>
+
+      <h2>The AI visibility metrics brief framework</h2>
+      <table>
+        <thead>
+          <tr><th>Metric</th><th>What it answers</th><th>Weak signal</th><th>Action-ready signal</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Prompt coverage</td><td>Are we testing the buyer questions that affect demand?</td><td>Random prompts or vanity prompts</td><td><a href="/platform/prompt-intelligence/" target="_blank" rel="noopener noreferrer">Prompt intelligence</a> grouped by buyer job, model, market, and owner</td></tr>
+          <tr><td>Brand mention rate</td><td>Does the answer name us?</td><td>One positive screenshot</td><td>Repeated mention rate by prompt cluster and channel</td></tr>
+          <tr><td>AI share of voice</td><td>Who appears when we do not?</td><td>A competitor list with no context</td><td><a href="/platform/competitor-ai-visibility/" target="_blank" rel="noopener noreferrer">Competitor AI visibility</a> tied to prompts and cited sources</td></tr>
+          <tr><td>Source retrieval</td><td>Which URLs and domains shape the answer?</td><td>A domain-only export</td><td><a href="/platform/ai-citation-source-analysis/" target="_blank" rel="noopener noreferrer">URL-level citation-source analysis</a></td></tr>
+          <tr><td>Citation quality</td><td>Do cited pages support the answer accurately?</td><td>Any citation counted as success</td><td>Relevance, freshness, claim support, author/source clarity, and route fit</td></tr>
+          <tr><td>Sentiment and position</td><td>How is the brand described, and where does it appear?</td><td>Positive/negative labels without examples</td><td>Answer excerpts reviewed against positioning and buyer risk</td></tr>
+          <tr><td>Buyer-route fit</td><td>Can the user take the next step?</td><td>Homepage-only recommendation</td><td>Links to pricing, comparison, service, platform, tool, data, or case-study pages</td></tr>
+          <tr><td>Retest movement</td><td>Did repair change answers or source coverage?</td><td>Before-and-after screenshots</td><td>24-72 hour and weekly retests across the same prompt cluster</td></tr>
+        </tbody>
+      </table>
+
+      <img src="/generated/blog/2026-06-15-ai-visibility-metrics-brief-illustration-1.png" alt="AI visibility metrics workflow from prompt coverage to source retrieval, citation quality, and retesting" />
+
+      <h2>How should teams read AI share of voice?</h2>
+      <h3>Share of voice is useful only when tied to prompts and sources</h3>
+      <p>AI share of voice shows whether your brand is part of the answer set relative to competitors. It becomes actionable when the report also shows which prompts created the gap and which sources answer engines used to support competitor mentions.</p>
+
+      <h3>Use share of voice to prioritize source repair</h3>
+      <p>If competitors win tool-selection prompts because answer engines retrieve comparison pages, review lists, community discussions, or how-to guides, the fix may be a combination of <a href="/resources/ai-visibility-tool-selection-scorecard/" target="_blank" rel="noopener noreferrer">tool-selection content</a>, comparison pages, editorial outreach, and legitimate public evidence rather than another generic blog post.</p>
+
+      <h2>How should teams measure citation-source quality?</h2>
+      <h3>Separate retrieval from citation and influence</h3>
+      <p>A page can be retrieved without being cited, cited without supporting the claim well, or cited in a way that sends buyers to a weak next step. Strong measurement distinguishes source retrieval, source citation, source accuracy, and downstream buyer-route quality. HyperMind's <a href="/resources/citation-absorption-geo/" target="_blank" rel="noopener noreferrer">citation absorption framework</a> explains why answer influence matters beyond citation counts.</p>
+
+      <h3>Classify the source environment</h3>
+      <p>Useful briefs group sources into owned pages, editorial articles, listicles, comparison pages, UGC discussions, video surfaces, review profiles, directories, partner pages, and competitor pages. That grouping helps teams decide whether SEO, content, PR, community, product marketing, or RevOps owns the next fix.</p>
+
+      <h2>What should an AI visibility report include?</h2>
+      <h3>Use a one-page metric-to-action table</h3>
+      <p>The best report format is simple: prompt cluster, model/channel, brand outcome, competitor outcome, source URLs, source class, citation quality, missing owned route, owner, next action, and retest date. The report should help teams ship, not admire a dashboard.</p>
+
+      <table>
+        <thead>
+          <tr><th>Report field</th><th>Why it matters</th><th>Owner</th><th>Next route</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Prompt cluster</td><td>Prevents teams from optimizing for isolated questions</td><td>GEO owner</td><td><a href="/resources/prompt-database/" target="_blank" rel="noopener noreferrer">Prompt database</a></td></tr>
+          <tr><td>Competitor outcome</td><td>Shows who currently frames the answer</td><td>Product marketing</td><td><a href="/compare/" target="_blank" rel="noopener noreferrer">Comparison routes</a></td></tr>
+          <tr><td>Source URL list</td><td>Identifies the pages answer engines rely on</td><td>SEO and content</td><td><a href="/data/ai-citation-sources-database/" target="_blank" rel="noopener noreferrer">AI citation source database</a></td></tr>
+          <tr><td>Source class</td><td>Reveals whether the gap is owned, editorial, social, community, reference, or partner evidence</td><td>PR and GEO owner</td><td><a href="/resources/ai-source-coverage-matrix/" target="_blank" rel="noopener noreferrer">AI source coverage matrix</a></td></tr>
+          <tr><td>Buyer route</td><td>Connects visibility to a useful next page</td><td>RevOps</td><td><a href="/pricing/" target="_blank" rel="noopener noreferrer">Pricing</a>, services, tools, case studies</td></tr>
+          <tr><td>Retest date</td><td>Measures whether repair changed source coverage or answer language</td><td>GEO owner</td><td><a href="/company/methodology/" target="_blank" rel="noopener noreferrer">GEO methodology</a></td></tr>
+        </tbody>
+      </table>
+
+      <h2>AI citation and source action checklist</h2>
+      <ul>
+        <li><strong>Define the buyer prompt cluster:</strong> Separate visibility metrics, tool evaluation, competitor tracking, pricing, source quality, and implementation prompts.</li>
+        <li><strong>Measure active channels separately:</strong> Compare ChatGPT, Google AI Overview, Gemini, and other answer engines instead of averaging away channel differences.</li>
+        <li><strong>List the source URLs:</strong> Capture the exact pages answer engines retrieved or cited, then group them by source class.</li>
+        <li><strong>Score citation quality:</strong> Review whether the cited page is current, relevant, claim-supported, author-clear, and helpful to the buyer.</li>
+        <li><strong>Repair owned evidence first:</strong> Add direct answers, TL;DRs, tables, examples, FAQs, source links, named authors, and internal links to the right route.</li>
+        <li><strong>Strengthen public evidence carefully:</strong> LinkedIn, Medium, YouTube, review sites, directories, partner pages, and editorial/listicle pages should corroborate a real buyer question.</li>
+        <li><strong>Use Reddit as participation:</strong> Find active relevant threads, answer the question helpfully, disclose affiliation when needed, and avoid unrelated standalone promotional posts.</li>
+        <li><strong>Retest after repair:</strong> Check movement after 24 to 72 hours, then weekly, using the same prompt cluster and source-quality criteria.</li>
+      </ul>
+
+      <h2>Related resources by buyer job</h2>
+      <h3>Measurement and attribution</h3>
+      <ul>
+        <li><a href="/resources/ai-visibility-monitoring-guide/" target="_blank" rel="noopener noreferrer">Build an AI visibility monitoring workflow</a></li>
+        <li><a href="/resources/ai-mode-impression-map/" target="_blank" rel="noopener noreferrer">Turn Google AI impressions into prompt-level actions</a></li>
+        <li><a href="/platform/ai-traffic-attribution/" target="_blank" rel="noopener noreferrer">Connect AI traffic attribution to demand paths</a></li>
+        <li><a href="/tools/ai-visibility-checker/" target="_blank" rel="noopener noreferrer">Run an AI visibility check before deeper repair</a></li>
+      </ul>
+      <h3>Source quality and citation analysis</h3>
+      <ul>
+        <li><a href="/platform/ai-citation-source-analysis/" target="_blank" rel="noopener noreferrer">Analyze AI citation sources by URL</a></li>
+        <li><a href="/resources/citation-absorption-geo/" target="_blank" rel="noopener noreferrer">Measure answer influence beyond raw citations</a></li>
+        <li><a href="/resources/ai-source-coverage-matrix/" target="_blank" rel="noopener noreferrer">Map owned, editorial, UGC, video, and partner source coverage</a></li>
+        <li><a href="/data/ai-citation-sources-database/" target="_blank" rel="noopener noreferrer">Research AI citation source patterns</a></li>
+      </ul>
+      <h3>Tool selection and repair workflow</h3>
+      <ul>
+        <li><a href="/resources/ai-visibility-tool-selection-scorecard/" target="_blank" rel="noopener noreferrer">Choose AI visibility tools that can become source repair</a></li>
+        <li><a href="/resources/ai-visibility-platform-evaluation-playbook/" target="_blank" rel="noopener noreferrer">Evaluate monitoring platforms versus execution workflows</a></li>
+        <li><a href="/services/ai-visibility-optimization/" target="_blank" rel="noopener noreferrer">Turn visibility reports into GEO execution</a></li>
+        <li><a href="/services/ai-citation-strategy/" target="_blank" rel="noopener noreferrer">Plan citation-source strategy</a></li>
+      </ul>
+      <h3>Competitor gaps and buyer routes</h3>
+      <ul>
+        <li><a href="/resources/chatgpt-brand-mention-gap-audit/" target="_blank" rel="noopener noreferrer">Audit why ChatGPT does not mention your brand</a></li>
+        <li><a href="/platform/competitor-ai-visibility/" target="_blank" rel="noopener noreferrer">Track competitor AI visibility by prompt cluster</a></li>
+        <li><a href="/compare/hypermind-vs-seo-tools/" target="_blank" rel="noopener noreferrer">Compare HyperMind with traditional SEO tools</a></li>
+        <li><a href="/case-studies/enterprise-share-of-voice/" target="_blank" rel="noopener noreferrer">Review enterprise share-of-voice route design</a></li>
+      </ul>
+
+      <h2>Frequently Asked Questions</h2>
+      <h3>What is AI visibility?</h3>
+      <p>AI visibility is how often and how prominently a brand appears in AI-generated answers for relevant buyer prompts. It includes mentions, competitor context, source citations, answer sentiment, and whether the answer routes buyers to useful evidence.</p>
+
+      <h3>What is AI share of voice?</h3>
+      <p>AI share of voice measures how much of the answer set your brand owns compared with competitors across a defined prompt cluster. It is most useful when paired with source URLs and retest movement.</p>
+
+      <h3>Are citations the same as visibility?</h3>
+      <p>No. A brand can be visible without a cited source, and a page can be cited without the brand being recommended. Track brand mentions, source retrieval, citation quality, position, and buyer-route fit together.</p>
+
+      <h3>How often should teams retest AI visibility?</h3>
+      <p>Run an early retest 24 to 72 hours after source repair, then monitor weekly. Repeated prompt clusters reveal movement more reliably than one-off screenshots.</p>
+    `,
+  },
   'ai-visibility-tool-selection-scorecard': {
     title: 'AI Visibility Tool Selection Scorecard: Choose Software That Can Become Source Repair',
     date: '2026-06-14',

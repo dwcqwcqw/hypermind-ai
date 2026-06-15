@@ -102,11 +102,11 @@ const FEATURED_DECISION_GUIDE = {
 }
 
 const FEATURED_AI_MODE_GUIDE = {
-  title: 'AI Visibility Tool Selection Scorecard',
-  href: '/resources/ai-visibility-tool-selection-scorecard',
+  title: 'AI Visibility Metrics Brief',
+  href: '/resources/ai-visibility-metrics-brief',
   description:
-    'A practical how-to and listicle guide for choosing AI visibility tools by scoring prompt coverage, source gaps, execution ownership, and retesting.',
-  tag: 'Latest Tool Guide',
+    'A practical metrics brief for measuring prompt coverage, brand mentions, share of voice, cited sources, citation quality, and retesting.',
+  tag: 'Latest Metrics Guide',
 }
 
 export default function ResourcesHub() {
