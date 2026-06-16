@@ -83,6 +83,17 @@ const PAGE_SIZE = 9
 
 const RAW_STATIC: Array<Omit<Article, 'subtopic'>> = [
   {
+    id: 41,
+    title: 'AI Source Repair Brief: Turn Prompt Gaps Into Pages, Proof, and Retests',
+    date: '2026-06-16',
+    category: 'geo-strategy',
+    image: '/generated/blog/2026-06-16-ai-source-repair-brief-cover.png',
+    description:
+      'A practical source repair brief for turning AI visibility prompt gaps into owned page updates, source-quality work, off-page evidence, buyer routes, and retests.',
+    slug: 'ai-source-repair-brief',
+    tags: ['AI source repair', 'prompt gaps', 'citation-source analysis', 'owned content repair', 'AI visibility workflow'],
+  },
+  {
     id: 40,
     title: 'AI Visibility Metrics Brief: Measure Mentions, Sources, and Retests That Matter',
     date: '2026-06-15',

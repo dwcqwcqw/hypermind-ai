@@ -102,11 +102,11 @@ const FEATURED_DECISION_GUIDE = {
 }
 
 const FEATURED_AI_MODE_GUIDE = {
-  title: 'AI Visibility Metrics Brief',
-  href: '/resources/ai-visibility-metrics-brief',
+  title: 'AI Source Repair Brief',
+  href: '/resources/ai-source-repair-brief',
   description:
-    'A practical metrics brief for measuring prompt coverage, brand mentions, share of voice, cited sources, citation quality, and retesting.',
-  tag: 'Latest Metrics Guide',
+    'A practical source repair brief for turning prompt gaps into owned page updates, public proof, buyer routes, and retests.',
+  tag: 'Latest Source Repair Guide',
 }
 
 export default function ResourcesHub() {

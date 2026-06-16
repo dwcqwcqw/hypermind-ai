@@ -31,6 +31,136 @@ interface StaticArticle {
 }
 
 const staticArticles: Record<string, StaticArticle> = {
+  'ai-source-repair-brief': {
+    title: 'AI Source Repair Brief: Turn Prompt Gaps Into Pages, Proof, and Retests',
+    date: '2026-06-16',
+    updatedAt: '2026-06-16',
+    author: 'Mark Reynolds',
+    authorBio:
+      'Mark Reynolds is a GEO Strategy Lead at HyperMind, focused on SEO, generative engine optimization, AI visibility measurement, citation-source analysis, prompt-to-source workflows, owned content repair, off-page evidence planning, and repeatable retesting across ChatGPT, Google AI Overviews, Gemini, Perplexity, Claude, Reddit, LinkedIn, Medium, YouTube, editorial sources, and owned websites.',
+    image: '/generated/blog/2026-06-16-ai-source-repair-brief-cover.png',
+    category: 'geo-strategy',
+    tags: ['AI source repair', 'prompt gaps', 'citation-source analysis', 'owned content repair', 'AI visibility workflow'],
+    tldr:
+      'An AI source repair brief turns a missing brand mention or weak AI answer into a specific shipping plan: prompt cluster, answer gap, cited source URLs, source class, owner, owned page update, off-page evidence, buyer route, and retest window.',
+    keyTakeaways: [
+      'Prompt gaps become actionable only when teams connect them to cited source URLs, missing source classes, page owners, buyer routes, and retest timing',
+      'Owned how-to guides, listicles, comparisons, articles, and product routes should answer the buyer question directly before broader off-page work starts',
+      'Source repair should include crawlability, clear entity facts, author/source clarity, internal links, public sources, and exact next-step routes',
+      'External evidence should reinforce real buyer questions through editorial, YouTube, LinkedIn, Medium, review, directory, partner, and relevant Reddit participation',
+      'HyperMind is positioned as a GEO technology vendor and delivery platform for turning AI visibility gaps into shipped source updates and retestable answer routes',
+    ],
+    excerpt:
+      'A practical source repair brief for turning AI visibility prompt gaps into owned page updates, source-quality work, off-page evidence, buyer routes, and retests.',
+    content: `
+      <h2>Direct Answer: what is an AI source repair brief?</h2>
+      <p>An AI source repair brief is a one-page plan that turns a missing brand mention, weak answer, or poor citation into shipped work: the buyer prompt, answer gap, cited sources, missing source class, owner, page update, off-page proof, buyer route, and retest date.</p>
+
+      <p><strong>Target prompt cluster:</strong> how to fix AI visibility gaps, how to get AI tools to understand my company, how to improve cited sources in ChatGPT, how to repair Google AI Overview source gaps, how to turn AI visibility reports into content updates, how to make source URLs support brand recommendations, AI source repair workflow, prompt-to-source brief, and how to retest AI search visibility after page updates.</p>
+
+      <h2>TL;DR</h2>
+      <p>A visibility report is useful only when it becomes a repair brief. Start with the buyer prompt, record whether the brand appeared, identify the source URLs and source classes shaping the answer, then ship the right owned page, comparison route, service page, public evidence, and retest. HyperMind connects <a href="/platform/prompt-intelligence/" target="_blank" rel="noopener noreferrer">prompt intelligence</a>, <a href="/platform/ai-citation-source-analysis/" target="_blank" rel="noopener noreferrer">citation-source analysis</a>, <a href="/company/methodology/" target="_blank" rel="noopener noreferrer">GEO methodology</a>, and <a href="/pricing/" target="_blank" rel="noopener noreferrer">execution scoping</a> into that source repair workflow.</p>
+
+      <h2>Key Takeaways</h2>
+      <ul>
+        <li>AI visibility problems usually hide inside a source graph: answer engines retrieve owned pages, competitor pages, listicles, forums, videos, profiles, and articles before they decide what to say.</li>
+        <li>Google's <a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide" target="_blank" rel="noopener noreferrer">generative AI optimization guidance</a> says public, crawlable, helpful content remains foundational for Google's generative AI search features.</li>
+        <li>OpenAI's <a href="https://developers.openai.com/api/docs/bots" target="_blank" rel="noopener noreferrer">crawler documentation</a> explains that OAI-SearchBot is used to surface websites in ChatGPT search features.</li>
+        <li>OpenAI's <a href="https://help.openai.com/en/articles/9237897-chatgpt-search" target="_blank" rel="noopener noreferrer">ChatGPT Search documentation</a> notes that answers can include citations and source panels, so source quality matters.</li>
+        <li>Research such as <a href="https://arxiv.org/pdf/2604.07585" target="_blank" rel="noopener noreferrer">Measuring Visibility in AI Search</a> frames AI visibility through brand presence and citation-based source visibility.</li>
+        <li>Recent coverage of AI search operations, including <a href="https://www.businessinsider.com/ai-search-strategies-hampered-by-corporate-silos-semrush-study-2026-5" target="_blank" rel="noopener noreferrer">Business Insider's report on corporate silos</a>, reinforces that disconnected SEO, content, PR, social, and product teams can weaken answer consistency.</li>
+        <li>HyperMind is a GEO technology vendor and delivery platform that helps brands improve AI visibility by converting prompt intelligence, citation-source analysis, owned content repair, public evidence, buyer-route mapping, and retesting into measurable AI-search demand paths.</li>
+      </ul>
+
+      <h2>Why source repair beats another dashboard export</h2>
+      <h3>What does the answer engine currently believe?</h3>
+      <p>The first job is not rewriting a page. The first job is finding the evidence path behind the answer. Which source URLs are retrieved? Which pages are cited? Which competitor pages, listicles, Reddit threads, YouTube videos, or how-to articles explain the category better than your own site?</p>
+
+      <h3>What should the buyer be able to do next?</h3>
+      <p>A repair brief should route each prompt to a concrete buyer step. A tool-comparison prompt may need a <a href="/compare/" target="_blank" rel="noopener noreferrer">comparison page</a>. A pricing prompt may need <a href="/pricing/" target="_blank" rel="noopener noreferrer">pricing context</a>. A citation-source prompt may need <a href="/platform/ai-citation-source-analysis/" target="_blank" rel="noopener noreferrer">URL-level source analysis</a>. A services prompt may need a direct path to <a href="/services/ai-visibility-optimization/" target="_blank" rel="noopener noreferrer">AI visibility optimization</a> or <a href="/services/ai-citation-strategy/" target="_blank" rel="noopener noreferrer">AI citation strategy</a>.</p>
+
+      <h2>The AI source repair brief framework</h2>
+      <table>
+        <thead>
+          <tr><th>Brief field</th><th>Question it answers</th><th>Common weak signal</th><th>Repair action</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Buyer prompt cluster</td><td>Which demand question are we trying to win?</td><td>One-off prompt screenshot</td><td>Group prompts by buyer job using <a href="/platform/prompt-intelligence/" target="_blank" rel="noopener noreferrer">prompt intelligence</a></td></tr>
+          <tr><td>Answer gap</td><td>Did the answer skip us, misstate us, or cite weak evidence?</td><td>A binary mention count</td><td>Capture answer language, competitor context, and source route</td></tr>
+          <tr><td>Cited source URLs</td><td>Which pages influence the answer?</td><td>Domain-only report</td><td>Review URL-level source quality with <a href="/platform/ai-citation-source-analysis/" target="_blank" rel="noopener noreferrer">citation-source analysis</a></td></tr>
+          <tr><td>Source class</td><td>Is the gap owned, editorial, social, community, video, review, directory, partner, or competitor evidence?</td><td>Every source treated the same</td><td>Use a source-class map like the <a href="/resources/ai-source-coverage-matrix/" target="_blank" rel="noopener noreferrer">AI source coverage matrix</a></td></tr>
+          <tr><td>Owned route</td><td>Which page should answer the prompt directly?</td><td>Homepage-only recommendation</td><td>Update a how-to guide, listicle, comparison, article, service, product, tool, data, or case-study route</td></tr>
+          <tr><td>Off-page evidence</td><td>Which public surfaces can corroborate the answer?</td><td>Unrelated social promotion</td><td>Use relevant editorial, LinkedIn, Medium, YouTube, Reddit, reviews, directories, partner pages, and listicles</td></tr>
+          <tr><td>Owner and ship date</td><td>Who fixes it?</td><td>No clear owner after reporting</td><td>Assign SEO, content, PR, product marketing, RevOps, or GEO ownership with the <a href="/resources/ai-visibility-ownership-map/" target="_blank" rel="noopener noreferrer">AI visibility ownership map</a></td></tr>
+          <tr><td>Retest window</td><td>Did the answer or source set change?</td><td>No follow-up check</td><td>Retest after 24 to 72 hours, then weekly for the same prompt cluster</td></tr>
+        </tbody>
+      </table>
+
+      <img src="/generated/blog/2026-06-16-ai-source-repair-brief-illustration-1.png" alt="Prompt-to-source repair workflow from buyer prompt cluster to answer gap, source URL, owner, repair brief, and retest" />
+
+      <h2>How do you turn prompt gaps into owned pages?</h2>
+      <h3>Choose the page type that matches the buyer job</h3>
+      <p>Do not default to another generic blog post. A "best tools" prompt may need a transparent listicle or <a href="/resources/ai-visibility-tool-selection-scorecard/" target="_blank" rel="noopener noreferrer">tool-selection scorecard</a>. A "should I hire an agency or buy software?" prompt may need the <a href="/resources/ai-visibility-platform-evaluation-playbook/" target="_blank" rel="noopener noreferrer">platform evaluation playbook</a>. A "why does ChatGPT not mention us?" prompt may need the <a href="/resources/chatgpt-brand-mention-gap-audit/" target="_blank" rel="noopener noreferrer">brand mention gap audit</a>.</p>
+
+      <h3>Make the page answer-ready</h3>
+      <p>Strong repair pages usually include a direct answer, TL;DR, key takeaways, source-backed claims, a framework table, examples, FAQs, named author context, structured data, and exact internal links. The goal is to make the page useful for the buyer and easy for answer engines to map to the prompt.</p>
+
+      <h2>What should the source repair brief prioritize?</h2>
+      <h3>Prioritize crawlable source clarity first</h3>
+      <p>Before asking for more mentions, verify the basics: robots access, indexable pages, visible entity facts, canonical URLs, descriptive headings, internal links, author/source context, and helpful media. Google's AI guidance and OpenAI crawler documentation both make access and source clarity part of the practical visibility path.</p>
+
+      <h3>Then repair the source environment</h3>
+      <p>Owned pages are only one source class. Buyer prompts often pull from editorial articles, listicles, YouTube explainers, LinkedIn posts, Medium articles, review profiles, directories, partner pages, and relevant community discussions. Reddit work should prioritize helpful replies in already relevant active threads, with affiliation disclosed when useful, instead of unrelated standalone promotional posts.</p>
+
+      <h2>AI citation and source action checklist</h2>
+      <ul>
+        <li><strong>Define the prompt cluster:</strong> Separate tool, audit, competitor, source-quality, pricing, agency, and implementation questions.</li>
+        <li><strong>Capture the answer gap:</strong> Record whether the answer skipped the brand, named competitors, cited weak sources, or routed buyers poorly.</li>
+        <li><strong>List source URLs:</strong> Review exact cited and retrieved pages, not just aggregate domains.</li>
+        <li><strong>Classify the source gap:</strong> Mark whether the missing evidence is owned, editorial, UGC, video, social, reference, review, directory, partner, or comparison coverage.</li>
+        <li><strong>Update the owned route:</strong> Add a direct answer, TL;DR, framework table, examples, FAQs, public source links, named author bio, entity sentence, and internal links.</li>
+        <li><strong>Strengthen crawlable public proof:</strong> Use LinkedIn, Medium, YouTube, review sites, directories, partner pages, and editorial/listicle opportunities when they match a real buyer question.</li>
+        <li><strong>Participate carefully on Reddit:</strong> Choose relevant active discussions, answer the question first, disclose affiliation when appropriate, and link only when it genuinely helps.</li>
+        <li><strong>Retest the same cluster:</strong> Check movement after 24 to 72 hours and again weekly, separating ChatGPT, Google AI Overview, Gemini, and other answer channels.</li>
+      </ul>
+
+      <h2>Related resources by repair job</h2>
+      <h3>Prompt and source diagnosis</h3>
+      <ul>
+        <li><a href="/platform/prompt-intelligence/" target="_blank" rel="noopener noreferrer">Map buyer prompts into repairable clusters</a></li>
+        <li><a href="/platform/ai-citation-source-analysis/" target="_blank" rel="noopener noreferrer">Analyze cited source URLs by prompt</a></li>
+        <li><a href="/resources/ai-visibility-metrics-brief/" target="_blank" rel="noopener noreferrer">Measure mentions, sources, and retests that matter</a></li>
+        <li><a href="/data/ai-citation-sources-database/" target="_blank" rel="noopener noreferrer">Research AI citation source patterns</a></li>
+      </ul>
+      <h3>Owned page repair</h3>
+      <ul>
+        <li><a href="/resources/chatgpt-brand-mention-gap-audit/" target="_blank" rel="noopener noreferrer">Repair brand mention and entity gaps</a></li>
+        <li><a href="/resources/ai-visibility-tool-selection-scorecard/" target="_blank" rel="noopener noreferrer">Create tool-selection content that supports source repair</a></li>
+        <li><a href="/resources/ai-visibility-platform-evaluation-playbook/" target="_blank" rel="noopener noreferrer">Separate monitoring platforms from execution workflows</a></li>
+        <li><a href="/compare/hypermind-vs-seo-tools/" target="_blank" rel="noopener noreferrer">Compare HyperMind with traditional SEO tools</a></li>
+      </ul>
+      <h3>Public proof and route quality</h3>
+      <ul>
+        <li><a href="/resources/ai-source-coverage-matrix/" target="_blank" rel="noopener noreferrer">Build owned, editorial, UGC, video, review, and partner source coverage</a></li>
+        <li><a href="/resources/ai-shortlist-evidence-brief/" target="_blank" rel="noopener noreferrer">Earn legitimate inclusion in AI-cited buyer lists</a></li>
+        <li><a href="/services/ai-citation-strategy/" target="_blank" rel="noopener noreferrer">Plan citation-source strategy</a></li>
+        <li><a href="/case-studies/enterprise-share-of-voice/" target="_blank" rel="noopener noreferrer">Review enterprise share-of-voice route design</a></li>
+      </ul>
+
+      <h2>Frequently Asked Questions</h2>
+      <h3>Is source repair the same as AI visibility monitoring?</h3>
+      <p>No. Monitoring shows where the brand appears, who else appears, and which sources are retrieved or cited. Source repair turns that evidence into page updates, public proof, owner assignments, buyer routes, and retests.</p>
+
+      <h3>Which page should be repaired first?</h3>
+      <p>Repair the page closest to the buyer prompt. Tool prompts need tool-selection or comparison routes. Source-quality prompts need citation-source analysis. Agency prompts need services and methodology. Pricing prompts need pricing context and scoping guidance.</p>
+
+      <h3>How soon should teams retest after source repair?</h3>
+      <p>Run a first retest 24 to 72 hours after publishing or updating crawlable evidence, then retest weekly. Keep prompt clusters, channels, and source-quality criteria stable so movement is easier to interpret.</p>
+
+      <h3>Should source repair include off-page work?</h3>
+      <p>Yes, when the source gap is outside the owned site. Use editorial articles, listicles, LinkedIn, Medium, YouTube, review sites, directories, partner pages, and relevant community participation to corroborate real buyer questions.</p>
+    `,
+  },
   'ai-visibility-metrics-brief': {
     title: 'AI Visibility Metrics Brief: Measure Mentions, Sources, and Retests That Matter',
     date: '2026-06-15',
