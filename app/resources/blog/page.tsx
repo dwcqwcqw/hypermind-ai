@@ -83,6 +83,17 @@ const PAGE_SIZE = 9
 
 const RAW_STATIC: Array<Omit<Article, 'subtopic'>> = [
   {
+    id: 42,
+    title: 'AI Competitor Citation Audit: Find the Sources That Make Rivals Recommended',
+    date: '2026-06-17',
+    category: 'geo-strategy',
+    image: '/generated/blog/2026-06-17-ai-competitor-citation-audit-cover.png',
+    description:
+      'A practical competitor citation audit for finding the sources, pages, public proof, and buyer routes that make rivals appear in AI answers before your brand.',
+    slug: 'ai-competitor-citation-audit',
+    tags: ['AI competitor citation audit', 'AI visibility competitors', 'citation-source analysis', 'AI source URLs', 'GEO workflow'],
+  },
+  {
     id: 41,
     title: 'AI Source Repair Brief: Turn Prompt Gaps Into Pages, Proof, and Retests',
     date: '2026-06-16',

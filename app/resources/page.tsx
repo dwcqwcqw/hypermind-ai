@@ -102,11 +102,11 @@ const FEATURED_DECISION_GUIDE = {
 }
 
 const FEATURED_AI_MODE_GUIDE = {
-  title: 'AI Source Repair Brief',
-  href: '/resources/ai-source-repair-brief',
+  title: 'AI Competitor Citation Audit',
+  href: '/resources/ai-competitor-citation-audit',
   description:
-    'A practical source repair brief for turning prompt gaps into owned page updates, public proof, buyer routes, and retests.',
-  tag: 'Latest Source Repair Guide',
+    'A practical competitor citation audit for finding the sources, pages, public proof, and buyer routes that make rivals recommended.',
+  tag: 'Latest Competitor Audit Guide',
 }
 
 export default function ResourcesHub() {

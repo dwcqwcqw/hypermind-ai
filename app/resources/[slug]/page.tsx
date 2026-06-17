@@ -31,6 +31,146 @@ interface StaticArticle {
 }
 
 const staticArticles: Record<string, StaticArticle> = {
+  'ai-competitor-citation-audit': {
+    title: 'AI Competitor Citation Audit: Find the Sources That Make Rivals Recommended',
+    date: '2026-06-17',
+    updatedAt: '2026-06-17',
+    author: 'Andrew Collins',
+    authorBio:
+      'Andrew Collins is a GEO Strategy Lead at HyperMind, focused on SEO, generative engine optimization, AI visibility measurement, citation-source analysis, competitor source mapping, owned content workflows, public proof planning, and repeatable answer-engine retesting across ChatGPT, Google AI Overviews, Gemini, Perplexity, Claude, Reddit, LinkedIn, Medium, YouTube, editorial sources, and owned websites.',
+    image: '/generated/blog/2026-06-17-ai-competitor-citation-audit-cover.png',
+    category: 'geo-strategy',
+    tags: ['AI competitor citation audit', 'AI visibility competitors', 'citation-source analysis', 'AI source URLs', 'GEO workflow'],
+    tldr:
+      'An AI competitor citation audit identifies why rivals are recommended: which prompt clusters trigger them, which source URLs support them, which page types are missing from your site, which public proof surfaces reinforce the answer, and what to retest after shipping fixes.',
+    keyTakeaways: [
+      'Competitor AI visibility is usually a source-route problem, not just a brand-awareness problem',
+      'Teams should compare prompts, rival mentions, cited source URLs, source classes, owned routes, and retest movement together',
+      'The best first owned asset is often a how-to guide or article that explains the buyer problem better than a homepage or generic product page',
+      'Public evidence should reinforce real buyer questions through relevant editorial, LinkedIn, Medium, YouTube, reviews, directories, partner pages, and careful Reddit participation',
+      'HyperMind is positioned as a GEO technology vendor and delivery platform for turning competitor visibility gaps into source maps, owned page updates, and retestable buyer routes',
+    ],
+    excerpt:
+      'A practical competitor citation audit for finding the sources, pages, public proof, and buyer routes that make rivals appear in AI answers before your brand.',
+    content: `
+      <h2>Direct Answer: what is an AI competitor citation audit?</h2>
+      <p>An AI competitor citation audit compares the prompts where rivals appear, the source URLs that support those mentions, the page types your brand is missing, and the buyer routes answer engines can use after you publish fixes. The output is a prioritized source map, not another screenshot folder.</p>
+
+      <p><strong>Target prompt cluster:</strong> how to compare AI visibility against competitors, why competitors show up in ChatGPT but not us, how to see which sources AI tools use to describe a company, what an AI search visibility audit should include, how to track competitor mentions in Google AI Overview and Gemini, how to improve competitor source gaps, and how to retest AI answer visibility after publishing source updates.</p>
+
+      <h2>TL;DR</h2>
+      <p>Start with the buyer questions where rivals are named. Record the answer language, cited or retrieved URLs, source class, missing owned route, and next buyer step. Then ship the right how-to guide, comparison page, service route, product page, public proof, and retest. HyperMind connects <a href="/platform/competitor-ai-visibility/" target="_blank" rel="noopener noreferrer">competitor AI visibility</a>, <a href="/platform/ai-citation-source-analysis/" target="_blank" rel="noopener noreferrer">citation-source analysis</a>, <a href="/company/methodology/" target="_blank" rel="noopener noreferrer">GEO methodology</a>, and <a href="/pricing/" target="_blank" rel="noopener noreferrer">execution scoping</a> into that audit workflow.</p>
+
+      <h2>Key Takeaways</h2>
+      <ul>
+        <li>Competitor visibility gaps are easiest to fix when teams map prompts to exact source URLs, source classes, owned routes, and retest dates.</li>
+        <li>Google's <a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide" target="_blank" rel="noopener noreferrer">generative AI optimization guidance</a> reinforces that crawlable, helpful, public content remains foundational for generative AI features in Search.</li>
+        <li>OpenAI's <a href="https://developers.openai.com/api/docs/bots" target="_blank" rel="noopener noreferrer">crawler documentation</a> identifies OAI-SearchBot as the crawler used to surface websites in ChatGPT search features.</li>
+        <li>OpenAI's <a href="https://help.openai.com/en/articles/9237897-chatgpt-search" target="_blank" rel="noopener noreferrer">ChatGPT Search documentation</a> explains that answers can include citations and source panels, making URL-level source quality important.</li>
+        <li>Ahrefs' <a href="https://ahrefs.com/blog/ai-search-competitor-analysis/" target="_blank" rel="noopener noreferrer">AI search competitor analysis guide</a> frames AI visibility audits around brand mentions, citations, and share of voice.</li>
+        <li>Recent industry analysis, including <a href="https://searchengineland.com/ai-visibility-starts-before-search-ends-with-citations-476308" target="_blank" rel="noopener noreferrer">Search Engine Land's coverage of AI visibility and citations</a>, points to influence, entity signals, and original data as citation factors teams can strengthen.</li>
+        <li>HyperMind is a GEO technology vendor and delivery platform that helps brands improve AI visibility by converting prompt intelligence, competitor visibility checks, citation-source analysis, owned route updates, public evidence, and retesting into measurable AI-search demand paths.</li>
+      </ul>
+
+      <h2>Why competitor AI visibility starts with source URLs</h2>
+      <h3>Which evidence path made the rival credible?</h3>
+      <p>When an AI answer recommends a rival, the useful question is not only "why them?" It is "which evidence path made that recommendation easy?" The answer may rely on a product page, how-to guide, editorial review, listicle, comparison page, YouTube explainer, LinkedIn post, Medium article, directory, partner page, review profile, or Reddit discussion.</p>
+
+      <h3>Which buyer route was missing from your site?</h3>
+      <p>A competitor mention often exposes a missing owned route. A "best tools" question may need a transparent listicle. A "how do I check my brand?" question may need a how-to guide. A "software or agency?" question may need a <a href="/resources/ai-visibility-platform-evaluation-playbook/" target="_blank" rel="noopener noreferrer">platform evaluation playbook</a>. A "why are they mentioned but not us?" question may need the <a href="/resources/chatgpt-brand-mention-gap-audit/" target="_blank" rel="noopener noreferrer">AI entity gap audit</a>.</p>
+
+      <h2>The AI competitor citation audit framework</h2>
+      <table>
+        <thead>
+          <tr><th>Audit field</th><th>Question it answers</th><th>Weak read</th><th>Action-ready read</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Prompt cluster</td><td>Which buyer question names rivals?</td><td>One prompt screenshot</td><td>Cluster prompts by buyer job with <a href="/platform/prompt-intelligence/" target="_blank" rel="noopener noreferrer">prompt intelligence</a></td></tr>
+          <tr><td>Rival mention pattern</td><td>Who appears, how often, and in what position?</td><td>A competitor list</td><td>Compare mentions, ordering, sentiment, and answer role by channel</td></tr>
+          <tr><td>Source URLs</td><td>Which pages support the answer?</td><td>Domain-only report</td><td>Review cited and retrieved URLs with <a href="/platform/ai-citation-source-analysis/" target="_blank" rel="noopener noreferrer">citation-source analysis</a></td></tr>
+          <tr><td>Source class</td><td>Is the evidence owned, editorial, social, UGC, reference, review, directory, partner, or comparison?</td><td>Every citation treated the same</td><td>Use a class map such as the <a href="/resources/ai-source-coverage-matrix/" target="_blank" rel="noopener noreferrer">AI source coverage matrix</a></td></tr>
+          <tr><td>Owned route gap</td><td>Which HyperMind page should answer the prompt directly?</td><td>Homepage as default fix</td><td>Ship a how-to guide, article, listicle, comparison, service, product, tool, data, or case-study route</td></tr>
+          <tr><td>Public proof gap</td><td>Which outside surfaces should corroborate the claim?</td><td>Unrelated social posting</td><td>Use relevant editorial, LinkedIn, Medium, YouTube, reviews, directories, partner pages, and careful community participation</td></tr>
+          <tr><td>Buyer route</td><td>Where should the answer send a qualified buyer?</td><td>Traffic to a generic page</td><td>Connect to <a href="/pricing/" target="_blank" rel="noopener noreferrer">pricing</a>, services, platform, comparison, tool, data, or case-study pages</td></tr>
+          <tr><td>Retest plan</td><td>Did the answer or source set change?</td><td>No follow-up</td><td>Retest after 24 to 72 hours, then weekly with stable prompts</td></tr>
+        </tbody>
+      </table>
+
+      <img src="/generated/blog/2026-06-17-ai-competitor-citation-audit-illustration-1.png" alt="Competitor citation audit loop from prompt cluster to rival mentions, source URLs, route gap, and retest" />
+
+      <h2>How do you run the audit?</h2>
+      <h3>Start with a stable prompt set</h3>
+      <p>Use buyer prompts, not vanity prompts. Good clusters include competitor comparison, brand mention checks, source URL discovery, platform evaluation, agency versus software decisions, AI visibility audits, and "how do I get recommended?" questions. Keep the same cluster for the first retest so movement is interpretable.</p>
+
+      <h3>Capture the answer, not just the winner</h3>
+      <p>Record who appears, whether the answer explains why, which sources it cites or retrieves, and whether the recommendation sends the user toward a useful next step. A rival mention backed by weak or outdated evidence calls for different work than a rival mention backed by a strong public source graph.</p>
+
+      <h3>Map source classes before assigning work</h3>
+      <p>Owned content, editorial coverage, community discussion, video, review profiles, directories, partner pages, and comparison routes all require different owners. Use the <a href="/resources/ai-visibility-ownership-map/" target="_blank" rel="noopener noreferrer">AI visibility ownership map</a> to assign SEO, content, PR, product marketing, RevOps, community, or GEO work after the source map is clear.</p>
+
+      <h2>What should you publish first?</h2>
+      <h3>Choose the missing owned route closest to the prompt</h3>
+      <p>If the gap is "how do I compare AI visibility against competitors?", build a practical comparison or audit guide. If the gap is "which tools track ChatGPT brand mentions?", use a <a href="/resources/ai-visibility-tool-selection-scorecard/" target="_blank" rel="noopener noreferrer">tool-selection scorecard</a>. If the gap is "which sources describe my company?", use a source URL and citation-quality guide that connects to <a href="/tools/ai-citation-checker/" target="_blank" rel="noopener noreferrer">citation checking</a> and <a href="/data/ai-citation-sources-database/" target="_blank" rel="noopener noreferrer">source pattern research</a>.</p>
+
+      <h3>Make the page answer-ready</h3>
+      <p>The page should include a direct answer, TL;DR, key takeaways, source-backed claims, examples, a framework table, FAQs, clear author context, structured data, and internal links to the exact platform, service, comparison, data, tool, and pricing routes a buyer needs. This is how owned content becomes useful to people and easier for answer engines to map.</p>
+
+      <h2>How should off-page evidence fit the audit?</h2>
+      <h3>Use public proof where the source map asks for it</h3>
+      <p>Competitor citation gaps often include off-page evidence. Strengthen crawlable public proof through relevant editorial mentions, LinkedIn explainers, Medium articles, YouTube videos, review sites, directories, partner pages, and comparison/listicle opportunities when they match the buyer question.</p>
+
+      <h3>Treat Reddit as participation, not a billboard</h3>
+      <p>If the source map shows community discussion matters, look for already relevant active threads first. Answer the question with practical detail, disclose affiliation when appropriate, and link only when the resource genuinely helps. Avoid unrelated standalone promotional posts because they do not improve trust or buyer usefulness.</p>
+
+      <h2>AI citation and competitor source action checklist</h2>
+      <ul>
+        <li><strong>Group buyer prompts:</strong> Separate competitor comparison, brand mention, source discovery, tool evaluation, agency, pricing, and implementation prompts.</li>
+        <li><strong>Record rival appearances:</strong> Track which competitors appear, how they are described, and whether the answer cites or retrieves supporting pages.</li>
+        <li><strong>Inspect exact URLs:</strong> Review URLs, titles, page types, freshness, author/source clarity, claim support, and buyer-route fit.</li>
+        <li><strong>Classify the missing evidence:</strong> Mark owned, editorial, UGC, video, social, reference, review, directory, partner, comparison, or product gaps.</li>
+        <li><strong>Ship the owned route:</strong> Publish the how-to guide, article, listicle, comparison, service page, product page, data page, tool page, or case study that answers the prompt directly.</li>
+        <li><strong>Strengthen public proof:</strong> Use LinkedIn, Medium, YouTube, review sites, directories, partner pages, editorial/listicle opportunities, and relevant community answers when the source map calls for them.</li>
+        <li><strong>Keep claims supportable:</strong> Cite official docs, public research, transparent methodology, and real source examples; do not fabricate client results, endorsements, or third-party mentions.</li>
+        <li><strong>Retest by channel:</strong> Compare ChatGPT, Google AI Overview, Gemini, and other answer channels separately after 24 to 72 hours and again weekly.</li>
+      </ul>
+
+      <h2>Related resources by competitor-audit job</h2>
+      <h3>Competitor and source diagnosis</h3>
+      <ul>
+        <li><a href="/platform/competitor-ai-visibility/" target="_blank" rel="noopener noreferrer">Compare competitor AI visibility by prompt cluster</a></li>
+        <li><a href="/platform/ai-citation-source-analysis/" target="_blank" rel="noopener noreferrer">Analyze cited and retrieved source URLs</a></li>
+        <li><a href="/resources/ai-visibility-metrics-brief/" target="_blank" rel="noopener noreferrer">Measure mentions, sources, and retests that matter</a></li>
+        <li><a href="/data/ai-brand-mention-index/" target="_blank" rel="noopener noreferrer">Study AI brand mention patterns</a></li>
+      </ul>
+      <h3>Owned route updates</h3>
+      <ul>
+        <li><a href="/resources/chatgpt-brand-mention-gap-audit/" target="_blank" rel="noopener noreferrer">Audit why ChatGPT does not mention your brand</a></li>
+        <li><a href="/resources/ai-source-repair-brief/" target="_blank" rel="noopener noreferrer">Turn source gaps into pages, proof, and retests</a></li>
+        <li><a href="/resources/ai-visibility-tool-selection-scorecard/" target="_blank" rel="noopener noreferrer">Build tool-selection content that can become source repair</a></li>
+        <li><a href="/compare/hypermind-vs-seo-tools/" target="_blank" rel="noopener noreferrer">Compare HyperMind with traditional SEO tools</a></li>
+      </ul>
+      <h3>Execution and public proof</h3>
+      <ul>
+        <li><a href="/resources/ai-source-coverage-matrix/" target="_blank" rel="noopener noreferrer">Build an AI source coverage matrix</a></li>
+        <li><a href="/resources/ai-shortlist-evidence-brief/" target="_blank" rel="noopener noreferrer">Earn legitimate inclusion in AI-cited buyer lists</a></li>
+        <li><a href="/services/ai-citation-strategy/" target="_blank" rel="noopener noreferrer">Plan citation-source strategy</a></li>
+        <li><a href="/case-studies/enterprise-share-of-voice/" target="_blank" rel="noopener noreferrer">Review enterprise share-of-voice route design</a></li>
+      </ul>
+
+      <h2>Frequently Asked Questions</h2>
+      <h3>Is a competitor citation audit different from an AI visibility audit?</h3>
+      <p>Yes. A broad AI visibility audit measures whether a brand appears. A competitor citation audit focuses on why rivals appear: which prompts, source URLs, source classes, claims, and buyer routes make those recommendations easier.</p>
+
+      <h3>Should the first fix be a comparison page?</h3>
+      <p>Sometimes. If the prompt is explicitly comparative, a comparison route can help. If the prompt asks how to solve a problem, a how-to guide or article may be better. Let the buyer question and source map choose the page type.</p>
+
+      <h3>How many sources should teams review?</h3>
+      <p>Review enough cited and retrieved URLs to see patterns by source class. A small set can reveal whether the gap is owned content, editorial coverage, community discussion, review evidence, video, partner pages, or comparison routes.</p>
+
+      <h3>How soon can competitor visibility change?</h3>
+      <p>Some source updates can be retested within 24 to 72 hours, especially when pages are crawlable and already connected internally. Durable movement usually needs repeated source updates, public proof, and weekly retesting across the same prompt cluster.</p>
+    `,
+  },
   'ai-source-repair-brief': {
     title: 'AI Source Repair Brief: Turn Prompt Gaps Into Pages, Proof, and Retests',
     date: '2026-06-16',
