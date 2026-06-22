@@ -83,6 +83,17 @@ const PAGE_SIZE = 9
 
 const RAW_STATIC: Array<Omit<Article, 'subtopic'>> = [
   {
+    id: 43,
+    title: 'AI Visibility Prompt Test Plan: Build the Question Set That Finds Real Source Gaps',
+    date: '2026-06-22',
+    category: 'geo-strategy',
+    image: '/generated/blog/2026-06-22-ai-visibility-prompt-test-plan-cover.png',
+    description:
+      'A practical prompt test plan for finding AI visibility gaps, source URLs, missing owned routes, public proof needs, and retestable buyer-question clusters.',
+    slug: 'ai-visibility-prompt-test-plan',
+    tags: ['AI visibility prompt testing', 'prompt set design', 'AI search audit', 'citation-source analysis', 'GEO workflow'],
+  },
+  {
     id: 42,
     title: 'AI Competitor Citation Audit: Find the Sources That Make Rivals Recommended',
     date: '2026-06-17',

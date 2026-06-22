@@ -102,11 +102,11 @@ const FEATURED_DECISION_GUIDE = {
 }
 
 const FEATURED_AI_MODE_GUIDE = {
-  title: 'AI Competitor Citation Audit',
-  href: '/resources/ai-competitor-citation-audit',
+  title: 'AI Visibility Prompt Test Plan',
+  href: '/resources/ai-visibility-prompt-test-plan',
   description:
-    'A practical competitor citation audit for finding the sources, pages, public proof, and buyer routes that make rivals recommended.',
-  tag: 'Latest Competitor Audit Guide',
+    'A practical prompt test plan for finding AI visibility gaps, source URLs, missing owned routes, public proof needs, and retestable buyer-question clusters.',
+  tag: 'Latest Prompt Testing Guide',
 }
 
 export default function ResourcesHub() {

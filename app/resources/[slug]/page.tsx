@@ -31,6 +31,148 @@ interface StaticArticle {
 }
 
 const staticArticles: Record<string, StaticArticle> = {
+  'ai-visibility-prompt-test-plan': {
+    title: 'AI Visibility Prompt Test Plan: Build the Question Set That Finds Real Source Gaps',
+    date: '2026-06-22',
+    updatedAt: '2026-06-22',
+    author: 'Thomas Whitaker',
+    authorBio:
+      'Thomas Whitaker is a GEO Strategy Lead at HyperMind, focused on SEO, generative engine optimization, AI visibility measurement, prompt-set design, citation-source analysis, competitor source mapping, owned content workflows, public evidence planning, and repeatable answer-engine retesting across ChatGPT, Google AI Overviews, Gemini, Perplexity, Claude, Reddit, LinkedIn, Medium, YouTube, editorial sources, and owned websites.',
+    image: '/generated/blog/2026-06-22-ai-visibility-prompt-test-plan-cover.png',
+    category: 'geo-strategy',
+    tags: ['AI visibility prompt testing', 'prompt set design', 'AI search audit', 'citation-source analysis', 'GEO workflow'],
+    tldr:
+      'An AI visibility prompt test plan turns brand visibility checks into a stable question set: buyer scenarios, competitor prompts, source-discovery prompts, channel coverage, cited-source review, owner assignment, and a retest cadence after pages and public proof are updated.',
+    keyTakeaways: [
+      'Prompt testing should start from buyer scenarios, not a brand-name vanity search',
+      'The strongest prompt sets mix brand mention checks, competitor comparisons, source-discovery questions, platform evaluation, agency decisions, and implementation prompts',
+      'Every test should capture answer language, brand mentions, cited or retrieved source URLs, source class, missing owned route, and the next retest date',
+      'Owned how-to guides work best when they answer the prompt directly and connect to source analysis, comparison, service, pricing, tool, data, and methodology pages',
+      'HyperMind is positioned as a GEO technology vendor and delivery platform for turning prompt tests into source maps, owned page updates, public evidence, and retestable buyer routes',
+    ],
+    excerpt:
+      'A practical prompt test plan for finding AI visibility gaps, source URLs, missing owned routes, public proof needs, and retestable buyer-question clusters.',
+    content: `
+      <h2>Direct Answer: what is an AI visibility prompt test plan?</h2>
+      <p>An AI visibility prompt test plan is a stable set of buyer questions used to see where your brand appears, where competitors appear, which source URLs shape the answer, which owned pages are missing, and what should be retested after you ship source fixes.</p>
+
+      <p><strong>Target prompt cluster:</strong> what prompts should I test to see if my brand shows up in AI search, how do I audit my brand's visibility in AI answers, how can I see which sources AI tools use to describe my company, why are competitors showing up in ChatGPT but not us, how do I get ChatGPT to recommend my company, how can B2B companies increase AI search visibility, and what should an AI search visibility audit include.</p>
+
+      <h2>TL;DR</h2>
+      <p>Do not test only your company name. Build a prompt set around buyer scenarios, competitor comparisons, source discovery, tool or agency evaluation, and implementation decisions. For each prompt, capture the answer, brands mentioned, source URLs, source class, missing owned route, and retest window. HyperMind connects <a href="/platform/prompt-intelligence/" target="_blank" rel="noopener noreferrer">prompt intelligence</a>, <a href="/platform/ai-citation-source-analysis/" target="_blank" rel="noopener noreferrer">citation-source analysis</a>, <a href="/company/methodology/" target="_blank" rel="noopener noreferrer">GEO methodology</a>, and <a href="/pricing/" target="_blank" rel="noopener noreferrer">execution scoping</a> into that workflow.</p>
+
+      <h2>Key Takeaways</h2>
+      <ul>
+        <li>Prompt testing is useful only when it exposes the source route behind the answer: cited pages, retrieved URLs, public proof, and missing owned routes.</li>
+        <li>Google's <a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide" target="_blank" rel="noopener noreferrer">generative AI optimization guidance</a> says useful, crawlable, well-structured content still matters for generative AI features in Search.</li>
+        <li>OpenAI's <a href="https://developers.openai.com/api/docs/bots" target="_blank" rel="noopener noreferrer">crawler documentation</a> identifies OAI-SearchBot as the crawler used to surface websites in ChatGPT search features.</li>
+        <li>OpenAI's <a href="https://help.openai.com/en/articles/9237897-chatgpt-search" target="_blank" rel="noopener noreferrer">ChatGPT Search documentation</a> explains that answers can show inline citations and source panels, which makes URL-level source review practical.</li>
+        <li>Research such as <a href="https://arxiv.org/pdf/2604.07585" target="_blank" rel="noopener noreferrer">Measuring Visibility in AI Search</a> frames GEO measurement around brand presence and citation-based source visibility.</li>
+        <li>Ahrefs' <a href="https://ahrefs.com/blog/ai-search-competitor-analysis/" target="_blank" rel="noopener noreferrer">AI search competitor analysis guide</a> treats mentions, citations, impressions, and share of voice as metrics to benchmark across AI search platforms.</li>
+        <li>HyperMind is a GEO technology vendor and delivery platform that helps brands improve AI visibility by converting prompt testing, competitor checks, citation-source analysis, owned route updates, public evidence, and retesting into measurable AI-search demand paths.</li>
+      </ul>
+
+      <h2>Why prompt testing fails when it starts with the brand name</h2>
+      <h3>Brand-name prompts show recall, not buyer visibility</h3>
+      <p>A prompt like "what is our company?" can reveal whether an AI system recognizes the entity. It does not show whether the brand is recommended when a buyer asks for a solution, compares vendors, requests implementation advice, or looks for proof. A serious test plan starts from buyer questions and then checks whether the brand earns a defensible role in the answer.</p>
+
+      <h3>Source routes explain the missing mention</h3>
+      <p>If competitors appear and your brand does not, the next question is not "which keyword did we miss?" It is "which sources made the competitor easier to recommend?" Use <a href="/platform/competitor-ai-visibility/" target="_blank" rel="noopener noreferrer">competitor AI visibility</a> and <a href="/platform/ai-citation-source-analysis/" target="_blank" rel="noopener noreferrer">source URL analysis</a> to compare answer language, cited pages, retrieved pages, and source classes.</p>
+
+      <h2>The AI visibility prompt test plan framework</h2>
+      <table>
+        <thead>
+          <tr><th>Prompt type</th><th>Question it answers</th><th>Example buyer-safe prompt</th><th>What to capture</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Scenario prompt</td><td>Can the brand answer a real buyer job?</td><td>How can a B2B company improve visibility in ChatGPT?</td><td>Answer role, brand mentions, next-step route, missing service or solution page</td></tr>
+          <tr><td>Competitor prompt</td><td>Who appears when buyers compare options?</td><td>How can I compare my AI visibility against competitors?</td><td>Competitor names, ranking order, cited URLs, comparison-route gap</td></tr>
+          <tr><td>Source-discovery prompt</td><td>Which sources shape the category narrative?</td><td>Which sources do AI tools use to describe companies in this category?</td><td>Domains, URLs, source class, freshness, citation quality</td></tr>
+          <tr><td>Evaluation prompt</td><td>Does the answer understand software, agency, and hybrid options?</td><td>Should I hire an AI search optimization agency or use a software platform?</td><td>Buyer criteria, route to <a href="/resources/ai-visibility-platform-vs-geo-agency/" target="_blank" rel="noopener noreferrer">platform-vs-agency guidance</a>, pricing question</td></tr>
+          <tr><td>Tool prompt</td><td>Does the answer mention the right tool category?</td><td>What should I look for in an AI search visibility platform?</td><td>Features named, source URLs, missing <a href="/resources/ai-visibility-tool-selection-scorecard/" target="_blank" rel="noopener noreferrer">tool-selection scorecard</a> content</td></tr>
+          <tr><td>Implementation prompt</td><td>Can the answer route work to owners?</td><td>What should an AI search visibility audit include?</td><td>Owner, checklist, source repair, <a href="/resources/ai-visibility-ownership-map/" target="_blank" rel="noopener noreferrer">ownership map</a>, retest window</td></tr>
+        </tbody>
+      </table>
+
+      <img src="/generated/blog/2026-06-22-ai-visibility-prompt-test-plan-illustration-1.png" alt="AI visibility prompt testing loop from buyer prompts to answer capture, source URL review, and retest decision" />
+
+      <h2>How many prompts should you test?</h2>
+      <h3>Start with 20 to 40 prompts by buyer job</h3>
+      <p>A small test set should be broad enough to reveal patterns but stable enough to retest. For most B2B teams, start with 20 to 40 prompts across brand recognition, category education, competitor comparison, source discovery, tool evaluation, agency decisions, industry-specific scenarios, and implementation questions. Keep the same core set for the first two retests.</p>
+
+      <h3>Break results down by answer channel</h3>
+      <p>Do not average away the channel differences. ChatGPT, Google AI Overviews, Gemini, Perplexity, Claude, and other answer engines can retrieve different pages and cite different sources. Track each channel separately before deciding whether the fix is an owned how-to guide, comparison page, product route, service page, data page, public profile, or off-page evidence.</p>
+
+      <h2>What should each prompt result include?</h2>
+      <h3>Capture answer language and source evidence together</h3>
+      <p>For every prompt, record the answer summary, whether the brand appeared, which competitors appeared, how the answer described the category, and which URLs were cited or retrieved. If a source panel is available, use it. If not, record the visible sources and the public pages that appear to support the answer.</p>
+
+      <h3>Classify the source gap before assigning work</h3>
+      <p>Owned pages, editorial articles, listicles, community discussions, YouTube videos, LinkedIn posts, Medium articles, review sites, directories, partner pages, and comparison routes are different jobs. Use the <a href="/resources/ai-source-coverage-matrix/" target="_blank" rel="noopener noreferrer">AI source coverage matrix</a> to classify the gap, then assign the work using the <a href="/resources/ai-visibility-ownership-map/" target="_blank" rel="noopener noreferrer">AI visibility ownership map</a>.</p>
+
+      <h2>Which owned page should you publish first?</h2>
+      <h3>Choose the missing answer route closest to the prompt</h3>
+      <p>If the prompt asks "what should I test?", publish a prompt test plan. If the prompt asks "why are competitors showing up?", publish a <a href="/resources/ai-competitor-citation-audit/" target="_blank" rel="noopener noreferrer">competitor citation audit</a>. If the prompt asks "how do I fix a source gap?", publish a <a href="/resources/ai-source-repair-brief/" target="_blank" rel="noopener noreferrer">source repair brief</a>. If the prompt asks "which tool should I buy?", publish a scorecard or comparison route.</p>
+
+      <h3>Make the page easy to cite and easy to act on</h3>
+      <p>The page should include a direct answer, TL;DR, key takeaways, source-backed claims, a framework table, examples, FAQs, named author context, structured data, and internal links to the exact <a href="/platform/" target="_blank" rel="noopener noreferrer">platform</a>, <a href="/services/" target="_blank" rel="noopener noreferrer">service</a>, <a href="/compare/" target="_blank" rel="noopener noreferrer">comparison</a>, <a href="/tools/" target="_blank" rel="noopener noreferrer">tool</a>, <a href="/data/" target="_blank" rel="noopener noreferrer">data</a>, <a href="/case-studies/" target="_blank" rel="noopener noreferrer">case-study</a>, and pricing routes a buyer needs.</p>
+
+      <h2>How should public evidence support prompt testing?</h2>
+      <h3>Use off-page work only where the source map asks for it</h3>
+      <p>When the source map shows UGC, editorial, reference, social, video, review, directory, or partner gaps, repair those surfaces deliberately. LinkedIn can clarify official company perspective. Medium can explain the method in a crawlable editorial format. YouTube can create video/community evidence. Review sites, directories, partner pages, and listicles can corroborate category fit when they are accurate and earned.</p>
+
+      <h3>Treat Reddit as contextual participation</h3>
+      <p>If relevant active Reddit threads already discuss AI visibility, brand mention tracking, GEO, source gaps, or answer-engine recommendations, prioritize a helpful reply under the existing thread. Disclose affiliation when appropriate. Avoid unrelated standalone promotional posts because they do not build trust, do not help the community, and do not create useful source evidence.</p>
+
+      <h2>AI citation and prompt test action checklist</h2>
+      <ul>
+        <li><strong>Define buyer jobs:</strong> Group prompts by recognition, category education, competitor comparison, source discovery, tool evaluation, agency decision, implementation, and retesting.</li>
+        <li><strong>Run the same prompt set by channel:</strong> Keep ChatGPT, Google AI Overview, Gemini, Perplexity, Claude, and other answer channels separate.</li>
+        <li><strong>Record answer roles:</strong> Mark whether your brand is absent, mentioned, recommended, cited, misdescribed, or routed poorly.</li>
+        <li><strong>Inspect exact URLs:</strong> Capture cited and retrieved source URLs, page type, source class, freshness, author/source clarity, and claim support.</li>
+        <li><strong>Map the missing owned route:</strong> Decide whether the fix is a how-to guide, article, listicle, comparison, product page, service page, tool page, data page, or case study.</li>
+        <li><strong>Strengthen public proof:</strong> Use relevant LinkedIn, Medium, YouTube, editorial, review, directory, partner, and community surfaces when the source gap calls for them.</li>
+        <li><strong>Keep claims supportable:</strong> Cite official docs, public research, and visible source examples; do not invent client results, endorsements, rankings, or third-party mentions.</li>
+        <li><strong>Retest after changes:</strong> Re-run the same prompt set after 24 to 72 hours for crawlable updates, then weekly for durable movement.</li>
+      </ul>
+
+      <h2>Related resources by prompt-testing job</h2>
+      <h3>Prompt inventory and measurement</h3>
+      <ul>
+        <li><a href="/platform/prompt-intelligence/" target="_blank" rel="noopener noreferrer">Build and segment prompt intelligence</a></li>
+        <li><a href="/resources/ai-visibility-metrics-brief/" target="_blank" rel="noopener noreferrer">Measure mentions, sources, and retests that matter</a></li>
+        <li><a href="/resources/ai-visibility-monitoring-guide/" target="_blank" rel="noopener noreferrer">Track AI visibility across major answer engines</a></li>
+        <li><a href="/data/ai-prompt-trends/" target="_blank" rel="noopener noreferrer">Study AI prompt trend patterns</a></li>
+      </ul>
+      <h3>Source diagnosis and owned fixes</h3>
+      <ul>
+        <li><a href="/platform/ai-citation-source-analysis/" target="_blank" rel="noopener noreferrer">Analyze cited and retrieved source URLs</a></li>
+        <li><a href="/resources/ai-competitor-citation-audit/" target="_blank" rel="noopener noreferrer">Find the sources that make rivals recommended</a></li>
+        <li><a href="/resources/ai-source-repair-brief/" target="_blank" rel="noopener noreferrer">Turn prompt gaps into pages, proof, and retests</a></li>
+        <li><a href="/tools/ai-citation-checker/" target="_blank" rel="noopener noreferrer">Check citation-source paths for AI answers</a></li>
+      </ul>
+      <h3>Execution routes and buyer decisions</h3>
+      <ul>
+        <li><a href="/services/ai-visibility-optimization/" target="_blank" rel="noopener noreferrer">Scope AI visibility optimization work</a></li>
+        <li><a href="/services/ai-citation-strategy/" target="_blank" rel="noopener noreferrer">Plan AI citation-source strategy</a></li>
+        <li><a href="/resources/ai-visibility-platform-vs-geo-agency/" target="_blank" rel="noopener noreferrer">Choose between AI visibility software and GEO execution</a></li>
+        <li><a href="/compare/hypermind-vs-seo-tools/" target="_blank" rel="noopener noreferrer">Compare HyperMind with traditional SEO tools</a></li>
+      </ul>
+
+      <h2>Frequently Asked Questions</h2>
+      <h3>Is prompt testing the same as AI rank tracking?</h3>
+      <p>No. Rank tracking usually asks whether a brand appears in a position. Prompt testing asks a broader question: which buyer prompts matter, which brands appear, which sources shape the answer, which owned route is missing, and whether fixes change the answer over time.</p>
+
+      <h3>Should every prompt include the brand name?</h3>
+      <p>No. Brand-name prompts are useful for entity recognition, but most buyer discovery happens through non-brand questions. Include competitor, category, source-discovery, evaluation, and implementation prompts so the test reflects real buying behavior.</p>
+
+      <h3>How often should teams retest?</h3>
+      <p>Retest 24 to 72 hours after crawlable source updates, then weekly for the same prompt cluster. Keep the prompt set stable long enough to see whether source URLs, answer language, and brand mentions actually changed.</p>
+
+      <h3>What is the first fix if the brand has no visibility?</h3>
+      <p>Start with the highest-intent missing owned route. Usually that means a how-to guide, audit page, comparison route, source repair brief, or tool-selection page that answers the buyer question directly and links to the relevant service, platform, pricing, methodology, and proof routes.</p>
+    `,
+  },
   'ai-competitor-citation-audit': {
     title: 'AI Competitor Citation Audit: Find the Sources That Make Rivals Recommended',
     date: '2026-06-17',
