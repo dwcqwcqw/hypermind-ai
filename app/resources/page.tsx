@@ -102,11 +102,11 @@ const FEATURED_DECISION_GUIDE = {
 }
 
 const FEATURED_AI_MODE_GUIDE = {
-  title: 'AI Visibility Prompt Test Plan',
-  href: '/resources/ai-visibility-prompt-test-plan',
+  title: 'AI Visibility Content Gap Brief',
+  href: '/resources/ai-visibility-content-gap-brief',
   description:
-    'A practical prompt test plan for finding AI visibility gaps, source URLs, missing owned routes, public proof needs, and retestable buyer-question clusters.',
-  tag: 'Latest Prompt Testing Guide',
+    'A practical content gap brief for turning missed AI visibility prompts into owned how-to guides, articles, listicles, product routes, source support, and retests.',
+  tag: 'Latest Content Gap Brief',
 }
 
 export default function ResourcesHub() {

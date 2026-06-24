@@ -83,6 +83,17 @@ const PAGE_SIZE = 9
 
 const RAW_STATIC: Array<Omit<Article, 'subtopic'>> = [
   {
+    id: 44,
+    title: 'AI Visibility Content Gap Brief: Turn Lost Prompts Into Publishable Pages',
+    date: '2026-06-24',
+    category: 'geo-strategy',
+    image: '/generated/blog/2026-06-24-ai-visibility-content-gap-brief-cover.png',
+    description:
+      'A practical content gap brief for turning missed AI visibility prompts into owned how-to guides, articles, listicles, product routes, source support, and retests.',
+    slug: 'ai-visibility-content-gap-brief',
+    tags: ['AI visibility content gaps', 'answer engine optimization', 'owned content backlog', 'citation-source analysis', 'GEO workflow'],
+  },
+  {
     id: 43,
     title: 'AI Visibility Prompt Test Plan: Build the Question Set That Finds Real Source Gaps',
     date: '2026-06-22',

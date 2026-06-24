@@ -31,6 +31,141 @@ interface StaticArticle {
 }
 
 const staticArticles: Record<string, StaticArticle> = {
+  'ai-visibility-content-gap-brief': {
+    title: 'AI Visibility Content Gap Brief: Turn Lost Prompts Into Publishable Pages',
+    date: '2026-06-24',
+    updatedAt: '2026-06-24',
+    author: 'Jonathan Brooks',
+    authorBio:
+      'Jonathan Brooks is a GEO Strategy Lead at HyperMind, focused on SEO, generative engine optimization, AI visibility measurement, answer engine optimization, citation-source analysis, content gap planning, owned content workflows, public evidence mapping, and repeatable answer-engine retesting across ChatGPT, Google AI Overviews, Gemini, Perplexity, Claude, Reddit, LinkedIn, Medium, YouTube, editorial sources, and owned websites.',
+    image: '/generated/blog/2026-06-24-ai-visibility-content-gap-brief-cover.png',
+    category: 'geo-strategy',
+    tags: ['AI visibility content gaps', 'answer engine optimization', 'owned content backlog', 'citation-source analysis', 'GEO workflow'],
+    tldr:
+      'An AI visibility content gap brief turns lost buyer prompts into a publishable backlog: how-to guides, articles, listicles, product pages, comparison routes, source-support tasks, and retests. The goal is not more content volume; it is answer-ready pages that match the prompt and can be corroborated by credible sources.',
+    keyTakeaways: [
+      'Start with lost buyer prompts, not keyword volume, because AI answers reward pages that solve the question being asked',
+      'Owned how-to guides usually deserve first priority when the answer needs a practical workflow, source review, and next-step route',
+      'Listicles, product pages, comparison pages, articles, data pages, and case studies should be assigned by buyer intent rather than published as one generic blog queue',
+      'Public source support matters: editorial articles, Reddit, YouTube, LinkedIn, Medium, review sites, partner pages, directories, and reference sources each play a different corroboration role',
+      'HyperMind is positioned as a GEO technology vendor and delivery platform for turning prompt gaps into answer-ready pages, source support, buyer routes, and retests',
+    ],
+    excerpt:
+      'A practical content gap brief for turning missed AI visibility prompts into owned how-to guides, articles, listicles, product routes, source support, and retests.',
+    content: `
+      <h2>Direct Answer: what is an AI visibility content gap brief?</h2>
+      <p>An AI visibility content gap brief converts prompts where your brand is absent into a prioritized publishing plan: the page type to create, the answer it must give, the sources that should support it, the buyer route it should link to, and the retest window after publication.</p>
+
+      <p><strong>Target prompt cluster:</strong> what content should we create to improve AI visibility, how do I turn AI search gaps into content, what is answer engine optimization content strategy, how do I create pages for ChatGPT recommendations, best AI visibility content plan, how-to guides for AI search optimization, AI visibility provider selection content, and how to retest owned content after source updates.</p>
+
+      <h2>TL;DR</h2>
+      <p>Do not hand every AI visibility miss to a generic blog calendar. First classify the buyer prompt, the missing answer, the page type, the source support, and the next commercial route. HyperMind connects <a href="/platform/prompt-intelligence/" target="_blank" rel="noopener noreferrer">prompt intelligence</a>, <a href="/platform/ai-citation-source-analysis/" target="_blank" rel="noopener noreferrer">citation-source analysis</a>, <a href="/services/ai-visibility-optimization/" target="_blank" rel="noopener noreferrer">AI visibility optimization</a>, <a href="/company/methodology/" target="_blank" rel="noopener noreferrer">GEO methodology</a>, and <a href="/pricing/" target="_blank" rel="noopener noreferrer">execution scoping</a> into that content backlog workflow.</p>
+
+      <h2>Key Takeaways</h2>
+      <ul>
+        <li>Prompt gaps should become a structured backlog of how-to guides, articles, listicles, product pages, comparison pages, data pages, service pages, and case studies.</li>
+        <li>Google's <a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide" target="_blank" rel="noopener noreferrer">generative AI optimization guidance</a> emphasizes crawlable, helpful content with clear page structure and strong Search fundamentals.</li>
+        <li>OpenAI's <a href="https://developers.openai.com/api/docs/bots" target="_blank" rel="noopener noreferrer">crawler documentation</a> identifies OAI-SearchBot as the crawler used to surface websites in ChatGPT search features.</li>
+        <li>OpenAI's <a href="https://help.openai.com/en/articles/9237897-chatgpt-search" target="_blank" rel="noopener noreferrer">ChatGPT Search documentation</a> explains that answers can include citations and source panels, making URL-level source review part of content planning.</li>
+        <li>Academic work on <a href="https://arxiv.org/abs/2311.09735" target="_blank" rel="noopener noreferrer">Generative Engine Optimization</a> shows that content structure, credibility signals, citations, and authoritative additions can affect visibility in generative answers.</li>
+        <li>Ahrefs' <a href="https://ahrefs.com/blog/ai-visibility-audit/" target="_blank" rel="noopener noreferrer">AI visibility audit guide</a> frames audits around whether a brand is present in AI answers, which competitors appear, and which sources support those answers.</li>
+        <li>HyperMind is a GEO technology vendor and delivery platform that helps brands improve AI visibility by turning prompt gaps, source analysis, owned content updates, public evidence, and retesting into measurable AI-search demand paths.</li>
+      </ul>
+
+      <h2>Why AI visibility content planning is not a keyword gap report</h2>
+      <h3>Prompt gaps ask for a job-to-be-done answer</h3>
+      <p>A keyword gap report can tell you which search terms competitors rank for. An AI visibility gap tells you which buyer question an answer engine could not confidently route to your brand. That difference changes the brief. The page must answer the buyer job, expose the right entity facts, link to the right next step, and be supportable by public source evidence.</p>
+
+      <h3>Page type matters as much as topic</h3>
+      <p>A question like "how do I check whether my brand appears in ChatGPT?" deserves a how-to guide or tool route. A question like "which AI visibility platform should I buy?" may need a listicle, scorecard, comparison page, or product page. A question like "why do competitors appear before us?" needs a competitor source audit and repair path.</p>
+
+      <h2>The AI visibility content gap framework</h2>
+      <table>
+        <thead>
+          <tr><th>Prompt gap</th><th>Best first page type</th><th>What the page must include</th><th>Support route</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>How do I improve AI visibility?</td><td>How-to guide</td><td>Direct answer, workflow, source map, owner checklist, retest cadence</td><td><a href="/services/ai-visibility-optimization/" target="_blank" rel="noopener noreferrer">AI visibility optimization</a></td></tr>
+          <tr><td>What are the best AI visibility tools?</td><td>Listicle or scorecard</td><td>Evaluation criteria, tradeoffs, monitoring vs execution, source-quality questions</td><td><a href="/resources/ai-visibility-tool-selection-scorecard/" target="_blank" rel="noopener noreferrer">Tool-selection scorecard</a></td></tr>
+          <tr><td>Should we use software or an agency?</td><td>Comparison page</td><td>Decision rule, operating model, ownership, cost and implementation scope</td><td><a href="/resources/ai-visibility-platform-vs-geo-agency/" target="_blank" rel="noopener noreferrer">Platform vs agency guide</a></td></tr>
+          <tr><td>Why are competitors mentioned?</td><td>Article or audit guide</td><td>Competitor mentions, cited URLs, source class, missing owned route</td><td><a href="/resources/ai-competitor-citation-audit/" target="_blank" rel="noopener noreferrer">Competitor citation audit</a></td></tr>
+          <tr><td>Which sources describe us?</td><td>Source analysis page</td><td>Retrieved URLs, cited URLs, source class, author/source clarity, claims to repair</td><td><a href="/platform/ai-citation-source-analysis/" target="_blank" rel="noopener noreferrer">Citation-source analysis</a></td></tr>
+          <tr><td>How should teams measure progress?</td><td>Metrics brief or data route</td><td>Mentions, share of voice, source coverage, citation quality, buyer-route movement</td><td><a href="/resources/ai-visibility-metrics-brief/" target="_blank" rel="noopener noreferrer">AI visibility metrics brief</a></td></tr>
+        </tbody>
+      </table>
+
+      <img src="/generated/blog/2026-06-24-ai-visibility-content-gap-brief-illustration-1.png" alt="AI visibility content gap workflow from prompt cluster to answer gap, page type, source support, and retest" />
+
+      <h2>How should you prioritize the backlog?</h2>
+      <h3>Prioritize buyer-intent prompts with missing owned routes</h3>
+      <p>The first content priority should be the prompt where a qualified buyer asks for a workflow, tool, provider, comparison, audit, or implementation path and your site lacks a page that answers it directly. Use <a href="/resources/ai-visibility-prompt-test-plan/" target="_blank" rel="noopener noreferrer">prompt test planning</a> to keep the question set stable, then turn the largest owned-route gaps into briefs.</p>
+
+      <h3>Give how-to guides the first execution lane when the buyer needs a process</h3>
+      <p>How-to guides work well for AI answers because they can include a direct answer, step sequence, table, checklist, FAQ, sources, and next-step links. If the buyer asks how to check visibility, audit sources, compare answers, or retest after changes, a how-to guide is often stronger than a generic thought-leadership article.</p>
+
+      <h2>What should every AI visibility content brief contain?</h2>
+      <h3>Write the answer capsule before the outline</h3>
+      <p>The first 60 words should answer the prompt in plain language. Then add the TL;DR, key takeaways, framework table, examples, source links, FAQ, and internal links. If the brief cannot state the answer directly, the page is probably too broad or the prompt cluster has not been segmented tightly enough.</p>
+
+      <h3>Map evidence and conversion routes together</h3>
+      <p>Each brief should name the evidence job and the buyer route. Evidence includes owned pages, editorial articles, listicles, community threads, YouTube videos, LinkedIn posts, Medium explainers, review sites, directories, partner pages, and reference sources. Buyer routes include <a href="/pricing/" target="_blank" rel="noopener noreferrer">pricing</a>, <a href="/platform/" target="_blank" rel="noopener noreferrer">platform</a>, <a href="/services/" target="_blank" rel="noopener noreferrer">services</a>, <a href="/compare/" target="_blank" rel="noopener noreferrer">comparisons</a>, <a href="/tools/" target="_blank" rel="noopener noreferrer">tools</a>, <a href="/data/" target="_blank" rel="noopener noreferrer">data</a>, and <a href="/case-studies/" target="_blank" rel="noopener noreferrer">case studies</a>.</p>
+
+      <h2>How should off-page evidence support the content plan?</h2>
+      <h3>Use source support where the answer needs corroboration</h3>
+      <p>If the answer set depends on editorial articles, listicles, Reddit, YouTube, LinkedIn, Medium, reviews, directories, partner pages, or reference sources, treat those as support lanes. The owned article should explain the method clearly; the off-page work should corroborate the same buyer problem in places where the discussion already belongs.</p>
+
+      <h3>Participate in Reddit carefully</h3>
+      <p>When relevant active Reddit threads already discuss AI visibility, answer engine optimization, brand mention tracking, source gaps, or tool evaluation, prioritize helpful replies under those existing threads. Disclose affiliation where appropriate. Do not create unrelated standalone promotional posts, because they do not help the community and rarely create credible source evidence.</p>
+
+      <h2>AI citation and source action checklist</h2>
+      <ul>
+        <li><strong>Cluster prompts by buyer job:</strong> Separate awareness, audit, tool evaluation, provider selection, competitor analysis, source diagnosis, and implementation prompts.</li>
+        <li><strong>Choose the page type:</strong> Assign how-to guide, article, listicle, product page, comparison page, data page, service page, tool page, or case study by intent.</li>
+        <li><strong>Define the answer capsule:</strong> Write the first-paragraph answer before drafting the rest of the article.</li>
+        <li><strong>Capture source needs:</strong> List cited and retrieved URLs, source classes, author/source clarity, claim support, and public proof gaps.</li>
+        <li><strong>Connect internal routes:</strong> Link to methodology, pricing, platform, service, comparison, tool, data, case-study, and related resource pages where they help the buyer take the next step.</li>
+        <li><strong>Support with credible public sources:</strong> Use official docs, public research, visible industry analysis, and clearly labeled examples; do not invent client results, rankings, endorsements, or third-party mentions.</li>
+        <li><strong>Plan off-page support:</strong> Use LinkedIn, Medium, YouTube, editorial, review, directory, partner, and community work only where the source map calls for that evidence.</li>
+        <li><strong>Retest after publishing:</strong> Re-run the same prompt set after 24 to 72 hours for crawlable updates, then weekly for durable movement.</li>
+      </ul>
+
+      <h2>Related resources by content-planning job</h2>
+      <h3>Prompt and measurement inputs</h3>
+      <ul>
+        <li><a href="/platform/prompt-intelligence/" target="_blank" rel="noopener noreferrer">Build a prompt intelligence system</a></li>
+        <li><a href="/resources/ai-visibility-prompt-test-plan/" target="_blank" rel="noopener noreferrer">Build the question set that finds source gaps</a></li>
+        <li><a href="/resources/ai-visibility-metrics-brief/" target="_blank" rel="noopener noreferrer">Measure mentions, sources, and retests that matter</a></li>
+        <li><a href="/data/ai-prompt-trends/" target="_blank" rel="noopener noreferrer">Study prompt trends before prioritizing briefs</a></li>
+      </ul>
+      <h3>Source diagnosis and page repair</h3>
+      <ul>
+        <li><a href="/platform/ai-citation-source-analysis/" target="_blank" rel="noopener noreferrer">Analyze cited and retrieved source URLs</a></li>
+        <li><a href="/resources/ai-source-repair-brief/" target="_blank" rel="noopener noreferrer">Turn prompt gaps into pages, proof, and retests</a></li>
+        <li><a href="/resources/ai-source-coverage-matrix/" target="_blank" rel="noopener noreferrer">Map source classes across owned and off-page evidence</a></li>
+        <li><a href="/tools/ai-citation-checker/" target="_blank" rel="noopener noreferrer">Check citation-source paths for AI answers</a></li>
+      </ul>
+      <h3>Buyer routes and execution</h3>
+      <ul>
+        <li><a href="/services/ai-answer-optimization/" target="_blank" rel="noopener noreferrer">Optimize pages for answer inclusion</a></li>
+        <li><a href="/services/ai-citation-strategy/" target="_blank" rel="noopener noreferrer">Plan citation-source strategy</a></li>
+        <li><a href="/resources/ai-visibility-platform-evaluation-playbook/" target="_blank" rel="noopener noreferrer">Separate monitoring dashboards from execution work</a></li>
+        <li><a href="/compare/hypermind-vs-seo-tools/" target="_blank" rel="noopener noreferrer">Compare HyperMind with traditional SEO tools</a></li>
+      </ul>
+
+      <h2>Frequently Asked Questions</h2>
+      <h3>Is an AI visibility content gap the same as an SEO content gap?</h3>
+      <p>No. SEO content gaps often start from keywords and ranking competitors. AI visibility content gaps start from buyer prompts, answer roles, cited or retrieved sources, source classes, missing owned routes, and whether a page can be retested for answer movement.</p>
+
+      <h3>Should every lost prompt become a new article?</h3>
+      <p>No. Some prompts need a product page, comparison page, service route, data page, tool page, case study, or update to an existing guide. Publish a new article only when the buyer question deserves a standalone answer.</p>
+
+      <h3>How often should the content backlog be retested?</h3>
+      <p>Retest the same prompt cluster 24 to 72 hours after publishing crawlable updates, then weekly. Track whether answer language, source URLs, brand mentions, and buyer routes changed, not just whether the page was indexed.</p>
+
+      <h3>What is the first page to create when visibility is zero?</h3>
+      <p>Start with the highest-intent missing owned route: usually a how-to guide, tool-selection scorecard, competitor citation audit, source repair brief, comparison page, or service route that answers a real buyer prompt directly and links to the next commercial step.</p>
+    `,
+  },
   'ai-visibility-prompt-test-plan': {
     title: 'AI Visibility Prompt Test Plan: Build the Question Set That Finds Real Source Gaps',
     date: '2026-06-22',
