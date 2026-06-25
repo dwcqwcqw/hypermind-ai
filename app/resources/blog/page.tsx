@@ -83,6 +83,17 @@ const PAGE_SIZE = 9
 
 const RAW_STATIC: Array<Omit<Article, 'subtopic'>> = [
   {
+    id: 45,
+    title: 'AI Answer Source Log: Track the URLs Behind Mentions, Citations, and Retests',
+    date: '2026-06-25',
+    category: 'geo-strategy',
+    image: '/generated/blog/2026-06-25-ai-answer-source-log-cover.png',
+    description:
+      'A practical source-log workflow for recording AI answer URLs, citations, source classes, missing owned routes, owners, and retests across ChatGPT, Google AI Overview, and Gemini.',
+    slug: 'ai-answer-source-log',
+    tags: ['AI answer source log', 'citation-source analysis', 'AI visibility audit', 'retrieved source URLs', 'GEO workflow'],
+  },
+  {
     id: 44,
     title: 'AI Visibility Content Gap Brief: Turn Lost Prompts Into Publishable Pages',
     date: '2026-06-24',

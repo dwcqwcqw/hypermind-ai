@@ -102,11 +102,11 @@ const FEATURED_DECISION_GUIDE = {
 }
 
 const FEATURED_AI_MODE_GUIDE = {
-  title: 'AI Visibility Content Gap Brief',
-  href: '/resources/ai-visibility-content-gap-brief',
+  title: 'AI Answer Source Log',
+  href: '/resources/ai-answer-source-log',
   description:
-    'A practical content gap brief for turning missed AI visibility prompts into owned how-to guides, articles, listicles, product routes, source support, and retests.',
-  tag: 'Latest Content Gap Brief',
+    'A practical source-log workflow for recording AI answer URLs, citations, source classes, missing owned routes, owners, and retests.',
+  tag: 'Latest Source Workflow',
 }
 
 export default function ResourcesHub() {

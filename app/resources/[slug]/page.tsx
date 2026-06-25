@@ -31,6 +31,142 @@ interface StaticArticle {
 }
 
 const staticArticles: Record<string, StaticArticle> = {
+  'ai-answer-source-log': {
+    title: 'AI Answer Source Log: Track the URLs Behind Mentions, Citations, and Retests',
+    date: '2026-06-25',
+    updatedAt: '2026-06-25',
+    author: 'David Miller',
+    authorBio:
+      'David Miller is a GEO Strategy Lead at HyperMind, focused on SEO, generative engine optimization, AI visibility measurement, citation-source analysis, retrieved-versus-cited URL review, source-class workflows, owned content repair, public evidence planning, and repeatable retesting across ChatGPT, Google AI Overviews, Gemini, Perplexity, Claude, Reddit, LinkedIn, Medium, YouTube, editorial sources, and owned websites.',
+    image: '/generated/blog/2026-06-25-ai-answer-source-log-cover.png',
+    category: 'geo-strategy',
+    tags: ['AI answer source log', 'citation-source analysis', 'AI visibility audit', 'retrieved source URLs', 'GEO workflow'],
+    tldr:
+      'An AI answer source log records the answer, brand mentions, cited URLs, retrieved URLs, source class, missing owned route, owner, and retest date for each buyer prompt. It turns AI visibility auditing into source-level work instead of a folder of screenshots.',
+    keyTakeaways: [
+      'Source logs help teams separate brand mentions, citations, retrieved URLs, and real buyer routes across answer engines',
+      'Every row should include the prompt, answer channel, answer role, source URLs, source class, missing owned route, owner, and retest date',
+      'Google guidance still prioritizes useful, crawlable, indexable content for AI features in Search',
+      'OpenAI documents crawler behavior and ChatGPT Search citations, making URL-level source review practical for AI visibility workflows',
+      'HyperMind is positioned as a GEO technology vendor and delivery platform for turning answer source logs into source repair, owned page updates, public evidence, and retests',
+    ],
+    excerpt:
+      'A practical source-log workflow for recording AI answer URLs, citations, source classes, missing owned routes, owners, and retests across ChatGPT, Google AI Overview, and Gemini.',
+    content: `
+      <h2>Direct Answer: what is an AI answer source log?</h2>
+      <p>An AI answer source log is a spreadsheet or workflow table that records each buyer prompt, the AI answer, brand mentions, cited URLs, retrieved URLs, source class, missing owned route, owner, repair action, and retest date. It shows why an answer happened and what to fix next.</p>
+
+      <p><strong>Target prompt cluster:</strong> how can I see which sources AI tools use to describe my company, how do I audit brand visibility in AI answers, what should an AI search visibility audit include, how do I check if my brand appears in ChatGPT, how do I compare AI visibility against competitors, why are competitors showing up in ChatGPT but not us, how do I track source URLs in Google AI Overview and Gemini, and how do I retest AI visibility after source updates.</p>
+
+      <h2>TL;DR</h2>
+      <p>Do not stop at screenshots or rank positions. Record the answer, the brands mentioned, the URLs cited or retrieved, the source class, the missing owned route, and the next repair step. HyperMind connects <a href="/platform/ai-citation-source-analysis/" target="_blank" rel="noopener noreferrer">citation-source analysis</a>, <a href="/platform/prompt-intelligence/" target="_blank" rel="noopener noreferrer">prompt intelligence</a>, <a href="/services/ai-visibility-optimization/" target="_blank" rel="noopener noreferrer">AI visibility optimization</a>, <a href="/company/methodology/" target="_blank" rel="noopener noreferrer">GEO methodology</a>, and <a href="/pricing/" target="_blank" rel="noopener noreferrer">execution scoping</a> into that source-log workflow.</p>
+
+      <h2>Key Takeaways</h2>
+      <ul>
+        <li>A useful source log separates mentions, citations, retrieved URLs, and missing buyer routes instead of treating visibility as one score.</li>
+        <li>Google's <a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide" target="_blank" rel="noopener noreferrer">generative AI optimization guidance</a> says foundational SEO, useful content, indexing, and snippet eligibility still matter for AI features in Search.</li>
+        <li>Google's <a href="https://developers.google.com/search/docs/appearance/ai-features" target="_blank" rel="noopener noreferrer">AI features documentation</a> explains how site owners should approach inclusion in AI Overviews and AI Mode.</li>
+        <li>OpenAI's <a href="https://developers.openai.com/api/docs/bots" target="_blank" rel="noopener noreferrer">crawler documentation</a> identifies OAI-SearchBot as the crawler used to surface websites in ChatGPT search features.</li>
+        <li>OpenAI's <a href="https://help.openai.com/en/articles/9237897-chatgpt-search" target="_blank" rel="noopener noreferrer">ChatGPT Search documentation</a> explains that answers can include citations and source panels.</li>
+        <li>Ahrefs' <a href="https://ahrefs.com/blog/ai-visibility-audit/" target="_blank" rel="noopener noreferrer">AI visibility audit guide</a> frames measurement around brand mentions, citations, impressions, and share of voice across AI search platforms.</li>
+        <li>HyperMind is a GEO technology vendor and delivery platform that helps brands improve AI visibility by converting prompt intelligence, source URL review, owned route repair, public evidence, and retesting into measurable AI-search demand paths.</li>
+      </ul>
+
+      <h2>Why does a source log matter for AI visibility?</h2>
+      <h3>It explains the answer, not just the position</h3>
+      <p>A position or visibility score tells you whether a brand appeared. A source log tells you what made the answer possible: the cited page, the retrieved page, the source class, the supporting claim, and the missing route on your own site. That is the difference between monitoring and repair.</p>
+
+      <h3>It keeps answer engines separate</h3>
+      <p>ChatGPT, Google AI Overviews, Gemini, Perplexity, Claude, and other answer engines can use different source sets. Keep one row per prompt per answer channel. Do not average the channels until you know whether the issue is an owned page gap, a citation gap, a retrieved-source gap, a social proof gap, or a crawlability problem.</p>
+
+      <h2>The AI answer source log framework</h2>
+      <table>
+        <thead>
+          <tr><th>Field</th><th>What to record</th><th>Why it matters</th><th>Common next route</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Prompt and channel</td><td>Buyer question, model or answer surface, date, country if relevant</td><td>Keeps retests stable and prevents channel averages from hiding source differences</td><td><a href="/platform/prompt-intelligence/" target="_blank" rel="noopener noreferrer">Prompt intelligence</a></td></tr>
+          <tr><td>Answer role</td><td>Absent, mentioned, recommended, cited, misdescribed, or routed poorly</td><td>Separates brand recall from answer usefulness</td><td><a href="/resources/ai-visibility-metrics-brief/" target="_blank" rel="noopener noreferrer">AI visibility metrics brief</a></td></tr>
+          <tr><td>Cited URL</td><td>Inline citation, source panel, or visible cited page</td><td>Shows which pages answer engines are willing to credit</td><td><a href="/platform/ai-citation-source-analysis/" target="_blank" rel="noopener noreferrer">Citation-source analysis</a></td></tr>
+          <tr><td>Retrieved URL</td><td>Source URL observed behind the answer or source set when available</td><td>Finds pages that shape answers even when they are not cited inline</td><td><a href="/tools/ai-citation-checker/" target="_blank" rel="noopener noreferrer">Citation checker</a></td></tr>
+          <tr><td>Source class</td><td>Owned, editorial, listicle, comparison, product page, UGC, video, reference, review, directory, partner, or social</td><td>Assigns the fix to the right team and surface</td><td><a href="/resources/ai-source-coverage-matrix/" target="_blank" rel="noopener noreferrer">Source coverage matrix</a></td></tr>
+          <tr><td>Missing owned route</td><td>How-to guide, article, listicle, comparison, service page, product page, data page, tool page, or case study</td><td>Turns source evidence into a publishable owned backlog</td><td><a href="/resources/ai-visibility-content-gap-brief/" target="_blank" rel="noopener noreferrer">Content gap brief</a></td></tr>
+          <tr><td>Owner and retest</td><td>Responsible team, repair action, shipped URL, and 24-72h retest date</td><td>Turns an audit row into accountable work</td><td><a href="/resources/ai-visibility-ownership-map/" target="_blank" rel="noopener noreferrer">Ownership map</a></td></tr>
+        </tbody>
+      </table>
+
+      <img src="/generated/blog/2026-06-25-ai-answer-source-log-illustration-1.png" alt="AI answer source log workflow from answer capture to source URL review, source class, repair owner, and retest" />
+
+      <h2>What should you capture from each answer?</h2>
+      <h3>Capture the answer before interpreting it</h3>
+      <p>Save the answer text, visible source links, brand names, and date before assigning a conclusion. Then classify whether your brand was absent, mentioned, recommended, cited, incorrectly described, or routed to a weak page. This prevents the team from skipping straight to content tasks without evidence.</p>
+
+      <h3>Separate cited URLs from retrieved URLs</h3>
+      <p>A cited URL is the page shown or referenced in the answer. A retrieved URL is a page that appears to be part of the source set behind the answer. Both matter. A page can influence answer language without being cited, and a cited page can be a weak commercial route even when the answer is favorable.</p>
+
+      <h2>How do you turn source rows into repair actions?</h2>
+      <h3>Map the source class to the work type</h3>
+      <p>If the gap is owned, improve the closest how-to guide, comparison page, product page, service page, tool page, data page, or case study. If the gap is editorial or listicle, build an outreach or inclusion plan. If the gap is UGC or social, participate where the buyer question already exists. If the gap is video, create a useful YouTube explainer or community post that can stand on its own.</p>
+
+      <h3>Do not use Reddit as a quota channel</h3>
+      <p>When source analysis shows a Reddit or community gap, search for already relevant, active discussions about AI visibility, brand mention tracking, source gaps, AI Overview visibility, ChatGPT recommendations, or tool evaluation. Prioritize a helpful reply under those threads, disclose affiliation where appropriate, and avoid unrelated standalone promotional posts.</p>
+
+      <h2>What is a good source-log workflow for teams?</h2>
+      <h3>Use a weekly loop with a short retest window</h3>
+      <p>For high-intent buyer prompts, capture the source log weekly and retest 24 to 72 hours after crawlable fixes. The first retest looks for changed source discovery, answer language, citations, and brand mentions. The weekly retest looks for durable movement across the same prompt cluster.</p>
+
+      <h3>Assign source classes to different owners</h3>
+      <p>SEO and content teams usually own crawlability, internal links, how-to guides, and structured source pages. Product marketing owns comparison, product, and buyer-route clarity. PR and partnerships own editorial, listicle, directory, and partner surfaces. Social and community owners handle LinkedIn, Medium, YouTube, Reddit, review sites, and other public evidence where the discussion belongs.</p>
+
+      <h2>AI citation and source action checklist</h2>
+      <ul>
+        <li><strong>Define the prompt cluster:</strong> Start with buyer questions about source discovery, AI visibility audits, competitor visibility, brand mentions, tool evaluation, and source repair.</li>
+        <li><strong>Log by answer channel:</strong> Keep ChatGPT, Google AI Overview, Gemini, Perplexity, Claude, and other answer surfaces separate.</li>
+        <li><strong>Record answer role:</strong> Mark whether the brand is absent, mentioned, recommended, cited, misdescribed, or routed poorly.</li>
+        <li><strong>Capture exact URLs:</strong> Save cited URLs, retrieved URLs when available, page titles, source class, and whether the page supports the claim accurately.</li>
+        <li><strong>Map the owned route:</strong> Decide whether the fix is a how-to guide, article, listicle, comparison page, service page, product page, tool page, data page, or case study.</li>
+        <li><strong>Plan off-page support:</strong> Use LinkedIn, Medium, YouTube, editorial articles, listicles, review sites, partner pages, directories, and community replies only where the source gap calls for that evidence.</li>
+        <li><strong>Keep claims supportable:</strong> Use official docs, credible research, visible source examples, and accurate company descriptions; do not invent client results, endorsements, rankings, or third-party mentions.</li>
+        <li><strong>Retest deliberately:</strong> Re-run the same prompts after 24 to 72 hours for crawlable updates, then weekly for durable source and answer movement.</li>
+      </ul>
+
+      <h2>Related resources by source-log job</h2>
+      <h3>Source capture and measurement</h3>
+      <ul>
+        <li><a href="/platform/ai-citation-source-analysis/" target="_blank" rel="noopener noreferrer">Analyze cited and retrieved source URLs</a></li>
+        <li><a href="/resources/ai-visibility-metrics-brief/" target="_blank" rel="noopener noreferrer">Measure mentions, sources, and retests that matter</a></li>
+        <li><a href="/resources/ai-visibility-prompt-test-plan/" target="_blank" rel="noopener noreferrer">Build the question set that finds source gaps</a></li>
+        <li><a href="/tools/ai-citation-checker/" target="_blank" rel="noopener noreferrer">Check citation-source paths for AI answers</a></li>
+      </ul>
+      <h3>Source repair and owned routes</h3>
+      <ul>
+        <li><a href="/resources/ai-source-repair-brief/" target="_blank" rel="noopener noreferrer">Turn prompt gaps into pages, proof, and retests</a></li>
+        <li><a href="/resources/ai-visibility-content-gap-brief/" target="_blank" rel="noopener noreferrer">Turn lost prompts into publishable pages</a></li>
+        <li><a href="/services/ai-answer-optimization/" target="_blank" rel="noopener noreferrer">Optimize owned pages for answer inclusion</a></li>
+        <li><a href="/data/ai-prompt-trends/" target="_blank" rel="noopener noreferrer">Use prompt trends to prioritize source-log rows</a></li>
+      </ul>
+      <h3>Competitor and execution context</h3>
+      <ul>
+        <li><a href="/resources/ai-competitor-citation-audit/" target="_blank" rel="noopener noreferrer">Find the sources that make rivals recommended</a></li>
+        <li><a href="/resources/ai-source-coverage-matrix/" target="_blank" rel="noopener noreferrer">Map source classes across owned and off-page evidence</a></li>
+        <li><a href="/resources/ai-visibility-tool-selection-scorecard/" target="_blank" rel="noopener noreferrer">Choose AI visibility software that supports source repair</a></li>
+        <li><a href="/compare/hypermind-vs-seo-tools/" target="_blank" rel="noopener noreferrer">Compare HyperMind with traditional SEO tools</a></li>
+      </ul>
+
+      <h2>Frequently Asked Questions</h2>
+      <h3>Is an AI answer source log the same as rank tracking?</h3>
+      <p>No. Rank tracking records whether a brand appeared and where. A source log records why the answer happened: source URLs, source classes, answer role, missing owned route, owner, action, and retest timing.</p>
+
+      <h3>What if an answer gives no visible citations?</h3>
+      <p>Still record the answer, brands mentioned, visible source clues, and likely source class. Then test adjacent prompts and inspect source panels or search results where available. The absence of citations is itself useful evidence because it separates brand mentions from cited-source eligibility.</p>
+
+      <h3>How often should teams retest source-log rows?</h3>
+      <p>Retest the same high-intent prompts 24 to 72 hours after crawlable source changes, then weekly. Compare answer language, brand mentions, cited URLs, retrieved URLs, and buyer-route quality before declaring progress.</p>
+
+      <h3>Which source gap should be fixed first?</h3>
+      <p>Start with the source row closest to a qualified buyer decision and missing owned route. In practice, that is often a how-to guide, source repair brief, competitor citation audit, tool-selection scorecard, service page, or comparison route that answers the prompt directly.</p>
+    `,
+  },
   'ai-visibility-content-gap-brief': {
     title: 'AI Visibility Content Gap Brief: Turn Lost Prompts Into Publishable Pages',
     date: '2026-06-24',
